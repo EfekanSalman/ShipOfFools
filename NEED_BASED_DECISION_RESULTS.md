@@ -98,6 +98,12 @@ Kapasite kontrastı (yüksek eksi düşük):
 | Nüfus | +16.2 [+13.1, +19.2] | +3.4 [+0.9, +6.0] |
 | `benefactor` etiketi payı | +0.234 [+0.215, +0.253] | +0.018 [+0.001, +0.035] |
 
+> **Düzeltme (2026-10-09).** Aşağıdaki ilk iki gözlemdeki açıklama ("servet
+> yendiği için") sonraki ayrışım deneyinde desteklenmedi: işaret değişimi
+> servetin yenemediği `scoring_only` kolunda da görülüyor ve ağırlıkla skor
+> biçimine ait. Bkz. `PROVISION_SCORING_FACTORIAL_RESULTS.md`. Sayılar
+> geçerlidir; yorum değişti.
+
 Gözlemler (keşifsel; mekanizma açıklamaları sınanmamış adaylardır):
 
 - **Servet iki mimaride ters yönde hareket ediyor.** `intact` kolda en kıt

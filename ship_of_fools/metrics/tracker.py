@@ -116,6 +116,9 @@ class MetricsTracker:
             **action_rate,
             inequality_gini=gini(wealth),
             avg_wealth=statistics.mean(wealth),
+            avg_min_need=statistics.mean(min(a.needs.food, a.needs.water) for a in alive),
+            # share of agents below 0.4 on food or water, the level where scarcity stress starts
+            need_deficit_rate=sum(1 for a in alive if min(a.needs.food, a.needs.water) < 0.4) / len(alive),
             avg_reflected_self=statistics.mean(a.mental_model.reflected_self for a in alive),
             social_perception_gap=statistics.mean(gaps) if gaps else 0.0,
             has_leader=1 if (institutions and institutions.leader_id is not None) else 0,

@@ -93,7 +93,10 @@ seed pairing is not full common-random-number coupling.
   real-world constructs. In particular, `cooperation_rate` is the share of
   living agents whose last action was `share` or `socialize`; `conflict_rate` is
   the share whose last action was `steal`. `action_*_rate` reports each of the
-  six actions separately.
+  six actions separately. `true_scarcity` is one minus the stock-to-capacity
+  ratio of the shared pool; it measures how empty the stores are, not whether
+  agents are deprived. `avg_min_need` and `need_deficit_rate` report the
+  latter (ISSUE-015).
 
 ## 3. Details
 

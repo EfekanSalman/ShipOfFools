@@ -152,8 +152,36 @@ geçmişi kaybolmaz.
 - **Ayrışım (2026-10-09)**: iki parça `provisions_edible` ve
   `need_based_scoring` anahtarlarına bölündü; 2×2×4 protokolü
   `EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md`.
-- **Kalan**: ayrışım sonucu; `provision_*` duyarlılığı;
+- **Ayrışım sonucu (480 koşu)**: fark skor biçimine ait (çatışma kapasite
+  kontrastında skor ana etkisi +0.082 [+0.076, +0.089]); erzak ana etkisi
+  ayırt edilemiyor (+0.003 [−0.002, +0.007]). Servet/Gini işaret değişimini
+  erzağa bağlayan önceki yorum düzeltildi. Erzak etkisiz çünkü ajanlar
+  nadiren aç kalıyor (ISSUE-015). Rapor: `PROVISION_SCORING_FACTORIAL_RESULTS.md`.
+- **Kalan**: `provision_eat_threshold` duyarlılığı (ISSUE-015 çözülmeden anlamı sınırlı);
   toplamada kütle korunumu. Varsayılan mimari kararı verilmedi.
+- **Durum**: **açık**.
+
+### ISSUE-015 — `true_scarcity` depo doluluğunu ölçüyor, yoksunluğu değil
+- **Nerede**: `economy/resources.py` (`true_scarcity`), `simulation/engine.py` (`forage`)
+- **Ne**: `true_scarcity = 1 − stok/kapasite`. Tanı koşusunda (5 seed, keşifsel)
+  kıtlığın tavanda (≈1.0) olduğu 90/0.016 hücresinde ajanların ortalama en
+  düşük ihtiyacı 0.80, ihtiyacı 0.4 altında olanların payı %4. Yani ölçü
+  azamideyken ajanlar toktur.
+- **Neden**: yenilenme akışı ihtiyacın birkaç katı (kapasite 7200 × 0.016 ≈ 115
+  birim/tick; ~100 ajanı doyurmak için ~30 birim/tick yeter). Depo yine de
+  boşalıyor çünkü bir toplama 5–12 birim alıyor ve ihtiyaç 1.0'da kırpılıyor;
+  fazlası kayboluyor. ISSUE-006'daki sıfır açlık ölümüyle uyumlu.
+- **Sonuç**: kaynak deneylerinin tamamı ajanların depo göstergesine dair
+  **inancına** verdiği tepkiyi ölçüyor; gerçek yoksunluğa tepkiyi değil.
+  ISSUE-011'deki "tavan rejimi" de bir açlık rejimi değil, boş depo rejimi.
+  Stresin ve nüfusun kaynakla değil çalmayla hareket etmesi (ablasyon
+  gözlemleri) bununla tutarlı.
+- **Yapılanlar**: `avg_min_need` ve `need_deficit_rate` metrikleri eklendi.
+- **Önerilen kapanış**: (a) raporlarda "kıtlık" yerine "depo boşluğu" ile
+  "yoksunluk" ayrımını yapmak ve her deneyde ikisini birlikte raporlamak;
+  (b) gerçek yoksunluk üreten bir kaynak rejimi tanımlamak (yenilenmeyi
+  ihtiyaç akışının altına indirmek veya toplamadaki israfı kaldırmak) —
+  ayrı protokol; varsayılan bu bulguya bakılarak değiştirilmez.
 - **Durum**: **açık**.
 
 ## Kapalı

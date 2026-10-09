@@ -457,7 +457,11 @@ bağı ancak elle yazılmış bir katsayıyla kurulabiliyordu.
       `need_based_scoring`); `need_based` yörüngeleri bit-bit aynı.
 - [x] Ayrışım protokolü koşudan önce: `EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md`
       (2×2 kaynak × 2×2 karar, 30 seed bloğu, 480 koşu).
-- [ ] Ayrışım koşusu ve raporu: `PROVISION_SCORING_FACTORIAL_RESULTS.md`.
+- [x] Ayrışım koşusu ve raporu: `PROVISION_SCORING_FACTORIAL_RESULTS.md` (2026-10-09).
+      Fark skor biçimine ait; erzak etkisi ayırt edilemiyor.
+- [x] `avg_min_need`, `need_deficit_rate` metrikleri; ISSUE-015 açıldı
+      (`true_scarcity` depo doluluğunu ölçüyor, ajanlar tavanda bile tok).
+- [ ] Gerçek yoksunluk üreten kaynak rejimi için pilot ve protokol (ISSUE-015).
 - [ ] `provision_*` parametrelerine duyarlılık (özellikle `provision_max_per_tick`).
 - [ ] Toplamada kütle korunumu: yenen ve saklanan payın açık ayrımı.
 - [ ] Gini için null model (yalnızca rastgele aktarım) — `REFERENCES.md` #15.
