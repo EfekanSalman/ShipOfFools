@@ -292,6 +292,12 @@ protokolle (`EXPERIMENT_PROTOCOL_SCARCITY_LINK_ABLATION.md`) koşuldu; sonuçlar
 `SCARCITY_LINK_ABLATION_RESULTS.md` içinde. Kimlik deneyinin etiket/eylem
 dağılımı post hoc olarak çıkarıldı (`IDENTITY_RESOURCE_RESULTS.md` eki).
 
+2026-10-09: alternatif, ihtiyaç temelli karar mimarisi (ISSUE-014) 2×2×2
+protokolle sınandı (`NEED_BASED_DECISION_RESULTS.md`). Kaynak → çatışma
+ilişkisi aynı yönde ama yaklaşık sekizde bir büyüklükte çıktı. Üç deney
+birlikte, bu ilişkinin büyüklüğünün karar kuralı varsayımına bağlı olduğunu
+gösteriyor; raporlanacak ana sonuç bu yapısal belirsizliktir.
+
 ## Kaynaklar
 
 - Grimm et al. (2020), “The ODD Protocol for Describing Agent-Based and Other

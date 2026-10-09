@@ -142,6 +142,15 @@ geçmişi kaybolmaz.
   ile hesaplanıyor. Testler `tests/test_need_based_decision.py`. Protokol
   `EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md`, sonuçlar
   `NEED_BASED_DECISION_RESULTS.md`. `avg_wealth` metriği eklendi.
+- **Sonuç (2026-10-09, 240 koşu)**: `need_based` kolda kapasite etkisi çatışma
+  ölçüsünde −0.012 [−0.013, −0.010] (`intact` −0.098), işbirliğinde +0.016
+  (`intact` +0.092): aynı yön, yaklaşık sekizde bir–altıda bir büyüklük.
+  Servet ve Gini'nin kaynak rejimine tepkisi iki mimaride ters işaretli:
+  `intact` kolda en kıt hücre en zengin hücredir (servet yenemediği için
+  birikir). Ablasyonla birlikte okununca kaynak → çatışma etkisinin büyüklüğü
+  karar kuralına göre yaklaşık sekiz kat değişiyor.
+- **Kalan**: erzak ile karar kuralının ayrı etkisi; `provision_*` duyarlılığı;
+  toplamada kütle korunumu. Varsayılan mimari kararı verilmedi.
 - **Durum**: **açık**.
 
 ## Kapalı

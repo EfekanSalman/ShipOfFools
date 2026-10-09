@@ -1,0 +1,2594 @@
+{
+  "bootstrap_draws": 10000,
+  "analysis_seed": 6102607,
+  "seed_block_paired": true,
+  "reference_arm": "intact",
+  "metrics": {
+    "conflict_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.31936752413541974,
+          "sd_between_seeds": 0.012015155633104265
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.28917397847277143,
+          "sd_between_seeds": 0.026644861198395146
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.23390551438300378,
+          "sd_between_seeds": 0.02940780491953254
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.17938762649718518,
+          "sd_between_seeds": 0.023421023973713546
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.19155681379518605,
+          "sd_between_seeds": 0.005523575562402227
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.18116745995903363,
+          "sd_between_seeds": 0.005791805340238283
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.17590902877520814,
+          "sd_between_seeds": 0.0060682860687392235
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.17322618010912708,
+          "sd_between_seeds": 0.006432630263710837
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.0976241808640011,
+              "bootstrap_ci95": [
+                -0.10507134629627934,
+                -0.09002603211291862
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.04235571677423344,
+              "bootstrap_ci95": [
+                -0.04682395373254514,
+                -0.03794168014202836
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.024324342223170287,
+              "bootstrap_ci95": [
+                -0.039795666981266124,
+                -0.00877347013943377
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.011794532434942218,
+              "bootstrap_ci95": [
+                -0.013166075748115588,
+                -0.010312160103950543
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.006536101251116727,
+              "bootstrap_ci95": [
+                -0.007903345619690237,
+                -0.0050717838823684976
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.007706505170071348,
+              "bootstrap_ci95": [
+                0.004327488794423625,
+                0.011211047319645872
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.08582964842905888,
+              "bootstrap_ci95": [
+                0.07816631922191224,
+                0.09345795798961966
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.035819615523116716,
+              "bootstrap_ci95": [
+                0.031228048561796506,
+                0.04028711380532435
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.032030847393241635,
+              "bootstrap_ci95": [
+                0.01761607865851737,
+                0.04645198871106043
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.12081568654975983,
+              "bootstrap_ci95": [
+                0.10322583875275908,
+                0.138436323161482
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.1543144998809908,
+              "bootstrap_ci95": [
+                0.11946669951107143,
+                0.19104688235711528
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cooperation_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.1726047896794031,
+          "sd_between_seeds": 0.0076693974538014345
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.20561368630855767,
+          "sd_between_seeds": 0.024097563970883033
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.25244676205292316,
+          "sd_between_seeds": 0.027981076128047754
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.30902740510110777,
+          "sd_between_seeds": 0.027557805962916217
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.287360122664809,
+          "sd_between_seeds": 0.008279081214927734
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.30011066620423293,
+          "sd_between_seeds": 0.007577880191046741
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.3079725288494664,
+          "sd_between_seeds": 0.009575456280555809
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.31127747592277355,
+          "sd_between_seeds": 0.008187419504372882
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.09162784558303505,
+              "bootstrap_ci95": [
+                0.08430115880401451,
+                0.09899352769203737
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.04479476983866959,
+              "bootstrap_ci95": [
+                0.03999609297933738,
+                0.04954132075661429
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.023571746419030037,
+              "bootstrap_ci95": [
+                0.011019130490896688,
+                0.03549143904318693
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.01588960795159905,
+              "bootstrap_ci95": [
+                0.01370044399054208,
+                0.018099476479906056
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.008027745306365519,
+              "bootstrap_ci95": [
+                0.006173087942712069,
+                0.009894884052300653
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.009445596466116812,
+              "bootstrap_ci95": [
+                -0.014040028631748054,
+                -0.005186744580645903
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.075738237631436,
+              "bootstrap_ci95": [
+                -0.08373742164216393,
+                -0.06764508919119182
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.03676702453230407,
+              "bootstrap_ci95": [
+                -0.04193581858342262,
+                -0.03149783055534639
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.03301734288514685,
+              "bootstrap_ci95": [
+                -0.04436323176143895,
+                -0.02186538376801417
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.17341461921856013,
+              "bootstrap_ci95": [
+                0.14541032114045,
+                0.2047880279459827
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.17921166545286002,
+              "bootstrap_ci95": [
+                0.1337101881030655,
+                0.22915516707085268
+              ]
+            }
+          }
+        }
+      }
+    },
+    "true_scarcity": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.9920907707349872,
+          "sd_between_seeds": 0.021396340063943087
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.8366772523507129,
+          "sd_between_seeds": 0.15758068734058767
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.5271837324227655,
+          "sd_between_seeds": 0.18538771968515702
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.18207313230301056,
+          "sd_between_seeds": 0.17382357055307227
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.8978656578284617,
+          "sd_between_seeds": 0.12610954079025385
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.6444198223514296,
+          "sd_between_seeds": 0.16548154083836036
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.3828241659674766,
+          "sd_between_seeds": 0.1848233303681994
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.10642202880884942,
+          "sd_between_seeds": 0.08085316999216259
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.559755579179962,
+              "bootstrap_ci95": [
+                -0.6105343774736818,
+                -0.5071541793042265
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.2502620592520146,
+              "bootstrap_ci95": [
+                -0.28282737998637353,
+                -0.21684550759333554
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.1896970817354806,
+              "bootstrap_ci95": [
+                -0.2629131159451322,
+                -0.11496673852522064
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.5265196427017826,
+              "bootstrap_ci95": [
+                -0.5627380230387624,
+                -0.49021553434734955
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.26492398631782965,
+              "bootstrap_ci95": [
+                -0.30627805819185727,
+                -0.2216013779261527
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.022956301681595015,
+              "bootstrap_ci95": [
+                -0.12097098210908845,
+                0.07261426905954295
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.03323593647817935,
+              "bootstrap_ci95": [
+                -0.03495838064500796,
+                0.10021183275100139
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.014661927065815039,
+              "bootstrap_ci95": [
+                -0.07378532126579389,
+                0.045026966858392525
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.1667407800538856,
+              "bootstrap_ci95": [
+                0.0485915983619396,
+                0.27849256820541485
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.9406241979278352,
+              "bootstrap_ci95": [
+                0.8335533990254992,
+                1.0684626930133514
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 1.058586295939691,
+              "bootstrap_ci95": [
+                0.8350005738199321,
+                1.3284725898587466
+              ]
+            }
+          }
+        }
+      }
+    },
+    "avg_scarcity_belief": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.9882318662221494,
+          "sd_between_seeds": 0.005788760957176334
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.8898427463804149,
+          "sd_between_seeds": 0.1309124984989884
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.6074776618111991,
+          "sd_between_seeds": 0.18013378782738226
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.25421133382188504,
+          "sd_between_seeds": 0.17451451074332666
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.920250230516339,
+          "sd_between_seeds": 0.08832089833608947
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.707335963760761,
+          "sd_between_seeds": 0.15173795512764285
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.45191822175817303,
+          "sd_between_seeds": 0.18260673949399994
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.1795383383161838,
+          "sd_between_seeds": 0.07544804926434387
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.5081928084847401,
+              "bootstrap_ci95": [
+                -0.5598746460311982,
+                -0.45582070957718596
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.2258277239155242,
+              "bootstrap_ci95": [
+                -0.2554551889929696,
+                -0.1948943977678119
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.2548772081475796,
+              "bootstrap_ci95": [
+                -0.3231257202042536,
+                -0.18239571908005606
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.4980648171013717,
+              "bootstrap_ci95": [
+                -0.5320422152095274,
+                -0.46455225237832537
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.24264707509878364,
+              "bootstrap_ci95": [
+                -0.27887713496270583,
+                -0.20464163442342662
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.05946561668641126,
+              "bootstrap_ci95": [
+                -0.15473532597296055,
+                0.03271120103374628
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.010127991383368451,
+              "bootstrap_ci95": [
+                -0.05620315061816789,
+                0.07585453147992254
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.016819351183259446,
+              "bootstrap_ci95": [
+                -0.06804213480673575,
+                0.03394988965786476
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.19541159146116832,
+              "bootstrap_ci95": [
+                0.08210461019293683,
+                0.3031604353815982
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.9800705731874351,
+              "bootstrap_ci95": [
+                0.862539649437043,
+                1.1209252482836867
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 1.0744786817651808,
+              "bootstrap_ci95": [
+                0.8605601728264997,
+                1.3361298827352304
+              ]
+            }
+          }
+        }
+      }
+    },
+    "avg_stress": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.8442940407525051,
+          "sd_between_seeds": 0.020078864444097445
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.7650745881303782,
+          "sd_between_seeds": 0.05627829704495567
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.6565641161941184,
+          "sd_between_seeds": 0.06153333660075491
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.521946499558624,
+          "sd_between_seeds": 0.059233121622141956
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.5831266537260299,
+          "sd_between_seeds": 0.029661667282044498
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.5492635773544301,
+          "sd_between_seeds": 0.02086096680457391
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.5276235720710554,
+          "sd_between_seeds": 0.027728761833214467
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.5202394860485828,
+          "sd_between_seeds": 0.033591220936893776
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.21542900656507058,
+              "bootstrap_ci95": [
+                -0.23069645239888115,
+                -0.19989551697567154
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.10691853462881062,
+              "bootstrap_ci95": [
+                -0.1168415259522092,
+                -0.09681494555003355
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.05539816401336739,
+              "bootstrap_ci95": [
+                -0.08417832001117977,
+                -0.024334764004645848
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.04226358648041095,
+              "bootstrap_ci95": [
+                -0.05126213955945071,
+                -0.0333949886661945
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.020623581197036223,
+              "bootstrap_ci95": [
+                -0.02921742709311949,
+                -0.012096431462335914
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.026478990349127263,
+              "bootstrap_ci95": [
+                0.009336128249047027,
+                0.04330754326752196
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.17316542008465963,
+              "bootstrap_ci95": [
+                0.15572826203586188,
+                0.19000559702140873
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0862949534317744,
+              "bootstrap_ci95": [
+                0.07430173745446872,
+                0.09802647820061938
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.08187715436249465,
+              "bootstrap_ci95": [
+                0.05436991901311868,
+                0.10727113329958296
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.19618336060815092,
+              "bootstrap_ci95": [
+                0.15484995491015843,
+                0.24007084789412253
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.1928906084303827,
+              "bootstrap_ci95": [
+                0.11601521036452438,
+                0.2726172178165341
+              ]
+            }
+          }
+        }
+      }
+    },
+    "avg_trust": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": -0.03371104302556402,
+          "sd_between_seeds": 0.0039634087802014805
+        },
+        "C90-R0p019-intact": {
+          "mean": -0.014678624521974309,
+          "sd_between_seeds": 0.009262099846622093
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.002085096597596586,
+          "sd_between_seeds": 0.007535863948788597
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.016701829695239423,
+          "sd_between_seeds": 0.0055132940133910706
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.009041304068941308,
+          "sd_between_seeds": 0.003601656783278101
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.01322436977523845,
+          "sd_between_seeds": 0.0027326045438069648
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.013911737232231223,
+          "sd_between_seeds": 0.003169274063708074
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.014619770913691547,
+          "sd_between_seeds": 0.0036831452219901503
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.033588296920187166,
+              "bootstrap_ci95": [
+                0.03173435876821003,
+                0.03536078254994059
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.016824575800616276,
+              "bootstrap_ci95": [
+                0.015294731281610881,
+                0.01836323367054239
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.004415685405946874,
+              "bootstrap_ci95": [
+                -0.008434048607980964,
+                -0.00041712455898356674
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.003132917150871507,
+              "bootstrap_ci95": [
+                0.002188069369611676,
+                0.0040636014033670195
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0024455496938787322,
+              "bootstrap_ci95": [
+                0.001661705347109592,
+                0.003178779680105773
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.003475032024836818,
+              "bootstrap_ci95": [
+                -0.005221502349726158,
+                -0.0017265874796038464
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.030455379769315657,
+              "bootstrap_ci95": [
+                -0.03240244272394697,
+                -0.02841629889407158
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.014379026106737544,
+              "bootstrap_ci95": [
+                -0.016130809846880072,
+                -0.01260114455454157
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0009406533811100563,
+              "bootstrap_ci95": [
+                -0.002990518952292295,
+                0.004797588067376438
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.09327406978436492,
+              "bootstrap_ci95": [
+                0.06514016973963181,
+                0.12130399853999228
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.1453558011126291,
+              "bootstrap_ci95": [
+                0.09741308273246624,
+                0.1951526913298469
+              ]
+            }
+          }
+        }
+      }
+    },
+    "inequality_gini": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.41568063338701233,
+          "sd_between_seeds": 0.021198806479039663
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.4086157437882012,
+          "sd_between_seeds": 0.02135486083428995
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.4200830458933354,
+          "sd_between_seeds": 0.01847947480219364
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.43333983963725664,
+          "sd_between_seeds": 0.018051206085191628
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.4483350858436637,
+          "sd_between_seeds": 0.02105106672984213
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.44052464148979237,
+          "sd_between_seeds": 0.020140727627328985
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.4280756390919265,
+          "sd_between_seeds": 0.019368231890733965
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.4208395249436538,
+          "sd_between_seeds": 0.022281023434979955
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.014563254177689278,
+              "bootstrap_ci95": [
+                0.007081733183169993,
+                0.022094266679907267
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0030959520725550305,
+              "bootstrap_ci95": [
+                -0.002143435863114219,
+                0.008361194817264791
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.020321683342732377,
+              "bootstrap_ci95": [
+                0.007780183802952316,
+                0.03304900846915454
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.019972281648937884,
+              "bootstrap_ci95": [
+                -0.027069228588983498,
+                -0.012566642314063159
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.00752327925107199,
+              "bootstrap_ci95": [
+                -0.01410435425032648,
+                -0.0008267473094724346
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.000574330205598661,
+              "bootstrap_ci95": [
+                -0.011406045337250093,
+                0.012427318289366033
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.03453553582662716,
+              "bootstrap_ci95": [
+                -0.04505305443995016,
+                -0.024121921524448642
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.01061923132362702,
+              "bootstrap_ci95": [
+                -0.019088896934109784,
+                -0.0026070721042926754
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.019747353137133716,
+              "bootstrap_ci95": [
+                -0.03640317826403263,
+                -0.001357683682483204
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -1.3714161275530827,
+              "bootstrap_ci95": [
+                -2.948563193845521,
+                -0.7271635603354666
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -2.4300373761481295,
+              "bootstrap_ci95": [
+                -24.047802805908447,
+                19.807682058051515
+              ]
+            }
+          }
+        }
+      }
+    },
+    "population": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 94.253,
+          "sd_between_seeds": 4.454072255270723
+        },
+        "C90-R0p019-intact": {
+          "mean": 106.85300000000001,
+          "sd_between_seeds": 5.2710505070883045
+        },
+        "C120-R0p016-intact": {
+          "mean": 115.659,
+          "sd_between_seeds": 7.724034299643482
+        },
+        "C120-R0p019-intact": {
+          "mean": 117.77933333333334,
+          "sd_between_seeds": 12.308151751592515
+        },
+        "C90-R0p016-need_based": {
+          "mean": 110.84533333333334,
+          "sd_between_seeds": 9.990418076003293
+        },
+        "C90-R0p019-need_based": {
+          "mean": 114.126,
+          "sd_between_seeds": 10.699600572628547
+        },
+        "C120-R0p016-need_based": {
+          "mean": 116.13666666666667,
+          "sd_between_seeds": 11.26872582012693
+        },
+        "C120-R0p019-need_based": {
+          "mean": 115.71499999999999,
+          "sd_between_seeds": 8.308754730548603
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 16.16616666666667,
+              "bootstrap_ci95": [
+                13.109929166666666,
+                19.20352083333333
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 7.360166666666672,
+              "bootstrap_ci95": [
+                5.3223208333333325,
+                9.378912499999998
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -10.479666666666674,
+              "bootstrap_ci95": [
+                -14.139333333333312,
+                -6.799874999999986
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 3.4401666666666557,
+              "bootstrap_ci95": [
+                0.9378208333333301,
+                6.016712499999998
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 1.4294999999999902,
+              "bootstrap_ci95": [
+                -1.5190625000000053,
+                4.419375000000007
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -3.7023333333333426,
+              "bootstrap_ci95": [
+                -10.015849999999995,
+                2.4393583333333226
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -12.726000000000013,
+              "bootstrap_ci95": [
+                -16.717245833333337,
+                -8.693250000000024
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -5.930666666666681,
+              "bootstrap_ci95": [
+                -9.70704166666666,
+                -2.1712125000000047
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 6.777333333333331,
+              "bootstrap_ci95": [
+                -0.4228333333333238,
+                13.737666666666657
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.21280039588853192,
+              "bootstrap_ci95": [
+                0.056357551299162575,
+                0.39324433429789807
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.19422114535449686,
+              "bootstrap_ci95": [
+                -0.208384365714912,
+                0.6576147291430654
+              ]
+            }
+          }
+        }
+      }
+    },
+    "helping_norm": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.17548073370582043,
+          "sd_between_seeds": 0.007878770988044213
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.21472907455534154,
+          "sd_between_seeds": 0.02416991770336465
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.26254714091054127,
+          "sd_between_seeds": 0.0244365947830418
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.3123803745780024,
+          "sd_between_seeds": 0.021859971128472978
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.2878779999049987,
+          "sd_between_seeds": 0.008642917227488818
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.3005427156912933,
+          "sd_between_seeds": 0.006853034585018106
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.3079823097936412,
+          "sd_between_seeds": 0.008225302537067459
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.3106341705278192,
+          "sd_between_seeds": 0.00793225404522826
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.09235885361369081,
+              "bootstrap_ci95": [
+                0.0863676354313904,
+                0.09802995080815233
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.04454078725849109,
+              "bootstrap_ci95": [
+                0.03992263270384054,
+                0.04890414267923708
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.010584892817940006,
+              "bootstrap_ci95": [
+                -0.0004014095163835856,
+                0.021125673953854583
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.015097882362584247,
+              "bootstrap_ci95": [
+                0.012901085514048333,
+                0.017242981990720177
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.00765828826023629,
+              "bootstrap_ci95": [
+                0.005905874194953914,
+                0.009452463368942236
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.010012855052116632,
+              "bootstrap_ci95": [
+                -0.013908948045040328,
+                -0.006207185876788395
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.07726097125110656,
+              "bootstrap_ci95": [
+                -0.0834708038731207,
+                -0.07054196816458386
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0368824989982548,
+              "bootstrap_ci95": [
+                -0.04174849857900975,
+                -0.03190631403046795
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.020597747870056637,
+              "bootstrap_ci95": [
+                -0.030924963998244227,
+                -0.01034382136318722
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.1634697895421497,
+              "bootstrap_ci95": [
+                0.13776068444983874,
+                0.1912088821449963
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.1719387718899455,
+              "bootstrap_ci95": [
+                0.12915945879852958,
+                0.2193493579925049
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_forage_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.16239929829609664,
+          "sd_between_seeds": 0.010876564870377886
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.15407184258666531,
+          "sd_between_seeds": 0.00454987620213013
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.16084582606315428,
+          "sd_between_seeds": 0.004518462284976444
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.16985915814221475,
+          "sd_between_seeds": 0.00426126861100237
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.1260824895592046,
+          "sd_between_seeds": 0.005509388279413914
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.1392529020240727,
+          "sd_between_seeds": 0.008920930556002116
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.15328403737914673,
+          "sd_between_seeds": 0.009653124529465288
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.16838116017105273,
+          "sd_between_seeds": 0.004657765442906107
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.007116921661303538,
+              "bootstrap_ci95": [
+                0.004610749389292465,
+                0.009570967270302513
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0003429381848145674,
+              "bootstrap_ci95": [
+                -0.001884865415181052,
+                0.0026330963577642077
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.017340787788491796,
+              "bootstrap_ci95": [
+                0.01217332749742775,
+                0.022260218634368403
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.028164902983461082,
+              "bootstrap_ci95": [
+                0.026228585153032,
+                0.03006879849153875
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.014133767628387084,
+              "bootstrap_ci95": [
+                0.012176703763662897,
+                0.01612012976253161
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.001926710327037895,
+              "bootstrap_ci95": [
+                -0.0035214489412509894,
+                0.007447320781973346
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.021047981322157544,
+              "bootstrap_ci95": [
+                0.017357213627675235,
+                0.024681409327024072
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.013790829443572516,
+              "bootstrap_ci95": [
+                0.0111182344319986,
+                0.016522551273358704
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.015414077461453901,
+              "bootstrap_ci95": [
+                -0.02137745174618759,
+                -0.009157965210606307
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 3.9574558107897437,
+              "bootstrap_ci95": [
+                2.839686955258208,
+                6.270080323518827
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 41.2137471248046,
+              "bootstrap_ci95": [
+                -183.3166929607014,
+                189.04558148169986
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_rest_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.13895222935403514,
+          "sd_between_seeds": 0.004392092244880682
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.1428580170184408,
+          "sd_between_seeds": 0.004649646079284808
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.15302587682441804,
+          "sd_between_seeds": 0.0038190667209020064
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.15838451934250625,
+          "sd_between_seeds": 0.002657263267955829
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.15049784142278774,
+          "sd_between_seeds": 0.0035986198079855517
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.15482042523419015,
+          "sd_between_seeds": 0.0035622798541860355
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.15827175604414975,
+          "sd_between_seeds": 0.0038344175835954256
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.16105287322505177,
+          "sd_between_seeds": 0.002778798673585441
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.014800074897224152,
+              "bootstrap_ci95": [
+                0.013582086701021226,
+                0.015992216412932806
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.004632215091246922,
+              "bootstrap_ci95": [
+                0.003410797746654721,
+                0.0059053654745632005
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0014528548536825447,
+              "bootstrap_ci95": [
+                -0.0019098135464806578,
+                0.004771531798676119
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.0070031813061118,
+              "bootstrap_ci95": [
+                0.006064970377607164,
+                0.007904557418773866
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0035518504961522257,
+              "bootstrap_ci95": [
+                0.0021024344721758503,
+                0.005033804449330512
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0015414666305003932,
+              "bootstrap_ci95": [
+                -0.0035585404126183945,
+                0.00047224257756956335
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.007796893591112353,
+              "bootstrap_ci95": [
+                -0.0092075887092141,
+                -0.006392796652036259
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.001080364595094696,
+              "bootstrap_ci95": [
+                -0.0027485673510366797,
+                0.0005372207046961296
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.002994321484182938,
+              "bootstrap_ci95": [
+                -0.006322471037332399,
+                0.0003553639273312615
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.4731855314749313,
+              "bootstrap_ci95": [
+                0.40790259069210644,
+                0.5435365678412792
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.7667714961819965,
+              "bootstrap_ci95": [
+                0.46279325889693235,
+                1.1364993363484555
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_socialize_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.0888773511867267,
+          "sd_between_seeds": 0.004000295425664064
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.09794010519724618,
+          "sd_between_seeds": 0.007503708920013917
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.10943279191366641,
+          "sd_between_seeds": 0.006314227925916639
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.11775376256399396,
+          "sd_between_seeds": 0.004718253874220932
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.11963223438767047,
+          "sd_between_seeds": 0.0033253060113989418
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.12024130471165319,
+          "sd_between_seeds": 0.0029752442323248
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.12196646732535389,
+          "sd_between_seeds": 0.0038979343882238108
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.12145113387374463,
+          "sd_between_seeds": 0.0035680110217923343
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.020184549046843747,
+              "bootstrap_ci95": [
+                0.018373155075843486,
+                0.021978668309860942
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.008691862330423517,
+              "bootstrap_ci95": [
+                0.007405810830317156,
+                0.010011541411929212
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0007417833601919277,
+              "bootstrap_ci95": [
+                -0.004605894611562445,
+                0.002967805318914457
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.0017720310498874348,
+              "bootstrap_ci95": [
+                0.0004709433530703345,
+                0.003074856157252248
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 4.686843618673109e-05,
+              "bootstrap_ci95": [
+                -0.0011311403591311657,
+                0.00127400938879588
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0011244037755919756,
+              "bootstrap_ci95": [
+                -0.003507001976705074,
+                0.001310703188055896
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.018412517996956312,
+              "bootstrap_ci95": [
+                -0.020705588308052553,
+                -0.016011678993227453
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.008644993894236785,
+              "bootstrap_ci95": [
+                -0.010729020985888193,
+                -0.0065413651293971566
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0003826204154000479,
+              "bootstrap_ci95": [
+                -0.004486901466851124,
+                0.003851232785922918
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.08779146097219977,
+              "bootstrap_ci95": [
+                0.02298948274054124,
+                0.15647392083739348
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.005392220263622996,
+              "bootstrap_ci95": [
+                -0.1232158294566697,
+                0.1579564865907253
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_share_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.08372743849267641,
+          "sd_between_seeds": 0.00518740993178238
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.10767358111131148,
+          "sd_between_seeds": 0.017657493131346992
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.14301397013925676,
+          "sd_between_seeds": 0.022442305214806106
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.19127364253711385,
+          "sd_between_seeds": 0.02429607996818581
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.16772788827713855,
+          "sd_between_seeds": 0.008390352843488505
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.17986936149257973,
+          "sd_between_seeds": 0.006884318047351019
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.1860060615241125,
+          "sd_between_seeds": 0.008702532988608583
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.1898263420490289,
+          "sd_between_seeds": 0.007611597250305402
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.07144329653619137,
+              "bootstrap_ci95": [
+                0.06529668437356209,
+                0.07756493274387134
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.03610290750824606,
+              "bootstrap_ci95": [
+                0.03202378667487981,
+                0.040062384452943293
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.02431352977922202,
+              "bootstrap_ci95": [
+                0.01451264053297536,
+                0.033849700602082464
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.01411757690171156,
+              "bootstrap_ci95": [
+                0.012102637998536838,
+                0.016095606303895244
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.007980876870178788,
+              "bootstrap_ci95": [
+                0.0059552115772084965,
+                0.010141745726144734
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.008321192690524781,
+              "bootstrap_ci95": [
+                -0.012422199005840481,
+                -0.004361639012836703
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.05732571963447981,
+              "bootstrap_ci95": [
+                -0.06414758422253476,
+                -0.05019480126923592
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.028122030638067272,
+              "bootstrap_ci95": [
+                -0.032589406016327954,
+                -0.023423537825622544
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0326347224697468,
+              "bootstrap_ci95": [
+                -0.042332526055591214,
+                -0.022830318248059058
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.19760533998539598,
+              "bootstrap_ci95": [
+                0.16317127554501024,
+                0.23722842712227007
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.22105911742304749,
+              "bootstrap_ci95": [
+                0.16173378895615947,
+                0.287795280579644
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_steal_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.31936752413541974,
+          "sd_between_seeds": 0.012015155633104265
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.28917397847277143,
+          "sd_between_seeds": 0.026644861198395146
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.23390551438300378,
+          "sd_between_seeds": 0.02940780491953254
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.17938762649718518,
+          "sd_between_seeds": 0.023421023973713546
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.19155681379518605,
+          "sd_between_seeds": 0.005523575562402227
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.18116745995903363,
+          "sd_between_seeds": 0.005791805340238283
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.17590902877520814,
+          "sd_between_seeds": 0.0060682860687392235
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.17322618010912708,
+          "sd_between_seeds": 0.006432630263710837
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.0976241808640011,
+              "bootstrap_ci95": [
+                -0.10531362470128607,
+                -0.09015803613183923
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.04235571677423344,
+              "bootstrap_ci95": [
+                -0.04680686048991793,
+                -0.03791268096024232
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.024324342223170287,
+              "bootstrap_ci95": [
+                -0.039584380847102286,
+                -0.00879441868273431
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.011794532434942218,
+              "bootstrap_ci95": [
+                -0.013199088122762643,
+                -0.010330543312706084
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.006536101251116727,
+              "bootstrap_ci95": [
+                -0.007921814390399776,
+                -0.00503363586831844
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.007706505170071348,
+              "bootstrap_ci95": [
+                0.004344200410384661,
+                0.011360800795874187
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.08582964842905888,
+              "bootstrap_ci95": [
+                0.07816569452681525,
+                0.09373373258485086
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.035819615523116716,
+              "bootstrap_ci95": [
+                0.03132939328647236,
+                0.04027533690535466
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.032030847393241635,
+              "bootstrap_ci95": [
+                0.017354274328417553,
+                0.04636032806792751
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.12081568654975983,
+              "bootstrap_ci95": [
+                0.10311211718493103,
+                0.1388183288590422
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.1543144998809908,
+              "bootstrap_ci95": [
+                0.11847282881328275,
+                0.19058203422539136
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_spread_belief_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.20660686096586997,
+          "sd_between_seeds": 0.006912649869199856
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.20815779425067685,
+          "sd_between_seeds": 0.005723836537693641
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.19949815219143582,
+          "sd_between_seeds": 0.006564516807753783
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.18296528114210198,
+          "sd_between_seeds": 0.00785266416643699
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.24425806218890406,
+          "sd_between_seeds": 0.008708225484571829
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.2243232205624303,
+          "sd_between_seeds": 0.01213338985213603
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.20420021281308873,
+          "sd_between_seeds": 0.013500014148881362
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.18569556564150408,
+          "sd_between_seeds": 0.00624914456577361
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.016150610941504495,
+              "bootstrap_ci95": [
+                -0.01915799394717244,
+                -0.0129967845420282
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.007490968882263499,
+              "bootstrap_ci95": [
+                -0.009202401169028979,
+                -0.005839059289731287
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.018083804334140724,
+              "bootstrap_ci95": [
+                -0.021659452019661136,
+                -0.014372924438989125
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.039342752148370796,
+              "bootstrap_ci95": [
+                -0.04170245517878059,
+                -0.03707308400043307
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.01921974439902918,
+              "bootstrap_ci95": [
+                -0.021833726861379153,
+                -0.016575898951486853
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0014301944548891221,
+              "bootstrap_ci95": [
+                -0.006103276297217685,
+                0.008561206055403297
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.0231921412068663,
+              "bootstrap_ci95": [
+                -0.0275434141209903,
+                -0.01894451160648757
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.011728775516765683,
+              "bootstrap_ci95": [
+                -0.01451140215261566,
+                -0.008944459554782862
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.019513998789029846,
+              "bootstrap_ci95": [
+                0.013049917378292203,
+                0.025669279467763505
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 2.4359915727563095,
+              "bootstrap_ci95": [
+                2.003136849840451,
+                3.086646486273232
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 2.5657220983170967,
+              "bootstrap_ci95": [
+                2.049745074625113,
+                3.3147487475640873
+              ]
+            }
+          }
+        }
+      }
+    },
+    "identity_leader_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.0024504108460495964,
+          "sd_between_seeds": 0.004603034598777842
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.005774469903890189,
+          "sd_between_seeds": 0.0060187684143416355
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.00632027934235718,
+          "sd_between_seeds": 0.004750411880041852
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.006758166068778071,
+          "sd_between_seeds": 0.004893074038661759
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.007449698043691085,
+          "sd_between_seeds": 0.0048049352304048035
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.007969832663517406,
+          "sd_between_seeds": 0.00401706833768034
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.006939564746992986,
+          "sd_between_seeds": 0.003932062622006616
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.007175432579937518,
+          "sd_between_seeds": 0.006037565335340705
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.002426782330597733,
+              "bootstrap_ci95": [
+                0.0006673604405572625,
+                0.004310550054202405
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0018809728921307424,
+              "bootstrap_ci95": [
+                -0.00013330160843895105,
+                0.0037376776149071478
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0028861723314197014,
+              "bootstrap_ci95": [
+                -0.006584512563030381,
+                0.0006541471281945578
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.0006522666901389931,
+              "bootstrap_ci95": [
+                -0.002289696313688663,
+                0.0010205480250016377
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0003780012263854271,
+              "bootstrap_ci95": [
+                -0.0015344619884734678,
+                0.0023084530314035254
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0002842667868817889,
+              "bootstrap_ci95": [
+                -0.003838024280198465,
+                0.003100950169668709
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.003079049020736726,
+              "bootstrap_ci95": [
+                -0.005909910278819559,
+                -0.00031734876347087426
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0015029716657453153,
+              "bootstrap_ci95": [
+                -0.004045762044017173,
+                0.0013598433913001886
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0026019055445379124,
+              "bootstrap_ci95": [
+                -0.0030666901553406877,
+                0.00802861669340463
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.268778407488378,
+              "bootstrap_ci95": [
+                -1.2325308095050116,
+                0.6652088925451354
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.20096048590962526,
+              "bootstrap_ci95": [
+                -2.114300602023899,
+                3.126617154092926
+              ]
+            }
+          }
+        }
+      }
+    },
+    "identity_benefactor_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.07442374899387366,
+          "sd_between_seeds": 0.039086870520549266
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.2834570034800776,
+          "sd_between_seeds": 0.08339260115778845
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.3708929874980298,
+          "sd_between_seeds": 0.0702408163742684
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.45461956513912966,
+          "sd_between_seeds": 0.06506437684494668
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.36698322775549636,
+          "sd_between_seeds": 0.0513639943125788
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.40399085328273215,
+          "sd_between_seeds": 0.058450630544340555
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.40762431055289705,
+          "sd_between_seeds": 0.05820978152024743
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.40000702901187707,
+          "sd_between_seeds": 0.05897543158160897
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.23381590008160408,
+              "bootstrap_ci95": [
+                0.21527298561029054,
+                0.25263840759625156
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.1463799160636519,
+              "bootstrap_ci95": [
+                0.12809918346025978,
+                0.16449772476018684
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.12530667684510405,
+              "bootstrap_ci95": [
+                -0.16027759761361002,
+                -0.0892263222009677
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.018328629263272778,
+              "bootstrap_ci95": [
+                0.0010934819408046081,
+                0.03511157587859712
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.01469517199310788,
+              "bootstrap_ci95": [
+                0.0009818715237995853,
+                0.028433835011077532
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.04462490706825578,
+              "bootstrap_ci95": [
+                -0.07712902926890321,
+                -0.011565698807206929
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.2154872708183313,
+              "bootstrap_ci95": [
+                -0.23798549851821144,
+                -0.19326089819872247
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.131684744070544,
+              "bootstrap_ci95": [
+                -0.15677170279664213,
+                -0.10592375774158504
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.08068176977684827,
+              "bootstrap_ci95": [
+                0.030911802705348417,
+                0.12962973334226374
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.07838914828664734,
+              "bootstrap_ci95": [
+                0.004795370800419616,
+                0.14816420976866693
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.10039063000089321,
+              "bootstrap_ci95": [
+                0.0063966916830605685,
+                0.20414331337231686
+              ]
+            }
+          }
+        }
+      }
+    },
+    "identity_opportunist_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.49230860429827733,
+          "sd_between_seeds": 0.04681155532202112
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.3953971230897503,
+          "sd_between_seeds": 0.048119346694448346
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.3766080621105223,
+          "sd_between_seeds": 0.044187682842714765
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.32576970134828864,
+          "sd_between_seeds": 0.03934492464612397
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.3695371659958616,
+          "sd_between_seeds": 0.042191131649818345
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.34419885374919856,
+          "sd_between_seeds": 0.03623622757912566
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.35948178669766745,
+          "sd_between_seeds": 0.04200024800741698
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.3616364793842759,
+          "sd_between_seeds": 0.05020466474830486
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.09266398196460834,
+              "bootstrap_ci95": [
+                -0.10506105978734784,
+                -0.08070192151506729
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.07387492098538034,
+              "bootstrap_ci95": [
+                -0.088113882917979,
+                -0.060412507395351686
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.046073120446293414,
+              "bootstrap_ci95": [
+                0.018496411157417122,
+                0.07309965404755403
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.003691123168441557,
+              "bootstrap_ci95": [
+                -0.00843063391585483,
+                0.01631442585145732
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.011591809780027329,
+              "bootstrap_ci95": [
+                -0.02484235996052029,
+                0.0021626940077777083
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.027493004933271503,
+              "bootstrap_ci95": [
+                -0.0011803007549253005,
+                0.05515410221417828
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.0963551051330499,
+              "bootstrap_ci95": [
+                0.07797095128113564,
+                0.115077246830489
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.062283111205353014,
+              "bootstrap_ci95": [
+                0.04220011734961984,
+                0.08163772728198196
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.01858011551302191,
+              "bootstrap_ci95": [
+                -0.05453939136056322,
+                0.016074387272042055
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.03983341844570556,
+              "bootstrap_ci95": [
+                -0.17245160648331187,
+                0.09268510003580828
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.15691129852201557,
+              "bootstrap_ci95": [
+                -0.0295646059582127,
+                0.3513186086528551
+              ]
+            }
+          }
+        }
+      }
+    },
+    "identity_survivor_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.4287874516407569,
+          "sd_between_seeds": 0.03597026189355373
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.3117215034662971,
+          "sd_between_seeds": 0.056175450911812044
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.23853528887939443,
+          "sd_between_seeds": 0.044884238913034086
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.20212728189415946,
+          "sd_between_seeds": 0.040721252768659316
+        },
+        "C90-R0p016-need_based": {
+          "mean": 0.24890351829561264,
+          "sd_between_seeds": 0.0367107811545543
+        },
+        "C90-R0p019-need_based": {
+          "mean": 0.23538705110496755,
+          "sd_between_seeds": 0.03909022791390292
+        },
+        "C120-R0p016-need_based": {
+          "mean": 0.2160902116054905,
+          "sd_between_seeds": 0.029729244941813445
+        },
+        "C120-R0p019-need_based": {
+          "mean": 0.22155257814764648,
+          "sd_between_seeds": 0.032991422704651066
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.1499231921667501,
+              "bootstrap_ci95": [
+                -0.16557932631093253,
+                -0.13567972327736985
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.07673697757984738,
+              "bootstrap_ci95": [
+                -0.08888502320678006,
+                -0.06420555602396391
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.08065794118922479,
+              "bootstrap_ci95": [
+                0.053180566443840754,
+                0.107625464760574
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.023323889823721605,
+              "bootstrap_ci95": [
+                -0.03348297777151982,
+                -0.013061407072960112
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.004027050324244552,
+              "bootstrap_ci95": [
+                -0.012453563204143087,
+                0.00432135201861208
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.01897883373280107,
+              "bootstrap_ci95": [
+                -0.0006077311472648635,
+                0.03682372526222908
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.1265993023430285,
+              "bootstrap_ci95": [
+                0.10825222524397904,
+                0.14552781453201016
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.07270992725560282,
+              "bootstrap_ci95": [
+                0.058167634242399305,
+                0.0871222843505497
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.061679107456423715,
+              "bootstrap_ci95": [
+                -0.09527650007125546,
+                -0.028231501437411554
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.15557225994614574,
+              "bootstrap_ci95": [
+                0.0855241029390932,
+                0.22688809821470937
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.052478615281065406,
+              "bootstrap_ci95": [
+                -0.05571719293631991,
+                0.16282039440308013
+              ]
+            }
+          }
+        }
+      }
+    },
+    "avg_wealth": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 60.8944688363322,
+          "sd_between_seeds": 3.7247166431785623
+        },
+        "C90-R0p019-intact": {
+          "mean": 56.175328351196164,
+          "sd_between_seeds": 5.880578632116309
+        },
+        "C120-R0p016-intact": {
+          "mean": 49.742078022346206,
+          "sd_between_seeds": 3.3404686881865198
+        },
+        "C120-R0p019-intact": {
+          "mean": 49.076396592130344,
+          "sd_between_seeds": 2.782278909765697
+        },
+        "C90-R0p016-need_based": {
+          "mean": 38.5784114855126,
+          "sd_between_seeds": 3.992082969862345
+        },
+        "C90-R0p019-need_based": {
+          "mean": 44.8717737235509,
+          "sd_between_seeds": 3.1894842096884273
+        },
+        "C120-R0p016-need_based": {
+          "mean": 46.512019634067414,
+          "sd_between_seeds": 2.885697745480235
+        },
+        "C120-R0p019-need_based": {
+          "mean": 48.44444205932981,
+          "sd_between_seeds": 3.4368078414891947
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -9.125661286525911,
+              "bootstrap_ci95": [
+                -10.329355820446885,
+                -7.918114077613062
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -2.6924109576759463,
+              "bootstrap_ci95": [
+                -4.107635575429865,
+                -1.1804055129643511
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 4.053459054920175,
+              "bootstrap_ci95": [
+                0.915103925175301,
+                7.300226151320152
+              ]
+            }
+          }
+        },
+        "need_based": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 5.753138242166855,
+              "bootstrap_ci95": [
+                4.566404131551677,
+                6.879282113082069
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 4.112892331650343,
+              "bootstrap_ci95": [
+                2.9902446037761776,
+                5.212224726843711
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -4.360939812775904,
+              "bootstrap_ci95": [
+                -6.416665560336552,
+                -2.0857084026485473
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 14.878799528692767,
+              "bootstrap_ci95": [
+                13.043382134493452,
+                16.558772986842506
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 6.8053032893262895,
+              "bootstrap_ci95": [
+                5.225997685297949,
+                8.397593700261996
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -8.414398867696079,
+              "bootstrap_ci95": [
+                -11.85312176788071,
+                -4.987731759162296
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.6304352157647354,
+              "bootstrap_ci95": [
+                -0.7812844146149908,
+                -0.49269848570715014
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -1.5275871314981342,
+              "bootstrap_ci95": [
+                -3.813685929513855,
+                -0.8394855088590346
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "primary_metrics": [
+    "conflict_rate",
+    "cooperation_rate"
+  ],
+  "manipulation_check_metrics": [
+    "true_scarcity",
+    "avg_scarcity_belief"
+  ],
+  "secondary_metrics": [
+    "avg_stress",
+    "avg_trust",
+    "inequality_gini",
+    "population",
+    "helping_norm",
+    "action_forage_rate",
+    "action_rest_rate",
+    "action_socialize_rate",
+    "action_share_rate",
+    "action_steal_rate",
+    "action_spread_belief_rate",
+    "identity_leader_rate",
+    "identity_benefactor_rate",
+    "identity_opportunist_rate",
+    "identity_survivor_rate",
+    "avg_wealth"
+  ]
+}

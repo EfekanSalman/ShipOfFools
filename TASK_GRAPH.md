@@ -451,7 +451,9 @@ bağı ancak elle yazılmış bir katsayıyla kurulabiliyordu.
 - [x] Sanity testleri: `tests/test_need_based_decision.py`.
 - [x] Protokol koşudan önce: `EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md`
       (2×2 kaynak × 2 mimari, 30 seed bloğu, 240 koşu).
-- [ ] Koşu ve rapor: `NEED_BASED_DECISION_RESULTS.md`.
+- [x] Koşu ve rapor: `NEED_BASED_DECISION_RESULTS.md` (2026-10-09). Kaynak → çatışma
+      ilişkisi aynı yönde ama `intact` koldakinin yaklaşık sekizde biri.
+- [ ] Erzak ile karar kuralının ayrı ayrı etkisi (şu an paket hâlinde).
 - [ ] `provision_*` parametrelerine duyarlılık (özellikle `provision_max_per_tick`).
 - [ ] Toplamada kütle korunumu: yenen ve saklanan payın açık ayrımı.
 - [ ] Gini için null model (yalnızca rastgele aktarım) — `REFERENCES.md` #15.
