@@ -298,6 +298,15 @@ ilişkisi aynı yönde ama yaklaşık sekizde bir büyüklükte çıktı. Üç d
 birlikte, bu ilişkinin büyüklüğünün karar kuralı varsayımına bağlı olduğunu
 gösteriyor; raporlanacak ana sonuç bu yapısal belirsizliktir.
 
+2026-10-09 (devam): erzak × skor ayrışımı farkın skor biçimine ait olduğunu
+gösterdi (`PROVISION_SCORING_FACTORIAL_RESULTS.md`). `true_scarcity`'nin depo
+doluluğunu ölçtüğü, ajanların tavanda bile tok olduğu (ISSUE-015) ve sabit
+ajan sırasının kıtlıkta kimliğe göre öncelik ürettiği (ISSUE-016) bulundu.
+Karıştırılmış sırayla kurulan gerçek yoksunluk deneyinde
+(`DEPRIVATION_RESULTS.md`) yoksunluğun çatışma ölçüsüne etkisinin yönü karar
+kuralına göre ters çıktı. Ana sonuç genişledi: kıtlık → çatışma ilişkisi hem
+kıtlığın inanç mı yoksunluk mu olduğuna hem karar kuralına bağlıdır.
+
 ## Kaynaklar
 
 - Grimm et al. (2020), “The ODD Protocol for Describing Agent-Based and Other

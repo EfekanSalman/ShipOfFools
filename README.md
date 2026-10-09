@@ -121,7 +121,7 @@ erzak × skor ayrışımı protokolü
 [EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md](EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md)
 ve sonuçları [PROVISION_SCORING_FACTORIAL_RESULTS.md](PROVISION_SCORING_FACTORIAL_RESULTS.md),
 gerçek yoksunluk protokolü [EXPERIMENT_PROTOCOL_DEPRIVATION.md](EXPERIMENT_PROTOCOL_DEPRIVATION.md)
-içindedir.
+ve sonuçları [DEPRIVATION_RESULTS.md](DEPRIVATION_RESULTS.md) içindedir.
 Aşamalı geliştirme planı [TASK_GRAPH.md](TASK_GRAPH.md) içindedir.
 
 ## Bilimsel yorum ve bilinen sınırlar

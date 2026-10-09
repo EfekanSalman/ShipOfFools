@@ -466,7 +466,11 @@ bağı ancak elle yazılmış bir katsayıyla kurulabiliyordu.
       (sabit sıra kıtlıkta kimliğe göre öncelik üretiyor).
 - [x] Yoksunluk protokolü koşudan önce: `EXPERIMENT_PROTOCOL_DEPRIVATION.md`
       (2×2 kaynak × 2×2 karar, karıştırılmış sıra, 480 koşu).
-- [ ] Yoksunluk koşusu ve raporu: `DEPRIVATION_RESULTS.md`.
+- [x] Yoksunluk koşusu ve raporu: `DEPRIVATION_RESULTS.md` (2026-10-09). Yoksunluk
+      özgün skorda `steal` payını düşürüyor, ihtiyaç temelli skorda artırıyor.
+- [ ] İhtiyaç temelli skorda `forage` getirisinin depo inancıyla çarpılması
+      ajanları yoksunken toplamaktan alıkoyuyor (tasarım zayıflığı); alternatif
+      getiri beklentisi için ayrı protokol.
 - [ ] ISSUE-016 tanısını n≥30 ile doğrulama; varsayılan sıra kararı.
 - [ ] `provision_*` parametrelerine duyarlılık (özellikle `provision_max_per_tick`).
 - [ ] Toplamada kütle korunumu: yenen ve saklanan payın açık ayrımı.

@@ -177,6 +177,13 @@ geçmişi kaybolmaz.
   Stresin ve nüfusun kaynakla değil çalmayla hareket etmesi (ablasyon
   gözlemleri) bununla tutarlı.
 - **Yapılanlar**: `avg_min_need` ve `need_deficit_rate` metrikleri eklendi.
+- **Yoksunluk deneyi (2026-10-09, 480 koşu, karıştırılmış sıra)**: depo
+  göstergesi iki düzeyde de doygunken gerçek yoksunluk `steal` payını özgün
+  skorda düşürüyor (tok eksi yoksun +0.048 [+0.045, +0.050]), ihtiyaç temelli
+  skorda artırıyor (−0.034 [−0.037, −0.032]). Erzak yoksunlukta açlık ölümünü
+  azaltıyor. İhtiyaç temelli skorda ajanlar depoyu boş sandıkları için
+  yoksunken de toplamıyor ve en çok açlık ölümü o kollarda. Rapor:
+  `DEPRIVATION_RESULTS.md`.
 - **Önerilen kapanış**: (a) raporlarda "kıtlık" yerine "depo boşluğu" ile
   "yoksunluk" ayrımını yapmak ve her deneyde ikisini birlikte raporlamak;
   (b, başlandı: `EXPERIMENT_PROTOCOL_DEPRIVATION.md`) gerçek yoksunluk üreten bir kaynak rejimi tanımlamak (yenilenmeyi
