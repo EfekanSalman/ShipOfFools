@@ -1,0 +1,354 @@
+{
+  "description": "Post hoc follow-up: identity-label and action shares in the 2x2x2 identity experiment.",
+  "exploratory": true,
+  "runs_matched_against_original": 240,
+  "analysis_window": 100,
+  "seed_start": 50000,
+  "seeds_per_cell": 30,
+  "cells": {
+    "C90-R0p016": {
+      "conflict_rate": {
+        "identity_0p0": 0.2852459969894277,
+        "identity_0p5": 0.3431019206373662,
+        "paired_difference": 0.05785592364793848,
+        "share_of_seeds_with_positive_difference": 1.0
+      },
+      "inequality_gini": {
+        "identity_0p0": 0.35111423473239434,
+        "identity_0p5": 0.4617970716438821,
+        "paired_difference": 0.11068283691148785,
+        "share_of_seeds_with_positive_difference": 1.0
+      },
+      "population": {
+        "identity_0p0": 99.20166666666667,
+        "identity_0p5": 86.866,
+        "paired_difference": -12.335666666666667,
+        "share_of_seeds_with_positive_difference": 0.1
+      },
+      "identity_formed_rate": {
+        "identity_0p0": 0.996386265137927,
+        "identity_0p5": 0.9990934130923083,
+        "paired_difference": 0.0027071479543812208,
+        "share_of_seeds_with_positive_difference": 0.7
+      },
+      "identity_leader_rate": {
+        "identity_0p0": 0.001395869774883158,
+        "identity_0p5": 0.0027943289820506955,
+        "paired_difference": 0.0013984592071675376,
+        "share_of_seeds_with_positive_difference": 0.26666666666666666
+      },
+      "identity_benefactor_rate": {
+        "identity_0p0": 0.0777764631540068,
+        "identity_0p5": 0.06312800155850082,
+        "paired_difference": -0.014648461595505974,
+        "share_of_seeds_with_positive_difference": 0.4
+      },
+      "identity_opportunist_rate": {
+        "identity_0p0": 0.5230696971316633,
+        "identity_0p5": 0.4883524903275359,
+        "paired_difference": -0.03471720680412733,
+        "share_of_seeds_with_positive_difference": 0.16666666666666666
+      },
+      "identity_survivor_rate": {
+        "identity_0p0": 0.3941442350773738,
+        "identity_0p5": 0.44481859222422077,
+        "paired_difference": 0.050674357146846975,
+        "share_of_seeds_with_positive_difference": 0.8333333333333334
+      },
+      "action_forage_rate": {
+        "identity_0p0": 0.1547427347296084,
+        "identity_0p5": 0.1695562307403118,
+        "paired_difference": 0.014813496010703399,
+        "share_of_seeds_with_positive_difference": 0.9
+      },
+      "action_rest_rate": {
+        "identity_0p0": 0.14483821540000766,
+        "identity_0p5": 0.1352736541685728,
+        "paired_difference": -0.009564561231434864,
+        "share_of_seeds_with_positive_difference": 0.0
+      },
+      "action_socialize_rate": {
+        "identity_0p0": 0.09730998760700812,
+        "identity_0p5": 0.08458087860639969,
+        "paired_difference": -0.012729109000608443,
+        "share_of_seeds_with_positive_difference": 0.0
+      },
+      "action_share_rate": {
+        "identity_0p0": 0.09289288597539015,
+        "identity_0p5": 0.07420393657023026,
+        "paired_difference": -0.01868894940515989,
+        "share_of_seeds_with_positive_difference": 0.0
+      },
+      "action_steal_rate": {
+        "identity_0p0": 0.2852459969894277,
+        "identity_0p5": 0.3431019206373662,
+        "paired_difference": 0.05785592364793848,
+        "share_of_seeds_with_positive_difference": 1.0
+      },
+      "action_spread_belief_rate": {
+        "identity_0p0": 0.22482871411929997,
+        "identity_0p5": 0.193242223924502,
+        "paired_difference": -0.031586490194797985,
+        "share_of_seeds_with_positive_difference": 0.0
+      }
+    },
+    "C90-R0p019": {
+      "conflict_rate": {
+        "identity_0p0": 0.2670041071284885,
+        "identity_0p5": 0.3100308676253317,
+        "paired_difference": 0.04302676049684325,
+        "share_of_seeds_with_positive_difference": 0.9666666666666667
+      },
+      "inequality_gini": {
+        "identity_0p0": 0.34647213761131834,
+        "identity_0p5": 0.4508113869283445,
+        "paired_difference": 0.10433924931702619,
+        "share_of_seeds_with_positive_difference": 1.0
+      },
+      "population": {
+        "identity_0p0": 111.56433333333332,
+        "identity_0p5": 100.82300000000001,
+        "paired_difference": -10.741333333333333,
+        "share_of_seeds_with_positive_difference": 0.1
+      },
+      "identity_formed_rate": {
+        "identity_0p0": 0.9938819814911501,
+        "identity_0p5": 0.9973936768302731,
+        "paired_difference": 0.003511695339122985,
+        "share_of_seeds_with_positive_difference": 0.7333333333333333
+      },
+      "identity_leader_rate": {
+        "identity_0p0": 0.006486541390447907,
+        "identity_0p5": 0.005893239621288292,
+        "paired_difference": -0.0005933017691596148,
+        "share_of_seeds_with_positive_difference": 0.43333333333333335
+      },
+      "identity_benefactor_rate": {
+        "identity_0p0": 0.2642469933456016,
+        "identity_0p5": 0.2166079902901024,
+        "paired_difference": -0.04763900305549924,
+        "share_of_seeds_with_positive_difference": 0.36666666666666664
+      },
+      "identity_opportunist_rate": {
+        "identity_0p0": 0.40922145299550766,
+        "identity_0p5": 0.4220411898048556,
+        "paired_difference": 0.012819736809347969,
+        "share_of_seeds_with_positive_difference": 0.5666666666666667
+      },
+      "identity_survivor_rate": {
+        "identity_0p0": 0.313926993759593,
+        "identity_0p5": 0.3528512571140269,
+        "paired_difference": 0.038924263354433906,
+        "share_of_seeds_with_positive_difference": 0.7
+      },
+      "action_forage_rate": {
+        "identity_0p0": 0.15289745766342505,
+        "identity_0p5": 0.1615910758207054,
+        "paired_difference": 0.00869361815728037,
+        "share_of_seeds_with_positive_difference": 0.9
+      },
+      "action_rest_rate": {
+        "identity_0p0": 0.14833804622984723,
+        "identity_0p5": 0.13962302741231822,
+        "paired_difference": -0.008715018817528997,
+        "share_of_seeds_with_positive_difference": 0.03333333333333333
+      },
+      "action_socialize_rate": {
+        "identity_0p0": 0.10341658671278307,
+        "identity_0p5": 0.09127576390880549,
+        "paired_difference": -0.012140822803977606,
+        "share_of_seeds_with_positive_difference": 0.0
+      },
+      "action_share_rate": {
+        "identity_0p0": 0.10503318069605071,
+        "identity_0p5": 0.09798266691604338,
+        "paired_difference": -0.007050513780007319,
+        "share_of_seeds_with_positive_difference": 0.26666666666666666
+      },
+      "action_steal_rate": {
+        "identity_0p0": 0.2670041071284885,
+        "identity_0p5": 0.3100308676253317,
+        "paired_difference": 0.04302676049684325,
+        "share_of_seeds_with_positive_difference": 0.9666666666666667
+      },
+      "action_spread_belief_rate": {
+        "identity_0p0": 0.2230658904437238,
+        "identity_0p5": 0.19938935608878924,
+        "paired_difference": -0.023676534354934553,
+        "share_of_seeds_with_positive_difference": 0.0
+      }
+    },
+    "C120-R0p016": {
+      "conflict_rate": {
+        "identity_0p0": 0.21685238831179543,
+        "identity_0p5": 0.24419304449708754,
+        "paired_difference": 0.027340656185292116,
+        "share_of_seeds_with_positive_difference": 0.8333333333333334
+      },
+      "inequality_gini": {
+        "identity_0p0": 0.35096966840251953,
+        "identity_0p5": 0.4652524433382259,
+        "paired_difference": 0.11428277493570634,
+        "share_of_seeds_with_positive_difference": 1.0
+      },
+      "population": {
+        "identity_0p0": 115.70366666666668,
+        "identity_0p5": 104.93599999999999,
+        "paired_difference": -10.767666666666667,
+        "share_of_seeds_with_positive_difference": 0.16666666666666666
+      },
+      "identity_formed_rate": {
+        "identity_0p0": 0.9916417580046489,
+        "identity_0p5": 0.9945382104991245,
+        "paired_difference": 0.0028964524944755394,
+        "share_of_seeds_with_positive_difference": 0.7666666666666667
+      },
+      "identity_leader_rate": {
+        "identity_0p0": 0.007777696633467241,
+        "identity_0p5": 0.00595759061729906,
+        "paired_difference": -0.001820106016168181,
+        "share_of_seeds_with_positive_difference": 0.36666666666666664
+      },
+      "identity_benefactor_rate": {
+        "identity_0p0": 0.4388118391408156,
+        "identity_0p5": 0.33926435924096804,
+        "paired_difference": -0.09954747989984754,
+        "share_of_seeds_with_positive_difference": 0.06666666666666667
+      },
+      "identity_opportunist_rate": {
+        "identity_0p0": 0.3050213862286331,
+        "identity_0p5": 0.3873951313586028,
+        "paired_difference": 0.08237374512996967,
+        "share_of_seeds_with_positive_difference": 0.9333333333333333
+      },
+      "identity_survivor_rate": {
+        "identity_0p0": 0.24003083600173297,
+        "identity_0p5": 0.2619211292822546,
+        "paired_difference": 0.021890293280521597,
+        "share_of_seeds_with_positive_difference": 0.7666666666666667
+      },
+      "action_forage_rate": {
+        "identity_0p0": 0.16148472177818007,
+        "identity_0p5": 0.1659000369204279,
+        "paired_difference": 0.004415315142247845,
+        "share_of_seeds_with_positive_difference": 0.8333333333333334
+      },
+      "action_rest_rate": {
+        "identity_0p0": 0.1578291461602686,
+        "identity_0p5": 0.15073110306932788,
+        "paired_difference": -0.007098043090940696,
+        "share_of_seeds_with_positive_difference": 0.1
+      },
+      "action_socialize_rate": {
+        "identity_0p0": 0.11509758280092901,
+        "identity_0p5": 0.10269186791986205,
+        "paired_difference": -0.012405714881066947,
+        "share_of_seeds_with_positive_difference": 0.03333333333333333
+      },
+      "action_share_rate": {
+        "identity_0p0": 0.13987699374195983,
+        "identity_0p5": 0.14205200170419124,
+        "paired_difference": 0.0021750079622314318,
+        "share_of_seeds_with_positive_difference": 0.5666666666666667
+      },
+      "action_steal_rate": {
+        "identity_0p0": 0.21685238831179543,
+        "identity_0p5": 0.24419304449708754,
+        "paired_difference": 0.027340656185292116,
+        "share_of_seeds_with_positive_difference": 0.8333333333333334
+      },
+      "action_spread_belief_rate": {
+        "identity_0p0": 0.20853036376360012,
+        "identity_0p5": 0.19420461191767982,
+        "paired_difference": -0.014325751845920297,
+        "share_of_seeds_with_positive_difference": 0.06666666666666667
+      }
+    },
+    "C120-R0p019": {
+      "conflict_rate": {
+        "identity_0p0": 0.17124527593678895,
+        "identity_0p5": 0.18874811701482652,
+        "paired_difference": 0.017502841078037547,
+        "share_of_seeds_with_positive_difference": 0.8333333333333334
+      },
+      "inequality_gini": {
+        "identity_0p0": 0.36153229324503994,
+        "identity_0p5": 0.4746253781855158,
+        "paired_difference": 0.11309308494047593,
+        "share_of_seeds_with_positive_difference": 1.0
+      },
+      "population": {
+        "identity_0p0": 119.751,
+        "identity_0p5": 111.547,
+        "paired_difference": -8.204,
+        "share_of_seeds_with_positive_difference": 0.2
+      },
+      "identity_formed_rate": {
+        "identity_0p0": 0.9896573467260757,
+        "identity_0p5": 0.9898850808885176,
+        "paired_difference": 0.00022773416244182093,
+        "share_of_seeds_with_positive_difference": 0.5
+      },
+      "identity_leader_rate": {
+        "identity_0p0": 0.007737505611887108,
+        "identity_0p5": 0.007258627490247107,
+        "paired_difference": -0.00047887812164000283,
+        "share_of_seeds_with_positive_difference": 0.43333333333333335
+      },
+      "identity_benefactor_rate": {
+        "identity_0p0": 0.5259792996381499,
+        "identity_0p5": 0.40579279708628646,
+        "paired_difference": -0.12018650255186344,
+        "share_of_seeds_with_positive_difference": 0.03333333333333333
+      },
+      "identity_opportunist_rate": {
+        "identity_0p0": 0.2504190310544205,
+        "identity_0p5": 0.35735544440181444,
+        "paired_difference": 0.10693641334739398,
+        "share_of_seeds_with_positive_difference": 0.9666666666666667
+      },
+      "identity_survivor_rate": {
+        "identity_0p0": 0.20552151042161823,
+        "identity_0p5": 0.2194782119101695,
+        "paired_difference": 0.013956701488551278,
+        "share_of_seeds_with_positive_difference": 0.7
+      },
+      "action_forage_rate": {
+        "identity_0p0": 0.1709943159111839,
+        "identity_0p5": 0.1749936883955675,
+        "paired_difference": 0.003999372484383625,
+        "share_of_seeds_with_positive_difference": 0.8333333333333334
+      },
+      "action_rest_rate": {
+        "identity_0p0": 0.16476474677610942,
+        "identity_0p5": 0.15687305791006312,
+        "paired_difference": -0.007891688866046277,
+        "share_of_seeds_with_positive_difference": 0.06666666666666667
+      },
+      "action_socialize_rate": {
+        "identity_0p0": 0.12406110450872676,
+        "identity_0p5": 0.11241017941486181,
+        "paired_difference": -0.011650925093864943,
+        "share_of_seeds_with_positive_difference": 0.0
+      },
+      "action_share_rate": {
+        "identity_0p0": 0.175551432417287,
+        "identity_0p5": 0.18860848346355347,
+        "paired_difference": 0.013057051046266461,
+        "share_of_seeds_with_positive_difference": 0.7333333333333333
+      },
+      "action_steal_rate": {
+        "identity_0p0": 0.17124527593678895,
+        "identity_0p5": 0.18874811701482652,
+        "paired_difference": 0.017502841078037547,
+        "share_of_seeds_with_positive_difference": 0.8333333333333334
+      },
+      "action_spread_belief_rate": {
+        "identity_0p0": 0.19301744721293643,
+        "identity_0p5": 0.177981363509414,
+        "paired_difference": -0.015036083703522489,
+        "share_of_seeds_with_positive_difference": 0.1
+      }
+    }
+  }
+}

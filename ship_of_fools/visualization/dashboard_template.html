@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ship of Fools — Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--card:#f5f5f7;--border:#e0e0e0;--accent:#2563eb;--pos:#16a34a;--neg:#dc2626;--muted:#6b7280}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1115;--fg:#e5e7eb;--card:#1a1d24;--border:#2a2d36;--accent:#60a5fa;--pos:#4ade80;--neg:#f87171;--muted:#9ca3af}}
+:root[data-theme="dark"]{--bg:#0f1115;--fg:#e5e7eb;--card:#1a1d24;--border:#2a2d36;--accent:#60a5fa;--pos:#4ade80;--neg:#f87171;--muted:#9ca3af}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+header{padding:16px 20px;border-bottom:1px solid var(--border)}
+header h1{margin:0;font-size:1.25rem}
+header p{margin:4px 0 0;color:var(--muted);font-size:.85rem}
+nav{display:flex;gap:8px;padding:10px 20px;border-bottom:1px solid var(--border);overflow-x:auto}
+nav button{background:var(--card);border:1px solid var(--border);color:var(--fg);padding:8px 14px;
+  border-radius:8px;cursor:pointer;font-size:.9rem;white-space:nowrap}
+nav button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+main{padding:16px 20px;max-width:1100px;margin:0 auto}
+.panel{display:none}
+.panel.active{display:block}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+select,input[type=range]{background:var(--card);color:var(--fg);border:1px solid var(--border);
+  border-radius:6px;padding:6px 10px;font-size:.9rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px}
+.chart-wrap{position:relative;height:340px;overflow-x:auto}
+.chart-wrap canvas{min-width:100%}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.stat{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 10px}
+.stat .label{color:var(--muted);font-size:.72rem;text-transform:uppercase}
+.stat .value{font-size:1.05rem;font-weight:600}
+#netSvg{width:100%;height:480px;border:1px solid var(--border);border-radius:10px;background:var(--bg)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+footer{padding:16px 20px;color:var(--muted);font-size:.78rem;text-align:center}
+</style>
+</head>
+<body>
+<header>
+<h1>🚢 Ship of Fools — Simülasyon Dashboard</h1>
+<p id="metaLine"></p>
+</header>
+<nav>
+<button class="tabbtn active" data-tab="pop">Popülasyon</button>
+<button class="tabbtn" data-tab="agent">Agent İnceleme</button>
+<button class="tabbtn" data-tab="net">Sosyal Ağ</button>
+</nav>
+<main>
+
+<section id="pop" class="panel active">
+  <div class="card">
+    <div class="row">
+      <label>Metrik: <select id="metricSelect"></select></label>
+      <label>Aralık: <input type="range" id="rangeStart" min="0" max="100" value="0"> - <input type="range" id="rangeEnd" min="0" max="100" value="100"></label>
+    </div>
+    <div class="chart-wrap"><canvas id="popChart"></canvas></div>
+  </div>
+</section>
+
+<section id="agent" class="panel">
+  <div class="card">
+    <div class="row"><label>Agent: <select id="agentSelect"></select></label></div>
+    <div class="stat-grid" id="agentStats"></div>
+  </div>
+  <div class="card"><h3 style="margin-top:0">Kişilik: başlangıç vs güncel</h3>
+    <div class="chart-wrap" style="height:280px"><canvas id="radarChart"></canvas></div>
+  </div>
+  <div class="card"><h3 style="margin-top:0">Zaman içinde</h3>
+    <div class="row"><label>Alan: <select id="agentFieldSelect"></select></label></div>
+    <div class="chart-wrap"><canvas id="agentLineChart"></canvas></div>
+  </div>
+</section>
+
+<section id="net" class="panel">
+  <div class="card">
+    <svg id="netSvg"></svg>
+    <div class="legend">
+      <span><i class="dot" style="background:#f59e0b"></i>leader</span>
+      <span><i class="dot" style="background:#16a34a"></i>benefactor</span>
+      <span><i class="dot" style="background:#dc2626"></i>opportunist</span>
+      <span><i class="dot" style="background:#6b7280"></i>survivor</span>
+      <span><i class="dot" style="background:#9ca3af"></i>none</span>
+      <span>yeşil kenar = pozitif güven, kırmızı = negatif</span>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>Ship of Fools V6+ — <span id="tickCount"></span> tick, <span id="agentCount"></span> kurucu agent</footer>
+
+<script>
+const DATA = /*__DASHBOARD_DATA__*/;
+
+document.getElementById('metaLine').textContent =
+  `n_agents=${DATA.meta.n_agents}  n_ticks=${DATA.meta.n_ticks}  seed=${DATA.meta.seed}`;
+document.getElementById('tickCount').textContent = DATA.meta.n_ticks;
+document.getElementById('agentCount').textContent = DATA.meta.n_agents;
+
+// ---- theme: follow system, no manual toggle needed for this page ----
+
+// ---- tab switching ----
+document.querySelectorAll('.tabbtn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tabbtn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+    // charts built while their panel was hidden can have stale (0px) sizes
+    setTimeout(() => [popChart, radarChart, agentLineChart].forEach(c => c && c.resize()), 30);
+  });
+});
+
+// ==================== POPULATION PANEL ====================
+const rows = DATA.timeseries;
+const metricKeys = Object.keys(rows[0]).filter(k => k !== 'tick');
+const metricSelect = document.getElementById('metricSelect');
+metricKeys.forEach(k => {
+  const o = document.createElement('option'); o.value = k; o.textContent = k;
+  if (k === 'avg_stress') o.selected = true;
+  metricSelect.appendChild(o);
+});
+const rangeStart = document.getElementById('rangeStart'), rangeEnd = document.getElementById('rangeEnd');
+rangeStart.max = rangeEnd.max = rows.length - 1;
+rangeEnd.value = rows.length - 1;
+
+let popChart = null;
+function drawPopChart() {
+  const key = metricSelect.value;
+  const s = parseInt(rangeStart.value), e = parseInt(rangeEnd.value);
+  const lo = Math.min(s, e), hi = Math.max(s, e);
+  const slice = rows.slice(lo, hi + 1);
+  const labels = slice.map(r => r.tick);
+  const data = slice.map(r => r[key]);
+  if (popChart) popChart.destroy();
+  const ctx = document.getElementById('popChart').getContext('2d');
+  const css = getComputedStyle(document.documentElement);
+  popChart = new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets: [{ label: key, data, borderColor: css.getPropertyValue('--accent'),
+      borderWidth: 1.5, pointRadius: 0, tension: 0.1 }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      scales: { x: { title: { display: true, text: 'tick' } }, y: { title: { display: true, text: key } } },
+      plugins: { legend: { display: false } } }
+  });
+}
+[metricSelect, rangeStart, rangeEnd].forEach(el => el.addEventListener('input', drawPopChart));
+drawPopChart();
+
+// ==================== AGENT INSPECTOR PANEL ====================
+const agentSelect = document.getElementById('agentSelect');
+const agentIds = Object.keys(DATA.agents).filter(id => DATA.agents[id].length > 0);
+agentIds.forEach(id => {
+  const o = document.createElement('option'); o.value = id; o.textContent = `Agent #${id}`;
+  agentSelect.appendChild(o);
+});
+const agentFieldSelect = document.getElementById('agentFieldSelect');
+const agentFields = ['stress', 'mood', 'health', 'wealth', 'scarcity_belief', 'institution_trust', 'reflected_self', 'forage_skill'];
+agentFields.forEach(f => { const o = document.createElement('option'); o.value = f; o.textContent = f; agentFieldSelect.appendChild(o); });
+
+let radarChart = null, agentLineChart = null;
+function drawAgentPanel() {
+  const id = agentSelect.value;
+  const snaps = DATA.agents[id];
+  if (!snaps || !snaps.length) return;
+  const first = snaps[0], last = snaps[snaps.length - 1];
+
+  document.getElementById('agentStats').innerHTML = `
+    <div class="stat"><div class="label">identity</div><div class="value">${last.identity || 'yok'}</div></div>
+    <div class="stat"><div class="label">age</div><div class="value">${last.age}</div></div>
+    <div class="stat"><div class="label">stress</div><div class="value">${last.stress}</div></div>
+    <div class="stat"><div class="label">health</div><div class="value">${last.health}</div></div>
+    <div class="stat"><div class="label">wealth</div><div class="value">${last.wealth}</div></div>
+    <div class="stat"><div class="label">forage_skill</div><div class="value">${last.forage_skill}</div></div>`;
+
+  const traits = Object.keys(first.personality);
+  if (radarChart) radarChart.destroy();
+  radarChart = new Chart(document.getElementById('radarChart').getContext('2d'), {
+    type: 'radar',
+    data: { labels: traits,
+      datasets: [
+        { label: 'başlangıç', data: traits.map(t => first.personality[t]), borderColor: '#9ca3af', backgroundColor: 'rgba(156,163,175,.15)' },
+        { label: 'güncel', data: traits.map(t => last.personality[t]), borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,.15)' }
+      ] },
+    options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 1 } } }
+  });
+
+  drawAgentLine();
+}
+function drawAgentLine() {
+  const id = agentSelect.value;
+  const snaps = DATA.agents[id];
+  const field = agentFieldSelect.value;
+  if (agentLineChart) agentLineChart.destroy();
+  agentLineChart = new Chart(document.getElementById('agentLineChart').getContext('2d'), {
+    type: 'line',
+    data: { labels: snaps.map(s => s.tick), datasets: [{ label: field, data: snaps.map(s => s[field]),
+      borderColor: '#16a34a', borderWidth: 1.5, pointRadius: 0, tension: 0.1 }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      scales: { x: { title: { display: true, text: 'tick' } } }, plugins: { legend: { display: false } } }
+  });
+}
+agentSelect.addEventListener('change', drawAgentPanel);
+agentFieldSelect.addEventListener('change', drawAgentLine);
+if (agentIds.length) { agentSelect.value = agentIds[0]; drawAgentPanel(); }
+
+// ==================== SOCIAL NETWORK PANEL ====================
+const IDENTITY_COLOR = { leader: '#f59e0b', benefactor: '#16a34a', opportunist: '#dc2626', survivor: '#6b7280', none: '#9ca3af' };
+function drawNetwork() {
+  const svg = d3.select('#netSvg');
+  const box = document.getElementById('netSvg').getBoundingClientRect();
+  const W = box.width || 800, H = 480;
+  svg.attr('viewBox', `0 0 ${W} ${H}`);
+  const { nodes, edges } = DATA.network;
+  const nodeById = new Map(nodes.map(n => [n.id, n]));
+  const links = edges.filter(e => nodeById.has(e.source) && nodeById.has(e.target))
+    .map(e => ({ ...e }));
+
+  const sim = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(60).strength(0.3))
+    .force('charge', d3.forceManyBody().strength(-90))
+    .force('center', d3.forceCenter(W / 2, H / 2))
+    .force('collide', d3.forceCollide(10));
+
+  const link = svg.append('g').selectAll('line').data(links).join('line')
+    .attr('stroke', d => d.trust > 0 ? '#16a34a' : '#dc2626')
+    .attr('stroke-width', d => Math.max(0.5, Math.abs(d.trust) * 3))
+    .attr('stroke-opacity', 0.5);
+
+  const node = svg.append('g').selectAll('circle').data(nodes).join('circle')
+    .attr('r', 6)
+    .attr('fill', d => IDENTITY_COLOR[d.identity] || IDENTITY_COLOR.none)
+    .attr('stroke', '#fff').attr('stroke-width', 1);
+  node.append('title').text(d => `#${d.id} (${d.identity})`);
+
+  sim.on('tick', () => {
+    link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    node.attr('cx', d => d.x).attr('cy', d => d.y);
+  });
+}
+drawNetwork();
+</script>
+</body>
+</html>

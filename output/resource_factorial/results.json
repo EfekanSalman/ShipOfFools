@@ -1,0 +1,2573 @@
+{
+  "experiment": "resource_scarcity_cooperation_conflict_2x2",
+  "created_utc": "2026-10-04T20:33:08.775325+00:00",
+  "python_version": "3.12.14",
+  "base_config": {
+    "n_agents": 80,
+    "n_ticks": 500,
+    "seed": 0,
+    "initial_food_per_agent": 50.0,
+    "initial_water_per_agent": 50.0,
+    "food_regen_rate": 0.016,
+    "water_regen_rate": 0.016,
+    "resource_capacity_per_agent": 75.0,
+    "forage_base_amount": 5.0,
+    "perception_noise": 0.15,
+    "confirmation_bias": 0.6,
+    "misinformation_rate": 0.05,
+    "relationship_decay": 0.004,
+    "trust_learning_rate": 0.15,
+    "neighbor_k": 6,
+    "rewire_prob": 0.1,
+    "long_range_interaction_prob": 0.15,
+    "leadership_emergence_threshold": 0.012,
+    "leadership_check_interval": 20,
+    "tax_rate_base": 0.15,
+    "redistribution_interval": 25,
+    "institution_trust_noise": 0.2,
+    "reconciliation_bonus": 0.35,
+    "norm_adapt_rate": 0.03,
+    "identity_feedback_strength": 0.3,
+    "self_correction_strength": 0.3,
+    "ticks_per_year": 15,
+    "founder_min_age": 18,
+    "founder_max_age": 50,
+    "adulthood_age": 16,
+    "elderly_age": 60,
+    "senescence_mortality_rate": 0.0015,
+    "min_reproduction_age": 18,
+    "max_reproduction_age": 45,
+    "birth_rate_base": 0.008,
+    "reproduction_need_threshold": 0.5,
+    "reproduction_max_stress": 0.6,
+    "birth_wealth_cost": 3.0,
+    "max_population_multiplier": 1.8,
+    "catch_probability_at_full_legitimacy": 0.6,
+    "punishment_wealth_fraction": 0.5,
+    "deterrence_strength": 0.5,
+    "informal_learning_rate": 0.0008,
+    "institutional_learning_rate": 0.004,
+    "baseline_health_recovery_rate": 0.005,
+    "institutional_health_bonus": 0.015,
+    "media_broadcast_interval": 10,
+    "media_reach_fraction": 0.5,
+    "forage_skill_gain": 0.01,
+    "forage_skill_bonus_max": 4.0,
+    "need_decay": 0.03,
+    "stress_from_scarcity_gain": 0.08,
+    "stress_recovery": 0.02
+  },
+  "capacity_levels": [
+    90.0,
+    120.0
+  ],
+  "food_and_water_regen_levels": [
+    0.016,
+    0.019
+  ],
+  "initial_stock_fraction_of_capacity": {
+    "food": 0.6666666666666666,
+    "water": 0.6666666666666666
+  },
+  "seeds_per_cell": 30,
+  "seed_start": 30000,
+  "seed_end_inclusive": 30119,
+  "seed_assignment": "disjoint sequential seed blocks per cell; not paired common-random-numbers",
+  "result_unit": "one simulation seed; per-tick values are averaged within each seed",
+  "protocol": "EXPERIMENT_PROTOCOL_RESOURCE_STRESS.md",
+  "results": {
+    "cells": {
+      "C90-R0p016": {
+        "capacity": 90.0,
+        "regen": 0.016,
+        "seeds": [
+          30000,
+          30001,
+          30002,
+          30003,
+          30004,
+          30005,
+          30006,
+          30007,
+          30008,
+          30009,
+          30010,
+          30011,
+          30012,
+          30013,
+          30014,
+          30015,
+          30016,
+          30017,
+          30018,
+          30019,
+          30020,
+          30021,
+          30022,
+          30023,
+          30024,
+          30025,
+          30026,
+          30027,
+          30028,
+          30029
+        ],
+        "seed_summaries": [
+          {
+            "seed": 30000,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 87,
+            "mean_cooperation_rate": 0.16771062564879646,
+            "mean_conflict_rate": 0.310381056593614,
+            "mean_true_scarcity": 0.9997312551726545,
+            "mean_avg_stress": 0.8641265299341405,
+            "mean_avg_trust": -0.03654288189758424,
+            "mean_inequality_gini": 0.4231929876726368,
+            "mean_population": 96.12,
+            "mean_avg_health": 0.9672170500413021
+          },
+          {
+            "seed": 30001,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 91,
+            "mean_cooperation_rate": 0.1826411412199075,
+            "mean_conflict_rate": 0.30448388450463765,
+            "mean_true_scarcity": 0.9992824916158274,
+            "mean_avg_stress": 0.8399149496485204,
+            "mean_avg_trust": -0.031637386718185875,
+            "mean_inequality_gini": 0.45377645635497016,
+            "mean_population": 96.05,
+            "mean_avg_health": 0.9976255491950105
+          },
+          {
+            "seed": 30002,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 94,
+            "mean_cooperation_rate": 0.17308264258488343,
+            "mean_conflict_rate": 0.30862899080620926,
+            "mean_true_scarcity": 0.9998295531816607,
+            "mean_avg_stress": 0.8563210661921411,
+            "mean_avg_trust": -0.03189673198492308,
+            "mean_inequality_gini": 0.42225030948598125,
+            "mean_population": 99.77,
+            "mean_avg_health": 0.9789480085563055
+          },
+          {
+            "seed": 30003,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 96,
+            "mean_cooperation_rate": 0.17347096952565455,
+            "mean_conflict_rate": 0.31393537350531076,
+            "mean_true_scarcity": 0.9996943758355107,
+            "mean_avg_stress": 0.8475604158510628,
+            "mean_avg_trust": -0.03378004139108081,
+            "mean_inequality_gini": 0.44080060810117666,
+            "mean_population": 100.26,
+            "mean_avg_health": 0.9919857117976872
+          },
+          {
+            "seed": 30004,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 82,
+            "mean_cooperation_rate": 0.17405311990720437,
+            "mean_conflict_rate": 0.3476405453870631,
+            "mean_true_scarcity": 0.9130791166030732,
+            "mean_avg_stress": 0.8298514062773786,
+            "mean_avg_trust": -0.03745925283881447,
+            "mean_inequality_gini": 0.3719279378601124,
+            "mean_population": 83.5,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30005,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 85,
+            "mean_cooperation_rate": 0.1788562106202205,
+            "mean_conflict_rate": 0.3197691474298768,
+            "mean_true_scarcity": 0.9783575034006563,
+            "mean_avg_stress": 0.8222181866979389,
+            "mean_avg_trust": -0.031672399108512626,
+            "mean_inequality_gini": 0.3502601946817878,
+            "mean_population": 89.86,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30006,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 84,
+            "mean_cooperation_rate": 0.1771034492398454,
+            "mean_conflict_rate": 0.32287864408577527,
+            "mean_true_scarcity": 0.9536751375604919,
+            "mean_avg_stress": 0.8406926798335554,
+            "mean_avg_trust": -0.03558967048004476,
+            "mean_inequality_gini": 0.44377828856924884,
+            "mean_population": 88.56,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30007,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 93,
+            "mean_cooperation_rate": 0.16945408879671253,
+            "mean_conflict_rate": 0.32841245675829667,
+            "mean_true_scarcity": 0.9996747989392962,
+            "mean_avg_stress": 0.8276387665277563,
+            "mean_avg_trust": -0.03701977138454894,
+            "mean_inequality_gini": 0.4463279863305474,
+            "mean_population": 96.17,
+            "mean_avg_health": 0.9909875943896641
+          },
+          {
+            "seed": 30008,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 77,
+            "mean_cooperation_rate": 0.1661504700335739,
+            "mean_conflict_rate": 0.33482481436296324,
+            "mean_true_scarcity": 0.9955667148635335,
+            "mean_avg_stress": 0.8379420159509189,
+            "mean_avg_trust": -0.039722421182026756,
+            "mean_inequality_gini": 0.35857382376034735,
+            "mean_population": 83.63,
+            "mean_avg_health": 0.9999710289007343
+          },
+          {
+            "seed": 30009,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 89,
+            "mean_cooperation_rate": 0.1869285019984755,
+            "mean_conflict_rate": 0.30806979658168865,
+            "mean_true_scarcity": 0.990019570247312,
+            "mean_avg_stress": 0.8290680820755579,
+            "mean_avg_trust": -0.024341772278233028,
+            "mean_inequality_gini": 0.4704796801254513,
+            "mean_population": 95.47,
+            "mean_avg_health": 0.9996551464234724
+          },
+          {
+            "seed": 30010,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 89,
+            "mean_cooperation_rate": 0.1757103033349732,
+            "mean_conflict_rate": 0.307652167093238,
+            "mean_true_scarcity": 0.9996589984683694,
+            "mean_avg_stress": 0.8567851447426672,
+            "mean_avg_trust": -0.030188177195750995,
+            "mean_inequality_gini": 0.44052210941621284,
+            "mean_population": 96.45,
+            "mean_avg_health": 0.9832822152058749
+          },
+          {
+            "seed": 30011,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 90,
+            "mean_cooperation_rate": 0.1759776237136001,
+            "mean_conflict_rate": 0.30595542083113664,
+            "mean_true_scarcity": 0.9999420426314503,
+            "mean_avg_stress": 0.8455860585923761,
+            "mean_avg_trust": -0.03256979341256318,
+            "mean_inequality_gini": 0.4237398711993212,
+            "mean_population": 96.51,
+            "mean_avg_health": 0.9654309706501532
+          },
+          {
+            "seed": 30012,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 95,
+            "mean_cooperation_rate": 0.17351855430733093,
+            "mean_conflict_rate": 0.31772288747104194,
+            "mean_true_scarcity": 0.9997189981659791,
+            "mean_avg_stress": 0.8439690701284986,
+            "mean_avg_trust": -0.03503133751137398,
+            "mean_inequality_gini": 0.3905393953625635,
+            "mean_population": 98.06,
+            "mean_avg_health": 0.995027724145519
+          },
+          {
+            "seed": 30013,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 93,
+            "mean_cooperation_rate": 0.17919445598739805,
+            "mean_conflict_rate": 0.31679066037060316,
+            "mean_true_scarcity": 0.9989581076770397,
+            "mean_avg_stress": 0.8631464094702851,
+            "mean_avg_trust": -0.029672983499466166,
+            "mean_inequality_gini": 0.4657569581623471,
+            "mean_population": 97.29,
+            "mean_avg_health": 0.9843825552005504
+          },
+          {
+            "seed": 30014,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 93,
+            "mean_cooperation_rate": 0.170021019734068,
+            "mean_conflict_rate": 0.3207938404905874,
+            "mean_true_scarcity": 0.9995709125453748,
+            "mean_avg_stress": 0.8295275557786475,
+            "mean_avg_trust": -0.03039364206106928,
+            "mean_inequality_gini": 0.4095994759658628,
+            "mean_population": 97.39,
+            "mean_avg_health": 0.989728552713993
+          },
+          {
+            "seed": 30015,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 83,
+            "mean_cooperation_rate": 0.16506775342694419,
+            "mean_conflict_rate": 0.3233023813588652,
+            "mean_true_scarcity": 0.9987155211689303,
+            "mean_avg_stress": 0.8431142052324003,
+            "mean_avg_trust": -0.03595924130494149,
+            "mean_inequality_gini": 0.3970169049983376,
+            "mean_population": 87.75,
+            "mean_avg_health": 0.998662474282238
+          },
+          {
+            "seed": 30016,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 86,
+            "mean_cooperation_rate": 0.17066619486625878,
+            "mean_conflict_rate": 0.3331436667658639,
+            "mean_true_scarcity": 0.9986392695958515,
+            "mean_avg_stress": 0.8340393988450668,
+            "mean_avg_trust": -0.03587649542643426,
+            "mean_inequality_gini": 0.4220295950736975,
+            "mean_population": 92.21,
+            "mean_avg_health": 0.9970365120940035
+          },
+          {
+            "seed": 30017,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 81,
+            "mean_cooperation_rate": 0.16608970755274946,
+            "mean_conflict_rate": 0.3380281470171839,
+            "mean_true_scarcity": 0.9965246757026611,
+            "mean_avg_stress": 0.8598966453824919,
+            "mean_avg_trust": -0.037992932946961225,
+            "mean_inequality_gini": 0.3733369826427436,
+            "mean_population": 88.09,
+            "mean_avg_health": 0.999970054200542
+          },
+          {
+            "seed": 30018,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 91,
+            "mean_cooperation_rate": 0.173832774470695,
+            "mean_conflict_rate": 0.31911678609655286,
+            "mean_true_scarcity": 0.9993457522896967,
+            "mean_avg_stress": 0.8583398359161591,
+            "mean_avg_trust": -0.03593477242004679,
+            "mean_inequality_gini": 0.4322785505121096,
+            "mean_population": 94.79,
+            "mean_avg_health": 0.9969362145299177
+          },
+          {
+            "seed": 30019,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 93,
+            "mean_cooperation_rate": 0.1715254361137378,
+            "mean_conflict_rate": 0.31343125800070804,
+            "mean_true_scarcity": 0.9991290714990881,
+            "mean_avg_stress": 0.8294331478745813,
+            "mean_avg_trust": -0.032037279774967994,
+            "mean_inequality_gini": 0.41742811418297315,
+            "mean_population": 96.94,
+            "mean_avg_health": 0.9928952739198341
+          },
+          {
+            "seed": 30020,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 89,
+            "mean_cooperation_rate": 0.17490533800003388,
+            "mean_conflict_rate": 0.30921485061231535,
+            "mean_true_scarcity": 0.9997612822288628,
+            "mean_avg_stress": 0.8197002680501001,
+            "mean_avg_trust": -0.033933511438976466,
+            "mean_inequality_gini": 0.3965003634843376,
+            "mean_population": 93.08,
+            "mean_avg_health": 0.9731687619577309
+          },
+          {
+            "seed": 30021,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 93,
+            "mean_cooperation_rate": 0.17354951935128654,
+            "mean_conflict_rate": 0.3268346572485629,
+            "mean_true_scarcity": 0.9993202780455394,
+            "mean_avg_stress": 0.8362679794538102,
+            "mean_avg_trust": -0.03925670482428244,
+            "mean_inequality_gini": 0.4243997346322096,
+            "mean_population": 97.75,
+            "mean_avg_health": 0.9764382775298271
+          },
+          {
+            "seed": 30022,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 84,
+            "mean_cooperation_rate": 0.19110481212726074,
+            "mean_conflict_rate": 0.3106100219174906,
+            "mean_true_scarcity": 0.8931370546786832,
+            "mean_avg_stress": 0.8283423315161674,
+            "mean_avg_trust": -0.025786232062719083,
+            "mean_inequality_gini": 0.40274982901865825,
+            "mean_population": 88.96,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30023,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 86,
+            "mean_cooperation_rate": 0.17776192436967458,
+            "mean_conflict_rate": 0.3230521510959574,
+            "mean_true_scarcity": 0.9959334942968796,
+            "mean_avg_stress": 0.8520741462619903,
+            "mean_avg_trust": -0.03280474999610901,
+            "mean_inequality_gini": 0.4298201929479712,
+            "mean_population": 92.7,
+            "mean_avg_health": 0.9982515514668112
+          },
+          {
+            "seed": 30024,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 84,
+            "mean_cooperation_rate": 0.19131504893013734,
+            "mean_conflict_rate": 0.30382394184929074,
+            "mean_true_scarcity": 0.8685664999010383,
+            "mean_avg_stress": 0.8087757634763997,
+            "mean_avg_trust": -0.027283348921118722,
+            "mean_inequality_gini": 0.3446182902626934,
+            "mean_population": 87.34,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30025,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 81,
+            "mean_cooperation_rate": 0.17002571359807242,
+            "mean_conflict_rate": 0.33992740695455026,
+            "mean_true_scarcity": 0.922541759433366,
+            "mean_avg_stress": 0.8538280135902288,
+            "mean_avg_trust": -0.03711053773439206,
+            "mean_inequality_gini": 0.4312724975633071,
+            "mean_population": 86.75,
+            "mean_avg_health": 0.9999943820224719
+          },
+          {
+            "seed": 30026,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 79,
+            "mean_cooperation_rate": 0.16806421606934688,
+            "mean_conflict_rate": 0.3269318975819405,
+            "mean_true_scarcity": 0.9933148236906395,
+            "mean_avg_stress": 0.836071976158,
+            "mean_avg_trust": -0.03484811959103469,
+            "mean_inequality_gini": 0.37368640676787185,
+            "mean_population": 85.92,
+            "mean_avg_health": 0.9998086258898649
+          },
+          {
+            "seed": 30027,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 93,
+            "mean_cooperation_rate": 0.1665774144981248,
+            "mean_conflict_rate": 0.3201046855933071,
+            "mean_true_scarcity": 0.999754569326831,
+            "mean_avg_stress": 0.8699211819261679,
+            "mean_avg_trust": -0.0350876573344108,
+            "mean_inequality_gini": 0.4159841524764702,
+            "mean_population": 99.05,
+            "mean_avg_health": 0.9883520187816071
+          },
+          {
+            "seed": 30028,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 94,
+            "mean_cooperation_rate": 0.16269050713021677,
+            "mean_conflict_rate": 0.3184252178348026,
+            "mean_true_scarcity": 0.9995872834026781,
+            "mean_avg_stress": 0.857861171525344,
+            "mean_avg_trust": -0.034106876129003705,
+            "mean_inequality_gini": 0.4280647693200226,
+            "mean_population": 98.5,
+            "mean_avg_health": 0.9596944998333156
+          },
+          {
+            "seed": 30029,
+            "cell": "C90-R0p016",
+            "capacity": 90.0,
+            "regen_rate": 0.016,
+            "final_population": 84,
+            "mean_cooperation_rate": 0.17256940565959064,
+            "mean_conflict_rate": 0.32252301817932144,
+            "mean_true_scarcity": 0.8609552207929858,
+            "mean_avg_stress": 0.8448580805728777,
+            "mean_avg_trust": -0.030532024759099358,
+            "mean_inequality_gini": 0.3639203361129286,
+            "mean_population": 89.18,
+            "mean_avg_health": 0.9999777777777779
+          }
+        ]
+      },
+      "C90-R0p019": {
+        "capacity": 90.0,
+        "regen": 0.019,
+        "seeds": [
+          30030,
+          30031,
+          30032,
+          30033,
+          30034,
+          30035,
+          30036,
+          30037,
+          30038,
+          30039,
+          30040,
+          30041,
+          30042,
+          30043,
+          30044,
+          30045,
+          30046,
+          30047,
+          30048,
+          30049,
+          30050,
+          30051,
+          30052,
+          30053,
+          30054,
+          30055,
+          30056,
+          30057,
+          30058,
+          30059
+        ],
+        "seed_summaries": [
+          {
+            "seed": 30030,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 106,
+            "mean_cooperation_rate": 0.1961156279128952,
+            "mean_conflict_rate": 0.2977788269814944,
+            "mean_true_scarcity": 0.9235594975209847,
+            "mean_avg_stress": 0.7710921020938205,
+            "mean_avg_trust": -0.01365526308821738,
+            "mean_inequality_gini": 0.3861089186264508,
+            "mean_population": 109.89,
+            "mean_avg_health": 0.9999953138776231
+          },
+          {
+            "seed": 30031,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 98,
+            "mean_cooperation_rate": 0.20009346938540806,
+            "mean_conflict_rate": 0.29594682706554704,
+            "mean_true_scarcity": 0.7817450880475056,
+            "mean_avg_stress": 0.7733510515072431,
+            "mean_avg_trust": -0.0162925958289232,
+            "mean_inequality_gini": 0.38711491845219015,
+            "mean_population": 105.11,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30032,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 101,
+            "mean_cooperation_rate": 0.2187253854007335,
+            "mean_conflict_rate": 0.2749386580723608,
+            "mean_true_scarcity": 0.770586782222247,
+            "mean_avg_stress": 0.7233425333319079,
+            "mean_avg_trust": -0.013408755929026064,
+            "mean_inequality_gini": 0.3891015241879983,
+            "mean_population": 104.66,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30033,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 97,
+            "mean_cooperation_rate": 0.23300182351895166,
+            "mean_conflict_rate": 0.2554073101420622,
+            "mean_true_scarcity": 0.6105548004849577,
+            "mean_avg_stress": 0.7109121277551234,
+            "mean_avg_trust": -0.007140314909718802,
+            "mean_inequality_gini": 0.4187367574428614,
+            "mean_population": 101.18,
+            "mean_avg_health": 0.9999249784398281
+          },
+          {
+            "seed": 30034,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 87,
+            "mean_cooperation_rate": 0.24479270432062916,
+            "mean_conflict_rate": 0.2479928773856107,
+            "mean_true_scarcity": 0.6147706501184331,
+            "mean_avg_stress": 0.6656989558736562,
+            "mean_avg_trust": -0.005043404214163303,
+            "mean_inequality_gini": 0.41206812633997436,
+            "mean_population": 95.41,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30035,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 94,
+            "mean_cooperation_rate": 0.23250297638312006,
+            "mean_conflict_rate": 0.25169059243838876,
+            "mean_true_scarcity": 0.6520422481950543,
+            "mean_avg_stress": 0.6801868910630929,
+            "mean_avg_trust": -0.0016955645604992966,
+            "mean_inequality_gini": 0.40624053911743535,
+            "mean_population": 101.01,
+            "mean_avg_health": 0.999995238095238
+          },
+          {
+            "seed": 30036,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 102,
+            "mean_cooperation_rate": 0.1804805391849288,
+            "mean_conflict_rate": 0.31404960951635663,
+            "mean_true_scarcity": 0.9438135570502597,
+            "mean_avg_stress": 0.8132394742918837,
+            "mean_avg_trust": -0.024922117369316578,
+            "mean_inequality_gini": 0.3954482258578944,
+            "mean_population": 106.26,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30037,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 95,
+            "mean_cooperation_rate": 0.19901516116387666,
+            "mean_conflict_rate": 0.2976626476057663,
+            "mean_true_scarcity": 0.7822276166140429,
+            "mean_avg_stress": 0.7905680737831026,
+            "mean_avg_trust": -0.019742666945732637,
+            "mean_inequality_gini": 0.3591781365939696,
+            "mean_population": 100.21,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30038,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 105,
+            "mean_cooperation_rate": 0.18194944047235542,
+            "mean_conflict_rate": 0.31897553036390036,
+            "mean_true_scarcity": 0.9470665265290408,
+            "mean_avg_stress": 0.797266772639603,
+            "mean_avg_trust": -0.022697537717626736,
+            "mean_inequality_gini": 0.39110855279271844,
+            "mean_population": 110.31,
+            "mean_avg_health": 0.9999809523809523
+          },
+          {
+            "seed": 30039,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 111,
+            "mean_cooperation_rate": 0.1917870470018831,
+            "mean_conflict_rate": 0.31033392049863984,
+            "mean_true_scarcity": 0.998581544637116,
+            "mean_avg_stress": 0.8021615125718,
+            "mean_avg_trust": -0.024640406278571517,
+            "mean_inequality_gini": 0.4049991442965174,
+            "mean_population": 114.93,
+            "mean_avg_health": 0.9991884073884668
+          },
+          {
+            "seed": 30040,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 100,
+            "mean_cooperation_rate": 0.1924332029609155,
+            "mean_conflict_rate": 0.3100848674834497,
+            "mean_true_scarcity": 0.9360110431432919,
+            "mean_avg_stress": 0.809746349470527,
+            "mean_avg_trust": -0.0183702184960067,
+            "mean_inequality_gini": 0.3888189360177288,
+            "mean_population": 105.83,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30041,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 101,
+            "mean_cooperation_rate": 0.21074175532489556,
+            "mean_conflict_rate": 0.2859653669125693,
+            "mean_true_scarcity": 0.790559812115548,
+            "mean_avg_stress": 0.740479511761426,
+            "mean_avg_trust": -0.013755843343897043,
+            "mean_inequality_gini": 0.4288643346088839,
+            "mean_population": 104.1,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30042,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 112,
+            "mean_cooperation_rate": 0.18408251426469213,
+            "mean_conflict_rate": 0.3060415969946027,
+            "mean_true_scarcity": 0.9603676163622137,
+            "mean_avg_stress": 0.8135316639544034,
+            "mean_avg_trust": -0.020565271278128225,
+            "mean_inequality_gini": 0.4009608726454491,
+            "mean_population": 113.7,
+            "mean_avg_health": 0.9996564356826803
+          },
+          {
+            "seed": 30043,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 97,
+            "mean_cooperation_rate": 0.21396878738477124,
+            "mean_conflict_rate": 0.2816363639048215,
+            "mean_true_scarcity": 0.657651179546737,
+            "mean_avg_stress": 0.7647651093125855,
+            "mean_avg_trust": -0.011111194795481689,
+            "mean_inequality_gini": 0.43779562016550316,
+            "mean_population": 101.3,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30044,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 104,
+            "mean_cooperation_rate": 0.2052349208982539,
+            "mean_conflict_rate": 0.2822535485008169,
+            "mean_true_scarcity": 0.8182543398604419,
+            "mean_avg_stress": 0.7376634789787837,
+            "mean_avg_trust": -0.009992423468852407,
+            "mean_inequality_gini": 0.41649402544888503,
+            "mean_population": 107.59,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30045,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 90,
+            "mean_cooperation_rate": 0.2627401274361166,
+            "mean_conflict_rate": 0.21707731893074228,
+            "mean_true_scarcity": 0.4193053846331256,
+            "mean_avg_stress": 0.6214098448884876,
+            "mean_avg_trust": 0.003039472092423395,
+            "mean_inequality_gini": 0.42471469966894226,
+            "mean_population": 93.09,
+            "mean_avg_health": 0.9999786376115306
+          },
+          {
+            "seed": 30046,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 103,
+            "mean_cooperation_rate": 0.18393115901953902,
+            "mean_conflict_rate": 0.3052648756590025,
+            "mean_true_scarcity": 0.9983631861976527,
+            "mean_avg_stress": 0.8134808453494553,
+            "mean_avg_trust": -0.024655122261071936,
+            "mean_inequality_gini": 0.3836120104805418,
+            "mean_population": 110.06,
+            "mean_avg_health": 0.998626573350398
+          },
+          {
+            "seed": 30047,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 101,
+            "mean_cooperation_rate": 0.1968810219769856,
+            "mean_conflict_rate": 0.3023835238395122,
+            "mean_true_scarcity": 0.7772799886890734,
+            "mean_avg_stress": 0.7677592326769129,
+            "mean_avg_trust": -0.01800805672887522,
+            "mean_inequality_gini": 0.42236906776660627,
+            "mean_population": 107.77,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30048,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 89,
+            "mean_cooperation_rate": 0.21455942545302656,
+            "mean_conflict_rate": 0.26802241326082027,
+            "mean_true_scarcity": 0.647204014112086,
+            "mean_avg_stress": 0.7634673380493487,
+            "mean_avg_trust": -0.009035248707057235,
+            "mean_inequality_gini": 0.3956038494241899,
+            "mean_population": 93.2,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30049,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 122,
+            "mean_cooperation_rate": 0.20121643263661868,
+            "mean_conflict_rate": 0.28308072401473705,
+            "mean_true_scarcity": 0.9999358956705166,
+            "mean_avg_stress": 0.8050354521390414,
+            "mean_avg_trust": -0.015011098519365733,
+            "mean_inequality_gini": 0.44720255143552606,
+            "mean_population": 132.35,
+            "mean_avg_health": 0.9608487304153737
+          },
+          {
+            "seed": 30050,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 96,
+            "mean_cooperation_rate": 0.19111930518428724,
+            "mean_conflict_rate": 0.29678756113096216,
+            "mean_true_scarcity": 0.8881822046143071,
+            "mean_avg_stress": 0.7788187586368955,
+            "mean_avg_trust": -0.01469191606255969,
+            "mean_inequality_gini": 0.39168018337628474,
+            "mean_population": 101.89,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30051,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 106,
+            "mean_cooperation_rate": 0.17963067138117272,
+            "mean_conflict_rate": 0.31176457135861724,
+            "mean_true_scarcity": 0.9988312212259214,
+            "mean_avg_stress": 0.7918155297052277,
+            "mean_avg_trust": -0.025777655823129644,
+            "mean_inequality_gini": 0.40732702830643364,
+            "mean_population": 110.03,
+            "mean_avg_health": 0.9996061484657818
+          },
+          {
+            "seed": 30052,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 100,
+            "mean_cooperation_rate": 0.18680001113728256,
+            "mean_conflict_rate": 0.31838060316194255,
+            "mean_true_scarcity": 0.8249612903673571,
+            "mean_avg_stress": 0.8209097101325843,
+            "mean_avg_trust": -0.020772902324318193,
+            "mean_inequality_gini": 0.37089439560163057,
+            "mean_population": 107.04,
+            "mean_avg_health": 0.9999818095409839
+          },
+          {
+            "seed": 30053,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 98,
+            "mean_cooperation_rate": 0.1965938799913793,
+            "mean_conflict_rate": 0.3044879165870076,
+            "mean_true_scarcity": 0.9094046053117097,
+            "mean_avg_stress": 0.8133608584198835,
+            "mean_avg_trust": -0.020924021003787256,
+            "mean_inequality_gini": 0.38308667779056166,
+            "mean_population": 105.43,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30054,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 87,
+            "mean_cooperation_rate": 0.23275731266791655,
+            "mean_conflict_rate": 0.2571026098719043,
+            "mean_true_scarcity": 0.6145521147129585,
+            "mean_avg_stress": 0.755566691959348,
+            "mean_avg_trust": -0.004783829017916615,
+            "mean_inequality_gini": 0.43060536697698765,
+            "mean_population": 96.04,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30055,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 100,
+            "mean_cooperation_rate": 0.22582756035799328,
+            "mean_conflict_rate": 0.270496717728529,
+            "mean_true_scarcity": 0.7180558129100563,
+            "mean_avg_stress": 0.721810873751998,
+            "mean_avg_trust": -0.008094661185751847,
+            "mean_inequality_gini": 0.4300909961518537,
+            "mean_population": 105.77,
+            "mean_avg_health": 0.9997883153869641
+          },
+          {
+            "seed": 30056,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 104,
+            "mean_cooperation_rate": 0.19484990759969123,
+            "mean_conflict_rate": 0.2905887092961699,
+            "mean_true_scarcity": 0.8981895397056072,
+            "mean_avg_stress": 0.7813550024298854,
+            "mean_avg_trust": -0.01820174439900719,
+            "mean_inequality_gini": 0.4077604533416185,
+            "mean_population": 106.53,
+            "mean_avg_health": 0.9998893164831089
+          },
+          {
+            "seed": 30057,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 108,
+            "mean_cooperation_rate": 0.1870088475020773,
+            "mean_conflict_rate": 0.30366525364068825,
+            "mean_true_scarcity": 0.9985830344655884,
+            "mean_avg_stress": 0.8169470641308308,
+            "mean_avg_trust": -0.020170144613946492,
+            "mean_inequality_gini": 0.41824092165701254,
+            "mean_population": 111.72,
+            "mean_avg_health": 0.9987175696347486
+          },
+          {
+            "seed": 30058,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 85,
+            "mean_cooperation_rate": 0.24705218097405957,
+            "mean_conflict_rate": 0.2412016291659761,
+            "mean_true_scarcity": 0.4249925964326921,
+            "mean_avg_stress": 0.6646594350095419,
+            "mean_avg_trust": -0.012796464433806913,
+            "mean_inequality_gini": 0.3546049717820878,
+            "mean_population": 86.05,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30059,
+            "cell": "C90-R0p019",
+            "capacity": 90.0,
+            "regen_rate": 0.019,
+            "final_population": 97,
+            "mean_cooperation_rate": 0.19530035277152497,
+            "mean_conflict_rate": 0.30177272483315815,
+            "mean_true_scarcity": 0.7970533254973321,
+            "mean_avg_stress": 0.7820087824925602,
+            "mean_avg_trust": -0.022900347214907635,
+            "mean_inequality_gini": 0.40780995508586976,
+            "mean_population": 102.16,
+            "mean_avg_health": 0.9999229075143874
+          }
+        ]
+      },
+      "C120-R0p016": {
+        "capacity": 120.0,
+        "regen": 0.016,
+        "seeds": [
+          30060,
+          30061,
+          30062,
+          30063,
+          30064,
+          30065,
+          30066,
+          30067,
+          30068,
+          30069,
+          30070,
+          30071,
+          30072,
+          30073,
+          30074,
+          30075,
+          30076,
+          30077,
+          30078,
+          30079,
+          30080,
+          30081,
+          30082,
+          30083,
+          30084,
+          30085,
+          30086,
+          30087,
+          30088,
+          30089
+        ],
+        "seed_summaries": [
+          {
+            "seed": 30060,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 121,
+            "mean_cooperation_rate": 0.22968328350505907,
+            "mean_conflict_rate": 0.26723077952214674,
+            "mean_true_scarcity": 0.7589750142239662,
+            "mean_avg_stress": 0.731106292756402,
+            "mean_avg_trust": 0.0010525818784266167,
+            "mean_inequality_gini": 0.40225615305826806,
+            "mean_population": 127.92,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30061,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 128,
+            "mean_cooperation_rate": 0.23164134659531033,
+            "mean_conflict_rate": 0.25633135950982106,
+            "mean_true_scarcity": 0.7237542450986908,
+            "mean_avg_stress": 0.6835773174321822,
+            "mean_avg_trust": -0.0015161167849660462,
+            "mean_inequality_gini": 0.409403739731702,
+            "mean_population": 130.29,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30062,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 91,
+            "mean_cooperation_rate": 0.28801253897018664,
+            "mean_conflict_rate": 0.19141007025170392,
+            "mean_true_scarcity": 0.17553358158448162,
+            "mean_avg_stress": 0.574968750378146,
+            "mean_avg_trust": 0.007059688895624572,
+            "mean_inequality_gini": 0.4218223602267793,
+            "mean_population": 96.67,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30063,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 114,
+            "mean_cooperation_rate": 0.22382454831210122,
+            "mean_conflict_rate": 0.2631638170871124,
+            "mean_true_scarcity": 0.6233610909439637,
+            "mean_avg_stress": 0.7304732322117392,
+            "mean_avg_trust": -0.0054632666155750124,
+            "mean_inequality_gini": 0.4035318001008653,
+            "mean_population": 115.9,
+            "mean_avg_health": 0.9999956140350877
+          },
+          {
+            "seed": 30064,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 93,
+            "mean_cooperation_rate": 0.2959661004102224,
+            "mean_conflict_rate": 0.1830418759240775,
+            "mean_true_scarcity": 0.231608492764793,
+            "mean_avg_stress": 0.5264800121664819,
+            "mean_avg_trust": 0.01247183349955971,
+            "mean_inequality_gini": 0.4298295802140752,
+            "mean_population": 98.29,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30065,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 100,
+            "mean_cooperation_rate": 0.2694511566139791,
+            "mean_conflict_rate": 0.20929500688930222,
+            "mean_true_scarcity": 0.34870066891732693,
+            "mean_avg_stress": 0.6294482763358431,
+            "mean_avg_trust": 0.0042874176759932926,
+            "mean_inequality_gini": 0.4248887955705191,
+            "mean_population": 106.08,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30066,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 103,
+            "mean_cooperation_rate": 0.26942571824881384,
+            "mean_conflict_rate": 0.21513944122142448,
+            "mean_true_scarcity": 0.33468965242598636,
+            "mean_avg_stress": 0.6204524180061065,
+            "mean_avg_trust": 0.004810426728207916,
+            "mean_inequality_gini": 0.44880415522011446,
+            "mean_population": 106.12,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30067,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 109,
+            "mean_cooperation_rate": 0.23562413445228228,
+            "mean_conflict_rate": 0.25032340526472185,
+            "mean_true_scarcity": 0.6061041589065436,
+            "mean_avg_stress": 0.7014417757751006,
+            "mean_avg_trust": 0.00020266879145005779,
+            "mean_inequality_gini": 0.4030192564762526,
+            "mean_population": 114.96,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30068,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 117,
+            "mean_cooperation_rate": 0.23410399229711745,
+            "mean_conflict_rate": 0.2562474407472142,
+            "mean_true_scarcity": 0.6946188125050533,
+            "mean_avg_stress": 0.7288097647106976,
+            "mean_avg_trust": -0.00470545269256587,
+            "mean_inequality_gini": 0.42232222938903907,
+            "mean_population": 118.78,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30069,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 113,
+            "mean_cooperation_rate": 0.20888516163188794,
+            "mean_conflict_rate": 0.28188822726629487,
+            "mean_true_scarcity": 0.8186282261060828,
+            "mean_avg_stress": 0.7494007609528928,
+            "mean_avg_trust": -0.012925027712271227,
+            "mean_inequality_gini": 0.440678799790439,
+            "mean_population": 118.18,
+            "mean_avg_health": 0.9999837365053978
+          },
+          {
+            "seed": 30070,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 102,
+            "mean_cooperation_rate": 0.25832092135125534,
+            "mean_conflict_rate": 0.21892203858455292,
+            "mean_true_scarcity": 0.44787758743870476,
+            "mean_avg_stress": 0.6730330576655554,
+            "mean_avg_trust": 0.003620869480432304,
+            "mean_inequality_gini": 0.38657654633017896,
+            "mean_population": 105.96,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30071,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 122,
+            "mean_cooperation_rate": 0.22687075941714294,
+            "mean_conflict_rate": 0.26634121650764714,
+            "mean_true_scarcity": 0.7545585033565255,
+            "mean_avg_stress": 0.6597142230223016,
+            "mean_avg_trust": -0.001854554375713649,
+            "mean_inequality_gini": 0.4096587714405542,
+            "mean_population": 126.73,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30072,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 107,
+            "mean_cooperation_rate": 0.23285811488808783,
+            "mean_conflict_rate": 0.2472768162511,
+            "mean_true_scarcity": 0.5555534351440407,
+            "mean_avg_stress": 0.6913619579665667,
+            "mean_avg_trust": 0.002032400521883684,
+            "mean_inequality_gini": 0.3845801222409814,
+            "mean_population": 111.25,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30073,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 107,
+            "mean_cooperation_rate": 0.2643145702263984,
+            "mean_conflict_rate": 0.22349608024495915,
+            "mean_true_scarcity": 0.4740506336325452,
+            "mean_avg_stress": 0.6211502186407498,
+            "mean_avg_trust": 0.004976978231400786,
+            "mean_inequality_gini": 0.4125361191809004,
+            "mean_population": 110.17,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30074,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 109,
+            "mean_cooperation_rate": 0.2752103538944832,
+            "mean_conflict_rate": 0.21739170800451418,
+            "mean_true_scarcity": 0.44844155484431425,
+            "mean_avg_stress": 0.6061917601865825,
+            "mean_avg_trust": 0.010820626794065384,
+            "mean_inequality_gini": 0.397481981728944,
+            "mean_population": 113.72,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30075,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 112,
+            "mean_cooperation_rate": 0.24529144451350582,
+            "mean_conflict_rate": 0.237380361124003,
+            "mean_true_scarcity": 0.5326678230234364,
+            "mean_avg_stress": 0.6881231331173396,
+            "mean_avg_trust": 0.0033408251673049823,
+            "mean_inequality_gini": 0.4159897971454567,
+            "mean_population": 114.57,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30076,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 97,
+            "mean_cooperation_rate": 0.25107344820444427,
+            "mean_conflict_rate": 0.2273185609053361,
+            "mean_true_scarcity": 0.43574005145813016,
+            "mean_avg_stress": 0.684568788578925,
+            "mean_avg_trust": 0.003495046218541119,
+            "mean_inequality_gini": 0.41382351586333727,
+            "mean_population": 104.52,
+            "mean_avg_health": 0.9999953719225592
+          },
+          {
+            "seed": 30077,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 102,
+            "mean_cooperation_rate": 0.2587117149165349,
+            "mean_conflict_rate": 0.22533422365037206,
+            "mean_true_scarcity": 0.38221245339221427,
+            "mean_avg_stress": 0.65690740473781,
+            "mean_avg_trust": 0.0006130970083243928,
+            "mean_inequality_gini": 0.3940398680496746,
+            "mean_population": 107.73,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30078,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 113,
+            "mean_cooperation_rate": 0.21838912970054417,
+            "mean_conflict_rate": 0.2732989391539007,
+            "mean_true_scarcity": 0.6899536437558673,
+            "mean_avg_stress": 0.7295116668904769,
+            "mean_avg_trust": -0.008082885916487462,
+            "mean_inequality_gini": 0.4366961758160979,
+            "mean_population": 118.85,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30079,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 96,
+            "mean_cooperation_rate": 0.2711323930046877,
+            "mean_conflict_rate": 0.2028191387287691,
+            "mean_true_scarcity": 0.2970454853113447,
+            "mean_avg_stress": 0.6320752915452679,
+            "mean_avg_trust": 0.007474057679609251,
+            "mean_inequality_gini": 0.4478898712253168,
+            "mean_population": 102.72,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30080,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 108,
+            "mean_cooperation_rate": 0.2695595484567648,
+            "mean_conflict_rate": 0.201452441006941,
+            "mean_true_scarcity": 0.3707224344254185,
+            "mean_avg_stress": 0.57503351126478,
+            "mean_avg_trust": 0.011333722097254533,
+            "mean_inequality_gini": 0.4059924847261998,
+            "mean_population": 112.42,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30081,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 104,
+            "mean_cooperation_rate": 0.23594315034405228,
+            "mean_conflict_rate": 0.25691771665166907,
+            "mean_true_scarcity": 0.5717280654942627,
+            "mean_avg_stress": 0.6887520912686408,
+            "mean_avg_trust": -0.004758606437428941,
+            "mean_inequality_gini": 0.39056994802655454,
+            "mean_population": 108.11,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30082,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 112,
+            "mean_cooperation_rate": 0.25528307681617957,
+            "mean_conflict_rate": 0.22243156160064304,
+            "mean_true_scarcity": 0.36299674273138877,
+            "mean_avg_stress": 0.6854944229959957,
+            "mean_avg_trust": 0.0013533371751766716,
+            "mean_inequality_gini": 0.38802822222139555,
+            "mean_population": 113.1,
+            "mean_avg_health": 0.9999134429777982
+          },
+          {
+            "seed": 30083,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 110,
+            "mean_cooperation_rate": 0.23766806336992363,
+            "mean_conflict_rate": 0.2435020481089823,
+            "mean_true_scarcity": 0.6027934992815586,
+            "mean_avg_stress": 0.6899446150573749,
+            "mean_avg_trust": -0.0020962480383335045,
+            "mean_inequality_gini": 0.4237338545492092,
+            "mean_population": 114.59,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30084,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 107,
+            "mean_cooperation_rate": 0.2622086950403235,
+            "mean_conflict_rate": 0.22082384287011242,
+            "mean_true_scarcity": 0.4322621357415127,
+            "mean_avg_stress": 0.6110488184854602,
+            "mean_avg_trust": -0.0001699327970193129,
+            "mean_inequality_gini": 0.42380119895945645,
+            "mean_population": 107.74,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30085,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 104,
+            "mean_cooperation_rate": 0.25428457709732993,
+            "mean_conflict_rate": 0.2226850917953524,
+            "mean_true_scarcity": 0.4861902696569955,
+            "mean_avg_stress": 0.6185676162732385,
+            "mean_avg_trust": 0.008063519495527105,
+            "mean_inequality_gini": 0.41340846760105926,
+            "mean_population": 113.47,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30086,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 93,
+            "mean_cooperation_rate": 0.3198333218090278,
+            "mean_conflict_rate": 0.1677845592730324,
+            "mean_true_scarcity": 0.08493143271686929,
+            "mean_avg_stress": 0.4765089172470667,
+            "mean_avg_trust": 0.014446262183018426,
+            "mean_inequality_gini": 0.43797081477877936,
+            "mean_population": 97.85,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30087,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 111,
+            "mean_cooperation_rate": 0.23898128247191103,
+            "mean_conflict_rate": 0.24007563843949448,
+            "mean_true_scarcity": 0.5993074609825253,
+            "mean_avg_stress": 0.6761358498635779,
+            "mean_avg_trust": 0.003041450781480852,
+            "mean_inequality_gini": 0.4220255844761803,
+            "mean_population": 116.88,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30088,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 106,
+            "mean_cooperation_rate": 0.2524630482870745,
+            "mean_conflict_rate": 0.22204122007888555,
+            "mean_true_scarcity": 0.4927592200455057,
+            "mean_avg_stress": 0.6013601621798568,
+            "mean_avg_trust": 0.004129106774057693,
+            "mean_inequality_gini": 0.44284639799918407,
+            "mean_population": 108.48,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30089,
+            "cell": "C120-R0p016",
+            "capacity": 120.0,
+            "regen_rate": 0.016,
+            "final_population": 96,
+            "mean_cooperation_rate": 0.2598626386492054,
+            "mean_conflict_rate": 0.22440237669786067,
+            "mean_true_scarcity": 0.4512996346325546,
+            "mean_avg_stress": 0.6561725573496072,
+            "mean_avg_trust": 0.00269156087190152,
+            "mean_inequality_gini": 0.40906196255402755,
+            "mean_population": 103.51,
+            "mean_avg_health": 1.0
+          }
+        ]
+      },
+      "C120-R0p019": {
+        "capacity": 120.0,
+        "regen": 0.019,
+        "seeds": [
+          30090,
+          30091,
+          30092,
+          30093,
+          30094,
+          30095,
+          30096,
+          30097,
+          30098,
+          30099,
+          30100,
+          30101,
+          30102,
+          30103,
+          30104,
+          30105,
+          30106,
+          30107,
+          30108,
+          30109,
+          30110,
+          30111,
+          30112,
+          30113,
+          30114,
+          30115,
+          30116,
+          30117,
+          30118,
+          30119
+        ],
+        "seed_summaries": [
+          {
+            "seed": 30090,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 110,
+            "mean_cooperation_rate": 0.31746854946430997,
+            "mean_conflict_rate": 0.15847060183011927,
+            "mean_true_scarcity": 0.09993459700719433,
+            "mean_avg_stress": 0.5148327089583653,
+            "mean_avg_trust": 0.02020099407071977,
+            "mean_inequality_gini": 0.43276460525536437,
+            "mean_population": 111.6,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30091,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 115,
+            "mean_cooperation_rate": 0.32333821594633955,
+            "mean_conflict_rate": 0.16296707634779717,
+            "mean_true_scarcity": 0.06140469682152114,
+            "mean_avg_stress": 0.45946897200802694,
+            "mean_avg_trust": 0.01515311001411089,
+            "mean_inequality_gini": 0.4666877830176352,
+            "mean_population": 113.17,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30092,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 115,
+            "mean_cooperation_rate": 0.29133865800422587,
+            "mean_conflict_rate": 0.19079741848553233,
+            "mean_true_scarcity": 0.22381556781998024,
+            "mean_avg_stress": 0.5515144229114116,
+            "mean_avg_trust": 0.01168086640432623,
+            "mean_inequality_gini": 0.4265696708581476,
+            "mean_population": 118.4,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30093,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 115,
+            "mean_cooperation_rate": 0.3205198178388522,
+            "mean_conflict_rate": 0.16679005459063986,
+            "mean_true_scarcity": 0.08996270096776206,
+            "mean_avg_stress": 0.4827604538701784,
+            "mean_avg_trust": 0.019299370397840885,
+            "mean_inequality_gini": 0.4789522919732082,
+            "mean_population": 116.61,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30094,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 123,
+            "mean_cooperation_rate": 0.26359054474243776,
+            "mean_conflict_rate": 0.2223204224287769,
+            "mean_true_scarcity": 0.44861345609593223,
+            "mean_avg_stress": 0.6005345458393004,
+            "mean_avg_trust": 0.005058379316896507,
+            "mean_inequality_gini": 0.3846373461744467,
+            "mean_population": 127.81,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30095,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 130,
+            "mean_cooperation_rate": 0.3107946163609314,
+            "mean_conflict_rate": 0.18005618496446513,
+            "mean_true_scarcity": 0.1529658215472184,
+            "mean_avg_stress": 0.5403540418044142,
+            "mean_avg_trust": 0.020532653753413815,
+            "mean_inequality_gini": 0.43819676426167886,
+            "mean_population": 131.96,
+            "mean_avg_health": 0.9998873014007252
+          },
+          {
+            "seed": 30096,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 92,
+            "mean_cooperation_rate": 0.3351067999794305,
+            "mean_conflict_rate": 0.15899523099548626,
+            "mean_true_scarcity": 0.019542615273776584,
+            "mean_avg_stress": 0.491258971724015,
+            "mean_avg_trust": 0.01893592453257881,
+            "mean_inequality_gini": 0.41242422177541566,
+            "mean_population": 99.09,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30097,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 115,
+            "mean_cooperation_rate": 0.331925645920743,
+            "mean_conflict_rate": 0.16707772914619604,
+            "mean_true_scarcity": 0.12779828866884077,
+            "mean_avg_stress": 0.49840545135307435,
+            "mean_avg_trust": 0.02023816305858932,
+            "mean_inequality_gini": 0.43179225575499336,
+            "mean_population": 116.97,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30098,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 121,
+            "mean_cooperation_rate": 0.3250144312477569,
+            "mean_conflict_rate": 0.16624979219583857,
+            "mean_true_scarcity": 0.09045339149135699,
+            "mean_avg_stress": 0.492056662908397,
+            "mean_avg_trust": 0.017060457648676884,
+            "mean_inequality_gini": 0.38520797509752436,
+            "mean_population": 121.44,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30099,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 126,
+            "mean_cooperation_rate": 0.3123125988750201,
+            "mean_conflict_rate": 0.17989423875086522,
+            "mean_true_scarcity": 0.21546894792832366,
+            "mean_avg_stress": 0.4853596470413792,
+            "mean_avg_trust": 0.019133692245756184,
+            "mean_inequality_gini": 0.4602035779591974,
+            "mean_population": 125.59,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30100,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 105,
+            "mean_cooperation_rate": 0.31059915397581245,
+            "mean_conflict_rate": 0.17225158062380388,
+            "mean_true_scarcity": 0.0635731287059555,
+            "mean_avg_stress": 0.535371666287797,
+            "mean_avg_trust": 0.015709511040133465,
+            "mean_inequality_gini": 0.45757700007189966,
+            "mean_population": 109.8,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30101,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 109,
+            "mean_cooperation_rate": 0.3066581180033656,
+            "mean_conflict_rate": 0.17057296071799022,
+            "mean_true_scarcity": 0.13836414881804404,
+            "mean_avg_stress": 0.5315528095047417,
+            "mean_avg_trust": 0.018138028431964125,
+            "mean_inequality_gini": 0.4464799270209365,
+            "mean_population": 111.94,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30102,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 115,
+            "mean_cooperation_rate": 0.32097111560295,
+            "mean_conflict_rate": 0.16927739833441596,
+            "mean_true_scarcity": 0.1239378087550657,
+            "mean_avg_stress": 0.47767364138947926,
+            "mean_avg_trust": 0.019467381203527128,
+            "mean_inequality_gini": 0.41716424981909805,
+            "mean_population": 117.93,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30103,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 116,
+            "mean_cooperation_rate": 0.3341830453626736,
+            "mean_conflict_rate": 0.16625566566224506,
+            "mean_true_scarcity": 0.032791339855620466,
+            "mean_avg_stress": 0.4696674332284143,
+            "mean_avg_trust": 0.01810639490373048,
+            "mean_inequality_gini": 0.4319011549643492,
+            "mean_population": 113.4,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30104,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 112,
+            "mean_cooperation_rate": 0.31031787986145093,
+            "mean_conflict_rate": 0.17066309500451649,
+            "mean_true_scarcity": 0.1047398375564959,
+            "mean_avg_stress": 0.5288614548851858,
+            "mean_avg_trust": 0.017014423379403572,
+            "mean_inequality_gini": 0.4168398347452936,
+            "mean_population": 115.41,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30105,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 108,
+            "mean_cooperation_rate": 0.3165480179433399,
+            "mean_conflict_rate": 0.17301157911203202,
+            "mean_true_scarcity": 0.026661070592397484,
+            "mean_avg_stress": 0.527769171617845,
+            "mean_avg_trust": 0.012851778257897883,
+            "mean_inequality_gini": 0.41582183346857404,
+            "mean_population": 109.32,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30106,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 107,
+            "mean_cooperation_rate": 0.31338311944631964,
+            "mean_conflict_rate": 0.17001683418733468,
+            "mean_true_scarcity": 0.07302558789701616,
+            "mean_avg_stress": 0.49104151412305447,
+            "mean_avg_trust": 0.012261091520396457,
+            "mean_inequality_gini": 0.41717314212741713,
+            "mean_population": 107.63,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30107,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 128,
+            "mean_cooperation_rate": 0.25194401508786435,
+            "mean_conflict_rate": 0.22471352143316095,
+            "mean_true_scarcity": 0.5741296556743607,
+            "mean_avg_stress": 0.6364528390358243,
+            "mean_avg_trust": 0.011310759224581073,
+            "mean_inequality_gini": 0.4399785028751426,
+            "mean_population": 134.92,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30108,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 116,
+            "mean_cooperation_rate": 0.31343864843514174,
+            "mean_conflict_rate": 0.169035822178532,
+            "mean_true_scarcity": 0.14659422009563933,
+            "mean_avg_stress": 0.5075999398005254,
+            "mean_avg_trust": 0.020649483949778533,
+            "mean_inequality_gini": 0.41175184400875087,
+            "mean_population": 118.47,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30109,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 113,
+            "mean_cooperation_rate": 0.3219620014927441,
+            "mean_conflict_rate": 0.16568727432937091,
+            "mean_true_scarcity": 0.10390956835601321,
+            "mean_avg_stress": 0.4825757787623997,
+            "mean_avg_trust": 0.021664735596810855,
+            "mean_inequality_gini": 0.41021423874824736,
+            "mean_population": 116.43,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30110,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 112,
+            "mean_cooperation_rate": 0.31292626837705845,
+            "mean_conflict_rate": 0.1768760084413685,
+            "mean_true_scarcity": 0.15098095413225474,
+            "mean_avg_stress": 0.5049578438442481,
+            "mean_avg_trust": 0.014959173512330774,
+            "mean_inequality_gini": 0.4255840312511027,
+            "mean_population": 115.54,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30111,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 118,
+            "mean_cooperation_rate": 0.2827595337147654,
+            "mean_conflict_rate": 0.19862501156248843,
+            "mean_true_scarcity": 0.30727317721344627,
+            "mean_avg_stress": 0.575027115615002,
+            "mean_avg_trust": 0.007813962801933966,
+            "mean_inequality_gini": 0.40440645511509693,
+            "mean_population": 121.34,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30112,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 116,
+            "mean_cooperation_rate": 0.27761045200166307,
+            "mean_conflict_rate": 0.20750741817932689,
+            "mean_true_scarcity": 0.3295203228432366,
+            "mean_avg_stress": 0.6417028908909904,
+            "mean_avg_trust": 0.007961004429412893,
+            "mean_inequality_gini": 0.4186438819472489,
+            "mean_population": 121.73,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30113,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 100,
+            "mean_cooperation_rate": 0.32107730957518094,
+            "mean_conflict_rate": 0.16518508706039423,
+            "mean_true_scarcity": 0.0318058494287276,
+            "mean_avg_stress": 0.46428716675704307,
+            "mean_avg_trust": 0.013516959348216562,
+            "mean_inequality_gini": 0.3992478803680377,
+            "mean_population": 105.08,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30114,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 106,
+            "mean_cooperation_rate": 0.3409365712604206,
+            "mean_conflict_rate": 0.15329545842362327,
+            "mean_true_scarcity": 0.024212272239471658,
+            "mean_avg_stress": 0.4832203789638281,
+            "mean_avg_trust": 0.027976731049716118,
+            "mean_inequality_gini": 0.4508405252223428,
+            "mean_population": 108.33,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30115,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 118,
+            "mean_cooperation_rate": 0.3239095676299179,
+            "mean_conflict_rate": 0.15919534837537413,
+            "mean_true_scarcity": 0.09368207583615622,
+            "mean_avg_stress": 0.45262946772181295,
+            "mean_avg_trust": 0.0249149533851521,
+            "mean_inequality_gini": 0.42980767191525643,
+            "mean_population": 114.8,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30116,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 133,
+            "mean_cooperation_rate": 0.26514633143838123,
+            "mean_conflict_rate": 0.20378706071365837,
+            "mean_true_scarcity": 0.4147558227491246,
+            "mean_avg_stress": 0.5793639474191751,
+            "mean_avg_trust": 0.012733913875470381,
+            "mean_inequality_gini": 0.4414348948651902,
+            "mean_population": 133.88,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30117,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 122,
+            "mean_cooperation_rate": 0.2847121209792117,
+            "mean_conflict_rate": 0.19404810932387886,
+            "mean_true_scarcity": 0.32023098290540924,
+            "mean_avg_stress": 0.5167286257952314,
+            "mean_avg_trust": 0.014448952616157822,
+            "mean_inequality_gini": 0.42988386257519606,
+            "mean_population": 125.53,
+            "mean_avg_health": 1.0
+          },
+          {
+            "seed": 30118,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 115,
+            "mean_cooperation_rate": 0.29116558354331007,
+            "mean_conflict_rate": 0.1853077975229971,
+            "mean_true_scarcity": 0.3144290016607849,
+            "mean_avg_stress": 0.5485658608370065,
+            "mean_avg_trust": 0.016193181507174116,
+            "mean_inequality_gini": 0.39183189168041255,
+            "mean_population": 122.33,
+            "mean_avg_health": 0.9999961535613014
+          },
+          {
+            "seed": 30119,
+            "cell": "C120-R0p019",
+            "capacity": 120.0,
+            "regen_rate": 0.019,
+            "final_population": 112,
+            "mean_cooperation_rate": 0.3057778555385598,
+            "mean_conflict_rate": 0.17956869272679069,
+            "mean_true_scarcity": 0.1741489954314324,
+            "mean_avg_stress": 0.4772235023493144,
+            "mean_avg_trust": 0.014168460882875506,
+            "mean_inequality_gini": 0.4369289071976268,
+            "mean_population": 113.57,
+            "mean_avg_health": 1.0
+          }
+        ]
+      }
+    },
+    "cell_statistics": {
+      "cooperation_rate": {
+        "C90-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.1739872980938925,
+          "sd_between_seeds": 0.007073813768419976,
+          "median": 0.17349476191649274,
+          "bootstrap_ci95": [
+            0.17161866405311754,
+            0.17653430556904515
+          ]
+        },
+        "C90-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.20603978505559936,
+          "sd_between_seeds": 0.022062479529446923,
+          "median": 0.19794809157043114,
+          "bootstrap_ci95": [
+            0.19867178169033678,
+            0.21411621529656163
+          ]
+        },
+        "C120-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.2524959411165279,
+          "sd_between_seeds": 0.0242287645029864,
+          "median": 0.2533738126922022,
+          "bootstrap_ci95": [
+            0.24423559553135865,
+            0.2613203254189229
+          ]
+        },
+        "C120-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.3079145529216726,
+          "sd_between_seeds": 0.022323516413313517,
+          "median": 0.31315469391168904,
+          "bootstrap_ci95": [
+            0.2997720954211687,
+            0.31535793019403147
+          ]
+        }
+      },
+      "conflict_rate": {
+        "C90-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.3198803258126252,
+          "sd_between_seeds": 0.011139816526192729,
+          "median": 0.3194429667632148,
+          "bootstrap_ci95": [
+            0.3160529283914355,
+            0.32391615339170576
+          ]
+        },
+        "C90-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.2867611898782052,
+          "sd_between_seeds": 0.025645923335938833,
+          "median": 0.2963671940982546,
+          "bootstrap_ci95": [
+            0.2775422056625791,
+            0.295397342468875
+          ]
+        },
+        "C120-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.23119223344539822,
+          "sd_between_seeds": 0.02747963133511524,
+          "median": 0.22486830017411635,
+          "bootstrap_ci95": [
+            0.22152579210828197,
+            0.24075871655713246
+          ]
+        },
+        "C120-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.1776166824549673,
+          "sd_between_seeds": 0.018331924911267724,
+          "median": 0.17061802786125335,
+          "bootstrap_ci95": [
+            0.1714408241975121,
+            0.18436719066589752
+          ]
+        }
+      },
+      "true_scarcity": {
+        "C90-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.9783995377653987,
+          "sd_between_seeds": 0.041688584885687455,
+          "median": 0.9990435895880639,
+          "bootstrap_ci95": [
+            0.9627783280021665,
+            0.9916154922213173
+          ]
+        },
+        "C90-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.8034228838997953,
+          "sd_between_seeds": 0.16546754512134987,
+          "median": 0.807653832678887,
+          "bootstrap_ci95": [
+            0.7438042449207541,
+            0.8596491781466536
+          ]
+        },
+        "C120-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.4929688670180868,
+          "sd_between_seeds": 0.17810089942245141,
+          "median": 0.48012045164477035,
+          "bootstrap_ci95": [
+            0.4305502237704125,
+            0.5552747893396365
+          ]
+        },
+        "C120-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.16929086347895198,
+          "sd_between_seeds": 0.1397805420660242,
+          "median": 0.12586804871195323,
+          "bootstrap_ci95": [
+            0.12325011816135446,
+            0.22102443481566905
+          ]
+        }
+      },
+      "avg_stress": {
+        "C90-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.8422290827827743,
+          "sd_between_seeds": 0.014905687372725253,
+          "median": 0.8419034425329779,
+          "bootstrap_ci95": [
+            0.8369115973990802,
+            0.8473292498259863
+          ]
+        },
+        "C90-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.7630803676053654,
+          "sd_between_seeds": 0.052211103141432694,
+          "median": 0.7760849050720693,
+          "bootstrap_ci95": [
+            0.7438856065744345,
+            0.7806779779134899
+          ]
+        },
+        "C120-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.6532604888354255,
+          "sd_between_seeds": 0.06293891000121088,
+          "median": 0.6663736403439285,
+          "bootstrap_ci95": [
+            0.6306255842954256,
+            0.6748403746403668
+          ]
+        },
+        "C120-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.5182939642415827,
+          "sd_between_seeds": 0.04919567465028689,
+          "median": 0.5062788918223868,
+          "bootstrap_ci95": [
+            0.5019513794007533,
+            0.5363546168830748
+          ]
+        }
+      },
+      "avg_trust": {
+        "C90-R0p016": {
+          "n_seeds": 30,
+          "mean": -0.033535624920289206,
+          "sd_between_seeds": 0.003762964238685912,
+          "median": -0.034020193783990085,
+          "bootstrap_ci95": [
+            -0.03479697829253467,
+            -0.032131161259865926
+          ]
+        },
+        "C90-R0p019": {
+          "n_seeds": 30,
+          "mean": -0.015193910614241326,
+          "sd_between_seeds": 0.0074376905697627485,
+          "median": -0.015651847174144466,
+          "bootstrap_ci95": [
+            -0.017751202178612945,
+            -0.012512969193561886
+          ]
+        },
+        "C120-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.0023248462192959948,
+          "sd_between_seeds": 0.006100731089023475,
+          "median": 0.002866505826691186,
+          "bootstrap_ci95": [
+            0.0001606559134874895,
+            0.0043940598520356335
+          ]
+        },
+        "C120-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.016305149745319103,
+          "sd_between_seeds": 0.004992763321656112,
+          "median": 0.016603802443288844,
+          "bootstrap_ci95": [
+            0.014500735445994917,
+            0.018042500913544278
+          ]
+        }
+      },
+      "inequality_gini": {
+        "C90-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.4121544267681633,
+          "sd_between_seeds": 0.033740847361690196,
+          "median": 0.42213995227983936,
+          "bootstrap_ci95": [
+            0.40026375247994517,
+            0.4237802678049391
+          ]
+        },
+        "C90-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.4032880587146869,
+          "sd_between_seeds": 0.02226796095071042,
+          "median": 0.4056198417069764,
+          "bootstrap_ci95": [
+            0.39544741298336,
+            0.4112360474736266
+          ]
+        },
+        "C120-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.41544228582305137,
+          "sd_between_seeds": 0.018290013310361296,
+          "median": 0.41361599173219826,
+          "bootstrap_ci95": [
+            0.40888608076580324,
+            0.4218306671892205
+          ]
+        },
+        "C120-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.42703160740382773,
+          "sd_between_seeds": 0.022920712736970845,
+          "median": 0.428188671386702,
+          "bootstrap_ci95": [
+            0.4190997651369305,
+            0.43527131331013225
+          ]
+        }
+      },
+      "population": {
+        "C90-R0p016": {
+          "n_seeds": 30,
+          "mean": 93.13666666666667,
+          "sd_between_seeds": 5.054740576810108,
+          "median": 95.13,
+          "bootstrap_ci95": [
+            91.35589166666665,
+            94.89069166666667
+          ]
+        },
+        "C90-R0p019": {
+          "n_seeds": 30,
+          "mean": 105.02066666666666,
+          "sd_between_seeds": 8.289327967991104,
+          "median": 105.6,
+          "bootstrap_ci95": [
+            102.16478333333332,
+            107.99906666666666
+          ]
+        },
+        "C120-R0p016": {
+          "n_seeds": 30,
+          "mean": 111.51866666666666,
+          "sd_between_seeds": 8.321020632579641,
+          "median": 111.83500000000001,
+          "bootstrap_ci95": [
+            108.721,
+            114.48368333333333
+          ]
+        },
+        "C120-R0p019": {
+          "n_seeds": 30,
+          "mean": 117.334,
+          "sd_between_seeds": 8.35632182738067,
+          "median": 116.52000000000001,
+          "bootstrap_ci95": [
+            114.43065833333334,
+            120.3158
+          ]
+        }
+      },
+      "avg_health": {
+        "C90-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.9908476177168736,
+          "sd_between_seeds": 0.011909974368671987,
+          "median": 0.9969863633119606,
+          "bootstrap_ci95": [
+            0.9863967478105828,
+            0.9948100204374621
+          ]
+        },
+        "C90-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.9985367111422688,
+          "sd_between_seeds": 0.007127213692380735,
+          "median": 0.9999976569388116,
+          "bootstrap_ci95": [
+            0.9958610657855763,
+            0.9999248330983308
+          ]
+        },
+        "C120-R0p016": {
+          "n_seeds": 30,
+          "mean": 0.9999962721813614,
+          "sd_between_seeds": 1.595292231803422e-05,
+          "median": 1.0,
+          "bootstrap_ci95": [
+            0.9999898053274799,
+            0.9999998538011695
+          ]
+        },
+        "C120-R0p019": {
+          "n_seeds": 30,
+          "mean": 0.9999961151654009,
+          "sd_between_seeds": 2.056361967774892e-05,
+          "median": 1.0,
+          "bootstrap_ci95": [
+            0.9999884737108259,
+            1.0
+          ]
+        }
+      }
+    },
+    "factorial_effects": {
+      "cooperation_rate": {
+        "capacity_high_minus_low": {
+          "estimate": 0.09019170544435429,
+          "bootstrap_ci95": [
+            0.08319901385124782,
+            0.097247856675267
+          ]
+        },
+        "regen_high_minus_low": {
+          "estimate": 0.043735549383425776,
+          "bootstrap_ci95": [
+            0.03645836556514446,
+            0.05079477697389085
+          ]
+        },
+        "capacity_by_regen_interaction": {
+          "estimate": 0.023366124843437808,
+          "bootstrap_ci95": [
+            0.008736080440690049,
+            0.03724325400329762
+          ]
+        }
+      },
+      "conflict_rate": {
+        "capacity_high_minus_low": {
+          "estimate": -0.09891629989523248,
+          "bootstrap_ci95": [
+            -0.10657778494945971,
+            -0.09116239223844556
+          ]
+        },
+        "regen_high_minus_low": {
+          "estimate": -0.04334734346242547,
+          "bootstrap_ci95": [
+            -0.051090070121769526,
+            -0.03574687232755787
+          ]
+        },
+        "capacity_by_regen_interaction": {
+          "estimate": -0.020456415056010896,
+          "bootstrap_ci95": [
+            -0.03540263976846971,
+            -0.0052347804919525695
+          ]
+        }
+      },
+      "true_scarcity": {
+        "capacity_high_minus_low": {
+          "estimate": -0.5597813455840775,
+          "bootstrap_ci95": [
+            -0.6095367280707854,
+            -0.510398549025859
+          ]
+        },
+        "regen_high_minus_low": {
+          "estimate": -0.24932732870236907,
+          "bootstrap_ci95": [
+            -0.29896073981801147,
+            -0.19928430290660698
+          ]
+        },
+        "capacity_by_regen_interaction": {
+          "estimate": -0.14870134967353144,
+          "bootstrap_ci95": [
+            -0.24853535067163718,
+            -0.04564073089456143
+          ]
+        }
+      },
+      "avg_stress": {
+        "capacity_high_minus_low": {
+          "estimate": -0.21687749865556571,
+          "bootstrap_ci95": [
+            -0.23432497669560434,
+            -0.1993552988928883
+          ]
+        },
+        "regen_high_minus_low": {
+          "estimate": -0.1070576198856259,
+          "bootstrap_ci95": [
+            -0.12354932051606628,
+            -0.0896463859399295
+          ]
+        },
+        "capacity_by_regen_interaction": {
+          "estimate": -0.05581780941643388,
+          "bootstrap_ci95": [
+            -0.08889947109935202,
+            -0.021551658475976863
+          ]
+        }
+      },
+      "avg_trust": {
+        "capacity_high_minus_low": {
+          "estimate": 0.03367976574957282,
+          "bootstrap_ci95": [
+            0.031581937791300765,
+            0.03571326130658928
+          ]
+        },
+        "regen_high_minus_low": {
+          "estimate": 0.016161008916035495,
+          "bootstrap_ci95": [
+            0.014142000288080882,
+            0.018164830232704262
+          ]
+        },
+        "capacity_by_regen_interaction": {
+          "estimate": -0.004361410780024772,
+          "bootstrap_ci95": [
+            -0.008376138692557066,
+            -0.0002486228221561642
+          ]
+        }
+      },
+      "inequality_gini": {
+        "capacity_high_minus_low": {
+          "estimate": 0.013515703872014506,
+          "bootstrap_ci95": [
+            0.004850577887205289,
+            0.022298117582037112
+          ]
+        },
+        "regen_high_minus_low": {
+          "estimate": 0.0013614767636499492,
+          "bootstrap_ci95": [
+            -0.00740158846646208,
+            0.0101779291287478
+          ]
+        },
+        "capacity_by_regen_interaction": {
+          "estimate": 0.020455689634252705,
+          "bootstrap_ci95": [
+            0.0026469875109038157,
+            0.03775942114786335
+          ]
+        }
+      },
+      "population": {
+        "capacity_high_minus_low": {
+          "estimate": 15.347666666666669,
+          "bootstrap_ci95": [
+            12.609649999999974,
+            18.01500416666668
+          ]
+        },
+        "regen_high_minus_low": {
+          "estimate": 8.849666666666678,
+          "bootstrap_ci95": [
+            6.185166666666681,
+            11.524554166666668
+          ]
+        },
+        "capacity_by_regen_interaction": {
+          "estimate": -6.068666666666644,
+          "bootstrap_ci95": [
+            -11.506683333333326,
+            -0.5913250000000049
+          ]
+        }
+      },
+      "avg_health": {
+        "capacity_high_minus_low": {
+          "estimate": 0.005304029243810016,
+          "bootstrap_ci95": [
+            0.0030563469815864247,
+            0.007891843390837115
+          ]
+        },
+        "regen_high_minus_low": {
+          "estimate": 0.0038444682047173995,
+          "bootstrap_ci95": [
+            0.0014062047730753423,
+            0.006312637141065417
+          ]
+        },
+        "capacity_by_regen_interaction": {
+          "estimate": -0.007689250441355822,
+          "bootstrap_ci95": [
+            -0.012621931984419035,
+            -0.002811795445056531
+          ]
+        }
+      }
+    },
+    "analysis_metrics": [
+      "cooperation_rate",
+      "conflict_rate",
+      "true_scarcity",
+      "avg_stress",
+      "avg_trust",
+      "inequality_gini",
+      "population",
+      "avg_health"
+    ],
+    "analysis_window": 100,
+    "bootstrap_draws": 10000,
+    "analysis_seed": 6102026
+  },
+  "raw_timeseries_csv": "timeseries.csv",
+  "seed_summaries_csv": "seed_summaries.csv"
+}

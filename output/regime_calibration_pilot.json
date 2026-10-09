@@ -1,0 +1,1014 @@
+{
+  "experiment": "resource_regime_calibration_pilot",
+  "created_utc": "2026-10-04T20:11:25.413136+00:00",
+  "python_version": "3.12.14",
+  "n_agents": 80,
+  "n_ticks": 400,
+  "analysis_window": 100,
+  "seeds_per_candidate": 4,
+  "seed_assignment": "disjoint sequential seed blocks per candidate cell",
+  "candidate_seed_start": 10000,
+  "candidate_seed_end_inclusive": 10063,
+  "scarcity_target": [
+    0.3,
+    0.6
+  ],
+  "ceiling_threshold": 0.98,
+  "max_ceiling_fraction": 0.1,
+  "selection_rule": "rank by scarcity target and ceiling fraction only; cooperation/conflict are exploratory outputs",
+  "candidates": [
+    {
+      "resource_capacity_per_agent": 90.0,
+      "food_regen_rate": 0.019,
+      "water_regen_rate": 0.019,
+      "initial_food_per_agent": 60.0,
+      "initial_water_per_agent": 60.0,
+      "seeds": [
+        10028,
+        10029,
+        10030,
+        10031
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.5153362294748394,
+      "sd_true_scarcity_between_seeds": 0.08751958516409826,
+      "fraction_window_at_or_above_ceiling_threshold": 0.0,
+      "mean_cooperation_rate_exploratory": 0.24242881204431743,
+      "mean_conflict_rate_exploratory": 0.23494101397789027,
+      "mean_population": 107.4825,
+      "seed_summaries": [
+        {
+          "seed": 10028,
+          "mean_true_scarcity": 0.450594168857673,
+          "mean_cooperation_rate": 0.24310543750146107,
+          "mean_conflict_rate": 0.22995557659489912,
+          "mean_population": 98.6,
+          "final_population": 97
+        },
+        {
+          "seed": 10029,
+          "mean_true_scarcity": 0.592004942572653,
+          "mean_cooperation_rate": 0.2272282078829523,
+          "mean_conflict_rate": 0.2478871384013968,
+          "mean_population": 111.45,
+          "final_population": 106
+        },
+        {
+          "seed": 10030,
+          "mean_true_scarcity": 0.5894924540980807,
+          "mean_cooperation_rate": 0.2424341092543736,
+          "mean_conflict_rate": 0.24563402297546091,
+          "mean_population": 113.69,
+          "final_population": 111
+        },
+        {
+          "seed": 10031,
+          "mean_true_scarcity": 0.42925335237095064,
+          "mean_cooperation_rate": 0.2569474935384828,
+          "mean_conflict_rate": 0.21628731793980427,
+          "mean_population": 106.19,
+          "final_population": 104
+        }
+      ],
+      "within_scarcity_target": true,
+      "ceiling_fraction_acceptable": true,
+      "eligible_for_followup_pilot": true,
+      "distance_from_target_midpoint": 0.06533622947483941,
+      "scarcity_only_rank": 1,
+      "n_seed_means_within_scarcity_target": 4,
+      "fraction_seed_means_within_scarcity_target": 1.0
+    },
+    {
+      "resource_capacity_per_agent": 120.0,
+      "food_regen_rate": 0.016,
+      "water_regen_rate": 0.016,
+      "initial_food_per_agent": 80.0,
+      "initial_water_per_agent": 80.0,
+      "seeds": [
+        10056,
+        10057,
+        10058,
+        10059
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.3370659580845859,
+      "sd_true_scarcity_between_seeds": 0.1512774724936773,
+      "fraction_window_at_or_above_ceiling_threshold": 0.0,
+      "mean_cooperation_rate_exploratory": 0.2861888605581072,
+      "mean_conflict_rate_exploratory": 0.19644401499713032,
+      "mean_population": 120.3375,
+      "seed_summaries": [
+        {
+          "seed": 10056,
+          "mean_true_scarcity": 0.18198607376885867,
+          "mean_cooperation_rate": 0.2952413845246414,
+          "mean_conflict_rate": 0.18102116534800022,
+          "mean_population": 110.46,
+          "final_population": 111
+        },
+        {
+          "seed": 10057,
+          "mean_true_scarcity": 0.37036325585944013,
+          "mean_cooperation_rate": 0.2920279165261699,
+          "mean_conflict_rate": 0.19308310841357262,
+          "mean_population": 124.8,
+          "final_population": 125
+        },
+        {
+          "seed": 10058,
+          "mean_true_scarcity": 0.5322715121418923,
+          "mean_cooperation_rate": 0.2559991128375836,
+          "mean_conflict_rate": 0.22625573862509463,
+          "mean_population": 127.94,
+          "final_population": 124
+        },
+        {
+          "seed": 10059,
+          "mean_true_scarcity": 0.26364299056815244,
+          "mean_cooperation_rate": 0.3014870283440341,
+          "mean_conflict_rate": 0.18541604760185382,
+          "mean_population": 118.15,
+          "final_population": 117
+        }
+      ],
+      "within_scarcity_target": true,
+      "ceiling_fraction_acceptable": true,
+      "eligible_for_followup_pilot": true,
+      "distance_from_target_midpoint": 0.11293404191541406,
+      "scarcity_only_rank": 2,
+      "n_seed_means_within_scarcity_target": 2,
+      "fraction_seed_means_within_scarcity_target": 0.5
+    },
+    {
+      "resource_capacity_per_agent": 105.0,
+      "food_regen_rate": 0.016,
+      "water_regen_rate": 0.016,
+      "initial_food_per_agent": 70.0,
+      "initial_water_per_agent": 70.0,
+      "seeds": [
+        10040,
+        10041,
+        10042,
+        10043
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.5789681604330019,
+      "sd_true_scarcity_between_seeds": 0.2283725092100827,
+      "fraction_window_at_or_above_ceiling_threshold": 0.0,
+      "mean_cooperation_rate_exploratory": 0.22852075589495008,
+      "mean_conflict_rate_exploratory": 0.25617556478225384,
+      "mean_population": 108.0175,
+      "seed_summaries": [
+        {
+          "seed": 10040,
+          "mean_true_scarcity": 0.25494969769700515,
+          "mean_cooperation_rate": 0.26991381978236023,
+          "mean_conflict_rate": 0.2097287987715966,
+          "mean_population": 94.29,
+          "final_population": 88
+        },
+        {
+          "seed": 10041,
+          "mean_true_scarcity": 0.6125192673243194,
+          "mean_cooperation_rate": 0.22978649995549713,
+          "mean_conflict_rate": 0.2545678389004174,
+          "mean_population": 106.4,
+          "final_population": 105
+        },
+        {
+          "seed": 10042,
+          "mean_true_scarcity": 0.660316294154807,
+          "mean_cooperation_rate": 0.2205423413064681,
+          "mean_conflict_rate": 0.26592135006225287,
+          "mean_population": 110.8,
+          "final_population": 112
+        },
+        {
+          "seed": 10043,
+          "mean_true_scarcity": 0.7880873825558764,
+          "mean_cooperation_rate": 0.1938403625354748,
+          "mean_conflict_rate": 0.2944842713947486,
+          "mean_population": 120.58,
+          "final_population": 120
+        }
+      ],
+      "within_scarcity_target": true,
+      "ceiling_fraction_acceptable": true,
+      "eligible_for_followup_pilot": true,
+      "distance_from_target_midpoint": 0.12896816043300197,
+      "scarcity_only_rank": 3,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 105.0,
+      "food_regen_rate": 0.019,
+      "water_regen_rate": 0.019,
+      "initial_food_per_agent": 70.0,
+      "initial_water_per_agent": 70.0,
+      "seeds": [
+        10044,
+        10045,
+        10046,
+        10047
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.2441388329758326,
+      "sd_true_scarcity_between_seeds": 0.037238075037360166,
+      "fraction_window_at_or_above_ceiling_threshold": 0.0,
+      "mean_cooperation_rate_exploratory": 0.291841179941553,
+      "mean_conflict_rate_exploratory": 0.1847882773411163,
+      "mean_population": 122.2125,
+      "seed_summaries": [
+        {
+          "seed": 10044,
+          "mean_true_scarcity": 0.24290875548148946,
+          "mean_cooperation_rate": 0.28540169964933215,
+          "mean_conflict_rate": 0.1927202546903576,
+          "mean_population": 125.76,
+          "final_population": 129
+        },
+        {
+          "seed": 10045,
+          "mean_true_scarcity": 0.2929136801103909,
+          "mean_cooperation_rate": 0.2721830453198826,
+          "mean_conflict_rate": 0.19361970111079527,
+          "mean_population": 120.27,
+          "final_population": 122
+        },
+        {
+          "seed": 10046,
+          "mean_true_scarcity": 0.20234879939469047,
+          "mean_cooperation_rate": 0.3057259954980058,
+          "mean_conflict_rate": 0.1704568050762729,
+          "mean_population": 122.82,
+          "final_population": 123
+        },
+        {
+          "seed": 10047,
+          "mean_true_scarcity": 0.2383840969167596,
+          "mean_cooperation_rate": 0.30405397929899164,
+          "mean_conflict_rate": 0.1823563484870395,
+          "mean_population": 120.0,
+          "final_population": 117
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": true,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.20586116702416735,
+      "scarcity_only_rank": 4,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 120.0,
+      "food_regen_rate": 0.013,
+      "water_regen_rate": 0.013,
+      "initial_food_per_agent": 80.0,
+      "initial_water_per_agent": 80.0,
+      "seeds": [
+        10052,
+        10053,
+        10054,
+        10055
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.7250454401118389,
+      "sd_true_scarcity_between_seeds": 0.05297290091378833,
+      "fraction_window_at_or_above_ceiling_threshold": 0.0,
+      "mean_cooperation_rate_exploratory": 0.20942897883671407,
+      "mean_conflict_rate_exploratory": 0.2770002196185758,
+      "mean_population": 107.61500000000001,
+      "seed_summaries": [
+        {
+          "seed": 10052,
+          "mean_true_scarcity": 0.7803451333611222,
+          "mean_cooperation_rate": 0.2088865390950758,
+          "mean_conflict_rate": 0.28063260259029127,
+          "mean_population": 113.43,
+          "final_population": 110
+        },
+        {
+          "seed": 10053,
+          "mean_true_scarcity": 0.664267463971795,
+          "mean_cooperation_rate": 0.22081138458657193,
+          "mean_conflict_rate": 0.2613824574881532,
+          "mean_population": 102.15,
+          "final_population": 98
+        },
+        {
+          "seed": 10054,
+          "mean_true_scarcity": 0.6990499296121725,
+          "mean_cooperation_rate": 0.2060107613678542,
+          "mean_conflict_rate": 0.28028265589071333,
+          "mean_population": 107.7,
+          "final_population": 105
+        },
+        {
+          "seed": 10055,
+          "mean_true_scarcity": 0.7565192335022657,
+          "mean_cooperation_rate": 0.20200723029735432,
+          "mean_conflict_rate": 0.2857031625051454,
+          "mean_population": 107.18,
+          "final_population": 103
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": true,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.27504544011183896,
+      "scarcity_only_rank": 5,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 120.0,
+      "food_regen_rate": 0.019,
+      "water_regen_rate": 0.019,
+      "initial_food_per_agent": 80.0,
+      "initial_water_per_agent": 80.0,
+      "seeds": [
+        10060,
+        10061,
+        10062,
+        10063
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.040389331792805246,
+      "sd_true_scarcity_between_seeds": 0.012176292984934032,
+      "fraction_window_at_or_above_ceiling_threshold": 0.0,
+      "mean_cooperation_rate_exploratory": 0.32162293361758704,
+      "mean_conflict_rate_exploratory": 0.16582299495538402,
+      "mean_population": 117.7675,
+      "seed_summaries": [
+        {
+          "seed": 10060,
+          "mean_true_scarcity": 0.052037322757569136,
+          "mean_cooperation_rate": 0.30538980736882076,
+          "mean_conflict_rate": 0.1761648196510963,
+          "mean_population": 119.75,
+          "final_population": 120
+        },
+        {
+          "seed": 10061,
+          "mean_true_scarcity": 0.044521873644076934,
+          "mean_cooperation_rate": 0.33709633522886745,
+          "mean_conflict_rate": 0.16066343326798097,
+          "mean_population": 122.11,
+          "final_population": 123
+        },
+        {
+          "seed": 10062,
+          "mean_true_scarcity": 0.02334701291230512,
+          "mean_cooperation_rate": 0.3259759509806895,
+          "mean_conflict_rate": 0.16041162353198757,
+          "mean_population": 109.62,
+          "final_population": 107
+        },
+        {
+          "seed": 10063,
+          "mean_true_scarcity": 0.041651117857269784,
+          "mean_cooperation_rate": 0.31802964089197044,
+          "mean_conflict_rate": 0.1660521033704713,
+          "mean_population": 119.59,
+          "final_population": 122
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": true,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.4096106682071947,
+      "scarcity_only_rank": 6,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 90.0,
+      "food_regen_rate": 0.016,
+      "water_regen_rate": 0.016,
+      "initial_food_per_agent": 60.0,
+      "initial_water_per_agent": 60.0,
+      "seeds": [
+        10024,
+        10025,
+        10026,
+        10027
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.8856229572480482,
+      "sd_true_scarcity_between_seeds": 0.1111208099959763,
+      "fraction_window_at_or_above_ceiling_threshold": 0.3675,
+      "mean_cooperation_rate_exploratory": 0.18405261165838416,
+      "mean_conflict_rate_exploratory": 0.3048189908723348,
+      "mean_population": 99.2825,
+      "seed_summaries": [
+        {
+          "seed": 10024,
+          "mean_true_scarcity": 0.748177949283892,
+          "mean_cooperation_rate": 0.20250995703907698,
+          "mean_conflict_rate": 0.28695549404994575,
+          "mean_population": 92.15,
+          "final_population": 88
+        },
+        {
+          "seed": 10025,
+          "mean_true_scarcity": 0.8481199951844173,
+          "mean_cooperation_rate": 0.18351640033469446,
+          "mean_conflict_rate": 0.3188668944628609,
+          "mean_population": 96.45,
+          "final_population": 95
+        },
+        {
+          "seed": 10026,
+          "mean_true_scarcity": 0.946240799982653,
+          "mean_cooperation_rate": 0.1781436477831152,
+          "mean_conflict_rate": 0.3141346590784488,
+          "mean_population": 101.71,
+          "final_population": 95
+        },
+        {
+          "seed": 10027,
+          "mean_true_scarcity": 0.9999530845412303,
+          "mean_cooperation_rate": 0.17204044147665004,
+          "mean_conflict_rate": 0.29931891589808385,
+          "mean_population": 106.82,
+          "final_population": 101
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.4356229572480482,
+      "scarcity_only_rank": 7,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 105.0,
+      "food_regen_rate": 0.013,
+      "water_regen_rate": 0.013,
+      "initial_food_per_agent": 70.0,
+      "initial_water_per_agent": 70.0,
+      "seeds": [
+        10036,
+        10037,
+        10038,
+        10039
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.9602902125571154,
+      "sd_true_scarcity_between_seeds": 0.06115183094181019,
+      "fraction_window_at_or_above_ceiling_threshold": 0.65,
+      "mean_cooperation_rate_exploratory": 0.17781892723943787,
+      "mean_conflict_rate_exploratory": 0.30354757346241273,
+      "mean_population": 99.67500000000001,
+      "seed_summaries": [
+        {
+          "seed": 10036,
+          "mean_true_scarcity": 0.9702715313715292,
+          "mean_cooperation_rate": 0.18137892231258262,
+          "mean_conflict_rate": 0.30558317908863236,
+          "mean_population": 96.79,
+          "final_population": 94
+        },
+        {
+          "seed": 10037,
+          "mean_true_scarcity": 0.8709948988611322,
+          "mean_cooperation_rate": 0.17898924355837653,
+          "mean_conflict_rate": 0.3236045183861084,
+          "mean_population": 92.18,
+          "final_population": 88
+        },
+        {
+          "seed": 10038,
+          "mean_true_scarcity": 0.9999952580538779,
+          "mean_cooperation_rate": 0.16966330975912863,
+          "mean_conflict_rate": 0.28759052820014347,
+          "mean_population": 106.0,
+          "final_population": 99
+        },
+        {
+          "seed": 10039,
+          "mean_true_scarcity": 0.9998991619419225,
+          "mean_cooperation_rate": 0.18124423332766373,
+          "mean_conflict_rate": 0.29741206817476673,
+          "mean_population": 103.73,
+          "final_population": 99
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.5102902125571155,
+      "scarcity_only_rank": 8,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 75.0,
+      "food_regen_rate": 0.019,
+      "water_regen_rate": 0.019,
+      "initial_food_per_agent": 50.0,
+      "initial_water_per_agent": 50.0,
+      "seeds": [
+        10012,
+        10013,
+        10014,
+        10015
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.9875070129683086,
+      "sd_true_scarcity_between_seeds": 0.012818812294866665,
+      "fraction_window_at_or_above_ceiling_threshold": 0.81,
+      "mean_cooperation_rate_exploratory": 0.17689559922485476,
+      "mean_conflict_rate_exploratory": 0.3162166126147469,
+      "mean_population": 98.755,
+      "seed_summaries": [
+        {
+          "seed": 10012,
+          "mean_true_scarcity": 0.9737171770275469,
+          "mean_cooperation_rate": 0.1810769250418426,
+          "mean_conflict_rate": 0.31263280000122967,
+          "mean_population": 94.96,
+          "final_population": 89
+        },
+        {
+          "seed": 10013,
+          "mean_true_scarcity": 0.9795175689746185,
+          "mean_cooperation_rate": 0.1730410433852997,
+          "mean_conflict_rate": 0.3280695535407069,
+          "mean_population": 95.83,
+          "final_population": 93
+        },
+        {
+          "seed": 10014,
+          "mean_true_scarcity": 0.997446248253296,
+          "mean_cooperation_rate": 0.17656207713030253,
+          "mean_conflict_rate": 0.3145405053495298,
+          "mean_population": 102.57,
+          "final_population": 98
+        },
+        {
+          "seed": 10015,
+          "mean_true_scarcity": 0.9993470576177726,
+          "mean_cooperation_rate": 0.17690235134197427,
+          "mean_conflict_rate": 0.30962359156752123,
+          "mean_population": 101.66,
+          "final_population": 100
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.5375070129683086,
+      "scarcity_only_rank": 9,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 120.0,
+      "food_regen_rate": 0.01,
+      "water_regen_rate": 0.01,
+      "initial_food_per_agent": 80.0,
+      "initial_water_per_agent": 80.0,
+      "seeds": [
+        10048,
+        10049,
+        10050,
+        10051
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.9925271027571716,
+      "sd_true_scarcity_between_seeds": 0.011666999291771417,
+      "fraction_window_at_or_above_ceiling_threshold": 0.875,
+      "mean_cooperation_rate_exploratory": 0.1673790848196286,
+      "mean_conflict_rate_exploratory": 0.31359006737554135,
+      "mean_population": 92.0775,
+      "seed_summaries": [
+        {
+          "seed": 10048,
+          "mean_true_scarcity": 0.9999869910065626,
+          "mean_cooperation_rate": 0.1655078733737881,
+          "mean_conflict_rate": 0.3160823839692869,
+          "mean_population": 96.61,
+          "final_population": 89
+        },
+        {
+          "seed": 10049,
+          "mean_true_scarcity": 0.975424015627535,
+          "mean_cooperation_rate": 0.1736055764567884,
+          "mean_conflict_rate": 0.31692221767378304,
+          "mean_population": 89.54,
+          "final_population": 85
+        },
+        {
+          "seed": 10050,
+          "mean_true_scarcity": 0.9999655183011938,
+          "mean_cooperation_rate": 0.17258294243623787,
+          "mean_conflict_rate": 0.3008169341661833,
+          "mean_population": 93.29,
+          "final_population": 87
+        },
+        {
+          "seed": 10051,
+          "mean_true_scarcity": 0.9947318860933951,
+          "mean_cooperation_rate": 0.15781994701170002,
+          "mean_conflict_rate": 0.3205387336929122,
+          "mean_population": 88.87,
+          "final_population": 83
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.5425271027571716,
+      "scarcity_only_rank": 10,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 75.0,
+      "food_regen_rate": 0.01,
+      "water_regen_rate": 0.01,
+      "initial_food_per_agent": 50.0,
+      "initial_water_per_agent": 50.0,
+      "seeds": [
+        10000,
+        10001,
+        10002,
+        10003
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.9996353291482262,
+      "sd_true_scarcity_between_seeds": 0.0003226468214662928,
+      "fraction_window_at_or_above_ceiling_threshold": 1.0,
+      "mean_cooperation_rate_exploratory": 0.16796266808284868,
+      "mean_conflict_rate_exploratory": 0.32255573613385957,
+      "mean_population": 58.9275,
+      "seed_summaries": [
+        {
+          "seed": 10000,
+          "mean_true_scarcity": 0.9998764859283247,
+          "mean_cooperation_rate": 0.15524602622845338,
+          "mean_conflict_rate": 0.3304056474199304,
+          "mean_population": 59.86,
+          "final_population": 57
+        },
+        {
+          "seed": 10001,
+          "mean_true_scarcity": 0.9991608816047125,
+          "mean_cooperation_rate": 0.16967304191773253,
+          "mean_conflict_rate": 0.32408088639268756,
+          "mean_population": 55.22,
+          "final_population": 50
+        },
+        {
+          "seed": 10002,
+          "mean_true_scarcity": 0.9997216961554244,
+          "mean_cooperation_rate": 0.18130805644898756,
+          "mean_conflict_rate": 0.3137415083140476,
+          "mean_population": 62.43,
+          "final_population": 57
+        },
+        {
+          "seed": 10003,
+          "mean_true_scarcity": 0.9997822529044431,
+          "mean_cooperation_rate": 0.16562354773622123,
+          "mean_conflict_rate": 0.3219949024087728,
+          "mean_population": 58.2,
+          "final_population": 56
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.5496353291482262,
+      "scarcity_only_rank": 11,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 75.0,
+      "food_regen_rate": 0.013,
+      "water_regen_rate": 0.013,
+      "initial_food_per_agent": 50.0,
+      "initial_water_per_agent": 50.0,
+      "seeds": [
+        10004,
+        10005,
+        10006,
+        10007
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.9997514832140489,
+      "sd_true_scarcity_between_seeds": 0.00017055799583987522,
+      "fraction_window_at_or_above_ceiling_threshold": 1.0,
+      "mean_cooperation_rate_exploratory": 0.16052045900171172,
+      "mean_conflict_rate_exploratory": 0.3210160724167565,
+      "mean_population": 73.7975,
+      "seed_summaries": [
+        {
+          "seed": 10004,
+          "mean_true_scarcity": 0.9998350876839313,
+          "mean_cooperation_rate": 0.15801517004816126,
+          "mean_conflict_rate": 0.3151914224477692,
+          "mean_population": 73.94,
+          "final_population": 66
+        },
+        {
+          "seed": 10005,
+          "mean_true_scarcity": 0.9997478118972655,
+          "mean_cooperation_rate": 0.16346844947193964,
+          "mean_conflict_rate": 0.3129419512782428,
+          "mean_population": 73.8,
+          "final_population": 71
+        },
+        {
+          "seed": 10006,
+          "mean_true_scarcity": 0.9999078228388807,
+          "mean_cooperation_rate": 0.15974261288254404,
+          "mean_conflict_rate": 0.32709580288670836,
+          "mean_population": 73.34,
+          "final_population": 70
+        },
+        {
+          "seed": 10007,
+          "mean_true_scarcity": 0.9995152104361185,
+          "mean_cooperation_rate": 0.1608556036042019,
+          "mean_conflict_rate": 0.3288351130543056,
+          "mean_population": 74.11,
+          "final_population": 69
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.549751483214049,
+      "scarcity_only_rank": 12,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 90.0,
+      "food_regen_rate": 0.01,
+      "water_regen_rate": 0.01,
+      "initial_food_per_agent": 60.0,
+      "initial_water_per_agent": 60.0,
+      "seeds": [
+        10016,
+        10017,
+        10018,
+        10019
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.9999501421658247,
+      "sd_true_scarcity_between_seeds": 3.1453564726038825e-05,
+      "fraction_window_at_or_above_ceiling_threshold": 1.0,
+      "mean_cooperation_rate_exploratory": 0.1600123388219765,
+      "mean_conflict_rate_exploratory": 0.3159259592661223,
+      "mean_population": 71.155,
+      "seed_summaries": [
+        {
+          "seed": 10016,
+          "mean_true_scarcity": 0.999903499821575,
+          "mean_cooperation_rate": 0.15299313501219516,
+          "mean_conflict_rate": 0.3145520372597365,
+          "mean_population": 71.3,
+          "final_population": 65
+        },
+        {
+          "seed": 10017,
+          "mean_true_scarcity": 0.9999717418085073,
+          "mean_cooperation_rate": 0.1609128577777654,
+          "mean_conflict_rate": 0.31882320239732304,
+          "mean_population": 72.75,
+          "final_population": 68
+        },
+        {
+          "seed": 10018,
+          "mean_true_scarcity": 0.9999651493675603,
+          "mean_cooperation_rate": 0.16101753096232266,
+          "mean_conflict_rate": 0.31254582119319474,
+          "mean_population": 73.89,
+          "final_population": 67
+        },
+        {
+          "seed": 10019,
+          "mean_true_scarcity": 0.9999601776656561,
+          "mean_cooperation_rate": 0.1651258315356227,
+          "mean_conflict_rate": 0.317782776214235,
+          "mean_population": 66.68,
+          "final_population": 64
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.5499501421658247,
+      "scarcity_only_rank": 13,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 75.0,
+      "food_regen_rate": 0.016,
+      "water_regen_rate": 0.016,
+      "initial_food_per_agent": 50.0,
+      "initial_water_per_agent": 50.0,
+      "seeds": [
+        10008,
+        10009,
+        10010,
+        10011
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.9999570423716304,
+      "sd_true_scarcity_between_seeds": 3.528210466716002e-05,
+      "fraction_window_at_or_above_ceiling_threshold": 1.0,
+      "mean_cooperation_rate_exploratory": 0.1623968308949707,
+      "mean_conflict_rate_exploratory": 0.29994739061279546,
+      "mean_population": 91.635,
+      "seed_summaries": [
+        {
+          "seed": 10008,
+          "mean_true_scarcity": 0.9999160670872428,
+          "mean_cooperation_rate": 0.16224681451429646,
+          "mean_conflict_rate": 0.3030729257698504,
+          "mean_population": 90.91,
+          "final_population": 86
+        },
+        {
+          "seed": 10009,
+          "mean_true_scarcity": 0.9999458486480072,
+          "mean_cooperation_rate": 0.17025064831831124,
+          "mean_conflict_rate": 0.3039656756312323,
+          "mean_population": 94.68,
+          "final_population": 87
+        },
+        {
+          "seed": 10010,
+          "mean_true_scarcity": 1.0,
+          "mean_cooperation_rate": 0.15880806707818862,
+          "mean_conflict_rate": 0.28875799442834277,
+          "mean_population": 87.25,
+          "final_population": 80
+        },
+        {
+          "seed": 10011,
+          "mean_true_scarcity": 0.9999662537512716,
+          "mean_cooperation_rate": 0.15828179366908646,
+          "mean_conflict_rate": 0.30399296662175646,
+          "mean_population": 93.7,
+          "final_population": 86
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.5499570423716305,
+      "scarcity_only_rank": 14,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 90.0,
+      "food_regen_rate": 0.013,
+      "water_regen_rate": 0.013,
+      "initial_food_per_agent": 60.0,
+      "initial_water_per_agent": 60.0,
+      "seeds": [
+        10020,
+        10021,
+        10022,
+        10023
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.9999581368908855,
+      "sd_true_scarcity_between_seeds": 4.1326448796235097e-05,
+      "fraction_window_at_or_above_ceiling_threshold": 1.0,
+      "mean_cooperation_rate_exploratory": 0.15982216722031473,
+      "mean_conflict_rate_exploratory": 0.3123670658193439,
+      "mean_population": 90.6675,
+      "seed_summaries": [
+        {
+          "seed": 10020,
+          "mean_true_scarcity": 0.9999868690246285,
+          "mean_cooperation_rate": 0.16038666328740103,
+          "mean_conflict_rate": 0.30140705009089064,
+          "mean_population": 90.06,
+          "final_population": 84
+        },
+        {
+          "seed": 10021,
+          "mean_true_scarcity": 1.0,
+          "mean_cooperation_rate": 0.15068376842064823,
+          "mean_conflict_rate": 0.3164689826120159,
+          "mean_population": 94.4,
+          "final_population": 88
+        },
+        {
+          "seed": 10022,
+          "mean_true_scarcity": 0.9999176562906262,
+          "mean_cooperation_rate": 0.16664818143665047,
+          "mean_conflict_rate": 0.3169531376169384,
+          "mean_population": 88.05,
+          "final_population": 83
+        },
+        {
+          "seed": 10023,
+          "mean_true_scarcity": 0.9999280222482874,
+          "mean_cooperation_rate": 0.1615700557365592,
+          "mean_conflict_rate": 0.3146390929575307,
+          "mean_population": 90.16,
+          "final_population": 84
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.5499581368908856,
+      "scarcity_only_rank": 15,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    },
+    {
+      "resource_capacity_per_agent": 105.0,
+      "food_regen_rate": 0.01,
+      "water_regen_rate": 0.01,
+      "initial_food_per_agent": 70.0,
+      "initial_water_per_agent": 70.0,
+      "seeds": [
+        10032,
+        10033,
+        10034,
+        10035
+      ],
+      "n_runs": 4,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.9999676078232869,
+      "sd_true_scarcity_between_seeds": 3.071653513405522e-05,
+      "fraction_window_at_or_above_ceiling_threshold": 1.0,
+      "mean_cooperation_rate_exploratory": 0.16224609406050564,
+      "mean_conflict_rate_exploratory": 0.3099272113811816,
+      "mean_population": 83.8275,
+      "seed_summaries": [
+        {
+          "seed": 10032,
+          "mean_true_scarcity": 1.0,
+          "mean_cooperation_rate": 0.16062084549692524,
+          "mean_conflict_rate": 0.3066086610015746,
+          "mean_population": 86.67,
+          "final_population": 78
+        },
+        {
+          "seed": 10033,
+          "mean_true_scarcity": 0.9999761340231224,
+          "mean_cooperation_rate": 0.16341216887034474,
+          "mean_conflict_rate": 0.30746371624957414,
+          "mean_population": 82.75,
+          "final_population": 76
+        },
+        {
+          "seed": 10034,
+          "mean_true_scarcity": 0.9999680221903686,
+          "mean_cooperation_rate": 0.1608239352570394,
+          "mean_conflict_rate": 0.29939269525589174,
+          "mean_population": 81.12,
+          "final_population": 70
+        },
+        {
+          "seed": 10035,
+          "mean_true_scarcity": 0.9999262750796567,
+          "mean_cooperation_rate": 0.16412742661771315,
+          "mean_conflict_rate": 0.3262437730176859,
+          "mean_population": 84.77,
+          "final_population": 77
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.5499676078232869,
+      "scarcity_only_rank": 16,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    }
+  ],
+  "seed_band_diagnostic_note": "Derived from stored per-seed summaries; not used in the original scarcity-only ranking."
+}

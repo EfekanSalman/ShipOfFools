@@ -1,0 +1,846 @@
+{
+  "experiment": "resource_regime_calibration_pilot",
+  "created_utc": "2026-10-04T20:17:04.054922+00:00",
+  "python_version": "3.12.14",
+  "n_agents": 80,
+  "n_ticks": 500,
+  "analysis_window": 100,
+  "seeds_per_candidate": 20,
+  "seed_assignment": "disjoint sequential seed blocks per candidate cell",
+  "candidate_seed_start": 20000,
+  "candidate_seed_end_inclusive": 20079,
+  "scarcity_target": [
+    0.3,
+    0.6
+  ],
+  "ceiling_threshold": 0.98,
+  "max_ceiling_fraction": 0.1,
+  "selection_rule": "rank by scarcity target and ceiling fraction only; cooperation/conflict are exploratory outputs",
+  "candidates": [
+    {
+      "resource_capacity_per_agent": 120.0,
+      "food_regen_rate": 0.016,
+      "water_regen_rate": 0.016,
+      "initial_food_per_agent": 80.0,
+      "initial_water_per_agent": 80.0,
+      "seeds": [
+        20060,
+        20061,
+        20062,
+        20063,
+        20064,
+        20065,
+        20066,
+        20067,
+        20068,
+        20069,
+        20070,
+        20071,
+        20072,
+        20073,
+        20074,
+        20075,
+        20076,
+        20077,
+        20078,
+        20079
+      ],
+      "n_runs": 20,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.5819765912016768,
+      "sd_true_scarcity_between_seeds": 0.1892612307880239,
+      "fraction_window_at_or_above_ceiling_threshold": 0.041,
+      "mean_cooperation_rate_exploratory": 0.2393942324596356,
+      "mean_conflict_rate_exploratory": 0.24600515067502302,
+      "mean_population": 115.628,
+      "seed_summaries": [
+        {
+          "seed": 20060,
+          "mean_true_scarcity": 0.7658261407380037,
+          "mean_cooperation_rate": 0.21591808800726972,
+          "mean_conflict_rate": 0.27294881212355926,
+          "mean_population": 120.59,
+          "final_population": 112
+        },
+        {
+          "seed": 20061,
+          "mean_true_scarcity": 0.5959248666969502,
+          "mean_cooperation_rate": 0.24780788860524652,
+          "mean_conflict_rate": 0.23933582981215085,
+          "mean_population": 118.14,
+          "final_population": 117
+        },
+        {
+          "seed": 20062,
+          "mean_true_scarcity": 0.6186430371518954,
+          "mean_cooperation_rate": 0.2292673269426691,
+          "mean_conflict_rate": 0.25444144852749173,
+          "mean_population": 108.14,
+          "final_population": 101
+        },
+        {
+          "seed": 20063,
+          "mean_true_scarcity": 0.791107777914808,
+          "mean_cooperation_rate": 0.21120301875991784,
+          "mean_conflict_rate": 0.2785613944758166,
+          "mean_population": 124.29,
+          "final_population": 120
+        },
+        {
+          "seed": 20064,
+          "mean_true_scarcity": 0.3612552020414793,
+          "mean_cooperation_rate": 0.2799875387826912,
+          "mean_conflict_rate": 0.20972576540089138,
+          "mean_population": 108.64,
+          "final_population": 105
+        },
+        {
+          "seed": 20065,
+          "mean_true_scarcity": 0.9347723370584922,
+          "mean_cooperation_rate": 0.19167662163549604,
+          "mean_conflict_rate": 0.305264651398888,
+          "mean_population": 130.9,
+          "final_population": 126
+        },
+        {
+          "seed": 20066,
+          "mean_true_scarcity": 0.503475676643734,
+          "mean_cooperation_rate": 0.2563950760660631,
+          "mean_conflict_rate": 0.2313398449340623,
+          "mean_population": 117.53,
+          "final_population": 117
+        },
+        {
+          "seed": 20067,
+          "mean_true_scarcity": 0.9368185620290873,
+          "mean_cooperation_rate": 0.19459677159696864,
+          "mean_conflict_rate": 0.29421099143062135,
+          "mean_population": 127.13,
+          "final_population": 122
+        },
+        {
+          "seed": 20068,
+          "mean_true_scarcity": 0.4327524842693718,
+          "mean_cooperation_rate": 0.2645020102286808,
+          "mean_conflict_rate": 0.21616091895791967,
+          "mean_population": 111.48,
+          "final_population": 108
+        },
+        {
+          "seed": 20069,
+          "mean_true_scarcity": 0.7214834313533796,
+          "mean_cooperation_rate": 0.21433731338157844,
+          "mean_conflict_rate": 0.2667607531543175,
+          "mean_population": 115.71,
+          "final_population": 115
+        },
+        {
+          "seed": 20070,
+          "mean_true_scarcity": 0.47259846144567325,
+          "mean_cooperation_rate": 0.24790389642960947,
+          "mean_conflict_rate": 0.24413696103015434,
+          "mean_population": 112.55,
+          "final_population": 105
+        },
+        {
+          "seed": 20071,
+          "mean_true_scarcity": 0.3872222945114699,
+          "mean_cooperation_rate": 0.2761694822130602,
+          "mean_conflict_rate": 0.20582965452346186,
+          "mean_population": 110.43,
+          "final_population": 108
+        },
+        {
+          "seed": 20072,
+          "mean_true_scarcity": 0.6876074278312199,
+          "mean_cooperation_rate": 0.22467233715894114,
+          "mean_conflict_rate": 0.2651562252632403,
+          "mean_population": 122.21,
+          "final_population": 118
+        },
+        {
+          "seed": 20073,
+          "mean_true_scarcity": 0.29444309909390864,
+          "mean_cooperation_rate": 0.2789390957278267,
+          "mean_conflict_rate": 0.19371754669525765,
+          "mean_population": 103.66,
+          "final_population": 100
+        },
+        {
+          "seed": 20074,
+          "mean_true_scarcity": 0.5588352708775763,
+          "mean_cooperation_rate": 0.23800237618177655,
+          "mean_conflict_rate": 0.24374664361385318,
+          "mean_population": 118.67,
+          "final_population": 118
+        },
+        {
+          "seed": 20075,
+          "mean_true_scarcity": 0.5533544387962017,
+          "mean_cooperation_rate": 0.24081646706676924,
+          "mean_conflict_rate": 0.23504549505878472,
+          "mean_population": 109.85,
+          "final_population": 107
+        },
+        {
+          "seed": 20076,
+          "mean_true_scarcity": 0.56411659528944,
+          "mean_cooperation_rate": 0.24296243386859273,
+          "mean_conflict_rate": 0.24248003520417286,
+          "mean_population": 121.64,
+          "final_population": 117
+        },
+        {
+          "seed": 20077,
+          "mean_true_scarcity": 0.7153882100581507,
+          "mean_cooperation_rate": 0.21162177797938267,
+          "mean_conflict_rate": 0.2776143702859051,
+          "mean_population": 111.71,
+          "final_population": 103
+        },
+        {
+          "seed": 20078,
+          "mean_true_scarcity": 0.4112902461813976,
+          "mean_cooperation_rate": 0.2632383768467442,
+          "mean_conflict_rate": 0.22349319154700312,
+          "mean_population": 110.38,
+          "final_population": 104
+        },
+        {
+          "seed": 20079,
+          "mean_true_scarcity": 0.3326162640512965,
+          "mean_cooperation_rate": 0.2578667517134276,
+          "mean_conflict_rate": 0.22013248006290914,
+          "mean_population": 108.91,
+          "final_population": 107
+        }
+      ],
+      "within_scarcity_target": true,
+      "ceiling_fraction_acceptable": true,
+      "eligible_for_followup_pilot": true,
+      "distance_from_target_midpoint": 0.13197659120167682,
+      "scarcity_only_rank": 1,
+      "n_seed_means_within_scarcity_target": 11,
+      "fraction_seed_means_within_scarcity_target": 0.55
+    },
+    {
+      "resource_capacity_per_agent": 120.0,
+      "food_regen_rate": 0.019,
+      "water_regen_rate": 0.019,
+      "initial_food_per_agent": 80.0,
+      "initial_water_per_agent": 80.0,
+      "seeds": [
+        20040,
+        20041,
+        20042,
+        20043,
+        20044,
+        20045,
+        20046,
+        20047,
+        20048,
+        20049,
+        20050,
+        20051,
+        20052,
+        20053,
+        20054,
+        20055,
+        20056,
+        20057,
+        20058,
+        20059
+      ],
+      "n_runs": 20,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.23199408917787173,
+      "sd_true_scarcity_between_seeds": 0.17903357572395864,
+      "fraction_window_at_or_above_ceiling_threshold": 0.0,
+      "mean_cooperation_rate_exploratory": 0.2953285724154718,
+      "mean_conflict_rate_exploratory": 0.18776048401075018,
+      "mean_population": 120.38,
+      "seed_summaries": [
+        {
+          "seed": 20040,
+          "mean_true_scarcity": 0.3289547492172627,
+          "mean_cooperation_rate": 0.29175676010425633,
+          "mean_conflict_rate": 0.1940862338246704,
+          "mean_population": 135.21,
+          "final_population": 133
+        },
+        {
+          "seed": 20041,
+          "mean_true_scarcity": 0.31457342683941447,
+          "mean_cooperation_rate": 0.2805618852828419,
+          "mean_conflict_rate": 0.20291440523578902,
+          "mean_population": 124.96,
+          "final_population": 122
+        },
+        {
+          "seed": 20042,
+          "mean_true_scarcity": 0.46173318981509504,
+          "mean_cooperation_rate": 0.2607746148827307,
+          "mean_conflict_rate": 0.21044801254683537,
+          "mean_population": 138.96,
+          "final_population": 137
+        },
+        {
+          "seed": 20043,
+          "mean_true_scarcity": 0.11664523077715136,
+          "mean_cooperation_rate": 0.3228212427970778,
+          "mean_conflict_rate": 0.16490182589828753,
+          "mean_population": 113.97,
+          "final_population": 110
+        },
+        {
+          "seed": 20044,
+          "mean_true_scarcity": 0.01937143905654921,
+          "mean_cooperation_rate": 0.3186677843390655,
+          "mean_conflict_rate": 0.17267057925665705,
+          "mean_population": 103.73,
+          "final_population": 101
+        },
+        {
+          "seed": 20045,
+          "mean_true_scarcity": 0.41411145212632144,
+          "mean_cooperation_rate": 0.288750117470848,
+          "mean_conflict_rate": 0.1967181991258638,
+          "mean_population": 130.28,
+          "final_population": 130
+        },
+        {
+          "seed": 20046,
+          "mean_true_scarcity": 0.028851591458498412,
+          "mean_cooperation_rate": 0.31840383136564254,
+          "mean_conflict_rate": 0.16133154343777842,
+          "mean_population": 108.8,
+          "final_population": 105
+        },
+        {
+          "seed": 20047,
+          "mean_true_scarcity": 0.10456416507133154,
+          "mean_cooperation_rate": 0.31203312767027336,
+          "mean_conflict_rate": 0.17121655082070333,
+          "mean_population": 111.86,
+          "final_population": 107
+        },
+        {
+          "seed": 20048,
+          "mean_true_scarcity": 0.05575072986081439,
+          "mean_cooperation_rate": 0.3137726729342147,
+          "mean_conflict_rate": 0.17280446602629315,
+          "mean_population": 108.52,
+          "final_population": 104
+        },
+        {
+          "seed": 20049,
+          "mean_true_scarcity": 0.07391019977668975,
+          "mean_cooperation_rate": 0.31072003370126244,
+          "mean_conflict_rate": 0.1677093238200434,
+          "mean_population": 117.07,
+          "final_population": 118
+        },
+        {
+          "seed": 20050,
+          "mean_true_scarcity": 0.4953831767258345,
+          "mean_cooperation_rate": 0.25381079432336306,
+          "mean_conflict_rate": 0.225211895070104,
+          "mean_population": 133.33,
+          "final_population": 133
+        },
+        {
+          "seed": 20051,
+          "mean_true_scarcity": 0.36174674513362687,
+          "mean_cooperation_rate": 0.2832841677550735,
+          "mean_conflict_rate": 0.21087887417536966,
+          "mean_population": 126.58,
+          "final_population": 123
+        },
+        {
+          "seed": 20052,
+          "mean_true_scarcity": 0.09383196625660295,
+          "mean_cooperation_rate": 0.30633594427055605,
+          "mean_conflict_rate": 0.17614707112392833,
+          "mean_population": 113.45,
+          "final_population": 110
+        },
+        {
+          "seed": 20053,
+          "mean_true_scarcity": 0.4041425024851929,
+          "mean_cooperation_rate": 0.26931369596944393,
+          "mean_conflict_rate": 0.21133080605384114,
+          "mean_population": 132.45,
+          "final_population": 131
+        },
+        {
+          "seed": 20054,
+          "mean_true_scarcity": 0.171485700162104,
+          "mean_cooperation_rate": 0.29334016283975645,
+          "mean_conflict_rate": 0.1818689453412105,
+          "mean_population": 112.93,
+          "final_population": 110
+        },
+        {
+          "seed": 20055,
+          "mean_true_scarcity": 0.2967376366960764,
+          "mean_cooperation_rate": 0.2786304920984399,
+          "mean_conflict_rate": 0.20476895944790788,
+          "mean_population": 124.74,
+          "final_population": 118
+        },
+        {
+          "seed": 20056,
+          "mean_true_scarcity": 0.01996582327843068,
+          "mean_cooperation_rate": 0.327686370414866,
+          "mean_conflict_rate": 0.15637483434226024,
+          "mean_population": 99.44,
+          "final_population": 97
+        },
+        {
+          "seed": 20057,
+          "mean_true_scarcity": 0.1526706632549921,
+          "mean_cooperation_rate": 0.3118976982361828,
+          "mean_conflict_rate": 0.1704091581933917,
+          "mean_population": 117.14,
+          "final_population": 117
+        },
+        {
+          "seed": 20058,
+          "mean_true_scarcity": 0.1319091598702942,
+          "mean_cooperation_rate": 0.3131336445326143,
+          "mean_conflict_rate": 0.1713749331323937,
+          "mean_population": 112.4,
+          "final_population": 106
+        },
+        {
+          "seed": 20059,
+          "mean_true_scarcity": 0.593542235695152,
+          "mean_cooperation_rate": 0.25087640732092575,
+          "mean_conflict_rate": 0.23204306334167515,
+          "mean_population": 141.78,
+          "final_population": 139
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": true,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.21800591082212822,
+      "scarcity_only_rank": 2,
+      "n_seed_means_within_scarcity_target": 8,
+      "fraction_seed_means_within_scarcity_target": 0.4
+    },
+    {
+      "resource_capacity_per_agent": 90.0,
+      "food_regen_rate": 0.019,
+      "water_regen_rate": 0.019,
+      "initial_food_per_agent": 60.0,
+      "initial_water_per_agent": 60.0,
+      "seeds": [
+        20000,
+        20001,
+        20002,
+        20003,
+        20004,
+        20005,
+        20006,
+        20007,
+        20008,
+        20009,
+        20010,
+        20011,
+        20012,
+        20013,
+        20014,
+        20015,
+        20016,
+        20017,
+        20018,
+        20019
+      ],
+      "n_runs": 20,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.8529775720197303,
+      "sd_true_scarcity_between_seeds": 0.1362323159824704,
+      "fraction_window_at_or_above_ceiling_threshold": 0.3595,
+      "mean_cooperation_rate_exploratory": 0.2031529429776239,
+      "mean_conflict_rate_exploratory": 0.2892081350827903,
+      "mean_population": 106.7035,
+      "seed_summaries": [
+        {
+          "seed": 20000,
+          "mean_true_scarcity": 0.7732255822000788,
+          "mean_cooperation_rate": 0.21808177868100678,
+          "mean_conflict_rate": 0.2737037554231286,
+          "mean_population": 100.42,
+          "final_population": 97
+        },
+        {
+          "seed": 20001,
+          "mean_true_scarcity": 0.7858354640964393,
+          "mean_cooperation_rate": 0.21181442275237017,
+          "mean_conflict_rate": 0.28801597873652807,
+          "mean_population": 101.96,
+          "final_population": 98
+        },
+        {
+          "seed": 20002,
+          "mean_true_scarcity": 0.9986200191508542,
+          "mean_cooperation_rate": 0.2022603317363376,
+          "mean_conflict_rate": 0.2927159502192968,
+          "mean_population": 120.83,
+          "final_population": 120
+        },
+        {
+          "seed": 20003,
+          "mean_true_scarcity": 0.789194142667661,
+          "mean_cooperation_rate": 0.19577253411451165,
+          "mean_conflict_rate": 0.2986248670287406,
+          "mean_population": 102.89,
+          "final_population": 96
+        },
+        {
+          "seed": 20004,
+          "mean_true_scarcity": 0.9308235260845524,
+          "mean_cooperation_rate": 0.20077713865521382,
+          "mean_conflict_rate": 0.29300156728294546,
+          "mean_population": 115.41,
+          "final_population": 111
+        },
+        {
+          "seed": 20005,
+          "mean_true_scarcity": 0.9366250374589303,
+          "mean_cooperation_rate": 0.19996151644720006,
+          "mean_conflict_rate": 0.28747243262165334,
+          "mean_population": 110.44,
+          "final_population": 108
+        },
+        {
+          "seed": 20006,
+          "mean_true_scarcity": 0.7228430703894445,
+          "mean_cooperation_rate": 0.22397184025720038,
+          "mean_conflict_rate": 0.2713213520645508,
+          "mean_population": 100.65,
+          "final_population": 95
+        },
+        {
+          "seed": 20007,
+          "mean_true_scarcity": 0.9992878635252963,
+          "mean_cooperation_rate": 0.18912546177342615,
+          "mean_conflict_rate": 0.29540613198656707,
+          "mean_population": 115.61,
+          "final_population": 111
+        },
+        {
+          "seed": 20008,
+          "mean_true_scarcity": 0.8089336636813991,
+          "mean_cooperation_rate": 0.2112966535744589,
+          "mean_conflict_rate": 0.28242876675642503,
+          "mean_population": 99.72,
+          "final_population": 93
+        },
+        {
+          "seed": 20009,
+          "mean_true_scarcity": 0.924620655789055,
+          "mean_cooperation_rate": 0.199385356671049,
+          "mean_conflict_rate": 0.29368375401818786,
+          "mean_population": 110.04,
+          "final_population": 108
+        },
+        {
+          "seed": 20010,
+          "mean_true_scarcity": 0.9990212456105162,
+          "mean_cooperation_rate": 0.17652984519393985,
+          "mean_conflict_rate": 0.3247429592297223,
+          "mean_population": 116.68,
+          "final_population": 116
+        },
+        {
+          "seed": 20011,
+          "mean_true_scarcity": 0.9989024596567703,
+          "mean_cooperation_rate": 0.1761574281223074,
+          "mean_conflict_rate": 0.3175781284450698,
+          "mean_population": 108.24,
+          "final_population": 104
+        },
+        {
+          "seed": 20012,
+          "mean_true_scarcity": 0.9392212415067998,
+          "mean_cooperation_rate": 0.19189249701761643,
+          "mean_conflict_rate": 0.3012400010906859,
+          "mean_population": 105.69,
+          "final_population": 101
+        },
+        {
+          "seed": 20013,
+          "mean_true_scarcity": 0.7102101472570967,
+          "mean_cooperation_rate": 0.21317921821968677,
+          "mean_conflict_rate": 0.2759207442921513,
+          "mean_population": 102.7,
+          "final_population": 100
+        },
+        {
+          "seed": 20014,
+          "mean_true_scarcity": 0.6241775296980857,
+          "mean_cooperation_rate": 0.22582474999191732,
+          "mean_conflict_rate": 0.25945853002143093,
+          "mean_population": 101.89,
+          "final_population": 97
+        },
+        {
+          "seed": 20015,
+          "mean_true_scarcity": 0.7753585475002438,
+          "mean_cooperation_rate": 0.20720219741931145,
+          "mean_conflict_rate": 0.2828094013026054,
+          "mean_population": 99.06,
+          "final_population": 93
+        },
+        {
+          "seed": 20016,
+          "mean_true_scarcity": 0.9987663386158384,
+          "mean_cooperation_rate": 0.18725964111514834,
+          "mean_conflict_rate": 0.3006789388739772,
+          "mean_population": 115.74,
+          "final_population": 106
+        },
+        {
+          "seed": 20017,
+          "mean_true_scarcity": 0.7875825170338849,
+          "mean_cooperation_rate": 0.2086689901176555,
+          "mean_conflict_rate": 0.2859615826322183,
+          "mean_population": 102.25,
+          "final_population": 96
+        },
+        {
+          "seed": 20018,
+          "mean_true_scarcity": 0.5631400245229403,
+          "mean_cooperation_rate": 0.2319059872943788,
+          "mean_conflict_rate": 0.2524839096082174,
+          "mean_population": 93.22,
+          "final_population": 85
+        },
+        {
+          "seed": 20019,
+          "mean_true_scarcity": 0.9931623639487206,
+          "mean_cooperation_rate": 0.19199127039774183,
+          "mean_conflict_rate": 0.30691395002170335,
+          "mean_population": 110.63,
+          "final_population": 107
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.4029775720197304,
+      "scarcity_only_rank": 3,
+      "n_seed_means_within_scarcity_target": 1,
+      "fraction_seed_means_within_scarcity_target": 0.05
+    },
+    {
+      "resource_capacity_per_agent": 90.0,
+      "food_regen_rate": 0.016,
+      "water_regen_rate": 0.016,
+      "initial_food_per_agent": 60.0,
+      "initial_water_per_agent": 60.0,
+      "seeds": [
+        20020,
+        20021,
+        20022,
+        20023,
+        20024,
+        20025,
+        20026,
+        20027,
+        20028,
+        20029,
+        20030,
+        20031,
+        20032,
+        20033,
+        20034,
+        20035,
+        20036,
+        20037,
+        20038,
+        20039
+      ],
+      "n_runs": 20,
+      "analysis_window": 100,
+      "mean_true_scarcity": 0.9889699255365327,
+      "sd_true_scarcity_between_seeds": 0.032298640665481625,
+      "fraction_window_at_or_above_ceiling_threshold": 0.8925,
+      "mean_cooperation_rate_exploratory": 0.17237497231635207,
+      "mean_conflict_rate_exploratory": 0.32132380493578466,
+      "mean_population": 93.5095,
+      "seed_summaries": [
+        {
+          "seed": 20020,
+          "mean_true_scarcity": 0.9998349748172373,
+          "mean_cooperation_rate": 0.1606480244604095,
+          "mean_conflict_rate": 0.3229363403564532,
+          "mean_population": 100.74,
+          "final_population": 97
+        },
+        {
+          "seed": 20021,
+          "mean_true_scarcity": 0.9991964121428836,
+          "mean_cooperation_rate": 0.1749074851790554,
+          "mean_conflict_rate": 0.3236120732772501,
+          "mean_population": 91.44,
+          "final_population": 88
+        },
+        {
+          "seed": 20022,
+          "mean_true_scarcity": 0.9992844159608271,
+          "mean_cooperation_rate": 0.1712679539419161,
+          "mean_conflict_rate": 0.3327129010376362,
+          "mean_population": 95.56,
+          "final_population": 90
+        },
+        {
+          "seed": 20023,
+          "mean_true_scarcity": 0.8557047345469586,
+          "mean_cooperation_rate": 0.18745372126994814,
+          "mean_conflict_rate": 0.3171902722034614,
+          "mean_population": 88.49,
+          "final_population": 86
+        },
+        {
+          "seed": 20024,
+          "mean_true_scarcity": 0.9747400421138586,
+          "mean_cooperation_rate": 0.17078316122030057,
+          "mean_conflict_rate": 0.3333356008841883,
+          "mean_population": 86.85,
+          "final_population": 80
+        },
+        {
+          "seed": 20025,
+          "mean_true_scarcity": 0.9951368975820856,
+          "mean_cooperation_rate": 0.1785298263674498,
+          "mean_conflict_rate": 0.32915306384874393,
+          "mean_population": 89.71,
+          "final_population": 85
+        },
+        {
+          "seed": 20026,
+          "mean_true_scarcity": 0.9981758688480846,
+          "mean_cooperation_rate": 0.1769453447620257,
+          "mean_conflict_rate": 0.32738862520576495,
+          "mean_population": 89.62,
+          "final_population": 83
+        },
+        {
+          "seed": 20027,
+          "mean_true_scarcity": 0.9997922432077314,
+          "mean_cooperation_rate": 0.17849294103161636,
+          "mean_conflict_rate": 0.2966945762210785,
+          "mean_population": 104.48,
+          "final_population": 96
+        },
+        {
+          "seed": 20028,
+          "mean_true_scarcity": 0.9996501753749446,
+          "mean_cooperation_rate": 0.18325033729439277,
+          "mean_conflict_rate": 0.30328381077193745,
+          "mean_population": 92.8,
+          "final_population": 89
+        },
+        {
+          "seed": 20029,
+          "mean_true_scarcity": 0.9997013055955631,
+          "mean_cooperation_rate": 0.17123201441794236,
+          "mean_conflict_rate": 0.31247742357847585,
+          "mean_population": 98.59,
+          "final_population": 90
+        },
+        {
+          "seed": 20030,
+          "mean_true_scarcity": 0.9972347041481577,
+          "mean_cooperation_rate": 0.17251152700086148,
+          "mean_conflict_rate": 0.3311884834157125,
+          "mean_population": 85.84,
+          "final_population": 79
+        },
+        {
+          "seed": 20031,
+          "mean_true_scarcity": 0.9998337748998307,
+          "mean_cooperation_rate": 0.16849133485352888,
+          "mean_conflict_rate": 0.32154138023148376,
+          "mean_population": 103.29,
+          "final_population": 99
+        },
+        {
+          "seed": 20032,
+          "mean_true_scarcity": 0.9983155119785404,
+          "mean_cooperation_rate": 0.16393502042089061,
+          "mean_conflict_rate": 0.32852547996500653,
+          "mean_population": 90.89,
+          "final_population": 86
+        },
+        {
+          "seed": 20033,
+          "mean_true_scarcity": 0.9989977441473011,
+          "mean_cooperation_rate": 0.1678187198561699,
+          "mean_conflict_rate": 0.3299855891497666,
+          "mean_population": 95.45,
+          "final_population": 93
+        },
+        {
+          "seed": 20034,
+          "mean_true_scarcity": 0.9930604732856848,
+          "mean_cooperation_rate": 0.17054414676729,
+          "mean_conflict_rate": 0.3244161023642089,
+          "mean_population": 91.32,
+          "final_population": 88
+        },
+        {
+          "seed": 20035,
+          "mean_true_scarcity": 0.9994862001585996,
+          "mean_cooperation_rate": 0.169659910873004,
+          "mean_conflict_rate": 0.31991858923899963,
+          "mean_population": 97.4,
+          "final_population": 96
+        },
+        {
+          "seed": 20036,
+          "mean_true_scarcity": 0.9989934862789158,
+          "mean_cooperation_rate": 0.17418974224028447,
+          "mean_conflict_rate": 0.3225595105416442,
+          "mean_population": 90.83,
+          "final_population": 86
+        },
+        {
+          "seed": 20037,
+          "mean_true_scarcity": 0.9998306257035517,
+          "mean_cooperation_rate": 0.16739930757823174,
+          "mean_conflict_rate": 0.3154432966502308,
+          "mean_population": 95.59,
+          "final_population": 92
+        },
+        {
+          "seed": 20038,
+          "mean_true_scarcity": 0.9989703369703881,
+          "mean_cooperation_rate": 0.16067560422733038,
+          "mean_conflict_rate": 0.31781004403723506,
+          "mean_population": 93.88,
+          "final_population": 87
+        },
+        {
+          "seed": 20039,
+          "mean_true_scarcity": 0.9734585829695094,
+          "mean_cooperation_rate": 0.17876332256439295,
+          "mean_conflict_rate": 0.3163029357364154,
+          "mean_population": 87.42,
+          "final_population": 83
+        }
+      ],
+      "within_scarcity_target": false,
+      "ceiling_fraction_acceptable": false,
+      "eligible_for_followup_pilot": false,
+      "distance_from_target_midpoint": 0.5389699255365328,
+      "scarcity_only_rank": 4,
+      "n_seed_means_within_scarcity_target": 0,
+      "fraction_seed_means_within_scarcity_target": 0.0
+    }
+  ],
+  "seed_band_diagnostic_note": "Derived from stored per-seed summaries; not used in the original scarcity-only ranking."
+}

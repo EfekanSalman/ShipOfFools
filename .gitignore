@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.idea/
+
+# Per-tick experiment dumps (9-65 MB each). Regenerate with the matching run_*.py;
+# seed summaries, experiment metadata and analysis files are tracked.
+output/**/*timeseries.csv

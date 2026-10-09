@@ -1,0 +1,523 @@
+{
+  "bootstrap_draws": 10000,
+  "analysis_seed": 6102030,
+  "seed_block_paired": true,
+  "metrics": {
+    "avg_trust": {
+      "n_seed_blocks": 30,
+      "identity_effect_by_resource_cell": {
+        "C90-R0p016": {
+          "estimate": -0.018188506011310872,
+          "bootstrap_ci95": [
+            -0.019794901753838332,
+            -0.016750898766330333
+          ]
+        },
+        "C90-R0p019": {
+          "estimate": -0.016453110670078437,
+          "bootstrap_ci95": [
+            -0.0193748393002664,
+            -0.01364095488397264
+          ]
+        },
+        "C120-R0p016": {
+          "estimate": -0.01375326161871947,
+          "bootstrap_ci95": [
+            -0.016211693488099536,
+            -0.011206791298096229
+          ]
+        },
+        "C120-R0p019": {
+          "estimate": -0.012583335774867152,
+          "bootstrap_ci95": [
+            -0.014577714604719356,
+            -0.010560512374597738
+          ]
+        }
+      },
+      "identity_resource_contrasts": {
+        "identity_average": {
+          "estimate": -0.015244553518743983,
+          "bootstrap_ci95": [
+            -0.016313590294285276,
+            -0.014154514151066248
+          ]
+        },
+        "identity_by_capacity": {
+          "estimate": 0.004152509643901341,
+          "bootstrap_ci95": [
+            0.001690021884543096,
+            0.006672296986183109
+          ]
+        },
+        "identity_by_regen": {
+          "estimate": 0.0014526605925423777,
+          "bootstrap_ci95": [
+            -0.001016875084029002,
+            0.0039465922049261425
+          ]
+        },
+        "identity_by_capacity_by_regen": {
+          "estimate": -0.000565469497380117,
+          "bootstrap_ci95": [
+            -0.004485851725248687,
+            0.003355192017456007
+          ]
+        }
+      }
+    },
+    "conflict_rate": {
+      "n_seed_blocks": 30,
+      "identity_effect_by_resource_cell": {
+        "C90-R0p016": {
+          "estimate": 0.05785592364793851,
+          "bootstrap_ci95": [
+            0.05219899158068432,
+            0.06360626117941721
+          ]
+        },
+        "C90-R0p019": {
+          "estimate": 0.04302676049684323,
+          "bootstrap_ci95": [
+            0.035877847195496554,
+            0.05005881703570108
+          ]
+        },
+        "C120-R0p016": {
+          "estimate": 0.027340656185292106,
+          "bootstrap_ci95": [
+            0.0164825027603957,
+            0.0386502139003624
+          ]
+        },
+        "C120-R0p019": {
+          "estimate": 0.017502841078037568,
+          "bootstrap_ci95": [
+            0.00949236182031818,
+            0.025713204425686812
+          ]
+        }
+      },
+      "identity_resource_contrasts": {
+        "identity_average": {
+          "estimate": 0.036431545352027854,
+          "bootstrap_ci95": [
+            0.03177615764912217,
+            0.04087904844129856
+          ]
+        },
+        "identity_by_capacity": {
+          "estimate": -0.028019593440726034,
+          "bootstrap_ci95": [
+            -0.03734845713161783,
+            -0.01812049040040855
+          ]
+        },
+        "identity_by_regen": {
+          "estimate": -0.01233348912917491,
+          "bootstrap_ci95": [
+            -0.020169328466871098,
+            -0.004707115121685498
+          ]
+        },
+        "identity_by_capacity_by_regen": {
+          "estimate": 0.004991348043840743,
+          "bootstrap_ci95": [
+            -0.006320296637631505,
+            0.01726655228886145
+          ]
+        }
+      }
+    },
+    "cooperation_rate": {
+      "n_seed_blocks": 30,
+      "identity_effect_by_resource_cell": {
+        "C90-R0p016": {
+          "estimate": -0.031418058405768334,
+          "bootstrap_ci95": [
+            -0.035698038414435876,
+            -0.027454306671692255
+          ]
+        },
+        "C90-R0p019": {
+          "estimate": -0.01919133658398492,
+          "bootstrap_ci95": [
+            -0.02668625045984319,
+            -0.011475519203799245
+          ]
+        },
+        "C120-R0p016": {
+          "estimate": -0.010230706918835542,
+          "bootstrap_ci95": [
+            -0.02289616778045789,
+            0.0018833802581292036
+          ]
+        },
+        "C120-R0p019": {
+          "estimate": 0.0014061259524015268,
+          "bootstrap_ci95": [
+            -0.007654063942666429,
+            0.010010062141281664
+          ]
+        }
+      },
+      "identity_resource_contrasts": {
+        "identity_average": {
+          "estimate": -0.014858493989046817,
+          "bootstrap_ci95": [
+            -0.019457795221370602,
+            -0.01013200900429327
+          ]
+        },
+        "identity_by_capacity": {
+          "estimate": 0.02089240701165962,
+          "bootstrap_ci95": [
+            0.010545765138211774,
+            0.030415260666970978
+          ]
+        },
+        "identity_by_regen": {
+          "estimate": 0.011931777346510242,
+          "bootstrap_ci95": [
+            0.003589430837801004,
+            0.020967802985876423
+          ]
+        },
+        "identity_by_capacity_by_regen": {
+          "estimate": -0.0005898889505463467,
+          "bootstrap_ci95": [
+            -0.014441558036860593,
+            0.012176705515102177
+          ]
+        }
+      }
+    },
+    "true_scarcity": {
+      "n_seed_blocks": 30,
+      "identity_effect_by_resource_cell": {
+        "C90-R0p016": {
+          "estimate": 0.021024497707999523,
+          "bootstrap_ci95": [
+            -0.0059063493645005105,
+            0.052405557686414625
+          ]
+        },
+        "C90-R0p019": {
+          "estimate": 0.011479374565805833,
+          "bootstrap_ci95": [
+            -0.04530560867185856,
+            0.06728375060438828
+          ]
+        },
+        "C120-R0p016": {
+          "estimate": -0.03449391747472591,
+          "bootstrap_ci95": [
+            -0.11397766967088115,
+            0.04788040154550887
+          ]
+        },
+        "C120-R0p019": {
+          "estimate": -0.0418216446520262,
+          "bootstrap_ci95": [
+            -0.10045766898391131,
+            0.013229429973557248
+          ]
+        }
+      },
+      "identity_resource_contrasts": {
+        "identity_average": {
+          "estimate": -0.010952922463236689,
+          "bootstrap_ci95": [
+            -0.04214224299960383,
+            0.019307023145701836
+          ]
+        },
+        "identity_by_capacity": {
+          "estimate": -0.054409717200278734,
+          "bootstrap_ci95": [
+            -0.1236857951050103,
+            0.014482178382423112
+          ]
+        },
+        "identity_by_regen": {
+          "estimate": -0.00843642515974699,
+          "bootstrap_ci95": [
+            -0.06705241052233803,
+            0.04824621241584124
+          ]
+        },
+        "identity_by_capacity_by_regen": {
+          "estimate": 0.0022173959648933983,
+          "bootstrap_ci95": [
+            -0.08958541963129496,
+            0.08997091619136696
+          ]
+        }
+      }
+    },
+    "inequality_gini": {
+      "n_seed_blocks": 30,
+      "identity_effect_by_resource_cell": {
+        "C90-R0p016": {
+          "estimate": 0.11068283691148778,
+          "bootstrap_ci95": [
+            0.10078997368312041,
+            0.12042009127124076
+          ]
+        },
+        "C90-R0p019": {
+          "estimate": 0.10433924931702615,
+          "bootstrap_ci95": [
+            0.09516501211926687,
+            0.11304217316806621
+          ]
+        },
+        "C120-R0p016": {
+          "estimate": 0.11428277493570638,
+          "bootstrap_ci95": [
+            0.10433068634201177,
+            0.12466965772944857
+          ]
+        },
+        "C120-R0p019": {
+          "estimate": 0.11309308494047587,
+          "bootstrap_ci95": [
+            0.10320846669207456,
+            0.12293724979405472
+          ]
+        }
+      },
+      "identity_resource_contrasts": {
+        "identity_average": {
+          "estimate": 0.11059948652617405,
+          "bootstrap_ci95": [
+            0.10552961723044181,
+            0.11547198126524967
+          ]
+        },
+        "identity_by_capacity": {
+          "estimate": 0.00617688682383416,
+          "bootstrap_ci95": [
+            -0.004533024930317696,
+            0.017327675067722415
+          ]
+        },
+        "identity_by_regen": {
+          "estimate": -0.0037666387948460667,
+          "bootstrap_ci95": [
+            -0.01267413341637598,
+            0.005382111602100265
+          ]
+        },
+        "identity_by_capacity_by_regen": {
+          "estimate": 0.0051538975992311276,
+          "bootstrap_ci95": [
+            -0.012540145506963116,
+            0.02315800854264994
+          ]
+        }
+      }
+    },
+    "population": {
+      "n_seed_blocks": 30,
+      "identity_effect_by_resource_cell": {
+        "C90-R0p016": {
+          "estimate": -12.335666666666668,
+          "bootstrap_ci95": [
+            -14.924374999999989,
+            -9.639308333333341
+          ]
+        },
+        "C90-R0p019": {
+          "estimate": -10.741333333333316,
+          "bootstrap_ci95": [
+            -13.46179166666666,
+            -7.975650000000003
+          ]
+        },
+        "C120-R0p016": {
+          "estimate": -10.767666666666685,
+          "bootstrap_ci95": [
+            -14.397733333333333,
+            -6.708591666666674
+          ]
+        },
+        "C120-R0p019": {
+          "estimate": -8.204000000000008,
+          "bootstrap_ci95": [
+            -11.411183333333334,
+            -4.903066666666659
+          ]
+        }
+      },
+      "identity_resource_contrasts": {
+        "identity_average": {
+          "estimate": -10.512166666666669,
+          "bootstrap_ci95": [
+            -12.352854166666658,
+            -8.626135416666664
+          ]
+        },
+        "identity_by_capacity": {
+          "estimate": 2.0526666666666458,
+          "bootstrap_ci95": [
+            -1.0798666666666803,
+            5.293045833333324
+          ]
+        },
+        "identity_by_regen": {
+          "estimate": 2.079000000000015,
+          "bootstrap_ci95": [
+            -0.48534999999998923,
+            4.408170833333339
+          ]
+        },
+        "identity_by_capacity_by_regen": {
+          "estimate": 0.9693333333333243,
+          "bootstrap_ci95": [
+            -5.509383333333358,
+            7.074049999999983
+          ]
+        }
+      }
+    },
+    "identity_formed_rate": {
+      "n_seed_blocks": 30,
+      "identity_effect_by_resource_cell": {
+        "C90-R0p016": {
+          "estimate": 0.002707147954381206,
+          "bootstrap_ci95": [
+            0.0013401047786577025,
+            0.004294890342580317
+          ]
+        },
+        "C90-R0p019": {
+          "estimate": 0.003511695339122989,
+          "bootstrap_ci95": [
+            0.0018242909250553913,
+            0.0051564766094143654
+          ]
+        },
+        "C120-R0p016": {
+          "estimate": 0.0028964524944755654,
+          "bootstrap_ci95": [
+            0.0010605620901657344,
+            0.004675395441526167
+          ]
+        },
+        "C120-R0p019": {
+          "estimate": 0.0002277341624418172,
+          "bootstrap_ci95": [
+            -0.0025949759443338965,
+            0.003176637609631151
+          ]
+        }
+      },
+      "identity_resource_contrasts": {
+        "identity_average": {
+          "estimate": 0.0023357574876053944,
+          "bootstrap_ci95": [
+            0.001414125973437541,
+            0.0032841483668876593
+          ]
+        },
+        "identity_by_capacity": {
+          "estimate": -0.0015473283182934061,
+          "bootstrap_ci95": [
+            -0.0034852124833049322,
+            0.0004927411138769102
+          ]
+        },
+        "identity_by_regen": {
+          "estimate": -0.0009320854736459827,
+          "bootstrap_ci95": [
+            -0.003032404204004649,
+            0.0012217917055288852
+          ]
+        },
+        "identity_by_capacity_by_regen": {
+          "estimate": -0.003473265716775531,
+          "bootstrap_ci95": [
+            -0.007719011962434675,
+            0.0007177714546477454
+          ]
+        }
+      }
+    },
+    "positive_relationship_rate": {
+      "n_seed_blocks": 30,
+      "identity_effect_by_resource_cell": {
+        "C90-R0p016": {
+          "estimate": -0.03178803874003473,
+          "bootstrap_ci95": [
+            -0.03582413598812739,
+            -0.02803308674271652
+          ]
+        },
+        "C90-R0p019": {
+          "estimate": -0.035837631521030755,
+          "bootstrap_ci95": [
+            -0.045310182978600184,
+            -0.026945293234481364
+          ]
+        },
+        "C120-R0p016": {
+          "estimate": -0.03802213132109625,
+          "bootstrap_ci95": [
+            -0.04585978758169296,
+            -0.029996087123591322
+          ]
+        },
+        "C120-R0p019": {
+          "estimate": -0.038437766155899666,
+          "bootstrap_ci95": [
+            -0.04609503375820488,
+            -0.03085070061657429
+          ]
+        }
+      },
+      "identity_resource_contrasts": {
+        "identity_average": {
+          "estimate": -0.036021391934515354,
+          "bootstrap_ci95": [
+            -0.03967775002425334,
+            -0.03227793361446952
+          ]
+        },
+        "identity_by_capacity": {
+          "estimate": -0.004417113607965213,
+          "bootstrap_ci95": [
+            -0.012036356760811983,
+            0.0032196166634395037
+          ]
+        },
+        "identity_by_regen": {
+          "estimate": -0.0022326138078997207,
+          "bootstrap_ci95": [
+            -0.010442311186278065,
+            0.0058026731982813735
+          ]
+        },
+        "identity_by_capacity_by_regen": {
+          "estimate": 0.0036339579461926036,
+          "bootstrap_ci95": [
+            -0.009614394649858051,
+            0.016365170528159823
+          ]
+        }
+      }
+    }
+  },
+  "primary_metrics": [
+    "avg_trust",
+    "conflict_rate",
+    "cooperation_rate"
+  ],
+  "secondary_metrics": [
+    "true_scarcity",
+    "inequality_gini",
+    "population",
+    "identity_formed_rate",
+    "positive_relationship_rate"
+  ]
+}

@@ -1,0 +1,3984 @@
+{
+  "bootstrap_draws": 10000,
+  "analysis_seed": 6102607,
+  "seed_block_paired": true,
+  "metrics": {
+    "conflict_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.3206250911083342,
+          "sd_between_seeds": 0.011213058653528587
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.2951827022783513,
+          "sd_between_seeds": 0.01650701530203653
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.2366343047014018,
+          "sd_between_seeds": 0.03293065234665932
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.1778419687193,
+          "sd_between_seeds": 0.021510957684494764
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.1199915229909079,
+          "sd_between_seeds": 0.004400289959541214
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.12309087873686791,
+          "sd_between_seeds": 0.006322877470682446
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.13160330811221305,
+          "sd_between_seeds": 0.007667215828441068
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.13631126274501695,
+          "sd_between_seeds": 0.005110301362465231
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.21835014234415237,
+          "sd_between_seeds": 0.010883553001580164
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.23125665406027412,
+          "sd_between_seeds": 0.010825841284881333
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.23755489232535115,
+          "sd_between_seeds": 0.009212524295808055
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.2398857373075081,
+          "sd_between_seeds": 0.008665676794074562
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.10066575998299182,
+              "bootstrap_ci95": [
+                -0.10824251274288725,
+                -0.09315696307553083
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.04211736240604236,
+              "bootstrap_ci95": [
+                -0.047248540860853394,
+                -0.03693382530571955
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.03334994715211889,
+              "bootstrap_ci95": [
+                -0.045698580829837625,
+                -0.021292162593075266
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.012416084564727106,
+              "bootstrap_ci95": [
+                0.011109212448164714,
+                0.013604396053104848
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0039036551893819604,
+              "bootstrap_ci95": [
+                0.002535708299543686,
+                0.00523408127241314
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0016085988868438927,
+              "bootstrap_ci95": [
+                -0.002431639405521511,
+                0.006014179363640528
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.11308184454771893,
+              "bootstrap_ci95": [
+                0.10549219988082566,
+                0.12077775092757893
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.04602101759542432,
+              "bootstrap_ci95": [
+                0.04080975561859894,
+                0.05115514553473352
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.034958546038962784,
+              "bootstrap_ci95": [
+                0.021215482367840682,
+                0.049090835963226886
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.12333969928628055,
+              "bootstrap_ci95": [
+                -0.13931900495753338,
+                -0.10802716793924905
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.09268517700011346,
+              "bootstrap_ci95": [
+                -0.13050905368905527,
+                -0.05794875414053793
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.013916916614216401,
+              "bootstrap_ci95": [
+                0.011616014918767691,
+                0.016225112650517955
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.007618678349139374,
+              "bootstrap_ci95": [
+                0.005205741204275565,
+                0.010006469206241302
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.010575666733964817,
+              "bootstrap_ci95": [
+                -0.01441060940089202,
+                -0.006905104723284953
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.11458267659720822,
+              "bootstrap_ci95": [
+                0.10708842269289333,
+                0.12220434939861959
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.04973604075518173,
+              "bootstrap_ci95": [
+                0.04452895339528773,
+                0.05493397736460918
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.022774280418154075,
+              "bootstrap_ci95": [
+                0.009344591233399424,
+                0.036501654128674225
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.13824876121302576,
+              "bootstrap_ci95": [
+                -0.1656860505055246,
+                -0.11297602832243085
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.18089163028989588,
+              "bootstrap_ci95": [
+                -0.24966585489271684,
+                -0.11811129379884382
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cooperation_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.17135156235559654,
+          "sd_between_seeds": 0.009990012816954063
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.19900128578652126,
+          "sd_between_seeds": 0.015027004136487465
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.2496076914022446,
+          "sd_between_seeds": 0.03311973527515228
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.31012128781668497,
+          "sd_between_seeds": 0.026057288413270614
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.3257857144091359,
+          "sd_between_seeds": 0.010462096657145127
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.32991700711648825,
+          "sd_between_seeds": 0.008803798454818322
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.34540687171415413,
+          "sd_between_seeds": 0.011009471227706761
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.3567937363076057,
+          "sd_between_seeds": 0.010082002907090083
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.22872627937675524,
+          "sd_between_seeds": 0.008674056140073022
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.23909928890654264,
+          "sd_between_seeds": 0.008864364660471668
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.24543182181435952,
+          "sd_between_seeds": 0.007880569683769838
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.24804370904165948,
+          "sd_between_seeds": 0.007934106197279722
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.09468806553840586,
+              "bootstrap_ci95": [
+                0.08741187578564794,
+                0.10201672756469798
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.04408165992268254,
+              "bootstrap_ci95": [
+                0.038695571163149985,
+                0.04915069209171032
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.032863872983515646,
+              "bootstrap_ci95": [
+                0.02168151672479208,
+                0.04394191809105592
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.02324894324806781,
+              "bootstrap_ci95": [
+                0.020568485985600328,
+                0.025698019402795223
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.007759078650401985,
+              "bootstrap_ci95": [
+                0.005133529830577826,
+                0.010424441287028295
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.00725557188609921,
+              "bootstrap_ci95": [
+                0.0023289534904165567,
+                0.012221883071253872
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.07143912229033805,
+              "bootstrap_ci95": [
+                -0.07877213217757591,
+                -0.06405085903066125
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.03632258127228055,
+              "bootstrap_ci95": [
+                -0.04172650949917845,
+                -0.030957209558141675
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.025608301097416436,
+              "bootstrap_ci95": [
+                -0.037456632829189186,
+                -0.01367291216320613
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.24553192755467101,
+              "bootstrap_ci95": [
+                0.21478002871246832,
+                0.2767503991513343
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.17601602716438305,
+              "bootstrap_ci95": [
+                0.11587893827445649,
+                0.2373166661206801
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.01282498128636056,
+              "bootstrap_ci95": [
+                0.010835822158140059,
+                0.014821096171439063
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.00649244837854368,
+              "bootstrap_ci95": [
+                0.004300007485088048,
+                0.008711029595199522
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.007761122302487433,
+              "bootstrap_ci95": [
+                -0.012397891187506395,
+                -0.0035908707773916783
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.0818630842520453,
+              "bootstrap_ci95": [
+                -0.08957728668097735,
+                -0.0742034600465977
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.037589211544138856,
+              "bootstrap_ci95": [
+                -0.04228025796453551,
+                -0.03262438694319043
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.04062499528600308,
+              "bootstrap_ci95": [
+                -0.05245372244007788,
+                -0.028561324014308595
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.13544453795139255,
+              "bootstrap_ci95": [
+                0.1121030831056516,
+                0.16010910898568922
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.14728230266126943,
+              "bootstrap_ci95": [
+                0.10035040634010796,
+                0.19563668076259846
+              ]
+            }
+          }
+        }
+      }
+    },
+    "true_scarcity": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.9815093342503072,
+          "sd_between_seeds": 0.05293759934083417
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.8799726235551998,
+          "sd_between_seeds": 0.10598014389587578
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.5522326647997069,
+          "sd_between_seeds": 0.1961883975266977
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.18580969965050056,
+          "sd_between_seeds": 0.15243959204487792
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.9999851895836679,
+          "sd_between_seeds": 2.8427502578703837e-05
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.9911231889301201,
+          "sd_between_seeds": 0.029206112661322278
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.7727681909252679,
+          "sd_between_seeds": 0.1998168434270291
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.29561677151194227,
+          "sd_between_seeds": 0.18815674245108316
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.9776826654021329,
+          "sd_between_seeds": 0.05343944093783767
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.5041085660146088,
+          "sd_between_seeds": 0.3179429972302639
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.15103471005764155,
+          "sd_between_seeds": 0.13973181398403428
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.021577094790798383,
+          "sd_between_seeds": 0.013475828189135468
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.5617197966776497,
+              "bootstrap_ci95": [
+                -0.6087385646123828,
+                -0.5125631674665697
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.23397983792215682,
+              "bootstrap_ci95": [
+                -0.2655830670592769,
+                -0.20292342126571564
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.26488625445409897,
+              "bootstrap_ci95": [
+                -0.33907660951974034,
+                -0.1904857206980015
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.4613617080382889,
+              "bootstrap_ci95": [
+                -0.5190963752414528,
+                -0.4038545979289546
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.24300671003343666,
+              "bootstrap_ci95": [
+                -0.27904284143429575,
+                -0.2058480393563334
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.46828941875977786,
+              "bootstrap_ci95": [
+                -0.5359263392940222,
+                -0.398383096067202
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.1003580886393608,
+              "bootstrap_ci95": [
+                0.03886496754106434,
+                0.16059681400708406
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.009026872111279838,
+              "bootstrap_ci95": [
+                -0.059060872214785703,
+                0.04298517314199902
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.2034031643056789,
+              "bootstrap_ci95": [
+                -0.300488087317032,
+                -0.10251346144622643
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.8213378107146317,
+              "bootstrap_ci95": [
+                0.7223891458078504,
+                0.9284046224516708
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 1.0385797006761026,
+              "bootstrap_ci95": [
+                0.8307326314504543,
+                1.2801355361735944
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.6545897132841508,
+              "bootstrap_ci95": [
+                -0.6999940188578248,
+                -0.6098927637376781
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.30151585732718356,
+              "bootstrap_ci95": [
+                -0.3475604107691431,
+                -0.2556949866396987
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.34411648412068085,
+              "bootstrap_ci95": [
+                0.19706928918679878,
+                0.4845729697440731
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.09286991660650112,
+              "bootstrap_ci95": [
+                -0.14750144219017128,
+                -0.03932135802815133
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.06753601940502674,
+              "bootstrap_ci95": [
+                -0.11480079551465501,
+                -0.01976831769216285
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.6090027385747798,
+              "bootstrap_ci95": [
+                0.4553221348657548,
+                0.7587417355632564
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 1.1653313932601093,
+              "bootstrap_ci95": [
+                1.066685935527674,
+                1.2803990122330766
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 1.2886403375811184,
+              "bootstrap_ci95": [
+                1.080005009652659,
+                1.5318640839636029
+              ]
+            }
+          }
+        }
+      }
+    },
+    "avg_scarcity_belief": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.983272860526532,
+          "sd_between_seeds": 0.023364983082538027
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.9268038240016613,
+          "sd_between_seeds": 0.06664567311969205
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.6345166651564077,
+          "sd_between_seeds": 0.20114596246731473
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.25599539485436984,
+          "sd_between_seeds": 0.1548860392232829
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.976169023278472,
+          "sd_between_seeds": 0.0014116409218983886
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.9695423927112085,
+          "sd_between_seeds": 0.02147480853573175
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.7911468331068054,
+          "sd_between_seeds": 0.17723428978126085
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.3438905170660511,
+          "sd_between_seeds": 0.18277377005351456
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.9761368831025846,
+          "sd_between_seeds": 0.025929977532058765
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.5783410945063463,
+          "sd_between_seeds": 0.28359627309201696
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.2524162542298897,
+          "sd_between_seeds": 0.13365601965930515
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.12730953238512913,
+          "sd_between_seeds": 0.01238794571193281
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.509782312258708,
+              "bootstrap_ci95": [
+                -0.5593050223019604,
+                -0.45891374788499467
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.21749515341345416,
+              "bootstrap_ci95": [
+                -0.24765083232982535,
+                -0.18807143982594174
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.3220522337771672,
+              "bootstrap_ci95": [
+                -0.3927764452436626,
+                -0.2522255044531222
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.40533703290841194,
+              "bootstrap_ci95": [
+                -0.45793785428352474,
+                -0.3542541257165832
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.22694147330400893,
+              "bootstrap_ci95": [
+                -0.26074224277279573,
+                -0.1925645988745649
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.4406296854734908,
+              "bootstrap_ci95": [
+                -0.5040484391458769,
+                -0.37358999189436876
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.10444527935029602,
+              "bootstrap_ci95": [
+                0.04992897809140749,
+                0.15773027371336254
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.009446319890554777,
+              "bootstrap_ci95": [
+                -0.05601831956028172,
+                0.039887714236303565
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.11857745169632361,
+              "bootstrap_ci95": [
+                -0.21287692414843765,
+                -0.018949041411185315
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.7951178829890603,
+              "bootstrap_ci95": [
+                0.7013114435699386,
+                0.8968463327910863
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 1.0434323236279086,
+              "bootstrap_ci95": [
+                0.8322797463528464,
+                1.2850666866267304
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.587376095496956,
+              "bootstrap_ci95": [
+                -0.6277758330231098,
+                -0.5476806970466835
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.26145125522049945,
+              "bootstrap_ci95": [
+                -0.3014772082157373,
+                -0.2218948812603069
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.27268906675147775,
+              "bootstrap_ci95": [
+                0.13753673820999565,
+                0.3992783777445692
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.07759378323824806,
+              "bootstrap_ci95": [
+                -0.13273246422024632,
+                -0.020956522538725243
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.04395610180704529,
+              "bootstrap_ci95": [
+                -0.08961181249698565,
+                0.003285817559991604
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.5947413005286449,
+              "bootstrap_ci95": [
+                0.45241746309349135,
+                0.7360697068324614
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 1.1522096419831651,
+              "bootstrap_ci95": [
+                1.0384398976744036,
+                1.2797987604085626
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 1.2021015232623855,
+              "bootstrap_ci95": [
+                0.985975764240528,
+                1.4497612233655983
+              ]
+            }
+          }
+        }
+      }
+    },
+    "avg_stress": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.8429606540699994,
+          "sd_between_seeds": 0.019627587296659973
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.7829618707894306,
+          "sd_between_seeds": 0.03513737717020007
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.6517896139834798,
+          "sd_between_seeds": 0.0755878520180721
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.5160556273107509,
+          "sd_between_seeds": 0.06680751031007794
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.4216106836039883,
+          "sd_between_seeds": 0.03504317719268856
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.4165637883772952,
+          "sd_between_seeds": 0.03575277448357691
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.394128817902262,
+          "sd_between_seeds": 0.02634263376282393
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.3987138261011393,
+          "sd_between_seeds": 0.026598261670576204
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.7042539176830703,
+          "sd_between_seeds": 0.025202950114017394
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.699606010936331,
+          "sd_between_seeds": 0.038569482743440804
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.709925124410375,
+          "sd_between_seeds": 0.028544579574823106
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.706250873704205,
+          "sd_between_seeds": 0.026808440979111368
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.2290386417825997,
+              "bootstrap_ci95": [
+                -0.24688682916977414,
+                -0.21148784298835904
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.09786638497664879,
+              "bootstrap_ci95": [
+                -0.1087769579115892,
+                -0.08611994089458519
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.07573520339216,
+              "bootstrap_ci95": [
+                -0.10326991451288253,
+                -0.04810867157098762
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.022665913988941078,
+              "bootstrap_ci95": [
+                -0.032289929322465355,
+                -0.013203156995603071
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0002309435139078997,
+              "bootstrap_ci95": [
+                -0.008782265779800303,
+                0.008423773139738883
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.00963190342557041,
+              "bootstrap_ci95": [
+                -0.00573348941390858,
+                0.024417602977051475
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.20637272779365862,
+              "bootstrap_ci95": [
+                0.18431158228084027,
+                0.2295145578149483
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.09763544146274089,
+              "bootstrap_ci95": [
+                0.08560983947137912,
+                0.10917568589286719
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.08536710681773041,
+              "bootstrap_ci95": [
+                0.05434292259074695,
+                0.11573442456678781
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.09896109151072965,
+              "bootstrap_ci95": [
+                0.05620995261529515,
+                0.14492998481566868
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.002359783841642904,
+              "bootstrap_ci95": [
+                -0.08981279052030633,
+                0.08690574067967213
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.006158034747589358,
+              "bootstrap_ci95": [
+                -0.0020243408676702433,
+                0.01458004923973818
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.00416107872645477,
+              "bootstrap_ci95": [
+                -0.013648067625110524,
+                0.004725424339938542
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0009736560405693151,
+              "bootstrap_ci95": [
+                -0.016168945453828437,
+                0.018266381064826046
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.23519667653018905,
+              "bootstrap_ci95": [
+                0.2133329460856274,
+                0.2570092662004678
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.09370530625019402,
+              "bootstrap_ci95": [
+                0.08116940080969008,
+                0.10589069687844534
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.07670885943272931,
+              "bootstrap_ci95": [
+                0.044200645089409615,
+                0.10944947474591923
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.026886444573988,
+              "bootstrap_ci95": [
+                -0.06227127223986008,
+                0.009051203291059759
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.042517956777984756,
+              "bootstrap_ci95": [
+                -0.050105149965214216,
+                0.13576616688897028
+              ]
+            }
+          }
+        }
+      }
+    },
+    "avg_trust": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": -0.034574952499074746,
+          "sd_between_seeds": 0.00390632666962809
+        },
+        "C90-R0p019-intact": {
+          "mean": -0.017006856809040825,
+          "sd_between_seeds": 0.00711865857088245
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.0013350790297023464,
+          "sd_between_seeds": 0.00855196087093237
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.017088131557792693,
+          "sd_between_seeds": 0.00512952468286275
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.03482194928369189,
+          "sd_between_seeds": 0.003399010046134884
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.03435035873702153,
+          "sd_between_seeds": 0.0033601752797022587
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.03396426533894619,
+          "sd_between_seeds": 0.0033145292134218515
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.03477583039635672,
+          "sd_between_seeds": 0.0034098755679386667
+        },
+        "C90-R0p016-fixed": {
+          "mean": -0.01252114582952126,
+          "sd_between_seeds": 0.0034742010262695244
+        },
+        "C90-R0p019-fixed": {
+          "mean": -0.013799966405686665,
+          "sd_between_seeds": 0.0037097467377547096
+        },
+        "C120-R0p016-fixed": {
+          "mean": -0.012737484700605648,
+          "sd_between_seeds": 0.0036957876773628714
+        },
+        "C120-R0p019-fixed": {
+          "mean": -0.013395679791974898,
+          "sd_between_seeds": 0.0033501389022066895
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.03500250994780531,
+              "bootstrap_ci95": [
+                0.03343174542258415,
+                0.03676117086864065
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.016660574109062132,
+              "bootstrap_ci95": [
+                0.014940261029005135,
+                0.018325245352997066
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0018150431619435754,
+              "bootstrap_ci95": [
+                -0.005504997239306026,
+                0.002042904202422598
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.00021610614270525796,
+              "bootstrap_ci95": [
+                -0.0009221565990655411,
+                0.0004967437774889782
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.00016998725537008957,
+              "bootstrap_ci95": [
+                -0.0007435313970433457,
+                0.0010379361211279743
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0012831556040808836,
+              "bootstrap_ci95": [
+                -0.00029936235117610665,
+                0.0028397641299232387
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.035218616090510566,
+              "bootstrap_ci95": [
+                -0.03710462442384916,
+                -0.033387176589718986
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.016490586853692042,
+              "bootstrap_ci95": [
+                -0.018378554938337215,
+                -0.014642112675978251
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.003098198766024459,
+              "bootstrap_ci95": [
+                -0.001376354210338451,
+                0.007406937332897966
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.006174018464033264,
+              "bootstrap_ci95": [
+                -0.026305198510336095,
+                0.014181161976440877
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.010202965051344116,
+              "bootstrap_ci95": [
+                -0.04535945043548738,
+                0.06261843023036259
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 9.397387131368853e-05,
+              "bootstrap_ci95": [
+                -0.000608539471854961,
+                0.0008284569143886119
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0009685078337673281,
+              "bootstrap_ci95": [
+                -0.001940979416478718,
+                -9.308990345068645e-06
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.000620625484796156,
+              "bootstrap_ci95": [
+                -0.0007920875675879447,
+                0.0019856149542227843
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.03490853607649162,
+              "bootstrap_ci95": [
+                -0.03689209024180261,
+                -0.03313015967496222
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.017629081942829458,
+              "bootstrap_ci95": [
+                -0.01932533401072748,
+                -0.01585344824139398
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0024356686467397314,
+              "bootstrap_ci95": [
+                -0.0017057875595825921,
+                0.006499697864290195
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.0026847752190862755,
+              "bootstrap_ci95": [
+                -0.017316755708260072,
+                0.023740760327069708
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0581317202773061,
+              "bootstrap_ci95": [
+                -0.1207741960206979,
+                -0.0005199624584311287
+              ]
+            }
+          }
+        }
+      }
+    },
+    "inequality_gini": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.4229811330978636,
+          "sd_between_seeds": 0.025670288347063423
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.4067809865041316,
+          "sd_between_seeds": 0.019596897820973853
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.418560066922681,
+          "sd_between_seeds": 0.020333337340570384
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.43754111982421157,
+          "sd_between_seeds": 0.02458847602218838
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.47304918704275245,
+          "sd_between_seeds": 0.020376014573918626
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.4594072433601667,
+          "sd_between_seeds": 0.01937001000458146
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.43934566809010817,
+          "sd_between_seeds": 0.02063852624520992
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.4367805464589731,
+          "sd_between_seeds": 0.02318597182979365
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.40942038298350414,
+          "sd_between_seeds": 0.02760741560745126
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.38867081722354363,
+          "sd_between_seeds": 0.028164023374542126
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.39282991625280533,
+          "sd_between_seeds": 0.021109559030851016
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.3941983053978894,
+          "sd_between_seeds": 0.019431069645181355
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.01316953357244871,
+              "bootstrap_ci95": [
+                0.0054412687202442175,
+                0.02136147214433563
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0013904531538992404,
+              "bootstrap_ci95": [
+                -0.00529333368860559,
+                0.008329354312176414
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.035181199495262605,
+              "bootstrap_ci95": [
+                0.020555365260461447,
+                0.04983670003131673
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.028165107926918953,
+              "bootstrap_ci95": [
+                -0.03659282353332575,
+                -0.019800986237857233
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.00810353265686048,
+              "bootstrap_ci95": [
+                -0.014582863560136607,
+                -0.0018520420191076431
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.011076822051450663,
+              "bootstrap_ci95": [
+                -0.002766390658545824,
+                0.02497131540204866
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.041334641499367664,
+              "bootstrap_ci95": [
+                -0.051346904521536736,
+                -0.031034134475619812
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.00949398581075972,
+              "bootstrap_ci95": [
+                -0.018317779732724967,
+                -0.0007074331933712928
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.024104377443811942,
+              "bootstrap_ci95": [
+                -0.04578940419203002,
+                -0.0026896010077144543
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -2.138656450661373,
+              "bootstrap_ci95": [
+                -5.656371339047789,
+                -1.0925957347567048
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -5.827979629616277,
+              "bootstrap_ci95": [
+                -37.517039454896306,
+                35.813310881905075
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.005531489278176482,
+              "bootstrap_ci95": [
+                -0.013770273069437906,
+                0.0031407336625972966
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.009690588307438186,
+              "bootstrap_ci95": [
+                -0.01745318454868012,
+                -0.0018824548597648903
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.02211795490504459,
+              "bootstrap_ci95": [
+                0.007596848044345012,
+                0.035941167450777155
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.018701022850625193,
+              "bootstrap_ci95": [
+                -0.028806576257754065,
+                -0.008543463513667722
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.011081041461337426,
+              "bootstrap_ci95": [
+                -0.021258662685843387,
+                -0.001231592611348649
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.013063244590218015,
+              "bootstrap_ci95": [
+                -0.03324384124678639,
+                0.005408722685889907
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.420021654354458,
+              "bootstrap_ci95": [
+                -1.7630155840985886,
+                0.2234608568916474
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -6.969374178671838,
+              "bootstrap_ci95": [
+                -43.21756547775466,
+                44.80365275760071
+              ]
+            }
+          }
+        }
+      }
+    },
+    "population": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 93.354,
+          "sd_between_seeds": 6.191529029580492
+        },
+        "C90-R0p019-intact": {
+          "mean": 106.96000000000001,
+          "sd_between_seeds": 6.60488794966169
+        },
+        "C120-R0p016-intact": {
+          "mean": 113.31533333333333,
+          "sd_between_seeds": 8.90743112212507
+        },
+        "C120-R0p019-intact": {
+          "mean": 118.77966666666666,
+          "sd_between_seeds": 10.967731819495215
+        },
+        "C90-R0p016-zero": {
+          "mean": 108.93933333333332,
+          "sd_between_seeds": 6.199043270639781
+        },
+        "C90-R0p019-zero": {
+          "mean": 126.304,
+          "sd_between_seeds": 9.209221989678193
+        },
+        "C120-R0p016-zero": {
+          "mean": 128.981,
+          "sd_between_seeds": 9.87797283056495
+        },
+        "C120-R0p019-zero": {
+          "mean": 128.96166666666667,
+          "sd_between_seeds": 10.750910493385277
+        },
+        "C90-R0p016-fixed": {
+          "mean": 92.13033333333333,
+          "sd_between_seeds": 7.7364000731576725
+        },
+        "C90-R0p019-fixed": {
+          "mean": 93.489,
+          "sd_between_seeds": 10.302139834636966
+        },
+        "C120-R0p016-fixed": {
+          "mean": 94.80066666666667,
+          "sd_between_seeds": 8.56181294583923
+        },
+        "C120-R0p019-fixed": {
+          "mean": 93.22599999999998,
+          "sd_between_seeds": 9.340500466544459
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 15.890499999999975,
+              "bootstrap_ci95": [
+                13.49215000000001,
+                18.337062500000002
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 9.535166666666669,
+              "bootstrap_ci95": [
+                7.898124999999988,
+                11.082675000000014
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -8.14166666666668,
+              "bootstrap_ci95": [
+                -11.773933333333323,
+                -4.577658333333339
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 11.349666666666678,
+              "bootstrap_ci95": [
+                8.802670833333325,
+                13.864579166666658
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 8.672666666666686,
+              "bootstrap_ci95": [
+                5.8949874999999885,
+                11.163733333333337
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -17.384,
+              "bootstrap_ci95": [
+                -22.10979999999999,
+                -12.406300000000018
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -4.540833333333296,
+              "bootstrap_ci95": [
+                -7.8227041666666715,
+                -1.1761083333333278
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.862499999999983,
+              "bootstrap_ci95": [
+                -4.069700000000011,
+                2.256099999999999
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -9.24233333333332,
+              "bootstrap_ci95": [
+                -15.951383333333311,
+                -2.433308333333365
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.7142422621482456,
+              "bootstrap_ci95": [
+                0.5430749989241408,
+                0.9168166005126857
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.9095453671496758,
+              "bootstrap_ci95": [
+                0.6010052201996001,
+                1.2671113586324567
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 1.2036666666666633,
+              "bootstrap_ci95": [
+                -0.41884999999999156,
+                2.867166666666663
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.10800000000000409,
+              "bootstrap_ci95": [
+                -2.184012500000012,
+                1.8083416666666698
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -2.9333333333333655,
+              "bootstrap_ci95": [
+                -7.4923583333333355,
+                1.7564416666666618
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -14.686833333333311,
+              "bootstrap_ci95": [
+                -17.541241666666682,
+                -11.628487500000002
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -9.643166666666673,
+              "bootstrap_ci95": [
+                -11.68584583333335,
+                -7.647612499999973
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 5.208333333333314,
+              "bootstrap_ci95": [
+                -1.3643749999999877,
+                11.957383333333336
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.07574756405818982,
+              "bootstrap_ci95": [
+                -0.026661560714105692,
+                0.18829176487216562
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.01132649315691081,
+              "bootstrap_ci95": [
+                -0.24976298015847037,
+                0.18253578826316624
+              ]
+            }
+          }
+        }
+      }
+    },
+    "helping_norm": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.17413722552296457,
+          "sd_between_seeds": 0.010000785861479117
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.20768659678897228,
+          "sd_between_seeds": 0.016516979871646558
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.2598233738676944,
+          "sd_between_seeds": 0.030229418654584585
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.3144831692161057,
+          "sd_between_seeds": 0.021465328644681765
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.32411469442234947,
+          "sd_between_seeds": 0.010005152186929041
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.33181341438983625,
+          "sd_between_seeds": 0.009382872634603147
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.34668098432131356,
+          "sd_between_seeds": 0.009749603130693457
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.35742029509975903,
+          "sd_between_seeds": 0.008506077332214725
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.22870431056272597,
+          "sd_between_seeds": 0.008507366489783792
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.23952051944286015,
+          "sd_between_seeds": 0.007975959624865503
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.244535952082696,
+          "sd_between_seeds": 0.0069716676157738034
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.24702864860327345,
+          "sd_between_seeds": 0.007267649167126808
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.09624136038593165,
+              "bootstrap_ci95": [
+                0.09000952306869069,
+                0.10253288265840473
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.04410458330720948,
+              "bootstrap_ci95": [
+                0.039105088621880904,
+                0.04893652211219077
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0211104240824036,
+              "bootstrap_ci95": [
+                0.010624939015996133,
+                0.03170875440979239
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.02408658530444341,
+              "bootstrap_ci95": [
+                0.02149984017462006,
+                0.026440414487595952
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0092190153729661,
+              "bootstrap_ci95": [
+                0.00714346498200257,
+                0.011276626060853558
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0030405908109586988,
+              "bootstrap_ci95": [
+                -0.0015659722859299341,
+                0.007557369086460191
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.07215477508148824,
+              "bootstrap_ci95": [
+                -0.07882220059978812,
+                -0.065416835412693
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.03488556793424338,
+              "bootstrap_ci95": [
+                -0.0397282372367945,
+                -0.030138122757665562
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0180698332714449,
+              "bootstrap_ci95": [
+                -0.028958455277697654,
+                -0.007227577688491835
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.25027270196363866,
+              "bootstrap_ci95": [
+                0.21949264618167036,
+                0.2804155814954521
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.20902624357090635,
+              "bootstrap_ci95": [
+                0.16302644361183172,
+                0.2566743144375061
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.011669885340191644,
+              "bootstrap_ci95": [
+                0.009864565812301657,
+                0.013509608813488944
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.006654452700355806,
+              "bootstrap_ci95": [
+                0.004747204687362628,
+                0.008628890398572748
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.008323512359556723,
+              "bootstrap_ci95": [
+                -0.01246686520878263,
+                -0.004500696418536729
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.08457147504574,
+              "bootstrap_ci95": [
+                -0.09111417338016009,
+                -0.07813877631576914
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.03745013060685368,
+              "bootstrap_ci95": [
+                -0.04207464747023681,
+                -0.03254824142855465
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.029433936441960323,
+              "bootstrap_ci95": [
+                -0.040459974358998126,
+                -0.018681067926532294
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.12125644622431503,
+              "bootstrap_ci95": [
+                0.10123507674678602,
+                0.14233897055391675
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.15087893822744827,
+              "bootstrap_ci95": [
+                0.10865733829244874,
+                0.1943455862584374
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_forage_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.163458719757054,
+          "sd_between_seeds": 0.012857502660475112
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.15445331720468225,
+          "sd_between_seeds": 0.005788713816919098
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.1606455752992322,
+          "sd_between_seeds": 0.006218482693449708
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.16932368107113271,
+          "sd_between_seeds": 0.004445212646128213
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.20701018697127058,
+          "sd_between_seeds": 0.00961096692347751
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.19521832293735064,
+          "sd_between_seeds": 0.01424121364905541
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.1707519644489471,
+          "sd_between_seeds": 0.011663015847469253
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.16842116676909805,
+          "sd_between_seeds": 0.0029559724350857472
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.1842193925960844,
+          "sd_between_seeds": 0.013617661974823548
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.1698714123661315,
+          "sd_between_seeds": 0.00489273535524297
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.1700104086423074,
+          "sd_between_seeds": 0.0033605287769337758
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.17004498957047906,
+          "sd_between_seeds": 0.00414011689334058
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.006028609704314319,
+              "bootstrap_ci95": [
+                0.002205383085495377,
+                0.009703810404778973
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.00016364839023563782,
+              "bootstrap_ci95": [
+                -0.002235490300894688,
+                0.0019760568954405857
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.017683508324272262,
+              "bootstrap_ci95": [
+                0.013529730560182172,
+                0.021869498417435906
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.031527689345288046,
+              "bootstrap_ci95": [
+                -0.034903781086364306,
+                -0.028056503527667594
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.007061330856884512,
+              "bootstrap_ci95": [
+                -0.009576573102264584,
+                -0.004444876641965161
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.009461066354070874,
+              "bootstrap_ci95": [
+                0.0014669506817923694,
+                0.017140300884559197
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.037556299049602365,
+              "bootstrap_ci95": [
+                -0.04222128747362491,
+                -0.032813301220248926
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0068976824666488745,
+              "bootstrap_ci95": [
+                -0.009941259727204062,
+                -0.00384384564858784
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.008222441970201388,
+              "bootstrap_ci95": [
+                -0.017834039214966402,
+                0.001230579837162618
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -5.229678299247925,
+              "bootstrap_ci95": [
+                -14.138248456726842,
+                -3.131849870236411
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 43.14940615496969,
+              "bootstrap_ci95": [
+                -97.8456425388381,
+                106.74175196805636
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.007017703374714718,
+              "bootstrap_ci95": [
+                -0.009797101666217818,
+                -0.004317757071385462
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0071566996508906355,
+              "bootstrap_ci95": [
+                -0.009682643774546681,
+                -0.004529481158886875
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.014382561158124557,
+              "bootstrap_ci95": [
+                0.00996558017688124,
+                0.01877742219778204
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.013046313079029037,
+              "bootstrap_ci95": [
+                -0.01678291659262172,
+                -0.00927176860392118
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.006993051260654998,
+              "bootstrap_ci95": [
+                -0.01007377085736674,
+                -0.003767509717015798
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0033009471661477052,
+              "bootstrap_ci95": [
+                -0.009236029004226114,
+                0.002325516400298068
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -1.164066628777206,
+              "bootstrap_ci95": [
+                -3.6771365685942374,
+                -0.5222282991874294
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 43.73217262073695,
+              "bootstrap_ci95": [
+                -98.33664709832091,
+                110.30762729124207
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_rest_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.13807815744179489,
+          "sd_between_seeds": 0.00376959991363426
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.14011618639541956,
+          "sd_between_seeds": 0.004502346676248871
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.1508942722605587,
+          "sd_between_seeds": 0.005109258296907081
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.15855527614788423,
+          "sd_between_seeds": 0.0029636060972900715
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.1547518986960715,
+          "sd_between_seeds": 0.0033839029985562766
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.15398366694595206,
+          "sd_between_seeds": 0.003937659314778227
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.15245900371994542,
+          "sd_between_seeds": 0.002860584782922658
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.15496071055508864,
+          "sd_between_seeds": 0.0037668947410587498
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.1515166935392669,
+          "sd_between_seeds": 0.00453235751862593
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.1548771956808566,
+          "sd_between_seeds": 0.0026273187856254592
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.15744569847058,
+          "sd_between_seeds": 0.003376830461802122
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.15911971638760816,
+          "sd_between_seeds": 0.0038282061002856155
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.015627602285614273,
+              "bootstrap_ci95": [
+                0.01432973552490886,
+                0.01701451294885335
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.004849516420475097,
+              "bootstrap_ci95": [
+                0.0035033180351145663,
+                0.006118035192895156
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.005622974933700842,
+              "bootstrap_ci95": [
+                0.002809199727141579,
+                0.008292732962758925
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.0006579256834947367,
+              "bootstrap_ci95": [
+                -0.0019012945100884576,
+                0.0006094432351881597
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0008667375425119028,
+              "bootstrap_ci95": [
+                -0.00016828393763486518,
+                0.0019365982618476947
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0032699385852626717,
+              "bootstrap_ci95": [
+                0.0007325338161933058,
+                0.005754246368769079
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.01628552796910901,
+              "bootstrap_ci95": [
+                -0.01819057791048918,
+                -0.014417574163606561
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0039827788779631945,
+              "bootstrap_ci95": [
+                -0.005680623435507456,
+                -0.002253532310758684
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.00235303634843817,
+              "bootstrap_ci95": [
+                -0.00660130668720131,
+                0.0021362175206735595
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.04210023210664755,
+              "bootstrap_ci95": [
+                -0.12215262565173847,
+                0.039128164684227314
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.17872659196542948,
+              "bootstrap_ci95": [
+                -0.03472534893687223,
+                0.4332616216157575
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.005085762819032336,
+              "bootstrap_ci95": [
+                0.004036840192029847,
+                0.006147993076895963
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0025172600293089376,
+              "bootstrap_ci95": [
+                0.0011937198279101495,
+                0.0038856413183714837
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0016864842245615241,
+              "bootstrap_ci95": [
+                -0.004024322257595265,
+                0.0004486340788160506
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.010541839466581937,
+              "bootstrap_ci95": [
+                -0.012232744591543256,
+                -0.00885513411281951
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.00233225639116616,
+              "bootstrap_ci95": [
+                -0.004244821821531958,
+                -0.0004924110476856383
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.007309459158262366,
+              "bootstrap_ci95": [
+                -0.011014681838674444,
+                -0.003580920187500554
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.3254346204928666,
+              "bootstrap_ci95": [
+                0.25602063736764114,
+                0.40128281748806577
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.5190744418723562,
+              "bootstrap_ci95": [
+                0.23620368882556156,
+                0.8731777321851953
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_socialize_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.08846073190160415,
+          "sd_between_seeds": 0.004130113692209814
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.0955885147200452,
+          "sd_between_seeds": 0.004722160977574495
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.10881958086748215,
+          "sd_between_seeds": 0.008040643364721248
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.11795479950584159,
+          "sd_between_seeds": 0.005563357203671045
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.10890059097520463,
+          "sd_between_seeds": 0.0037834641184111327
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.11133367797409649,
+          "sd_between_seeds": 0.004883677556643055
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.11789949157854389,
+          "sd_between_seeds": 0.004975171991724494
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.12209820398372342,
+          "sd_between_seeds": 0.004095928922166444
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.10052781172738715,
+          "sd_between_seeds": 0.0038145266188010043
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.10501914888346595,
+          "sd_between_seeds": 0.004016245114818104
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.10820802094682294,
+          "sd_between_seeds": 0.003722266595344723
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.10944086508398844,
+          "sd_between_seeds": 0.004042999379737383
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.021362566875837208,
+              "bootstrap_ci95": [
+                0.019608610525633653,
+                0.023028493408980874
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.008131500728400243,
+              "bootstrap_ci95": [
+                0.006481871775610761,
+                0.009642782042408458
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.002007435819918385,
+              "bootstrap_ci95": [
+                -0.0013361319057249013,
+                0.005206715379745556
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.00988171330648309,
+              "bootstrap_ci95": [
+                0.008573093764741553,
+                0.011210991095902529
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0033158997020357045,
+              "bootstrap_ci95": [
+                0.001833036353280977,
+                0.0048428074554381206
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.001765625406287677,
+              "bootstrap_ci95": [
+                -0.0007100406720982773,
+                0.0041706257762239825
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.011480853569354119,
+              "bootstrap_ci95": [
+                -0.013753471879785421,
+                -0.009085184469780554
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.004815601026364538,
+              "bootstrap_ci95": [
+                -0.006823845295456533,
+                -0.0026948096031491954
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0002418104136307081,
+              "bootstrap_ci95": [
+                -0.004615828139189611,
+                0.004226343203440372
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.4625714392805533,
+              "bootstrap_ci95": [
+                0.3906891794182298,
+                0.5461303087707783
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.4077844684259237,
+              "bootstrap_ci95": [
+                0.22552596560784013,
+                0.622850528950492
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.006050962709979152,
+              "bootstrap_ci95": [
+                0.004881073255821696,
+                0.007264718381108242
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0028620906466221563,
+              "bootstrap_ci95": [
+                0.001476716498231274,
+                0.004226660396728175
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0032584930189133027,
+              "bootstrap_ci95": [
+                -0.004812888773330928,
+                -0.0016890186741202705
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.015311604165858056,
+              "bootstrap_ci95": [
+                -0.017199144618596833,
+                -0.01343891895418504
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0052694100817780865,
+              "bootstrap_ci95": [
+                -0.007194336178862953,
+                -0.0033182730239657145
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.005265928838831688,
+              "bootstrap_ci95": [
+                -0.009111537192107385,
+                -0.0014366480071204527
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.283250732234022,
+              "bootstrap_ci95": [
+                0.22883585766700543,
+                0.34111138433375043
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.3519756982405426,
+              "bootstrap_ci95": [
+                0.18365694714721637,
+                0.5355122967158588
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_share_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.08289083045399238,
+          "sd_between_seeds": 0.00667670715999956
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.10341277106647608,
+          "sd_between_seeds": 0.01097563357387776
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.14078811053476242,
+          "sd_between_seeds": 0.026249516731669333
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.19216648831084335,
+          "sd_between_seeds": 0.022579577963397386
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.21688512343393124,
+          "sd_between_seeds": 0.008822039848467711
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.21858332914239179,
+          "sd_between_seeds": 0.007203601901373982
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.22750738013561028,
+          "sd_between_seeds": 0.00890937827252559
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.23469553232388227,
+          "sd_between_seeds": 0.009785117264471316
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.1281984676493681,
+          "sd_between_seeds": 0.006574075496370138
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.13408014002307667,
+          "sd_between_seeds": 0.006564845166476391
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.13722380086753655,
+          "sd_between_seeds": 0.0060484771093835266
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.13860284395767103,
+          "sd_between_seeds": 0.006052764524283206
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.07332549866256864,
+              "bootstrap_ci95": [
+                0.06695039772477496,
+                0.07960800233923582
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.03595015919428232,
+              "bootstrap_ci95": [
+                0.03178531114629523,
+                0.040042926186738076
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.030856437163597233,
+              "bootstrap_ci95": [
+                0.022201725382542153,
+                0.039595741427768685
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.013367229941584735,
+              "bootstrap_ci95": [
+                0.011317901827815583,
+                0.015471764154809787
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0044431789483662665,
+              "bootstrap_ci95": [
+                0.0020586552596897458,
+                0.006789194808315614
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.005489946479811436,
+              "bootstrap_ci95": [
+                0.0006639621362480645,
+                0.010188842846665203
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.05995826872098391,
+              "bootstrap_ci95": [
+                -0.0658387150562244,
+                -0.05391432030498812
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.031506980245916055,
+              "bootstrap_ci95": [
+                -0.03594072395167683,
+                -0.02711160778032353
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.025366490683785797,
+              "bootstrap_ci95": [
+                -0.0348875890857589,
+                -0.01583570494018444
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.18229988456128246,
+              "bootstrap_ci95": [
+                0.1547661440815442,
+                0.21114571906559407
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.12359274751342214,
+              "bootstrap_ci95": [
+                0.058103603381663274,
+                0.1886945938334325
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.006774018576381408,
+              "bootstrap_ci95": [
+                0.005363723138670642,
+                0.008113081959707114
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.003630357731921524,
+              "bootstrap_ci95": [
+                0.0022206392551507395,
+                0.005053549915015802
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.004502629283574089,
+              "bootstrap_ci95": [
+                -0.008900708591771748,
+                -0.0005675310812939991
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.06655148008618723,
+              "bootstrap_ci95": [
+                -0.07300516319763169,
+                -0.060015959078801556
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0323198014623608,
+              "bootstrap_ci95": [
+                -0.03632497143351296,
+                -0.0281234982034623
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.03535906644717132,
+              "bootstrap_ci95": [
+                -0.044795249281711656,
+                -0.02587707555170512
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.09238285043998512,
+              "bootstrap_ci95": [
+                0.07223393775050363,
+                0.11291292186111529
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.10098307805265332,
+              "bootstrap_ci95": [
+                0.0623374490436395,
+                0.1415941986586886
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_steal_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.3206250911083342,
+          "sd_between_seeds": 0.011213058653528587
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.2951827022783513,
+          "sd_between_seeds": 0.01650701530203653
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.2366343047014018,
+          "sd_between_seeds": 0.03293065234665932
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.1778419687193,
+          "sd_between_seeds": 0.021510957684494764
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.1199915229909079,
+          "sd_between_seeds": 0.004400289959541214
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.12309087873686791,
+          "sd_between_seeds": 0.006322877470682446
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.13160330811221305,
+          "sd_between_seeds": 0.007667215828441068
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.13631126274501695,
+          "sd_between_seeds": 0.005110301362465231
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.21835014234415237,
+          "sd_between_seeds": 0.010883553001580164
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.23125665406027412,
+          "sd_between_seeds": 0.010825841284881333
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.23755489232535115,
+          "sd_between_seeds": 0.009212524295808055
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.2398857373075081,
+          "sd_between_seeds": 0.008665676794074562
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.10066575998299182,
+              "bootstrap_ci95": [
+                -0.10825764603708295,
+                -0.09309320366646189
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.04211736240604236,
+              "bootstrap_ci95": [
+                -0.04719784093297128,
+                -0.03676053399592804
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.03334994715211889,
+              "bootstrap_ci95": [
+                -0.04573143846096754,
+                -0.020931174935885685
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.012416084564727106,
+              "bootstrap_ci95": [
+                0.01110698498565099,
+                0.013584051853692377
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0039036551893819604,
+              "bootstrap_ci95": [
+                0.0025593547118877226,
+                0.00524291147289444
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0016085988868438927,
+              "bootstrap_ci95": [
+                -0.002445292112783322,
+                0.0058609104950030876
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.11308184454771893,
+              "bootstrap_ci95": [
+                0.10546066288508542,
+                0.12073532576168929
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.04602101759542432,
+              "bootstrap_ci95": [
+                0.040689531630792995,
+                0.05111089196082976
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.034958546038962784,
+              "bootstrap_ci95": [
+                0.020849838223698028,
+                0.04889638428565294
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.12333969928628055,
+              "bootstrap_ci95": [
+                -0.1393859848770832,
+                -0.10852544908726253
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.09268517700011346,
+              "bootstrap_ci95": [
+                -0.1302068053891439,
+                -0.05886172488869016
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.013916916614216401,
+              "bootstrap_ci95": [
+                0.011653580330483772,
+                0.016196974797643995
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.007618678349139374,
+              "bootstrap_ci95": [
+                0.00519940897766058,
+                0.010105458215984048
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.010575666733964817,
+              "bootstrap_ci95": [
+                -0.014515239251237367,
+                -0.006825451515728412
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.11458267659720822,
+              "bootstrap_ci95": [
+                0.10687852204374643,
+                0.12210230408366844
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.04973604075518173,
+              "bootstrap_ci95": [
+                0.044327654481322615,
+                0.05503931961540463
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.022774280418154075,
+              "bootstrap_ci95": [
+                0.008940206576061678,
+                0.036369270924396034
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.13824876121302576,
+              "bootstrap_ci95": [
+                -0.16539725148855014,
+                -0.11335126447690626
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.18089163028989588,
+              "bootstrap_ci95": [
+                -0.2524916008425824,
+                -0.11917052902244057
+              ]
+            }
+          }
+        }
+      }
+    },
+    "action_spread_belief_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.20640536797034056,
+          "sd_between_seeds": 0.006747296644233984
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.21112913755670915,
+          "sd_between_seeds": 0.004403075980592053
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.20199304252284686,
+          "sd_between_seeds": 0.010419021261624915
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.18373632580400134,
+          "sd_between_seeds": 0.010147768841418653
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.1920968337635975,
+          "sd_between_seeds": 0.005820723111692262
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.1973050725794294,
+          "sd_between_seeds": 0.006819277807448096
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.1992498180725291,
+          "sd_between_seeds": 0.00842446974484208
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.1829620133206061,
+          "sd_between_seeds": 0.009478301588665496
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.21708109169971967,
+          "sd_between_seeds": 0.007354278136532711
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.2047902209827193,
+          "sd_between_seeds": 0.012514629147117333
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.18940928120099743,
+          "sd_between_seeds": 0.007010310555552463
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.1827265998614499,
+          "sd_between_seeds": 0.004658974623866861
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.015902568600100753,
+              "bootstrap_ci95": [
+                -0.019516194390568255,
+                -0.012348771018672123
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.006766473566238468,
+              "bootstrap_ci95": [
+                -0.008612444085685738,
+                -0.004968349558873312
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0229804863052141,
+              "bootstrap_ci95": [
+                -0.027474098725564968,
+                -0.018546445756053503
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.003595037474945856,
+              "bootstrap_ci95": [
+                -0.007175326645204966,
+                -0.00021653516715557696
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0055397829680455535,
+              "bootstrap_ci95": [
+                -0.007475105848579368,
+                -0.0035292687380823347
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.021496043567754863,
+              "bootstrap_ci95": [
+                -0.0268213063132554,
+                -0.016136872722039165
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.012307531125154897,
+              "bootstrap_ci95": [
+                0.008194110243711576,
+                0.01634814700325276
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0012266905981929144,
+              "bootstrap_ci95": [
+                -0.0014643671401663614,
+                0.004183994829063383
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.001484442737459235,
+              "bootstrap_ci95": [
+                -0.006654908047726412,
+                0.009605036809427668
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.22606646544653666,
+              "bootstrap_ci95": [
+                0.014662003940982854,
+                0.4384852494259389
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.8187105016838423,
+              "bootstrap_ci95": [
+                0.48503038875817445,
+                1.2703698134803307
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.024867715809995805,
+              "bootstrap_ci95": [
+                -0.027221691395193065,
+                -0.022417544013381537
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.009486776028273969,
+              "bootstrap_ci95": [
+                -0.012321281648102382,
+                -0.0066559500637424695
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.00560818937745286,
+              "bootstrap_ci95": [
+                -0.0013614185592850587,
+                0.012711410312699789
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.008965147209895052,
+              "bootstrap_ci95": [
+                -0.01244926989894815,
+                -0.00537125876864252
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.002720302462035501,
+              "bootstrap_ci95": [
+                -0.005910565704518655,
+                0.0006906030519108754
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.02858867568266696,
+              "bootstrap_ci95": [
+                0.020730398875190677,
+                0.036941302311193414
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 1.5637546634974586,
+              "bootstrap_ci95": [
+                1.2863039855295735,
+                1.9733804627829261
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 1.4020266148098968,
+              "bootstrap_ci95": [
+                0.9105326400875186,
+                2.051556408937074
+              ]
+            }
+          }
+        }
+      }
+    },
+    "identity_leader_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.00137476833928716,
+          "sd_between_seeds": 0.0034371681064368515
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.00539155016730455,
+          "sd_between_seeds": 0.005370859093180366
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.0072518850053386995,
+          "sd_between_seeds": 0.004057089035364029
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.007389193331036941,
+          "sd_between_seeds": 0.006123609449389068
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.010408850899677325,
+          "sd_between_seeds": 0.006071500728746288
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.007509992908537379,
+          "sd_between_seeds": 0.005317582281884725
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.007837868839231887,
+          "sd_between_seeds": 0.0039103005881339645
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.008235199189000095,
+          "sd_between_seeds": 0.0048171908282604444
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.004022449154006373,
+          "sd_between_seeds": 0.005410676901366929
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.001679319281752585,
+          "sd_between_seeds": 0.0035246097217096753
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.0015295775278392823,
+          "sd_between_seeds": 0.003385441510585082
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.0018689558654770438,
+          "sd_between_seeds": 0.003907086639316056
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.0039373799148919655,
+              "bootstrap_ci95": [
+                0.0022315084620070447,
+                0.005586417515762146
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0020770450768578157,
+              "bootstrap_ci95": [
+                0.00035096193624510824,
+                0.0037378111870529267
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.0038794735023191477,
+              "bootstrap_ci95": [
+                -0.007069235745824839,
+                -0.0008166675587873903
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.0009228878899913608,
+              "bootstrap_ci95": [
+                -0.002719393177663931,
+                0.0007871592278068249
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0012507638206858684,
+              "bootstrap_ci95": [
+                -0.0031477347151274,
+                0.0006894785725494375
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0032961883409081544,
+              "bootstrap_ci95": [
+                -0.0003568991011286416,
+                0.007040740444421132
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.004860267804883326,
+              "bootstrap_ci95": [
+                -0.007070209645697935,
+                -0.0027555330564336586
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.003327808897543684,
+              "bootstrap_ci95": [
+                -0.005994756691398514,
+                -0.0006117893207803071
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.007175661843227302,
+              "bootstrap_ci95": [
+                0.0022421127419410885,
+                0.011960029952464863
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.2343913744520341,
+              "bootstrap_ci95": [
+                -0.8907432435760231,
+                0.18645403681702583
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.6021842446375995,
+              "bootstrap_ci95": [
+                -2.934010480703907,
+                0.5179164797312784
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.0011516175212213159,
+              "bootstrap_ci95": [
+                -0.002248149241147135,
+                -5.874566221449626e-05
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0010018757673080133,
+              "bootstrap_ci95": [
+                -0.0026037397255918616,
+                0.0006764727029674632
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.002682508209891549,
+              "bootstrap_ci95": [
+                -0.00012713001932484192,
+                0.00556273336112892
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.005088997436113281,
+              "bootstrap_ci95": [
+                -0.007101065715942331,
+                -0.0029903440713291945
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.003078920844165829,
+              "bootstrap_ci95": [
+                -0.0055415397526357175,
+                -0.0005878727079639428
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.006561981712210696,
+              "bootstrap_ci95": [
+                0.0019483654709153016,
+                0.011277769508766064
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.2924832111998301,
+              "bootstrap_ci95": [
+                -0.6997731485213444,
+                -0.014634537825383404
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.48235629475296016,
+              "bootstrap_ci95": [
+                -2.5796029578513804,
+                0.5052311484556757
+              ]
+            }
+          }
+        }
+      }
+    },
+    "identity_benefactor_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.07924195373840903,
+          "sd_between_seeds": 0.037149536344391484
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.2779139558701416,
+          "sd_between_seeds": 0.07431666118260553
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.3843721570929942,
+          "sd_between_seeds": 0.07778359783190725
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.4800876068993597,
+          "sd_between_seeds": 0.060835496194391575
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.6627381756502374,
+          "sd_between_seeds": 0.05330529369965258
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.6582247301756303,
+          "sd_between_seeds": 0.04546974929417888
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.6672186260335319,
+          "sd_between_seeds": 0.04094290695245526
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.6645423214779727,
+          "sd_between_seeds": 0.04630214502878461
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.12057176499833257,
+          "sd_between_seeds": 0.03876052985621023
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.11851179493235008,
+          "sd_between_seeds": 0.04147614603659091
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.12088076688433885,
+          "sd_between_seeds": 0.03202324412932595
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.1264683188869112,
+          "sd_between_seeds": 0.03334109672230156
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.25365192719190166,
+              "bootstrap_ci95": [
+                0.23382066714586233,
+                0.2727882872696203
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.14719372596904906,
+              "bootstrap_ci95": [
+                0.12964319217209658,
+                0.16389463544604385
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.1029565523253671,
+              "bootstrap_ci95": [
+                -0.1425985578578971,
+                -0.06363228224015802
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.005399020842818292,
+              "bootstrap_ci95": [
+                -0.007538629171738631,
+                0.017916882602448437
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.0035948750150831543,
+              "bootstrap_ci95": [
+                -0.01604220855587079,
+                0.008517565875972504
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.0018371409190478527,
+              "bootstrap_ci95": [
+                -0.025442330670780416,
+                0.02999063619204513
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.24825290634908337,
+              "bootstrap_ci95": [
+                -0.27133520211869505,
+                -0.2244630043571451
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.15078860098413222,
+              "bootstrap_ci95": [
+                -0.17186884585346612,
+                -0.1283179579261317
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.10479369324441495,
+              "bootstrap_ci95": [
+                0.051784344203716325,
+                0.15740141216517103
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.02128515601118865,
+              "bootstrap_ci95": [
+                -0.030024028410421087,
+                0.07092063009267585
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.02442274622383743,
+              "bootstrap_ci95": [
+                -0.10994387933785428,
+                0.05953078034945099
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.0041327629202837085,
+              "bootstrap_ci95": [
+                -0.005921519535393854,
+                0.014115599129630162
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0017637909682949315,
+              "bootstrap_ci95": [
+                -0.010383170897109701,
+                0.01473637913467133
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.007647522068554846,
+              "bootstrap_ci95": [
+                -0.01624101466846486,
+                0.031603127972855714
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": -0.24951916427161797,
+              "bootstrap_ci95": [
+                -0.27285353075610297,
+                -0.22544243486896276
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.14542993500075413,
+              "bootstrap_ci95": [
+                -0.1646822565493962,
+                -0.1250999269860389
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.11060407439392195,
+              "bootstrap_ci95": [
+                0.06431526817760085,
+                0.15892136645260016
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.016293047587046503,
+              "bootstrap_ci95": [
+                -0.023042172448983794,
+                0.057369945014562114
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.011982786336054908,
+              "bootstrap_ci95": [
+                -0.07147341322893733,
+                0.0983576034454508
+              ]
+            }
+          }
+        }
+      }
+    },
+    "identity_opportunist_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.504826676063787,
+          "sd_between_seeds": 0.029384224448606125
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.4044021884358068,
+          "sd_between_seeds": 0.041842368854725004
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.3645392999871574,
+          "sd_between_seeds": 0.045115500018394275
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.3214838225215576,
+          "sd_between_seeds": 0.03770502334799083
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.1978134528602989,
+          "sd_between_seeds": 0.0343131488446673
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.2300828979685479,
+          "sd_between_seeds": 0.03341358456034358
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.22928909680765716,
+          "sd_between_seeds": 0.03738001247334696
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.2225414417232501,
+          "sd_between_seeds": 0.03280716417968237
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.4896614677468351,
+          "sd_between_seeds": 0.04264500165881325
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.4829190214127433,
+          "sd_between_seeds": 0.039998141698112624
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.4775082020430135,
+          "sd_between_seeds": 0.036780444824220895
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.48986435667758654,
+          "sd_between_seeds": 0.04306588487375206
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.11160287099543936,
+              "bootstrap_ci95": [
+                -0.1228502849730488,
+                -0.09946919939188864
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.07173998254678998,
+              "bootstrap_ci95": [
+                -0.08337946798457542,
+                -0.05980409888327512
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.057369010162380385,
+              "bootstrap_ci95": [
+                0.029133946840809014,
+                0.08336439208571773
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": 0.01196709385103023,
+              "bootstrap_ci95": [
+                0.002281495404712346,
+                0.02141993542280309
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.012760895011920986,
+              "bootstrap_ci95": [
+                0.0009829207253553459,
+                0.02444275863762167
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.03901710019265606,
+              "bootstrap_ci95": [
+                -0.05588484456440902,
+                -0.02199770004024888
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.1235699648464696,
+              "bootstrap_ci95": [
+                0.11032100902362345,
+                0.13684299841985903
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.08450087755871097,
+              "bootstrap_ci95": [
+                0.06642872705248382,
+                0.10189697530180059
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.09638611035503644,
+              "bootstrap_ci95": [
+                -0.12823744427450562,
+                -0.06171693716638598
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": -0.10722926519981071,
+              "bootstrap_ci95": [
+                -0.19960127300307143,
+                -0.019817123587111
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.17787702978040346,
+              "bootstrap_ci95": [
+                -0.34455073091116756,
+                -0.01447374606921637
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.0026039652194891905,
+              "bootstrap_ci95": [
+                -0.01669058756231014,
+                0.01069683291508712
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.002806854150240623,
+              "bootstrap_ci95": [
+                -0.01146106299374117,
+                0.016967000396281053
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.01909860096866489,
+              "bootstrap_ci95": [
+                -0.0075025913603266004,
+                0.044619961879158766
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.10899890577595017,
+              "bootstrap_ci95": [
+                0.08698895352016583,
+                0.12942284457028672
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0745468366970306,
+              "bootstrap_ci95": [
+                0.05487666295693566,
+                0.09417621657181188
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.03827040919371549,
+              "bootstrap_ci95": [
+                -0.07719398649676738,
+                0.0018073048020211082
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.02333242143560627,
+              "bootstrap_ci95": [
+                -0.09323003248896879,
+                0.15625261594988532
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.03912538100228763,
+              "bootstrap_ci95": [
+                -0.23533559295238762,
+                0.1635611856315095
+              ]
+            }
+          }
+        }
+      }
+    },
+    "identity_survivor_rate": {
+      "n_seed_blocks": 30,
+      "cell_means": {
+        "C90-R0p016-intact": {
+          "mean": 0.41322594202234286,
+          "sd_between_seeds": 0.030173677754382677
+        },
+        "C90-R0p019-intact": {
+          "mean": 0.3093042242948349,
+          "sd_between_seeds": 0.05293917451017711
+        },
+        "C120-R0p016-intact": {
+          "mean": 0.2379429909450949,
+          "sd_between_seeds": 0.0498712237965799
+        },
+        "C120-R0p019-intact": {
+          "mean": 0.18017523412487274,
+          "sd_between_seeds": 0.03941473432463804
+        },
+        "C90-R0p016-zero": {
+          "mean": 0.11763065894735344,
+          "sd_between_seeds": 0.03411994504403685
+        },
+        "C90-R0p019-zero": {
+          "mean": 0.0911911699034273,
+          "sd_between_seeds": 0.026202549466226122
+        },
+        "C120-R0p016-zero": {
+          "mean": 0.08164834844255996,
+          "sd_between_seeds": 0.017972056495109714
+        },
+        "C120-R0p019-zero": {
+          "mean": 0.09041985696978586,
+          "sd_between_seeds": 0.02137810401911211
+        },
+        "C90-R0p016-fixed": {
+          "mean": 0.38274824708374366,
+          "sd_between_seeds": 0.04151693001438562
+        },
+        "C90-R0p019-fixed": {
+          "mean": 0.3937083902045541,
+          "sd_between_seeds": 0.04925983957343018
+        },
+        "C120-R0p016-fixed": {
+          "mean": 0.39657351519778217,
+          "sd_between_seeds": 0.03058220883860523
+        },
+        "C120-R0p019-fixed": {
+          "mean": 0.3774593699803568,
+          "sd_between_seeds": 0.040308680111817874
+        }
+      },
+      "arms": {
+        "intact": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.15220597062360502,
+              "bootstrap_ci95": [
+                -0.16527133672436778,
+                -0.1393808906515808
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.08084473727386504,
+              "bootstrap_ci95": [
+                -0.0919723724819142,
+                -0.07061554323749039
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.046153960907285796,
+              "bootstrap_ci95": [
+                0.01630213217922712,
+                0.0760557721241198
+              ]
+            }
+          }
+        },
+        "zero": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.01837681171921747,
+              "bootstrap_ci95": [
+                -0.02673583447973755,
+                -0.009898303272386529
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.008833990258350119,
+              "bootstrap_ci95": [
+                -0.01544958965116532,
+                -0.0025474263442801467
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": 0.03521099757115205,
+              "bootstrap_ci95": [
+                0.019026533489666212,
+                0.0515817130004077
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.13382915890438757,
+              "bootstrap_ci95": [
+                0.11636947857820117,
+                0.15031313223619372
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.07201074701551492,
+              "bootstrap_ci95": [
+                0.061174115850903814,
+                0.08364179757182953
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.010942963336133746,
+              "bootstrap_ci95": [
+                -0.045614935285378085,
+                0.0251735113539698
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.12073647074372706,
+              "bootstrap_ci95": [
+                0.06410427675450746,
+                0.18190453010512073
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.10927106149686151,
+              "bootstrap_ci95": [
+                0.03242459347131749,
+                0.18764907550296922
+              ]
+            }
+          }
+        },
+        "fixed": {
+          "contrasts": {
+            "capacity_high_minus_low": {
+              "estimate": -0.0012118760550793861,
+              "bootstrap_ci95": [
+                -0.013089183677456073,
+                0.010710457502038497
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": -0.004077001048307438,
+              "bootstrap_ci95": [
+                -0.01608699676378665,
+                0.008193420858097076
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.030074288338235833,
+              "bootstrap_ci95": [
+                -0.05759020065427412,
+                -0.0014703735956853759
+              ]
+            }
+          },
+          "minus_intact": {
+            "capacity_high_minus_low": {
+              "estimate": 0.15099409456852564,
+              "bootstrap_ci95": [
+                0.1332029847152667,
+                0.1683466477759733
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.0767677362255576,
+              "bootstrap_ci95": [
+                0.0608020883645576,
+                0.09335080135580594
+              ]
+            },
+            "capacity_by_regen_interaction": {
+              "estimate": -0.07622824924552163,
+              "bootstrap_ci95": [
+                -0.11833171339550293,
+                -0.03302732528568469
+              ]
+            }
+          },
+          "retained_fraction": {
+            "capacity_high_minus_low": {
+              "estimate": 0.007962079609059968,
+              "bootstrap_ci95": [
+                -0.07150859281478328,
+                0.08560846054591768
+              ]
+            },
+            "regen_high_minus_low": {
+              "estimate": 0.050430011721065045,
+              "bootstrap_ci95": [
+                -0.10179303740009782,
+                0.20111737179001496
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "primary_metrics": [
+    "conflict_rate",
+    "cooperation_rate"
+  ],
+  "manipulation_check_metrics": [
+    "true_scarcity",
+    "avg_scarcity_belief"
+  ],
+  "secondary_metrics": [
+    "avg_stress",
+    "avg_trust",
+    "inequality_gini",
+    "population",
+    "helping_norm",
+    "action_forage_rate",
+    "action_rest_rate",
+    "action_socialize_rate",
+    "action_share_rate",
+    "action_steal_rate",
+    "action_spread_belief_rate",
+    "identity_leader_rate",
+    "identity_benefactor_rate",
+    "identity_opportunist_rate",
+    "identity_survivor_rate"
+  ]
+}
