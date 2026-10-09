@@ -1,0 +1,1056 @@
+{
+  "purpose": "calibration pilot for a deprivation regime; seeds not reused in final experiments",
+  "created_utc": "2026-10-09T11:11:03.173374+00:00",
+  "python_version": "3.14.2",
+  "base_config": {
+    "n_agents": 80,
+    "n_ticks": 500,
+    "seed": 0,
+    "agent_update_order": "shuffled",
+    "agent_rng_mode": "shared",
+    "initial_food_per_agent": 50.0,
+    "initial_water_per_agent": 50.0,
+    "food_regen_rate": 0.016,
+    "water_regen_rate": 0.016,
+    "resource_capacity_per_agent": 75.0,
+    "forage_base_amount": 5.0,
+    "perception_noise": 0.15,
+    "confirmation_bias": 0.6,
+    "misinformation_rate": 0.05,
+    "steal_scarcity_weight": 0.9,
+    "share_scarcity_weight": 0.5,
+    "action_scarcity_reference": null,
+    "decision_architecture": "heuristic",
+    "provisions_edible": null,
+    "need_based_scoring": null,
+    "provision_need_per_wealth": 0.1,
+    "provision_eat_threshold": 0.4,
+    "provision_max_per_tick": 1.0,
+    "relationship_decay": 0.004,
+    "trust_learning_rate": 0.15,
+    "neighbor_k": 6,
+    "rewire_prob": 0.1,
+    "long_range_interaction_prob": 0.15,
+    "leadership_emergence_threshold": 0.012,
+    "leadership_check_interval": 20,
+    "tax_rate_base": 0.15,
+    "redistribution_interval": 25,
+    "institution_trust_noise": 0.2,
+    "reconciliation_bonus": 0.35,
+    "norm_adapt_rate": 0.03,
+    "identity_feedback_strength": 0.3,
+    "self_correction_strength": 0.3,
+    "ticks_per_year": 15,
+    "founder_min_age": 18,
+    "founder_max_age": 50,
+    "adulthood_age": 16,
+    "elderly_age": 60,
+    "senescence_mortality_rate": 0.0015,
+    "min_reproduction_age": 18,
+    "max_reproduction_age": 45,
+    "birth_rate_base": 0.008,
+    "reproduction_need_threshold": 0.5,
+    "reproduction_max_stress": 0.6,
+    "birth_wealth_cost": 3.0,
+    "max_population_multiplier": 1.8,
+    "catch_probability_at_full_legitimacy": 0.6,
+    "punishment_wealth_fraction": 0.5,
+    "deterrence_strength": 0.5,
+    "informal_learning_rate": 0.0008,
+    "institutional_learning_rate": 0.004,
+    "baseline_health_recovery_rate": 0.005,
+    "institutional_health_bonus": 0.015,
+    "media_broadcast_interval": 10,
+    "media_reach_fraction": 0.5,
+    "forage_skill_gain": 0.01,
+    "forage_skill_bonus_max": 4.0,
+    "need_decay": 0.03,
+    "stress_from_scarcity_gain": 0.08,
+    "stress_recovery": 0.02
+  },
+  "capacities": [
+    90.0,
+    120.0
+  ],
+  "regen_rates": [
+    0.002,
+    0.003,
+    0.004,
+    0.005,
+    0.006,
+    0.008,
+    0.01,
+    0.012,
+    0.016
+  ],
+  "seeds_per_cell": 4,
+  "seed_start": 93000,
+  "seed_end_inclusive": 93071,
+  "analysis_window": 100,
+  "selection_rule": {
+    "min_mean_need_deficit_rate": 0.2,
+    "min_final_population_every_seed": 20,
+    "pick": "highest qualifying regen rate, both capacities"
+  },
+  "qualifying_regen_rates": [
+    0.003,
+    0.004
+  ],
+  "selected_regen_rate": 0.004,
+  "cells": [
+    {
+      "capacity": 90.0,
+      "regen_rate": 0.002,
+      "runs": [
+        {
+          "seed": 93000,
+          "final_population": 23,
+          "cumulative_deaths_starvation": 65,
+          "mean_need_deficit_rate": 0.22774227105006717,
+          "mean_avg_min_need": 0.61252320765112,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 27.79,
+          "mean_avg_stress": 0.7620484958922318
+        },
+        {
+          "seed": 93001,
+          "final_population": 27,
+          "cumulative_deaths_starvation": 60,
+          "mean_need_deficit_rate": 0.2360942346287174,
+          "mean_avg_min_need": 0.6083685351329521,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 27.94,
+          "mean_avg_stress": 0.6954940662299982
+        },
+        {
+          "seed": 93002,
+          "final_population": 23,
+          "cumulative_deaths_starvation": 65,
+          "mean_need_deficit_rate": 0.14632769415048277,
+          "mean_avg_min_need": 0.6595028387301377,
+          "mean_true_scarcity": 0.9999900257097653,
+          "mean_population": 25.12,
+          "mean_avg_stress": 0.6465003951108246
+        },
+        {
+          "seed": 93003,
+          "final_population": 19,
+          "cumulative_deaths_starvation": 63,
+          "mean_need_deficit_rate": 0.11445730234677604,
+          "mean_avg_min_need": 0.7049912900454115,
+          "mean_true_scarcity": 0.9999962661726057,
+          "mean_population": 21.23,
+          "mean_avg_stress": 0.6561068326083425
+        }
+      ],
+      "min_final_population": 19,
+      "mean_need_deficit_rate": 0.18115537554401084,
+      "mean_avg_min_need": 0.6463464678899054,
+      "mean_true_scarcity": 0.9999965729705927,
+      "mean_population": 25.52,
+      "mean_avg_stress": 0.6900374474603492,
+      "mean_deaths_starvation": 63.25
+    },
+    {
+      "capacity": 90.0,
+      "regen_rate": 0.003,
+      "runs": [
+        {
+          "seed": 93004,
+          "final_population": 39,
+          "cumulative_deaths_starvation": 53,
+          "mean_need_deficit_rate": 0.30480655884759494,
+          "mean_avg_min_need": 0.5626716233820082,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 42.98,
+          "mean_avg_stress": 0.8060357420106551
+        },
+        {
+          "seed": 93005,
+          "final_population": 31,
+          "cumulative_deaths_starvation": 55,
+          "mean_need_deficit_rate": 0.235310714091162,
+          "mean_avg_min_need": 0.6043502347025441,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 36.51,
+          "mean_avg_stress": 0.7527791773105582
+        },
+        {
+          "seed": 93006,
+          "final_population": 32,
+          "cumulative_deaths_starvation": 43,
+          "mean_need_deficit_rate": 0.2071409592067487,
+          "mean_avg_min_need": 0.627245966678062,
+          "mean_true_scarcity": 0.999985511160979,
+          "mean_population": 35.99,
+          "mean_avg_stress": 0.7041759622319317
+        },
+        {
+          "seed": 93007,
+          "final_population": 41,
+          "cumulative_deaths_starvation": 51,
+          "mean_need_deficit_rate": 0.2813001377522081,
+          "mean_avg_min_need": 0.5778272026739233,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 42.63,
+          "mean_avg_stress": 0.7704579958507813
+        }
+      ],
+      "min_final_population": 31,
+      "mean_need_deficit_rate": 0.2571395924744284,
+      "mean_avg_min_need": 0.5930237568591343,
+      "mean_true_scarcity": 0.9999963777902448,
+      "mean_population": 39.5275,
+      "mean_avg_stress": 0.7583622193509816,
+      "mean_deaths_starvation": 50.5
+    },
+    {
+      "capacity": 90.0,
+      "regen_rate": 0.004,
+      "runs": [
+        {
+          "seed": 93008,
+          "final_population": 44,
+          "cumulative_deaths_starvation": 30,
+          "mean_need_deficit_rate": 0.23965666038289424,
+          "mean_avg_min_need": 0.6023765694720752,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 52.3,
+          "mean_avg_stress": 0.8096474780607792
+        },
+        {
+          "seed": 93009,
+          "final_population": 53,
+          "cumulative_deaths_starvation": 35,
+          "mean_need_deficit_rate": 0.27836823098299823,
+          "mean_avg_min_need": 0.5706734657720223,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 60.14,
+          "mean_avg_stress": 0.8011850987264907
+        },
+        {
+          "seed": 93010,
+          "final_population": 46,
+          "cumulative_deaths_starvation": 24,
+          "mean_need_deficit_rate": 0.2046025546807774,
+          "mean_avg_min_need": 0.6335386570524766,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 50.52,
+          "mean_avg_stress": 0.8021174554803724
+        },
+        {
+          "seed": 93011,
+          "final_population": 55,
+          "cumulative_deaths_starvation": 31,
+          "mean_need_deficit_rate": 0.2670765857301723,
+          "mean_avg_min_need": 0.5823576399869937,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 58.94,
+          "mean_avg_stress": 0.7821283914523728
+        }
+      ],
+      "min_final_population": 44,
+      "mean_need_deficit_rate": 0.24742600794421055,
+      "mean_avg_min_need": 0.5972365830708919,
+      "mean_true_scarcity": 1.0,
+      "mean_population": 55.475,
+      "mean_avg_stress": 0.7987696059300038,
+      "mean_deaths_starvation": 30.0
+    },
+    {
+      "capacity": 90.0,
+      "regen_rate": 0.005,
+      "runs": [
+        {
+          "seed": 93012,
+          "final_population": 59,
+          "cumulative_deaths_starvation": 6,
+          "mean_need_deficit_rate": 0.23023734723261588,
+          "mean_avg_min_need": 0.6102391357422897,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 67.42,
+          "mean_avg_stress": 0.8428357622933863
+        },
+        {
+          "seed": 93013,
+          "final_population": 64,
+          "cumulative_deaths_starvation": 12,
+          "mean_need_deficit_rate": 0.26439147409459124,
+          "mean_avg_min_need": 0.5866607685474634,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 69.82,
+          "mean_avg_stress": 0.8337531884374185
+        },
+        {
+          "seed": 93014,
+          "final_population": 59,
+          "cumulative_deaths_starvation": 9,
+          "mean_need_deficit_rate": 0.21209668571812984,
+          "mean_avg_min_need": 0.6257147493171616,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 65.86,
+          "mean_avg_stress": 0.8275874506750074
+        },
+        {
+          "seed": 93015,
+          "final_population": 62,
+          "cumulative_deaths_starvation": 10,
+          "mean_need_deficit_rate": 0.21957823901563459,
+          "mean_avg_min_need": 0.6198158149237801,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 65.69,
+          "mean_avg_stress": 0.8462087995382125
+        }
+      ],
+      "min_final_population": 59,
+      "mean_need_deficit_rate": 0.2315759365152429,
+      "mean_avg_min_need": 0.6106076171326738,
+      "mean_true_scarcity": 1.0,
+      "mean_population": 67.19749999999999,
+      "mean_avg_stress": 0.8375963002360062,
+      "mean_deaths_starvation": 9.25
+    },
+    {
+      "capacity": 90.0,
+      "regen_rate": 0.006,
+      "runs": [
+        {
+          "seed": 93016,
+          "final_population": 76,
+          "cumulative_deaths_starvation": 4,
+          "mean_need_deficit_rate": 0.2356405370250707,
+          "mean_avg_min_need": 0.6113030995423939,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 79.7,
+          "mean_avg_stress": 0.8610116779536319
+        },
+        {
+          "seed": 93017,
+          "final_population": 79,
+          "cumulative_deaths_starvation": 6,
+          "mean_need_deficit_rate": 0.23009426496290483,
+          "mean_avg_min_need": 0.6095943723728205,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 80.34,
+          "mean_avg_stress": 0.8688498437383533
+        },
+        {
+          "seed": 93018,
+          "final_population": 79,
+          "cumulative_deaths_starvation": 11,
+          "mean_need_deficit_rate": 0.2794567953795544,
+          "mean_avg_min_need": 0.5774319921592295,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 86.2,
+          "mean_avg_stress": 0.8549881756652491
+        },
+        {
+          "seed": 93019,
+          "final_population": 61,
+          "cumulative_deaths_starvation": 1,
+          "mean_need_deficit_rate": 0.17879992100737213,
+          "mean_avg_min_need": 0.6498993316266979,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 68.08,
+          "mean_avg_stress": 0.8464155239722264
+        }
+      ],
+      "min_final_population": 61,
+      "mean_need_deficit_rate": 0.23099787959372553,
+      "mean_avg_min_need": 0.6120571989252854,
+      "mean_true_scarcity": 1.0,
+      "mean_population": 78.58,
+      "mean_avg_stress": 0.8578163053323652,
+      "mean_deaths_starvation": 5.5
+    },
+    {
+      "capacity": 90.0,
+      "regen_rate": 0.008,
+      "runs": [
+        {
+          "seed": 93020,
+          "final_population": 68,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.0990455917321492,
+          "mean_avg_min_need": 0.7177146212595157,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 74.29,
+          "mean_avg_stress": 0.8068598593202253
+        },
+        {
+          "seed": 93021,
+          "final_population": 79,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.1332073271388994,
+          "mean_avg_min_need": 0.6875207321837867,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 81.4,
+          "mean_avg_stress": 0.829795979789212
+        },
+        {
+          "seed": 93022,
+          "final_population": 72,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.12111628764674823,
+          "mean_avg_min_need": 0.6996755686086993,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 78.91,
+          "mean_avg_stress": 0.8652207449763636
+        },
+        {
+          "seed": 93023,
+          "final_population": 75,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.10196393225427379,
+          "mean_avg_min_need": 0.7132182994750847,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 79.14,
+          "mean_avg_stress": 0.8320959129563837
+        }
+      ],
+      "min_final_population": 68,
+      "mean_need_deficit_rate": 0.11383328469301765,
+      "mean_avg_min_need": 0.7045323053817716,
+      "mean_true_scarcity": 1.0,
+      "mean_population": 78.435,
+      "mean_avg_stress": 0.8334931242605461,
+      "mean_deaths_starvation": 0.0
+    },
+    {
+      "capacity": 90.0,
+      "regen_rate": 0.01,
+      "runs": [
+        {
+          "seed": 93024,
+          "final_population": 80,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.07594653521716532,
+          "mean_avg_min_need": 0.7385229611791766,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 86.44,
+          "mean_avg_stress": 0.8683364302479417
+        },
+        {
+          "seed": 93025,
+          "final_population": 77,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.04881222585289826,
+          "mean_avg_min_need": 0.7564395340971415,
+          "mean_true_scarcity": 0.9999845997067003,
+          "mean_population": 83.57,
+          "mean_avg_stress": 0.8612314329114062
+        },
+        {
+          "seed": 93026,
+          "final_population": 73,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.04914208915357791,
+          "mean_avg_min_need": 0.7636623693209019,
+          "mean_true_scarcity": 0.9999321549670946,
+          "mean_population": 76.92,
+          "mean_avg_stress": 0.8447580234480602
+        },
+        {
+          "seed": 93027,
+          "final_population": 73,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.0648736190499633,
+          "mean_avg_min_need": 0.7484760619621831,
+          "mean_true_scarcity": 0.9999738080491951,
+          "mean_population": 81.41,
+          "mean_avg_stress": 0.8619036794679935
+        }
+      ],
+      "min_final_population": 73,
+      "mean_need_deficit_rate": 0.0596936173184012,
+      "mean_avg_min_need": 0.7517752316398507,
+      "mean_true_scarcity": 0.9999726406807475,
+      "mean_population": 82.085,
+      "mean_avg_stress": 0.8590573915188504,
+      "mean_deaths_starvation": 0.0
+    },
+    {
+      "capacity": 90.0,
+      "regen_rate": 0.012,
+      "runs": [
+        {
+          "seed": 93028,
+          "final_population": 76,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.021850247994458716,
+          "mean_avg_min_need": 0.7997341072053723,
+          "mean_true_scarcity": 0.9997819678582266,
+          "mean_population": 83.0,
+          "mean_avg_stress": 0.8482419788257531
+        },
+        {
+          "seed": 93029,
+          "final_population": 79,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.017885194759577602,
+          "mean_avg_min_need": 0.7975567716324947,
+          "mean_true_scarcity": 0.9997716816613064,
+          "mean_population": 84.35,
+          "mean_avg_stress": 0.8544379923980544
+        },
+        {
+          "seed": 93030,
+          "final_population": 88,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.04604617817024079,
+          "mean_avg_min_need": 0.7630095200958844,
+          "mean_true_scarcity": 0.9999793503150335,
+          "mean_population": 93.52,
+          "mean_avg_stress": 0.8555284933913003
+        },
+        {
+          "seed": 93031,
+          "final_population": 79,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.033051620570736066,
+          "mean_avg_min_need": 0.785291622924297,
+          "mean_true_scarcity": 0.9999430038108593,
+          "mean_population": 85.09,
+          "mean_avg_stress": 0.8429413866754739
+        }
+      ],
+      "min_final_population": 76,
+      "mean_need_deficit_rate": 0.029708310373753294,
+      "mean_avg_min_need": 0.7863980054645121,
+      "mean_true_scarcity": 0.9998690009113564,
+      "mean_population": 86.49,
+      "mean_avg_stress": 0.8502874628226454,
+      "mean_deaths_starvation": 0.0
+    },
+    {
+      "capacity": 90.0,
+      "regen_rate": 0.016,
+      "runs": [
+        {
+          "seed": 93032,
+          "final_population": 92,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.01771800644829726,
+          "mean_avg_min_need": 0.8133107921909492,
+          "mean_true_scarcity": 0.9984071726974882,
+          "mean_population": 97.39,
+          "mean_avg_stress": 0.8561260028169956
+        },
+        {
+          "seed": 93033,
+          "final_population": 90,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.014033771547147227,
+          "mean_avg_min_need": 0.815286366572727,
+          "mean_true_scarcity": 0.9992112532998497,
+          "mean_population": 96.59,
+          "mean_avg_stress": 0.8307441767658418
+        },
+        {
+          "seed": 93034,
+          "final_population": 89,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.013120243762146998,
+          "mean_avg_min_need": 0.813847876889206,
+          "mean_true_scarcity": 0.9993333168405338,
+          "mean_population": 94.84,
+          "mean_avg_stress": 0.8472812311493643
+        },
+        {
+          "seed": 93035,
+          "final_population": 81,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.009299838950925789,
+          "mean_avg_min_need": 0.8278561943017213,
+          "mean_true_scarcity": 0.9966848623149924,
+          "mean_population": 84.91,
+          "mean_avg_stress": 0.8365027569046138
+        }
+      ],
+      "min_final_population": 81,
+      "mean_need_deficit_rate": 0.013542965177129319,
+      "mean_avg_min_need": 0.8175753074886509,
+      "mean_true_scarcity": 0.9984091512882161,
+      "mean_population": 93.4325,
+      "mean_avg_stress": 0.8426635419092039,
+      "mean_deaths_starvation": 0.0
+    },
+    {
+      "capacity": 120.0,
+      "regen_rate": 0.002,
+      "runs": [
+        {
+          "seed": 93036,
+          "final_population": 33,
+          "cumulative_deaths_starvation": 56,
+          "mean_need_deficit_rate": 0.24579321957340533,
+          "mean_avg_min_need": 0.6006475980094728,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 37.68,
+          "mean_avg_stress": 0.7988241618733285
+        },
+        {
+          "seed": 93037,
+          "final_population": 36,
+          "cumulative_deaths_starvation": 58,
+          "mean_need_deficit_rate": 0.22748740440845705,
+          "mean_avg_min_need": 0.6145344122499661,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 36.97,
+          "mean_avg_stress": 0.7699745077580503
+        },
+        {
+          "seed": 93038,
+          "final_population": 35,
+          "cumulative_deaths_starvation": 54,
+          "mean_need_deficit_rate": 0.21456906906906906,
+          "mean_avg_min_need": 0.6236268867757763,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 36.31,
+          "mean_avg_stress": 0.7641998367429811
+        },
+        {
+          "seed": 93039,
+          "final_population": 35,
+          "cumulative_deaths_starvation": 57,
+          "mean_need_deficit_rate": 0.22901284743390007,
+          "mean_avg_min_need": 0.6114143929914116,
+          "mean_true_scarcity": 0.9999800000000001,
+          "mean_population": 36.37,
+          "mean_avg_stress": 0.781471784729804
+        }
+      ],
+      "min_final_population": 33,
+      "mean_need_deficit_rate": 0.22921563512120788,
+      "mean_avg_min_need": 0.6125558225066567,
+      "mean_true_scarcity": 0.999995,
+      "mean_population": 36.832499999999996,
+      "mean_avg_stress": 0.7786175727760409,
+      "mean_deaths_starvation": 56.25
+    },
+    {
+      "capacity": 120.0,
+      "regen_rate": 0.003,
+      "runs": [
+        {
+          "seed": 93040,
+          "final_population": 51,
+          "cumulative_deaths_starvation": 28,
+          "mean_need_deficit_rate": 0.2825860635985124,
+          "mean_avg_min_need": 0.5742300780798484,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 59.23,
+          "mean_avg_stress": 0.8384398178836618
+        },
+        {
+          "seed": 93041,
+          "final_population": 54,
+          "cumulative_deaths_starvation": 26,
+          "mean_need_deficit_rate": 0.24960509286428262,
+          "mean_avg_min_need": 0.5981939343284367,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 56.44,
+          "mean_avg_stress": 0.7812529110785266
+        },
+        {
+          "seed": 93042,
+          "final_population": 50,
+          "cumulative_deaths_starvation": 32,
+          "mean_need_deficit_rate": 0.2709100776979657,
+          "mean_avg_min_need": 0.579546581315189,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 57.37,
+          "mean_avg_stress": 0.826815654362086
+        },
+        {
+          "seed": 93043,
+          "final_population": 47,
+          "cumulative_deaths_starvation": 37,
+          "mean_need_deficit_rate": 0.22751710601230155,
+          "mean_avg_min_need": 0.6160020853808514,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 52.14,
+          "mean_avg_stress": 0.8162845237464303
+        }
+      ],
+      "min_final_population": 47,
+      "mean_need_deficit_rate": 0.25765458504326555,
+      "mean_avg_min_need": 0.5919931697760814,
+      "mean_true_scarcity": 1.0,
+      "mean_population": 56.295,
+      "mean_avg_stress": 0.8156982267676762,
+      "mean_deaths_starvation": 30.75
+    },
+    {
+      "capacity": 120.0,
+      "regen_rate": 0.004,
+      "runs": [
+        {
+          "seed": 93044,
+          "final_population": 73,
+          "cumulative_deaths_starvation": 11,
+          "mean_need_deficit_rate": 0.27054233357019825,
+          "mean_avg_min_need": 0.5820322406118402,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 77.52,
+          "mean_avg_stress": 0.8668202519161398
+        },
+        {
+          "seed": 93045,
+          "final_population": 70,
+          "cumulative_deaths_starvation": 17,
+          "mean_need_deficit_rate": 0.2715481070107359,
+          "mean_avg_min_need": 0.5823097211240975,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 76.72,
+          "mean_avg_stress": 0.8312689037598741
+        },
+        {
+          "seed": 93046,
+          "final_population": 68,
+          "cumulative_deaths_starvation": 12,
+          "mean_need_deficit_rate": 0.2672518335166078,
+          "mean_avg_min_need": 0.5852385249513857,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 73.42,
+          "mean_avg_stress": 0.8486394850868649
+        },
+        {
+          "seed": 93047,
+          "final_population": 70,
+          "cumulative_deaths_starvation": 7,
+          "mean_need_deficit_rate": 0.2623830392453651,
+          "mean_avg_min_need": 0.585340656561513,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 78.79,
+          "mean_avg_stress": 0.8668755172825007
+        }
+      ],
+      "min_final_population": 68,
+      "mean_need_deficit_rate": 0.26793132833572675,
+      "mean_avg_min_need": 0.5837302858122091,
+      "mean_true_scarcity": 1.0,
+      "mean_population": 76.6125,
+      "mean_avg_stress": 0.8534010395113448,
+      "mean_deaths_starvation": 11.75
+    },
+    {
+      "capacity": 120.0,
+      "regen_rate": 0.005,
+      "runs": [
+        {
+          "seed": 93048,
+          "final_population": 77,
+          "cumulative_deaths_starvation": 2,
+          "mean_need_deficit_rate": 0.2035520772275363,
+          "mean_avg_min_need": 0.6341916477675063,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 81.67,
+          "mean_avg_stress": 0.8608800171509797
+        },
+        {
+          "seed": 93049,
+          "final_population": 79,
+          "cumulative_deaths_starvation": 1,
+          "mean_need_deficit_rate": 0.195845906941184,
+          "mean_avg_min_need": 0.6390375900217041,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 82.51,
+          "mean_avg_stress": 0.873164031467509
+        },
+        {
+          "seed": 93050,
+          "final_population": 75,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.15842121372967652,
+          "mean_avg_min_need": 0.6623406240451131,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 78.52,
+          "mean_avg_stress": 0.8466718131215635
+        },
+        {
+          "seed": 93051,
+          "final_population": 62,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.15133689423190042,
+          "mean_avg_min_need": 0.6725047332325732,
+          "mean_true_scarcity": 0.9999894586002587,
+          "mean_population": 71.15,
+          "mean_avg_stress": 0.8358048135410543
+        }
+      ],
+      "min_final_population": 62,
+      "mean_need_deficit_rate": 0.17728902303257432,
+      "mean_avg_min_need": 0.6520186487667241,
+      "mean_true_scarcity": 0.9999973646500646,
+      "mean_population": 78.4625,
+      "mean_avg_stress": 0.8541301688202766,
+      "mean_deaths_starvation": 0.75
+    },
+    {
+      "capacity": 120.0,
+      "regen_rate": 0.006,
+      "runs": [
+        {
+          "seed": 93052,
+          "final_population": 67,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.08688955966927053,
+          "mean_avg_min_need": 0.7275828353004075,
+          "mean_true_scarcity": 0.9999744739431012,
+          "mean_population": 73.0,
+          "mean_avg_stress": 0.8477922627648867
+        },
+        {
+          "seed": 93053,
+          "final_population": 72,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.11487634691551107,
+          "mean_avg_min_need": 0.7020040952808583,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 77.63,
+          "mean_avg_stress": 0.8170125861157679
+        },
+        {
+          "seed": 93054,
+          "final_population": 77,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.11069732042962217,
+          "mean_avg_min_need": 0.7044936259903938,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 81.49,
+          "mean_avg_stress": 0.8320123490468387
+        },
+        {
+          "seed": 93055,
+          "final_population": 83,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.14639060561419973,
+          "mean_avg_min_need": 0.6759277298765203,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 87.68,
+          "mean_avg_stress": 0.8279442064936943
+        }
+      ],
+      "min_final_population": 67,
+      "mean_need_deficit_rate": 0.11471345815715088,
+      "mean_avg_min_need": 0.7025020716120449,
+      "mean_true_scarcity": 0.9999936184857753,
+      "mean_population": 79.95,
+      "mean_avg_stress": 0.8311903511052969,
+      "mean_deaths_starvation": 0.0
+    },
+    {
+      "capacity": 120.0,
+      "regen_rate": 0.008,
+      "runs": [
+        {
+          "seed": 93056,
+          "final_population": 78,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.04870911106014585,
+          "mean_avg_min_need": 0.7634442221389308,
+          "mean_true_scarcity": 0.9999993195786198,
+          "mean_population": 83.27,
+          "mean_avg_stress": 0.8475454881738504
+        },
+        {
+          "seed": 93057,
+          "final_population": 79,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.04220032668420406,
+          "mean_avg_min_need": 0.765737096557991,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 83.42,
+          "mean_avg_stress": 0.8358656480576436
+        },
+        {
+          "seed": 93058,
+          "final_population": 84,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.06318443913908599,
+          "mean_avg_min_need": 0.7485106384524528,
+          "mean_true_scarcity": 1.0,
+          "mean_population": 89.74,
+          "mean_avg_stress": 0.8568613342436173
+        },
+        {
+          "seed": 93059,
+          "final_population": 81,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.058271928310468554,
+          "mean_avg_min_need": 0.756506340853589,
+          "mean_true_scarcity": 0.9999915297452564,
+          "mean_population": 85.88,
+          "mean_avg_stress": 0.8341559247895601
+        }
+      ],
+      "min_final_population": 78,
+      "mean_need_deficit_rate": 0.05309145129847612,
+      "mean_avg_min_need": 0.7585495745007409,
+      "mean_true_scarcity": 0.999997712330969,
+      "mean_population": 85.5775,
+      "mean_avg_stress": 0.8436070988161679,
+      "mean_deaths_starvation": 0.0
+    },
+    {
+      "capacity": 120.0,
+      "regen_rate": 0.01,
+      "runs": [
+        {
+          "seed": 93060,
+          "final_population": 83,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.026954860985642256,
+          "mean_avg_min_need": 0.7953249506945279,
+          "mean_true_scarcity": 0.9998235590309776,
+          "mean_population": 89.24,
+          "mean_avg_stress": 0.8741644439769429
+        },
+        {
+          "seed": 93061,
+          "final_population": 71,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.017734700423234974,
+          "mean_avg_min_need": 0.8180792274500922,
+          "mean_true_scarcity": 0.9984301431626896,
+          "mean_population": 77.08,
+          "mean_avg_stress": 0.8464076134719519
+        },
+        {
+          "seed": 93062,
+          "final_population": 101,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.03873664022062569,
+          "mean_avg_min_need": 0.7703182737000731,
+          "mean_true_scarcity": 0.9999872493124425,
+          "mean_population": 105.06,
+          "mean_avg_stress": 0.8368907087633214
+        },
+        {
+          "seed": 93063,
+          "final_population": 84,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.020639868965632423,
+          "mean_avg_min_need": 0.8022274480953792,
+          "mean_true_scarcity": 0.9997912760037677,
+          "mean_population": 87.6,
+          "mean_avg_stress": 0.851472569952962
+        }
+      ],
+      "min_final_population": 71,
+      "mean_need_deficit_rate": 0.026016517648783835,
+      "mean_avg_min_need": 0.7964874749850182,
+      "mean_true_scarcity": 0.9995080568774694,
+      "mean_population": 89.745,
+      "mean_avg_stress": 0.8522338340412946,
+      "mean_deaths_starvation": 0.0
+    },
+    {
+      "capacity": 120.0,
+      "regen_rate": 0.012,
+      "runs": [
+        {
+          "seed": 93064,
+          "final_population": 79,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.005381864582186556,
+          "mean_avg_min_need": 0.8403500961502367,
+          "mean_true_scarcity": 0.6073832306627927,
+          "mean_population": 83.56,
+          "mean_avg_stress": 0.8007349372475772
+        },
+        {
+          "seed": 93065,
+          "final_population": 78,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.004657221056063047,
+          "mean_avg_min_need": 0.8380899671628825,
+          "mean_true_scarcity": 0.8190779192384693,
+          "mean_population": 84.51,
+          "mean_avg_stress": 0.8485414426713906
+        },
+        {
+          "seed": 93066,
+          "final_population": 80,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.004057291498721047,
+          "mean_avg_min_need": 0.8362339786175406,
+          "mean_true_scarcity": 0.9253643962366099,
+          "mean_population": 85.78,
+          "mean_avg_stress": 0.8575345167813769
+        },
+        {
+          "seed": 93067,
+          "final_population": 89,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.01529922103983416,
+          "mean_avg_min_need": 0.8143698213949988,
+          "mean_true_scarcity": 0.9993453823689272,
+          "mean_population": 92.5,
+          "mean_avg_stress": 0.8210687354674329
+        }
+      ],
+      "min_final_population": 78,
+      "mean_need_deficit_rate": 0.007348899544201202,
+      "mean_avg_min_need": 0.8322609658314146,
+      "mean_true_scarcity": 0.8377927321266998,
+      "mean_population": 86.5875,
+      "mean_avg_stress": 0.8319699080419444,
+      "mean_deaths_starvation": 0.0
+    },
+    {
+      "capacity": 120.0,
+      "regen_rate": 0.016,
+      "runs": [
+        {
+          "seed": 93068,
+          "final_population": 98,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.0015698659928814127,
+          "mean_avg_min_need": 0.8604486904443358,
+          "mean_true_scarcity": 0.1410478972392808,
+          "mean_population": 101.72,
+          "mean_avg_stress": 0.5178982648594139
+        },
+        {
+          "seed": 93069,
+          "final_population": 107,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.0025760286237806102,
+          "mean_avg_min_need": 0.850509707801466,
+          "mean_true_scarcity": 0.5791943137185518,
+          "mean_population": 108.69,
+          "mean_avg_stress": 0.6293263236506987
+        },
+        {
+          "seed": 93070,
+          "final_population": 111,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.0032699325453260917,
+          "mean_avg_min_need": 0.8468338783950216,
+          "mean_true_scarcity": 0.7134884440582191,
+          "mean_population": 116.05,
+          "mean_avg_stress": 0.7407141139267711
+        },
+        {
+          "seed": 93071,
+          "final_population": 104,
+          "cumulative_deaths_starvation": 0,
+          "mean_need_deficit_rate": 0.0022441626634890606,
+          "mean_avg_min_need": 0.8569634932107327,
+          "mean_true_scarcity": 0.3230426809176082,
+          "mean_population": 108.15,
+          "mean_avg_stress": 0.6024463789942736
+        }
+      ],
+      "min_final_population": 98,
+      "mean_need_deficit_rate": 0.002414997456369294,
+      "mean_avg_min_need": 0.8536889424628891,
+      "mean_true_scarcity": 0.439193333983415,
+      "mean_population": 108.6525,
+      "mean_avg_stress": 0.6225962703577893,
+      "mean_deaths_starvation": 0.0
+    }
+  ]
+}

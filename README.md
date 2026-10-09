@@ -62,6 +62,9 @@ python run_scarcity_link_ablation.py --arms intact,need_based --seed-start 70000
 python analyze_scarcity_link_ablation.py --dir output/need_based_decision
 python run_scarcity_link_ablation.py --arms intact,provisions_only,scoring_only,need_based --seed-start 80000 --out-dir output/provision_scoring_factorial --protocol EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md  # erzak × skor ayrışımı; 480 dünya
 python analyze_scarcity_link_ablation.py --dir output/provision_scoring_factorial --factorial provisions_only,scoring_only,need_based
+python run_deprivation_pilot.py       # yoksunluk rejimi kalibrasyonu; --order shuffled ile de koşulur
+python run_scarcity_link_ablation.py --arms intact,provisions_only,scoring_only,need_based --capacities 90,120 --regen-rates 0.004,0.010 --order shuffled --seed-start 94000 --out-dir output/deprivation --protocol EXPERIMENT_PROTOCOL_DEPRIVATION.md  # gerçek yoksunluk; 480 dünya
+python analyze_scarcity_link_ablation.py --dir output/deprivation --factorial provisions_only,scoring_only,need_based
 python ship_of_fools/tests/test_basic.py
 python ship_of_fools/tests/test_reproducibility.py
 python ship_of_fools/tests/test_resource_factorial.py
@@ -116,7 +119,9 @@ ihtiyaç temelli karar mimarisi protokolü
 ve sonuçları [NEED_BASED_DECISION_RESULTS.md](NEED_BASED_DECISION_RESULTS.md),
 erzak × skor ayrışımı protokolü
 [EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md](EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md)
-ve sonuçları [PROVISION_SCORING_FACTORIAL_RESULTS.md](PROVISION_SCORING_FACTORIAL_RESULTS.md) içindedir.
+ve sonuçları [PROVISION_SCORING_FACTORIAL_RESULTS.md](PROVISION_SCORING_FACTORIAL_RESULTS.md),
+gerçek yoksunluk protokolü [EXPERIMENT_PROTOCOL_DEPRIVATION.md](EXPERIMENT_PROTOCOL_DEPRIVATION.md)
+içindedir.
 Aşamalı geliştirme planı [TASK_GRAPH.md](TASK_GRAPH.md) içindedir.
 
 ## Bilimsel yorum ve bilinen sınırlar

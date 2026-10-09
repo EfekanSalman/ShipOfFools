@@ -22,7 +22,8 @@ METRICS = (("conflict_rate", "cooperation_rate", "true_scarcity", "avg_scarcity_
             "avg_stress", "avg_trust", "inequality_gini", "population", "helping_norm")
            + tuple(f"action_{name}_rate" for name in ACTIONS)
            + tuple(f"identity_{name}_rate" for name in LABELS)
-           + ("avg_wealth",))  # appended last so earlier metrics keep their bootstrap draws
+           # appended last so earlier metrics keep their bootstrap draws
+           + ("avg_wealth", "avg_min_need", "need_deficit_rate", "cumulative_deaths_starvation"))
 CAPACITIES = (90.0, 120.0)
 REGEN_RATES = (0.016, 0.019)
 ARMS = {
@@ -46,27 +47,34 @@ def main():
     parser.add_argument("--out-dir", default="output/scarcity_link_ablation")
     parser.add_argument("--arms", default=DEFAULT_ARMS, help="comma-separated arm names; the first is the reference")
     parser.add_argument("--protocol", default="EXPERIMENT_PROTOCOL_SCARCITY_LINK_ABLATION.md")
+    parser.add_argument("--capacities", default=",".join(str(c) for c in CAPACITIES), help="two levels, low,high")
+    parser.add_argument("--regen-rates", default=",".join(str(r) for r in REGEN_RATES), help="two levels, low,high")
+    parser.add_argument("--order", default="fixed", choices=("fixed", "shuffled"), help="agent_update_order")
     args = parser.parse_args()
     arm_names = args.arms.split(",")
     if len(set(arm_names)) != len(arm_names) or any(name not in ARMS for name in arm_names):
         parser.error(f"arms must be distinct names from {sorted(ARMS)}")
     arms = {name: ARMS[name] for name in arm_names}
+    capacities = tuple(sorted(float(c) for c in args.capacities.split(",")))
+    regen_rates = tuple(sorted(float(r) for r in args.regen_rates.split(",")))
+    if len(set(capacities)) != 2 or len(set(regen_rates)) != 2:
+        parser.error("exactly two distinct capacities and two distinct regen rates are required")
     if args.agents <= 1 or args.ticks < args.window or args.seeds_per_cell < 2:
         parser.error("invalid agents, ticks/window, or seeds-per-cell")
     os.makedirs(args.out_dir, exist_ok=True)
     base = Config(n_agents=args.agents, n_ticks=args.ticks, seed=0,
-                  agent_update_order="fixed", agent_rng_mode="shared")
+                  agent_update_order=args.order, agent_rng_mode="shared")
     summaries = []
     summary_path = os.path.join(args.out_dir, "seed_summaries.csv")
     series_path = os.path.join(args.out_dir, "timeseries.csv")
     fields = ["capacity", "regen_rate", "arm", "cell", "seed", "tick"] + list(METRICS)
-    total = len(CAPACITIES) * len(REGEN_RATES) * len(arms) * args.seeds_per_cell
+    total = len(capacities) * len(regen_rates) * len(arms) * args.seeds_per_cell
     with open(series_path, "w", newline="", encoding="utf-8") as series_file:
         writer = csv.DictWriter(series_file, fieldnames=fields)
         writer.writeheader()
         n_runs = 0
-        for capacity in CAPACITIES:
-            for regen in REGEN_RATES:
+        for capacity in capacities:
+            for regen in regen_rates:
                 for arm, overrides in arms.items():
                     cell = f"C{int(capacity)}-R{str(regen).replace('.', 'p')}-{arm}"
                     for seed in range(args.seed_start, args.seed_start + args.seeds_per_cell):
@@ -80,17 +88,19 @@ def main():
                         for key, value in overrides.items():
                             setattr(cfg, key, value)
                         rows = Simulation(cfg).run().to_rows()
-                        tail = rows[-args.window:]
+                        # a tick with nobody alive has no metrics; an extinct window yields NaN
+                        tail = [r for r in rows[-args.window:] if r["population"] > 0]
                         summary = {"capacity": capacity, "regen_rate": regen, "arm": arm,
                                    "cell": cell, "seed": seed,
                                    "final_population": int(rows[-1]["population"])}
                         for metric in METRICS:
-                            summary[f"mean_{metric}"] = sum(float(r[metric]) for r in tail) / len(tail)
+                            summary[f"mean_{metric}"] = (sum(float(r[metric]) for r in tail) / len(tail)
+                                                         if tail else float("nan"))
                         summaries.append(summary)
                         for row in rows:
                             writer.writerow({"capacity": capacity, "regen_rate": regen, "arm": arm,
                                              "cell": cell, "seed": seed,
-                                             **{key: row[key] for key in ("tick",) + METRICS}})
+                                             **{key: row.get(key, "") for key in ("tick",) + METRICS}})
                         n_runs += 1
                         if n_runs % 10 == 0:
                             print(f"Completed {n_runs}/{total} runs", flush=True)
@@ -102,7 +112,7 @@ def main():
         "experiment": "resource_2x2_x_decision_arm",
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "python_version": platform.python_version(), "base_config": asdict(base),
-        "capacities": list(CAPACITIES), "food_and_water_regen_rates": list(REGEN_RATES),
+        "capacities": list(capacities), "food_and_water_regen_rates": list(regen_rates),
         "arms": arms,
         "seeds_per_cell": args.seeds_per_cell, "seed_start": args.seed_start,
         "seed_end_inclusive": args.seed_start + args.seeds_per_cell - 1,

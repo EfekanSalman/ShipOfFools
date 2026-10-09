@@ -61,6 +61,11 @@ ajan başına stream tasarımının metodolojik gerekçesi birlikte değerlendir
 seçilmelidir. Ortak dışsal olayları kimlik/tick bazında sabitleyen counter-based
 RNG, daha güçlü eşleştirme için gelecekteki bir alternatif olabilir.
 
+## Kapsam notu (2026-10-09)
+
+Bu sonuç ajanların tok olduğu kaynak hücrelerine aittir; kıt rejimlerde
+güncelleme sırası sonuçları değiştirir (ISSUE-016).
+
 ## Tekrar üretim
 
 - `run_agent_rng_robustness.py` — 240 koşu ve ham zaman serileri.

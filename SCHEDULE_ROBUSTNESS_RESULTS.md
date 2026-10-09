@@ -54,6 +54,13 @@ farklı parametrelere veya insan davranışına genellenemez. Bir sonraki
 sağlamlık adımı karar RNG'lerini ajan başına ayırma veya aynı dışsal şokları
 ajan kimliklerine sabitleme tasarımını ayrıca değerlendirmek olabilir.
 
+## Kapsam notu (2026-10-09)
+
+Bu karşılaştırmadaki dört kaynak hücresinde ajanlar toktu (ISSUE-015).
+Yenilenme ihtiyacın altına indirildiğinde sabit sıra kimliğe göre öncelik
+üretiyor ve sonuçları büyük ölçüde değiştiriyor (ISSUE-016). Buradaki
+sağlamlık sonucu kıt rejimlere genellenmemelidir.
+
 ## Tekrar üretim
 
 - `run_schedule_robustness.py`: 120 karıştırılmış koşuyu ve zaman serilerini üretir.

@@ -7285,6 +7285,24 @@
       }
     }
   },
+  "resource_cells": [
+    [
+      90.0,
+      0.016
+    ],
+    [
+      90.0,
+      0.019
+    ],
+    [
+      120.0,
+      0.016
+    ],
+    [
+      120.0,
+      0.019
+    ]
+  ],
   "primary_metrics": [
     "conflict_rate",
     "cooperation_rate"

@@ -461,7 +461,13 @@ bağı ancak elle yazılmış bir katsayıyla kurulabiliyordu.
       Fark skor biçimine ait; erzak etkisi ayırt edilemiyor.
 - [x] `avg_min_need`, `need_deficit_rate` metrikleri; ISSUE-015 açıldı
       (`true_scarcity` depo doluluğunu ölçüyor, ajanlar tavanda bile tok).
-- [ ] Gerçek yoksunluk üreten kaynak rejimi için pilot ve protokol (ISSUE-015).
+- [x] Yoksunluk pilotu (`run_deprivation_pilot.py`): sabit sırada kalıcı yoksunluk
+      oluşmuyor, karıştırılmış sırada yenilenme 0.004 seçildi. ISSUE-016 açıldı
+      (sabit sıra kıtlıkta kimliğe göre öncelik üretiyor).
+- [x] Yoksunluk protokolü koşudan önce: `EXPERIMENT_PROTOCOL_DEPRIVATION.md`
+      (2×2 kaynak × 2×2 karar, karıştırılmış sıra, 480 koşu).
+- [ ] Yoksunluk koşusu ve raporu: `DEPRIVATION_RESULTS.md`.
+- [ ] ISSUE-016 tanısını n≥30 ile doğrulama; varsayılan sıra kararı.
 - [ ] `provision_*` parametrelerine duyarlılık (özellikle `provision_max_per_tick`).
 - [ ] Toplamada kütle korunumu: yenen ve saklanan payın açık ayrımı.
 - [ ] Gini için null model (yalnızca rastgele aktarım) — `REFERENCES.md` #15.

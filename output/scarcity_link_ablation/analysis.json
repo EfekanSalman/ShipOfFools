@@ -2,6 +2,7 @@
   "bootstrap_draws": 10000,
   "analysis_seed": 6102607,
   "seed_block_paired": true,
+  "reference_arm": "intact",
   "metrics": {
     "conflict_rate": {
       "n_seed_blocks": 30,
@@ -3956,6 +3957,24 @@
       }
     }
   },
+  "resource_cells": [
+    [
+      90.0,
+      0.016
+    ],
+    [
+      90.0,
+      0.019
+    ],
+    [
+      120.0,
+      0.016
+    ],
+    [
+      120.0,
+      0.019
+    ]
+  ],
   "primary_metrics": [
     "conflict_rate",
     "cooperation_rate"

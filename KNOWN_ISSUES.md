@@ -179,9 +179,39 @@ geçmişi kaybolmaz.
 - **Yapılanlar**: `avg_min_need` ve `need_deficit_rate` metrikleri eklendi.
 - **Önerilen kapanış**: (a) raporlarda "kıtlık" yerine "depo boşluğu" ile
   "yoksunluk" ayrımını yapmak ve her deneyde ikisini birlikte raporlamak;
-  (b) gerçek yoksunluk üreten bir kaynak rejimi tanımlamak (yenilenmeyi
+  (b, başlandı: `EXPERIMENT_PROTOCOL_DEPRIVATION.md`) gerçek yoksunluk üreten bir kaynak rejimi tanımlamak (yenilenmeyi
   ihtiyaç akışının altına indirmek veya toplamadaki israfı kaldırmak) —
   ayrı protokol; varsayılan bu bulguya bakılarak değiştirilmez.
+- **Durum**: **açık**.
+
+### ISSUE-016 — Sabit ajan sırası kıtlıkta kimliğe göre öncelik üretiyor
+- **Nerede**: `simulation/engine.py` (`step`, `agent_update_order="fixed"`)
+- **Ne**: ajanlar her tick aynı liste sırasıyla hareket eder ve toplama anında
+  etkilidir. Depo ihtiyacı karşılamadığında sıranın başındakiler alır,
+  sondakilere kalmaz. Keşifsel tanı (kapasite 90, 4 seed, seed 92000–92003):
+
+  | Yenilenme | Sıra | Son nüfus | Açlık ölümü | Düşük kimlikli kurucularda ölüm | Yüksek kimlikli kurucularda ölüm | Son-100 yoksun pay |
+  |---|---|---:|---:|---:|---:|---:|
+  | 0.004 | sabit | 25.0 | 64.2 | 0.14 | 1.00 | 0.045 |
+  | 0.004 | karışık | 51.8 | 31.0 | 0.25 | 0.33 | 0.247 |
+  | 0.008 | sabit | 44.5 | 35.2 | 0.00 | 0.46 | 0.020 |
+  | 0.008 | karışık | 80.8 | 0.2 | 0.01 | 0.00 | 0.137 |
+
+  Sabit sırada kurucuların ikinci yarısının tamamı açlıktan ölüyor; sıra
+  karıştırılınca ölüm kimlikten bağımsızlaşıyor, toplam ölüm yarıya iniyor ve
+  kalıcı yoksunluk ortaya çıkıyor.
+- **Sonuç**: `SCHEDULE_ROBUSTNESS_RESULTS.md` ve `AGENT_RNG_ROBUSTNESS_RESULTS.md`
+  sıranın sonuçları değiştirmediğini yalnızca ajanların tok olduğu rejimlerde
+  gösterdi; bu sağlamlık kıt rejimlere genellenemez. Sabit sıra orada örtük
+  bir "kimliğe göre erişim hiyerarşisi" varsayımıdır. Sonradan doğanlar en
+  yüksek kimliğe sahip olduğundan en son onlar erişir.
+- **Yapılanlar**: yoksunluk pilotu iki sırayla koşuldu
+  (`output/deprivation_pilot*.json`); yoksunluk deneyi karıştırılmış sırayla
+  tanımlandı (`EXPERIMENT_PROTOCOL_DEPRIVATION.md`).
+- **Önerilen kapanış**: kıt rejim içeren her deneyde sırayı açıkça raporlamak;
+  varsayılanın `shuffled` olup olmayacağına karar vermek (eski deneylerin
+  tekrarlanabilirliği için `fixed` seçeneği kalmalı); 4 seed'lik tanıyı n≥30
+  ile doğrulamak.
 - **Durum**: **açık**.
 
 ## Kapalı

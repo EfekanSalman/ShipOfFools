@@ -31,11 +31,11 @@ def percentile_ci(values):
     return [q(0.025), q(0.975)]
 
 
-def contrasts(data, arm, indices):
+def contrasts(data, arm, indices, cells=RESOURCE_CELLS):
     """2x2 high-minus-low resource contrasts within one arm over the given seed blocks."""
     m = {cell: statistics.fmean(data[(cell[0], cell[1], arm)][i] for i in indices)
-         for cell in RESOURCE_CELLS}
-    ll, lh, hl, hh = (m[cell] for cell in RESOURCE_CELLS)
+         for cell in cells}
+    ll, lh, hl, hh = (m[cell] for cell in cells)
     return {
         "capacity_high_minus_low": (hl + hh) / 2 - (ll + lh) / 2,
         "regen_high_minus_low": (lh + hh) / 2 - (ll + hl) / 2,
@@ -43,7 +43,8 @@ def contrasts(data, arm, indices):
     }
 
 
-def analyze(values_by_metric, n_draws=N_DRAWS, analysis_seed=ANALYSIS_SEED, arms=ARMS, factorial=None):
+def analyze(values_by_metric, n_draws=N_DRAWS, analysis_seed=ANALYSIS_SEED, arms=ARMS, factorial=None,
+            cells=RESOURCE_CELLS):
     """Bootstrap resource contrasts per arm.
 
     factorial, if given, names three arms (a_only, b_only, both) that form a
@@ -56,19 +57,19 @@ def analyze(values_by_metric, n_draws=N_DRAWS, analysis_seed=ANALYSIS_SEED, arms
               "seed_block_paired": True, "reference_arm": reference, "metrics": {}}
     for metric, data in values_by_metric.items():
         # data[(capacity, regen, arm)] = one observation per matched seed
-        n = len(data[(90.0, 0.016, reference)])
+        n = len(data[(cells[0][0], cells[0][1], reference)])
         everyone = list(range(n))
-        point = {arm: contrasts(data, arm, everyone) for arm in arms}
+        point = {arm: contrasts(data, arm, everyone, cells) for arm in arms}
         draws = {arm: {name: [] for name in CONTRASTS} for arm in arms}
         for _ in range(n_draws):
             sampled = [rng.randrange(n) for _ in range(n)]
             for arm in arms:
-                current = contrasts(data, arm, sampled)
+                current = contrasts(data, arm, sampled, cells)
                 for name in CONTRASTS:
                     draws[arm][name].append(current[name])
         metric_result = {"n_seed_blocks": n, "cell_means": {}, "arms": {}}
         for arm in arms:
-            for capacity, regen in RESOURCE_CELLS:
+            for capacity, regen in cells:
                 values = data[(capacity, regen, arm)]
                 key = f"C{int(capacity)}-R{str(regen).replace('.', 'p')}-{arm}"
                 metric_result["cell_means"][key] = {
@@ -124,22 +125,28 @@ def main():
     if len(seeds) != args.seeds_per_cell:
         raise ValueError(f"expected {args.seeds_per_cell} seed blocks; found {len(seeds)}")
     arms = tuple(dict.fromkeys(row["arm"] for row in rows))
+    capacities = sorted({float(row["capacity"]) for row in rows})
+    regen_rates = sorted({float(row["regen_rate"]) for row in rows})
+    if len(capacities) != 2 or len(regen_rates) != 2:
+        raise ValueError("expected a 2x2 resource design")
+    cells = tuple((c, r) for c in capacities for r in regen_rates)  # low/low, low/high, high/low, high/high
     lookup = {(float(row["capacity"]), float(row["regen_rate"]), row["arm"], int(row["seed"])): row
               for row in rows}
-    required = {(c, r, arm, seed) for c, r in RESOURCE_CELLS for arm in arms for seed in seeds}
+    required = {(c, r, arm, seed) for c, r in cells for arm in arms for seed in seeds}
     if lookup.keys() != required or len(rows) != len(required):
         raise ValueError("incomplete or duplicated factorial seed blocks")
 
     metrics = [key[len("mean_"):] for key in rows[0] if key.startswith("mean_")]
     values_by_metric = {
         metric: {(c, r, arm): [float(lookup[(c, r, arm, seed)][f"mean_{metric}"]) for seed in seeds]
-                 for c, r in RESOURCE_CELLS for arm in arms}
+                 for c, r in cells for arm in arms}
         for metric in metrics
     }
     factorial = tuple(args.factorial.split(",")) if args.factorial else None
     if factorial is not None and (len(factorial) != 3 or any(name not in arms[1:] for name in factorial)):
         raise ValueError("--factorial needs three non-reference arm names present in the data")
-    result = analyze(values_by_metric, arms=arms, factorial=factorial)
+    result = analyze(values_by_metric, arms=arms, factorial=factorial, cells=cells)
+    result["resource_cells"] = [list(cell) for cell in cells]
     result["primary_metrics"] = list(PRIMARY)
     result["manipulation_check_metrics"] = list(MANIPULATION_CHECK)
     result["secondary_metrics"] = [m for m in metrics if m not in PRIMARY + MANIPULATION_CHECK]
