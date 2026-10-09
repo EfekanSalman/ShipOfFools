@@ -69,10 +69,25 @@ def test_ablation_analysis_known_values():
     assert arms["zero"]["contrasts"]["capacity_by_regen_interaction"]["estimate"] == 0.0
 
 
+def test_arm_factorial_split_known_values():
+    # capacity effect: reference 1, a_only 3, b_only 2, both 7 -> a +3.5, b +2.5, interaction +3
+    data = {}
+    for arm, effect in (("ref", 1.0), ("a", 3.0), ("b", 2.0), ("ab", 7.0)):
+        for capacity in (90.0, 120.0):
+            for regen in (0.016, 0.019):
+                data[(capacity, regen, arm)] = [effect * (capacity == 120.0) + seed for seed in range(5)]
+    result = analyze({"m": data}, n_draws=200, arms=("ref", "a", "b", "ab"), factorial=("a", "b", "ab"))
+    split = result["metrics"]["m"]["arm_factorial"]["contrasts"]["capacity_high_minus_low"]
+    assert split["a_main_effect"]["estimate"] == 3.5
+    assert split["b_main_effect"]["estimate"] == 2.5
+    assert split["a_by_b_interaction"]["estimate"] == 3.0
+
+
 if __name__ == "__main__":
     test_default_scores_read_scarcity_belief()
     test_ablation_arms_cut_the_direct_link_only()
     test_fixed_reference_matches_default_at_that_belief()
     test_action_rates_partition_cooperation_and_conflict()
     test_ablation_analysis_known_values()
+    test_arm_factorial_split_known_values()
     print("Scarcity-link ablation checks passed.")

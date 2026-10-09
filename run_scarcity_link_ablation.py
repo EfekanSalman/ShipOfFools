@@ -30,6 +30,8 @@ ARMS = {
     "zero": {"steal_scarcity_weight": 0.0, "share_scarcity_weight": 0.0},
     "fixed": {"action_scarcity_reference": 0.5},
     "need_based": {"decision_architecture": "need_based"},
+    "provisions_only": {"provisions_edible": True},
+    "scoring_only": {"need_based_scoring": True},
 }
 DEFAULT_ARMS = "intact,zero,fixed"
 

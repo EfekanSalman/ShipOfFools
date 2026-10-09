@@ -60,6 +60,8 @@ python analyze_scarcity_link_ablation.py # ablasyon kontrastları ve kalan pay
 python run_identity_label_followup.py # kimlik deneyinin etiket/eylem payları; 240 dünya
 python run_scarcity_link_ablation.py --arms intact,need_based --seed-start 70000 --out-dir output/need_based_decision --protocol EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md  # ihtiyaç temelli karar mimarisi; 240 dünya
 python analyze_scarcity_link_ablation.py --dir output/need_based_decision
+python run_scarcity_link_ablation.py --arms intact,provisions_only,scoring_only,need_based --seed-start 80000 --out-dir output/provision_scoring_factorial --protocol EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md  # erzak × skor ayrışımı; 480 dünya
+python analyze_scarcity_link_ablation.py --dir output/provision_scoring_factorial --factorial provisions_only,scoring_only,need_based
 python ship_of_fools/tests/test_basic.py
 python ship_of_fools/tests/test_reproducibility.py
 python ship_of_fools/tests/test_resource_factorial.py
@@ -111,7 +113,10 @@ kıtlık-inancı bağlantısı ablasyon protokolü
 ve sonuçları [SCARCITY_LINK_ABLATION_RESULTS.md](SCARCITY_LINK_ABLATION_RESULTS.md),
 ihtiyaç temelli karar mimarisi protokolü
 [EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md](EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md)
-ve sonuçları [NEED_BASED_DECISION_RESULTS.md](NEED_BASED_DECISION_RESULTS.md) içindedir.
+ve sonuçları [NEED_BASED_DECISION_RESULTS.md](NEED_BASED_DECISION_RESULTS.md),
+erzak × skor ayrışımı protokolü
+[EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md](EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md)
+içindedir.
 Aşamalı geliştirme planı [TASK_GRAPH.md](TASK_GRAPH.md) içindedir.
 
 ## Bilimsel yorum ve bilinen sınırlar

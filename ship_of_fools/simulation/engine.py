@@ -26,7 +26,9 @@ class Simulation:
         self.config = config
         if config.decision_architecture not in ("heuristic", "need_based"):
             raise ValueError("decision_architecture must be 'heuristic' or 'need_based'")
-        self.need_based = config.decision_architecture == "need_based"
+        need_based = config.decision_architecture == "need_based"
+        self.provisions_edible = need_based if config.provisions_edible is None else config.provisions_edible
+        self.need_based_scoring = need_based if config.need_based_scoring is None else config.need_based_scoring
         # need value of one theft (at most 2.0 wealth, see _apply_action)
         # relative to one base forage, both in need units
         self.steal_relative_gain = (2.0 * config.provision_need_per_wealth) / (config.forage_base_amount / 10)
@@ -256,10 +258,10 @@ class Simulation:
     def _update_internal_state(self, agent):
         cfg = self.config
 
-        # ISSUE-014: in the need-based architecture wealth is a private stock
-        # of provisions, so a hungry or thirsty agent eats from it. This is
-        # what gives sharing a cost and theft a payoff in need terms.
-        if (self.need_based and agent.wealth > 0
+        # ISSUE-014: when provisions are edible, wealth is a private stock of
+        # provisions, so a hungry or thirsty agent eats from it. This is what
+        # gives sharing a cost and theft a payoff in need terms.
+        if (self.provisions_edible and agent.wealth > 0
                 and min(agent.needs.food, agent.needs.water) < cfg.provision_eat_threshold):
             eaten = min(agent.wealth, cfg.provision_max_per_tick)
             agent.wealth -= eaten
@@ -346,7 +348,7 @@ class Simulation:
                                     steal_scarcity_weight=self.config.steal_scarcity_weight,
                                     share_scarcity_weight=self.config.share_scarcity_weight,
                                     action_scarcity_reference=self.config.action_scarcity_reference,
-                                    need_based=self.need_based,
+                                    need_based=self.need_based_scoring,
                                     steal_relative_gain=self.steal_relative_gain)
             self._apply_action(agent, action)
             self._update_internal_state(agent)

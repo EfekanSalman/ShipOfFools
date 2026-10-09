@@ -149,7 +149,10 @@ geçmişi kaybolmaz.
   `intact` kolda en kıt hücre en zengin hücredir (servet yenemediği için
   birikir). Ablasyonla birlikte okununca kaynak → çatışma etkisinin büyüklüğü
   karar kuralına göre yaklaşık sekiz kat değişiyor.
-- **Kalan**: erzak ile karar kuralının ayrı etkisi; `provision_*` duyarlılığı;
+- **Ayrışım (2026-10-09)**: iki parça `provisions_edible` ve
+  `need_based_scoring` anahtarlarına bölündü; 2×2×4 protokolü
+  `EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md`.
+- **Kalan**: ayrışım sonucu; `provision_*` duyarlılığı;
   toplamada kütle korunumu. Varsayılan mimari kararı verilmedi.
 - **Durum**: **açık**.
 

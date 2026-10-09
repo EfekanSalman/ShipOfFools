@@ -71,6 +71,24 @@ def test_need_based_run_is_reproducible_and_differs_from_heuristic():
     assert run("need_based") != run("heuristic")
 
 
+def test_parts_can_be_switched_separately():
+    def flags(**kwargs):
+        sim = Simulation(Config(n_agents=4, n_ticks=1, **kwargs))
+        return sim.provisions_edible, sim.need_based_scoring
+    assert flags() == (False, False)
+    assert flags(decision_architecture="need_based") == (True, True)
+    assert flags(provisions_edible=True) == (True, False)
+    assert flags(need_based_scoring=True) == (False, True)
+    assert flags(decision_architecture="need_based", provisions_edible=False) == (False, True)
+
+
+def test_explicit_switches_reproduce_need_based():
+    def run(**kwargs):
+        config = Config(n_agents=16, n_ticks=40, seed=11, **kwargs)
+        return [(r["population"], r["conflict_rate"], r["avg_wealth"]) for r in Simulation(config).run().to_rows()]
+    assert run(decision_architecture="need_based") == run(provisions_edible=True, need_based_scoring=True)
+
+
 def test_unknown_architecture_is_rejected():
     try:
         Simulation(Config(n_agents=4, n_ticks=1, decision_architecture="other"))
@@ -85,5 +103,7 @@ if __name__ == "__main__":
     test_hungry_agent_eats_from_wealth_only_when_need_based()
     test_fed_agent_keeps_its_wealth()
     test_need_based_run_is_reproducible_and_differs_from_heuristic()
+    test_parts_can_be_switched_separately()
+    test_explicit_switches_reproduce_need_based()
     test_unknown_architecture_is_rejected()
     print("Need-based decision checks passed.")

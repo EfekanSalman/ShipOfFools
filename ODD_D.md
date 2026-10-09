@@ -145,6 +145,8 @@ to one base forage (0.4 at defaults). In this architecture wealth is a stock of
 provisions: an agent whose food or water need is below `provision_eat_threshold`
 eats up to `provision_max_per_tick` wealth per tick, each unit restoring
 `provision_need_per_wealth` of both needs. The default remains `"heuristic"`.
+The two parts can be set independently with `provisions_edible` and
+`need_based_scoring`; left at `None` they follow `decision_architecture`.
 
 #### Resource and action effects
 

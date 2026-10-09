@@ -39,8 +39,13 @@ class Config:
     # scoring. In "need_based", wealth is a private stock of provisions that can
     # be eaten, and forage/steal/share are scored by what they do for the
     # agent's own needs instead of by a direct scarcity-belief coefficient.
-    # The provision_* fields are only read in "need_based".
+    # The provision_* fields are only read when provisions are edible.
     decision_architecture: str = "heuristic"
+    # The two parts of "need_based" can be switched separately for factorial
+    # runs. None follows decision_architecture (both on in "need_based", both
+    # off in "heuristic").
+    provisions_edible: bool | None = None    # hungry agents eat from their wealth
+    need_based_scoring: bool | None = None   # forage/steal/share scored by urgency x payoff
     provision_need_per_wealth: float = 0.1  # food and water restored per unit wealth eaten (the rate the child-share rule already uses)
     provision_eat_threshold: float = 0.4    # an agent eats from its wealth when a need is below this (where scarcity stress starts)
     provision_max_per_tick: float = 1.0     # most wealth an agent can eat in one tick

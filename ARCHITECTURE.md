@@ -38,7 +38,9 @@ formülündeki diğer katsayılar hâlâ `cognition/decision.py` içinde sabitti
 servet yenebilir erzak olur (`_update_internal_state` içinde, ihtiyaç
 `provision_eat_threshold` altındayken) ve `forage`/`steal`/`share` skorları
 doğrudan kıtlık inancı katsayısı yerine ajanın ihtiyaç aciliyeti × eylemin
-ihtiyaca getirisiyle hesaplanır. Tick sırası ve RNG çekilişleri değişmez. Varsayılan `shared` RNG
+ihtiyaca getirisiyle hesaplanır. Tick sırası ve RNG çekilişleri değişmez.
+İki parça faktöriyel deneyler için ayrı ayrı açılabilir: `provisions_edible`
+ve `need_based_scoring` (`None` ise `decision_architecture`'ı izlerler). Varsayılan `shared` RNG
 modunda rastgele model işlemleri `Simulation.rng` üzerinden yürütülür. Deneysel
 `per_agent` modunda ajan eylemleri ve ajan başına lifecycle çekilişleri sabit
 ajan-ID seed'li akışlardan alınır; ortam, medya ve ağ kurulumundaki rastgele

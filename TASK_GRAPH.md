@@ -453,7 +453,11 @@ bağı ancak elle yazılmış bir katsayıyla kurulabiliyordu.
       (2×2 kaynak × 2 mimari, 30 seed bloğu, 240 koşu).
 - [x] Koşu ve rapor: `NEED_BASED_DECISION_RESULTS.md` (2026-10-09). Kaynak → çatışma
       ilişkisi aynı yönde ama `intact` koldakinin yaklaşık sekizde biri.
-- [ ] Erzak ile karar kuralının ayrı ayrı etkisi (şu an paket hâlinde).
+- [x] Erzak ile karar kuralı ayrı anahtarlara bölündü (`provisions_edible`,
+      `need_based_scoring`); `need_based` yörüngeleri bit-bit aynı.
+- [x] Ayrışım protokolü koşudan önce: `EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md`
+      (2×2 kaynak × 2×2 karar, 30 seed bloğu, 480 koşu).
+- [ ] Ayrışım koşusu ve raporu: `PROVISION_SCORING_FACTORIAL_RESULTS.md`.
 - [ ] `provision_*` parametrelerine duyarlılık (özellikle `provision_max_per_tick`).
 - [ ] Toplamada kütle korunumu: yenen ve saklanan payın açık ayrımı.
 - [ ] Gini için null model (yalnızca rastgele aktarım) — `REFERENCES.md` #15.

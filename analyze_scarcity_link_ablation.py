@@ -43,7 +43,13 @@ def contrasts(data, arm, indices):
     }
 
 
-def analyze(values_by_metric, n_draws=N_DRAWS, analysis_seed=ANALYSIS_SEED, arms=ARMS):
+def analyze(values_by_metric, n_draws=N_DRAWS, analysis_seed=ANALYSIS_SEED, arms=ARMS, factorial=None):
+    """Bootstrap resource contrasts per arm.
+
+    factorial, if given, names three arms (a_only, b_only, both) that form a
+    2x2 with the reference arm; each resource contrast is then split into the
+    main effects of the two arm factors and their interaction.
+    """
     reference = arms[0]
     rng = random.Random(analysis_seed)
     result = {"bootstrap_draws": n_draws, "analysis_seed": analysis_seed,
@@ -87,6 +93,20 @@ def analyze(values_by_metric, n_draws=N_DRAWS, analysis_seed=ANALYSIS_SEED, arms
                         "estimate": point[arm][name] / point[reference][name],
                         "bootstrap_ci95": percentile_ci(ratio)}
             metric_result["arms"][arm] = arm_result
+        if factorial is not None:
+            a_only, b_only, both = factorial
+            def split(ref, a, b, ab):
+                return {"a_main_effect": ((a - ref) + (ab - b)) / 2,
+                        "b_main_effect": ((b - ref) + (ab - a)) / 2,
+                        "a_by_b_interaction": (ab - b) - (a - ref)}
+            metric_result["arm_factorial"] = {"a": a_only, "b": b_only, "both": both, "contrasts": {}}
+            for name in CONTRASTS:
+                estimate = split(point[reference][name], point[a_only][name], point[b_only][name], point[both][name])
+                rows = [split(*values) for values in zip(draws[reference][name], draws[a_only][name],
+                                                         draws[b_only][name], draws[both][name])]
+                metric_result["arm_factorial"]["contrasts"][name] = {
+                    key: {"estimate": estimate[key], "bootstrap_ci95": percentile_ci([row[key] for row in rows])}
+                    for key in estimate}
         result["metrics"][metric] = metric_result
     return result
 
@@ -95,6 +115,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dir", default="output/scarcity_link_ablation")
     parser.add_argument("--seeds-per-cell", type=int, default=30)
+    parser.add_argument("--factorial", default=None,
+                        help="A_ONLY,B_ONLY,BOTH: arms forming a 2x2 with the reference arm")
     args = parser.parse_args()
     with open(os.path.join(args.dir, "seed_summaries.csv"), newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
@@ -114,7 +136,10 @@ def main():
                  for c, r in RESOURCE_CELLS for arm in arms}
         for metric in metrics
     }
-    result = analyze(values_by_metric, arms=arms)
+    factorial = tuple(args.factorial.split(",")) if args.factorial else None
+    if factorial is not None and (len(factorial) != 3 or any(name not in arms[1:] for name in factorial)):
+        raise ValueError("--factorial needs three non-reference arm names present in the data")
+    result = analyze(values_by_metric, arms=arms, factorial=factorial)
     result["primary_metrics"] = list(PRIMARY)
     result["manipulation_check_metrics"] = list(MANIPULATION_CHECK)
     result["secondary_metrics"] = [m for m in metrics if m not in PRIMARY + MANIPULATION_CHECK]
@@ -133,6 +158,13 @@ def main():
                     line += (f"  retained={kept['estimate']:+.2f} "
                              f"[{kept['bootstrap_ci95'][0]:+.2f}, {kept['bootstrap_ci95'][1]:+.2f}]")
                 print(line)
+        if factorial is not None:
+            split = result["metrics"][metric]["arm_factorial"]
+            for name in CONTRASTS:
+                parts = "  ".join(
+                    "{}={:+.4f} [{:+.4f}, {:+.4f}]".format(key, value["estimate"], *value["bootstrap_ci95"])
+                    for key, value in split["contrasts"][name].items())
+                print("  split of {} (a={}, b={}): {}".format(name, split["a"], split["b"], parts))
 
 
 if __name__ == "__main__":
