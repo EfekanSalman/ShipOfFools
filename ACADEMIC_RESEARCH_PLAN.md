@@ -1,313 +1,342 @@
-# Akademik Araştırma ve Simülasyon Planı
+# Academic Research and Simulation Plan
 
-Bu belge, Ship of Fools'u araştırma amaçlı ajan tabanlı simülasyon olarak
-geliştirmek için kullanılacak yöntemleri, öncelikleri ve önerilen ilk çalışmayı
-toplar. Bu plan, modelin gerçek insan davranışını şimdiden doğruladığı anlamına
-gelmez. Mevcut model öncelikle kuramsal mekanizmaları ve yapay dünyadaki
-sonuçlarını inceleyen bir araştırma aracıdır.
+This document collects the methods, priorities and the proposed first study
+to be used in developing Ship of Fools as an agent-based simulation for
+research purposes. This plan does not mean that the model already validates
+real human behaviour. The current model is primarily a research tool for
+examining theoretical mechanisms and their consequences in an artificial world.
 
-## 1. Akademik çerçeve
+## 1. Academic framework
 
-### Modelin iddia düzeyi
+### Level of claim made by the model
 
-Çalışmanın her aşamasında şu ayrım korunacak:
+The following distinction will be maintained at every stage of the work:
 
-- **Kod doğrulaması (verification):** Kod, amaçlanan kuralları uyguluyor mu?
-- **Kavramsal doğrulama:** Seçilen mekanizmalar araştırma sorusu ve dayandığı
-  teorilerle tutarlı mı?
-- **Davranışsal değerlendirme:** Modelin ürettiği örüntüler beklenen veya
-  gözlenen örüntülerle uyuşuyor mu?
-- **Ampirik kalibrasyon/doğrulama:** Parametreler gerçek veriye göre seçildi
-  mi; sonuçlar kullanılmayan veri ya da bağımsız bir örüntüyle sınandı mı?
+- **Code verification (verification):** Does the code implement the intended rules?
+- **Conceptual validation:** Are the chosen mechanisms consistent with the
+  research question and the theories they rest on?
+- **Behavioural evaluation:** Do the patterns the model produces match
+  expected or observed patterns?
+- **Empirical calibration/validation:** Were the parameters chosen according to
+  real data; were the results tested against unused data or an independent pattern?
 
-Bir aşamadaki başarı diğer aşamaların kanıtı sayılmaz. Model gerçek veriye
-bağlanmadıkça sonuçlar “gerçek toplumda böyle olur” biçiminde sunulmayacak;
-“bu varsayımlar altındaki modelde gözlendi” diye raporlanacak.
+Success at one stage is not counted as evidence for the other stages. Unless the
+model is tied to real data, results will not be presented as “this is what
+happens in a real society”; they will be reported as “observed in the model
+under these assumptions”.
 
-### Model dokümantasyonu: ODD ve ODD+D
+### Model documentation: ODD and ODD+D
 
-Mevcut kod, ODD (Overview, Design concepts, Details) yapısında başkalarının
-yeniden kurabileceği açıklıkta belgelenmeli. ODD; amaç, ajan/durum değişkenleri
-ve ölçekler, süreç sırası, tasarım kavramları, başlangıç, girdiler ve alt
-modelleri kapsar. İnsan kararları içerdiğimiz için ODD+D'nin karar vericiler,
-seçenekler, karar süreci, öğrenme ve bilgi varsayımlarına ilişkin soruları da
-uygulanmalı.
+The current code should be documented in the ODD (Overview, Design concepts,
+Details) structure, with enough clarity for others to rebuild it. ODD covers
+purpose, agents/state variables and scales, process order, design concepts,
+initialisation, inputs and submodels. Because we include human decisions, the
+ODD+D questions on decision makers, options, the decision process, learning and
+information assumptions should also be applied.
 
-Belgelenecek somut konular:
+Concrete topics to be documented:
 
-- Bir ajan hangi bilgiyi gerçekten görür, neyi yalnızca hatalı inanç olarak
-  taşır?
-- Her kararın seçenekleri, skorları/olasılıkları ve parametreleri nelerdir?
-- Hangi süreç hangi sırada, hangi ajan kümesi üzerinde işler?
-- Ajanlar öğreniyor veya uyum sağlıyorsa tam olarak hangi değişken güncellenir?
-- Başlangıç nüfusu, yaşları, kaynak düzeyleri ve ağ nasıl kurulur?
-- Her mekanizma hangi teoriye dayanır; hangi kısımları tasarım varsayımıdır?
+- What information does an agent actually see, and what does it carry only as
+  an erroneous belief?
+- What are the options, scores/probabilities and parameters of each decision?
+- Which process runs in which order, over which set of agents?
+- If agents learn or adapt, exactly which variable is updated?
+- How are the initial population, its ages, resource levels and the network
+  constructed?
+- Which theory does each mechanism rest on; which parts of it are design
+  assumptions?
 
-### Örüntü odaklı değerlendirme
+### Pattern-oriented evaluation
 
-Tek bir genel skorla “model geçerli” demek yerine, araştırma sorusuyla ilgili
-birkaç gözlenebilir örüntü önceden seçilmeli. Mümkünse farklı düzeylerde
-örüntüler birlikte ele alınmalı (ajan davranışı, ağ/kurum, nüfus veya zaman
-serisi). Alternatif mekanizmalar da aynı örüntüyü üretiyor mu diye
-karşılaştırılmalı. Hedef örüntü ve veri yoksa, sonuç kuramsal/keşifsel olarak
-sınıflandırılmalı; ampirik doğrulama iddiası yapılmamalı.
+Instead of declaring the model “valid” with a single overall score, a few
+observable patterns relevant to the research question should be selected in
+advance. Where possible, patterns at different levels should be considered
+together (agent behaviour, network/institution, population or time series). It
+should also be compared whether alternative mechanisms produce the same
+pattern. Where there is no target pattern and no data, the result should be
+classified as theoretical/exploratory; no claim of empirical validation should
+be made.
 
-## 2. Mevcut koşudan başlangıç gözlemi
+## 2. Initial observation from the current run
 
-Varsayılan konfigürasyonda (80 ajan, 500 tick, seed 42) çalıştırılan tek koşuda:
+In a single run with the default configuration (80 agents, 500 ticks, seed 42):
 
-- `true_scarcity` 300. tick'te 1.0'a ulaştı ve koşunun sonuna kadar tavanda
-  kaldı.
-- Stres yükseldi; güven hafif pozitif başlangıç değerinden negatife indi.
-- İşbirliği başlangıca göre düştü; çatışma ve Gini yükseldi.
-- Nüfus 102'ye kadar çıkıp 76'ya indi.
+- `true_scarcity` reached 1.0 at tick 300 and stayed at the ceiling until the
+  end of the run.
+- Stress rose; trust fell from a slightly positive initial value to negative.
+- Cooperation fell relative to the start; conflict and Gini rose.
+- Population rose to 102 and fell back to 76.
 
-Bu yalnızca **bir konfigürasyon ve seed için betimleyici bir gözlem**; genellenen
-bulgu değildir. Varsayılan kıtlık tavanı, daha fazla araştırma öncesi ele
-alınması gereken rejim/duyarlılık sorunudur (ayrıca `KNOWN_ISSUES.md`
-ISSUE-011/012).
+This is only **a descriptive observation for one configuration and seed**; it
+is not a generalised finding. The default scarcity ceiling is a regime/sensitivity
+problem that needs to be addressed before further research (see also
+`KNOWN_ISSUES.md` ISSUE-011/012).
 
-### İlk kıtlık rejimi pilotu (2026-10-04)
+### First scarcity-regime pilot (2026-10-04)
 
-`run_regime_calibration.py` ile 80 ajan, 400 tick, son 100 tick analizi ve 16
-parametre birleşimi (kapasite 75/90/105/120 × regen 0.010/0.013/0.016/0.019)
-koşturuldu. Her hücre 4 ayrı seed aldı; adaylar için seed aralıkları
-birbirinden ayrıdır (10000–10063). Önceden belirlenen ölçüt: ortalama kıtlık
-0.30–0.60 ve analiz penceresindeki tick'lerin en fazla %10'unda kıtlık ≥0.98.
+With `run_regime_calibration.py`, 80 agents, 400 ticks, analysis of the last 100
+ticks and 16 parameter combinations (capacity 75/90/105/120 × regen
+0.010/0.013/0.016/0.019) were run. Each cell received 4 separate seeds; the
+seed ranges are disjoint across candidates (10000–10063). The criterion defined
+in advance: mean scarcity 0.30–0.60 and scarcity ≥0.98 in at most 10% of the
+ticks in the analysis window.
 
-| Kapasite/ajan | Food+water regen | Son pencere kıtlık ort. ± seedler arası SD | Tavanda tick payı | Ölçüt |
+| Capacity/agent | Food+water regen | Last-window scarcity mean ± between-seed SD | Share of ticks at ceiling | Criterion |
 |---:|---:|---:|---:|---|
-| 90 | 0.019 | 0.515 ± 0.088 | 0.0% | uygun |
-| 120 | 0.016 | 0.337 ± 0.151 | 0.0% | uygun |
-| 105 | 0.016 | 0.579 ± 0.228 | 0.0% | uygun |
+| 90 | 0.019 | 0.515 ± 0.088 | 0.0% | meets |
+| 120 | 0.016 | 0.337 ± 0.151 | 0.0% | meets |
+| 105 | 0.016 | 0.579 ± 0.228 | 0.0% | meets |
 
-Kıtlık ölçütüne göre ilk aday **kapasite 90, regen 0.019** oldu. İşbirliği ve
-çatışma oranları çıktı dosyasında keşifsel olarak raporlandı; sıralamayı
-etkilemedi. Dört seed yalnızca ön tarama için yeterlidir, bu aday kalibre
-edilmiş nihai ayar değildir. Tam sonuç:
-`output/regime_calibration_pilot.json`.
+By the scarcity criterion, the first candidate was **capacity 90, regen 0.019**.
+Cooperation and conflict rates were reported exploratorily in the output file;
+they did not affect the ranking. Four seeds are sufficient only for a
+preliminary screen; this candidate is not a final calibrated setting. Full
+result: `output/regime_calibration_pilot.json`.
 
-**Sonraki adım:** bu ilk aday ve en az bir uygun alternatif, daha geniş ve
-birbirinden bağımsız yeni pilot seed bloklarında tekrar incelendi. 2026-10-04'te
-2×2 takip taraması (80 ajan, 500 tick, son 100 tick, her hücrede 20 seed;
-seed blokları 20000–20079) yapıldı:
+**Next step:** this first candidate and at least one suitable alternative were
+re-examined in wider, mutually independent new pilot seed blocks. On 2026-10-04
+a 2×2 follow-up screen was run (80 agents, 500 ticks, last 100 ticks, 20 seeds
+in each cell; seed blocks 20000–20079):
 
-| Kapasite/ajan | Regen | Kıtlık ort. ± seedler arası SD | Seed ortalaması hedef bantta | Tavanda tick payı | Ölçüt |
+| Capacity/agent | Regen | Scarcity mean ± between-seed SD | Seed mean in target band | Share of ticks at ceiling | Criterion |
 |---:|---:|---:|---:|---:|---|
-| 120 | 0.016 | 0.582 ± 0.189 | 11/20 (55%) | 4.1% | ortalama/tavan ölçütü geçti |
-| 120 | 0.019 | 0.232 ± 0.179 | 8/20 (40%) | 0.0% | ortalama hedefin altında |
-| 90 | 0.019 | 0.853 ± 0.136 | 1/20 (5%) | 35.9% | kıtlık yüksek/tavan fazla |
-| 90 | 0.016 | 0.989 ± 0.032 | 0/20 (0%) | 89.2% | kıtlık tavana yapışık |
+| 120 | 0.016 | 0.582 ± 0.189 | 11/20 (55%) | 4.1% | passed mean/ceiling criterion |
+| 120 | 0.019 | 0.232 ± 0.179 | 8/20 (40%) | 0.0% | mean below target |
+| 90 | 0.019 | 0.853 ± 0.136 | 1/20 (5%) | 35.9% | scarcity high/too much at ceiling |
+| 90 | 0.016 | 0.989 ± 0.032 | 0/20 (0%) | 89.2% | scarcity stuck at ceiling |
 
-Önemli sonuç: ilk pilotta öne çıkan `90 / 0.019` ayarı yeni seed bloğunda
-orta kıtlığı **tekrarlamadı**. `120 / 0.016` ayarı 20-seed ortalamasında hedef
-bandın içinde ve tavan payı düşük olsa da seedlerin yalnızca 11/20'sinde
-son-pencere ortalaması hedef bandına girdi; seedler arası değişkenlik yüksek.
-Dolayısıyla henüz güvenilir/kararlı bir orta rejim bulmuş değiliz. Bu, aday
-seçimini tek ortalamaya dayandırmamak ve run-to-run değişkenliği araştırma
-sonucunun parçası olarak ele almak gerektiğini gösteriyor.
+Important result: the `90 / 0.019` setting that stood out in the first pilot
+did **not replicate** moderate scarcity in the new seed block. Although the
+`120 / 0.016` setting is within the target band on the 20-seed mean and has a
+low ceiling share, the last-window mean entered the target band in only 11/20
+of the seeds; between-seed variability is high. Therefore we have not yet found
+a reliable/stable moderate regime. This shows that candidate selection should
+not be based on a single mean and that run-to-run variability should be treated
+as part of the research result.
 
-Tam sonuç: `output/regime_calibration_confirmation.json`. Coop/conflict
-kolonları keşifseldir ve rejim sıralamasına katılmamıştır. Karar: daha geniş
-kalibrasyonla tek bir istikrarlı orta kıtlık ayarı aramayı zorlamıyoruz. Bunun
-yerine kapasite×yenilenme faktöriyel koşullarını sabitleyip kaynak rejimlerinin
-sonuç dağılımına etkisini sınayacağız. Ayrıntılı protokol
-`EXPERIMENT_PROTOCOL_RESOURCE_STRESS.md` içindedir.
+Full result: `output/regime_calibration_confirmation.json`. The coop/conflict
+columns are exploratory and did not take part in the regime ranking. Decision:
+we are not forcing a search for a single stable moderate-scarcity setting
+through wider calibration. Instead, we will fix the capacity×regeneration
+factorial conditions and test the effect of resource regimes on the outcome
+distribution. The detailed protocol is in `EXPERIMENT_PROTOCOL_RESOURCE_STRESS.md`.
 
-## 3. Çalışma ilkeleri
+## 3. Working principles
 
-1. **Önce soru, sonra özellik:** Yeni alt sistem eklemeden önce hangi araştırma
-   sorusuna ve ölçülebilir hipoteze hizmet ettiğini yaz.
-2. **İddia ve kanıtı ayır:** Simülasyon içi örüntü, ampirik veriyle uyum ve
-   nedensellik ayrı iddialardır.
-3. **Mekanizmaları gerekçelendir:** Kaynak, teori, basitleştirme ve sınırı her
-   mekanizma için kaydet; kaynak bulunamadığında bunu açıkça “tasarım varsayımı”
-   diye işaretle.
-4. **Model katmanlarını ayrı değerlendir:** Kod doğruluğu, mekanizma davranışı,
-   tüm-model örüntüleri ve ampirik karşılaştırma ayrı aşamalardır.
-5. **Birden çok örüntü ve koşu kullan:** Seed dağılımını raporla. Seed sayısını
-   sabit bir sihirli eşik olarak seçme; belirsizlik aralığı veya önceden
-   belirlenen hassasiyet hedefi yeterli olana kadar gerekçelendir.
-6. **Kalibrasyon ve değerlendirme koşularını ayır:** Parametre/rejim seçerken
-   kullanılan seed'leri nihai hipotez sınamasında tekrar kullanma.
-7. **Alternatif yapıları sınama:** Sonuç yalnızca katsayıları değiştirmeye değil,
-   makul alternatif karar kurallarına/ağ yapılarına da dayanıyor mu incele.
-8. **Tekrar üretim bilgisini sakla:** Kod sürümü, parametreler, seed'ler,
-   Python/bağımlılık sürümleri, deney tanımı, ham sonuç ve analiz özeti birlikte
-   saklansın.
-9. **Sonuç yönüne göre katsayı ayarlama:** İstenilen hipotezi desteklemek için
-   mekanizma katsayılarını sonradan zorlama; ayarlama araştırma sorusuna göre
-   gerekçelendirilmeli ve ayrı veride sınanmalı.
+1. **Question first, then feature:** Before adding a new subsystem, write down
+   which research question and measurable hypothesis it serves.
+2. **Separate claim from evidence:** An in-simulation pattern, agreement with
+   empirical data, and causality are separate claims.
+3. **Justify mechanisms:** Record the source, theory, simplification and limit
+   for each mechanism; when no source can be found, mark this explicitly as a
+   “design assumption”.
+4. **Evaluate model layers separately:** Code correctness, mechanism behaviour,
+   whole-model patterns and empirical comparison are separate stages.
+5. **Use multiple patterns and runs:** Report the seed distribution. Do not
+   choose the number of seeds as a fixed magic threshold; justify it until the
+   uncertainty interval or a precision target defined in advance is sufficient.
+6. **Separate calibration and evaluation runs:** Do not reuse in the final
+   hypothesis test the seeds used when selecting parameters/regimes.
+7. **Test alternative structures:** Examine whether the result depends not only
+   on changing coefficients but also on plausible alternative decision
+   rules/network structures.
+8. **Store reproduction information:** Code version, parameters, seeds,
+   Python/dependency versions, experiment definition, raw results and analysis
+   summary should be stored together.
+9. **Do not tune coefficients according to the direction of the result:** Do not
+   force mechanism coefficients after the fact to support a desired hypothesis;
+   tuning must be justified by the research question and tested on separate data.
 
-## 4. Kritik teknik konu: seed eşleştirme
+## 4. Critical technical issue: seed matching
 
-Simülasyon tek bir `Simulation.rng` akışını birçok süreçte kullanıyor. İki
-koşul aynı seed ile başlasa bile, koşullar farklı davranışlar üretince rastgele
-çekiliş sayıları ve sıraları ayrışabilir. Bu nedenle `run_paired_counterfactual`
-aynı seed kullanıyor olsa da, seed eşleşmesinin tick boyunca ortak rastgele
-şokları garanti ettiği varsayılmamalı.
+The simulation uses a single `Simulation.rng` stream across many processes.
+Even if two conditions start with the same seed, the number and order of random
+draws can diverge once the conditions produce different behaviours. Therefore,
+even though `run_paired_counterfactual` uses the same seed, it should not be
+assumed that seed matching guarantees common random shocks over the ticks.
 
-Eşleşmiş tasarım kullanmadan önce şu seçeneklerden biri değerlendirilip
-belgelenmeli:
+Before using a paired design, one of the following options should be evaluated
+and documented:
 
-- Her koşulda bağımsız seed'ler kullanıp koşul farkını seed dağılımlarıyla
-  karşılaştırmak.
-- Ortak rastgele sayılar gerekiyorsa süreç/ajan/tick bazlı bağımsız RNG
-  akışları veya anahtarlı deterministik rastgele çekiliş tasarlamak; bunun
-  mevcut tekrar üretilebilirlik kayıtlarıyla uyumunu sınamak.
+- Using independent seeds in each condition and comparing the condition
+  difference through the seed distributions.
+- If common random numbers are required, designing independent RNG streams per
+  process/agent/tick or keyed deterministic random draws; testing their
+  compatibility with the existing reproducibility records.
 
-Hangi tasarım seçilirse seçilsin, RNG düzeni ve sürümü deney çıktısına yazılmalı.
+Whichever design is chosen, the RNG layout and version should be written to the
+experiment output.
 
-## 5. Önerilen araştırma soruları
+## 5. Proposed research questions
 
-### A. Kaynak baskısı, işbirliği ve çatışma — önerilen ilk çalışma
+### A. Resource pressure, cooperation and conflict — proposed first study
 
-**Araştırma sorusu:** Kaynak kıtlığı, modelin tanımlı koşullarında işbirliği ve
-çatışma örüntülerini nasıl değiştiriyor? Bu ilişki doğrusal mı; başlangıçtaki
-güven/ağ yapısına veya kurumsal koşullara bağlı mı?
+**Research question:** How does resource scarcity change cooperation and
+conflict patterns under the model's defined conditions? Is this relationship
+linear; does it depend on the initial trust/network structure or on
+institutional conditions?
 
-**Neden ilk sırada:** Kaynak havuzu, stres, eylem seçimi ve nüfus dinamikleri
-mevcut motorda birbirine bağlı. Pilotlar seed'ler arasında rejim farkı
-gösterdiğinden araştırma yalnızca sabit bir “orta kıtlık” seviyesi aramayacak;
-kapasite/yenilenme koşullarının sonuç dağılımlarını ve etkileşimini ölçecek.
+**Why first:** The resource pool, stress, action selection and population
+dynamics are coupled in the current engine. Because the pilots showed regime
+differences across seeds, the research will not merely look for a fixed
+“moderate scarcity” level; it will measure the outcome distributions and
+interaction of capacity/regeneration conditions.
 
-**İlk aşamada ölçülecekler:** `true_scarcity`, stres, cooperation/conflict
-rate, güven, eşitsizlik, nüfus ve ölümler. Son tick değeriyle yetinilmeyip
-önceden tanımlı bir son dönem penceresi ve tam zaman serisi raporlansın.
+**To be measured in the first stage:** `true_scarcity`, stress,
+cooperation/conflict rate, trust, inequality, population and deaths. Rather than
+settling for the final-tick value, a pre-defined last-period window and the
+full time series should be reported.
 
-**Önemli tasarım kuralı:** Kaynak parametreleri araştırma koşulları olarak
-belirlenir; koşul sonuçları görülünce hedef işbirliği/çatışma değerleri elde
-etmek için yeniden ayarlanmaz. Pilot seed'leri final analizine katılmaz.
+**Important design rule:** Resource parameters are set as research conditions;
+once the condition results are seen, they are not re-tuned to obtain target
+cooperation/conflict values. Pilot seeds do not take part in the final analysis.
 
-### B. Gerçek ve algılanan kurumsal meşruiyet
+### B. Real and perceived institutional legitimacy
 
-Kurumun gerçek meşruiyeti ile ajanların inancı arasındaki fark davranışları ve
-kurumun devamlılığını nasıl etkiliyor? Önce kurumsal değişkenlerin ölçüm ve
-mekanizma zinciri netleştirilmeli; liderliğin nadiren oluşması tasarımda hesaba
-katılmalı.
+How does the difference between an institution's real legitimacy and agents'
+beliefs affect behaviours and the institution's persistence? First, the
+measurement and mechanism chain of the institutional variables should be
+clarified; the rarity of leadership formation should be taken into account in
+the design.
 
-### C. Kimlik pekişmesi, ağ yapısı ve güven
+### C. Identity consolidation, network structure and trust
 
-Davranıştan oluşan kimliklerin güven ilişkileri ve ağ kümelenmesiyle bağı nedir?
-Mevcut kimlik geri beslemesi ve ağ metrikleri başlangıç sağlayabilir; alternatif
-kimlik oluşum kuralları ve yeterli örneklem gerekir.
+What is the link between behaviour-derived identities and trust relationships
+and network clustering? The current identity feedback and network metrics can
+provide a starting point; alternative identity-formation rules and adequate
+sample sizes are needed.
 
-### D. Kurumlar, kıtlık ve dağıtım
+### D. Institutions, scarcity and distribution
 
-Vergi/yeniden dağıtım veya kolluk hangi kaynak rejimlerinde sonuçları
-değiştiriyor? Bunu sınamadan önce liderlik/meşruiyet oluşumunu ve müdahalenin
-hangi ajanlara ne zaman uygulandığını açık biçimde tanımlamak gerekir.
+In which resource regimes do taxation/redistribution or law enforcement change
+outcomes? Before testing this, it is necessary to define explicitly the
+formation of leadership/legitimacy and which agents the intervention is applied
+to and when.
 
-## 6. Önerilen aşamalı yol haritası
+## 6. Proposed staged roadmap
 
-**İlerlemenin durumu:** ODD+D ilk kod-temelli taslağı eklendi; aynı-seed
-tekrar-üretilebilirlik kontrolü geçti; 16-hücre ilk taraması ve 20-seed 2×2
-takip taraması yapıldı. Tekrarlanabilir “orta rejim” bulunmadığı için, seed
-dağılımını sonuç olarak ele alan 2×2 final deney protokolü uygulandı ve final
-koşu tamamlandı. Sonuçlar `RESOURCE_STRESS_RESULTS.md`'de.
+**Status of progress:** The first code-based draft of ODD+D has been added; the
+same-seed reproducibility check passed; the first 16-cell screen and the
+20-seed 2×2 follow-up screen were run. Because no replicable “moderate regime”
+was found, a 2×2 final experiment protocol treating the seed distribution as
+the result was implemented and the final run was completed. Results are in
+`RESOURCE_STRESS_RESULTS.md`.
 
-### Aşama 1 — Araştırma kapsamı ve model tarifi
+### Stage 1 — Research scope and model description
 
-- İlk soru (kaynak baskısı → işbirliği/çatışma) ve kuramsal/keşifsel başlangıç
-  çerçevesi seçildi.
-- `ODD_D.md` oluşturuldu: mevcut kodu ve insan karar mekanizmalarını ODD+D
-  başlıklarında, gerçek uygulamayı esas alarak belgeleyelim.
-- Mevcut `REFERENCES.md` kaynaklarını ve “tasarım tercihi” olan noktaları
-  mekanizma bazında ODD+D'ye bağlayalım.
+- The first question (resource pressure → cooperation/conflict) and the
+  theoretical/exploratory starting framework were chosen.
+- `ODD_D.md` was created: let us document the current code and the human
+  decision mechanisms under the ODD+D headings, based on the actual implementation.
+- Let us link the existing `REFERENCES.md` sources and the points that are
+  “design choices” to ODD+D, mechanism by mechanism.
 
-### Aşama 2 — Kod doğrulaması ve tekrar üretim
+### Stage 2 — Code verification and reproduction
 
-- Aynı konfigürasyon/seed ile tam metrik yörüngesinin aynı olduğu test edildi.
-- Faktöriyel analiz fonksiyonu, bilinen 2×2 kontrastlar ve küçük CLI koşusu
-  smoke-test edildi.
-- Tam `test_basic.py` koşusu ilk ortamda SciPy bulunmadığı için tamamlanamamıştı.
-  2026-10-07'de SciPy kurulu ortamda tüm test paketi geçti (Python 3.14).
-- Sınır değerleri, nüfus/kaynak/olasılık değişmezlerini ve önemli süreç
-  sırasını kapsayan testleri belirle.
-- Seed eşleştirme tasarımını karara bağla; deney çıktısı şemasını sabitle.
+- It was tested that the full metric trajectory is identical for the same
+  configuration/seed.
+- The factorial analysis function, known 2×2 contrasts and a small CLI run were
+  smoke-tested.
+- The full `test_basic.py` run could not be completed in the first environment
+  because SciPy was not present. On 2026-10-07 the entire test suite passed in
+  an environment with SciPy installed (Python 3.14).
+- Determine tests covering boundary values, population/resource/probability
+  invariants and the important process order.
+- Decide on the seed-matching design; fix the experiment output schema.
 
-### Aşama 3 — Kıtlık rejimi kalibrasyonu
+### Stage 3 — Scarcity-regime calibration
 
-- İlk tarama ve 20 seed/hücrelik 2×2 takip yapıldı; orta kıtlık adaylarının
-  seedler arasında kararlı olmadığı görüldü.
-- Kararı: tek bir “orta” konfigürasyonu zorla seçmiyoruz; 90/120 kapasite ve
-  0.016/0.019 yenilenme düzeylerini final deney koşulları olarak sabitliyoruz.
-- Pilot ve final seed'leri ayrıldı; parametre, seed, özet ve zaman serisi
-  makinece okunabilir dosyalara yazılır.
+- The first screen and the 2×2 follow-up with 20 seeds/cell were done; it was
+  seen that the moderate-scarcity candidates were not stable across seeds.
+- Decision: we are not forcing the selection of a single “moderate”
+  configuration; we are fixing the capacity levels 90/120 and regeneration
+  levels 0.016/0.019 as the final experiment conditions.
+- Pilot and final seeds were separated; parameters, seeds, summaries and time
+  series are written to machine-readable files.
 
-### Aşama 4 — Önceden tanımlı deney
+### Stage 4 — Pre-defined experiment
 
-- `EXPERIMENT_PROTOCOL_RESOURCE_STRESS.md` protokolü yazıldı; 2×2 koşullar,
-  hipotezler, birim (seed), metrik penceresi ve bootstrap kontrastları
-  tanımlandı.
-- Final deney tamamlandı: 30 seed/hücre; bootstrap %95 GA. 30 seed
-  evrensel bir yeterlilik garantisi değildir; seed düzeyindeki belirsizlik
-  sonuç raporunda gösterilmiştir.
-- Sonuç tabloları, seed dağılımı ve yorum sınırları
-  `RESOURCE_STRESS_RESULTS.md` içinde; ham JSON ve CSV dosyaları
-  `output/resource_factorial/` içinde.
+- The `EXPERIMENT_PROTOCOL_RESOURCE_STRESS.md` protocol was written; the 2×2
+  conditions, hypotheses, unit (seed), metric window and bootstrap contrasts
+  were defined.
+- The final experiment was completed: 30 seeds/cell; bootstrap 95% CI. 30 seeds
+  is not a universal guarantee of adequacy; the seed-level uncertainty is shown
+  in the results report.
+- Result tables, seed distributions and interpretation limits are in
+  `RESOURCE_STRESS_RESULTS.md`; raw JSON and CSV files are in
+  `output/resource_factorial/`.
 
-### Aşama 5 — Yapısal sağlamlık ve paylaşım
+### Stage 5 — Structural robustness and sharing
 
-- Temel sonucu makul alternatif parametre rejimi ve mekanizma seçimiyle
-  sınamayı planla.
-- Kurulum, komut satırı arayüzü, veri sözlüğü ve ODD+D dokümanını tekrar
-  üretilebilir şekilde tamamla.
-- Daha sonra uygun görülürse CoMSES Net gibi hesaplamalı model arşivlerinin
-  dokümantasyon ve paylaşım standartlarına göre yayın hazırlığı yap.
+- Plan to test the main result with plausible alternative parameter regimes and
+  mechanism choices.
+- Complete the installation, command-line interface, data dictionary and ODD+D
+  document in a reproducible way.
+- Later, if deemed appropriate, prepare for publication according to the
+  documentation and sharing standards of computational model archives such as
+  CoMSES Net.
 
-## 7. Karar kaydı ve sonraki sorular
+## 7. Decision log and next questions
 
-Başlangıç kararları verildi ve ilk kodlama dilimi tamamlandı:
+Initial decisions were made and the first coding slice was completed:
 
-- İlk araştırma odağı: **kaynak kapasitesi/yenilenmesi → işbirliği ve çatışma**.
-- İlk iddia düzeyi: **kuramsal/keşifsel model içi analiz**.
-- Karar: seed'ler arası orta kıtlık istikrarsız olduğu için final deney, bir
-  tek orta rejime değil 2×2 kaynak koşullarındaki sonuç dağılımlarına bakacak.
-- İlk uygulama: ODD+D belgesi, seed tekrarlanabilirlik kontrolü, rejim pilot
-  kalibratörü, protokol ve faktöriyel deney çalıştırıcısı hazırlandı.
+- First research focus: **resource capacity/regeneration → cooperation and conflict**.
+- First level of claim: **theoretical/exploratory within-model analysis**.
+- Decision: because moderate scarcity is unstable across seeds, the final
+  experiment will look at the outcome distributions in the 2×2 resource
+  conditions rather than at a single moderate regime.
+- First implementation: the ODD+D document, the seed reproducibility check, the
+  regime pilot calibrator, the protocol and the factorial experiment runner were
+  prepared.
 
-Güncelleme sırası sağlamlık analizi tamamlandı: aynı 120 seed-koşul çifti
-karıştırılmış ajan sırasıyla çalıştırıldı. Dokuz birincil faktöriyel etki
-farkının bootstrap aralıkları sıfırı kapsadı ve kapasite/yenilenme etkilerinin
-yönleri aynı kaldı. Bu eşdeğerlik kanıtı değildir; seed eşleştirmesi tam ortak
-rastgele sayı tasarımı değildir. Ardından 240 koşuluk takipte eylem RNG
-akışları ajan başına ayrıldı ve aynı karşılaştırma yinelendi; birincil
-kontrastlar yine yönünü korudu. Ayrıntılar `SCHEDULE_ROBUSTNESS_RESULTS.md` ve
-`AGENT_RNG_ROBUSTNESS_RESULTS.md` içinde. `shared` mevcut varsayılan olarak
-kalır; araştırma için hangi modun tercih edileceği ayrı yöntem kararıdır.
-Sonraki takipte eski `identity_feedback_strength` bulgusu 2×2 kaynak
-koşullarıyla çaprazlandı (0.0/0.5; 30 eş seed bloğu/hücre). Güven ve çatışma
-etkileri tüm rejimlerde aynı yönde çıktı; çatışma artışı ve işbirliği düşüşü
-düşük kapasitede daha büyüktü. Yöntem `EXPERIMENT_PROTOCOL_IDENTITY_BY_RESOURCE.md`,
-sonuçlar `IDENTITY_RESOURCE_RESULTS.md` içinde. Bu analiz de model içidir;
-ara doz ve mekanizma ayrıştırması açık iştir.
-Tam test paketi 2026-10-07'de SciPy kurulu ortamda yeniden çalıştırıldı ve geçti.
+The update-order robustness analysis was completed: the same 120 seed-condition
+pairs were run with shuffled agent order. The bootstrap intervals of the nine
+primary factorial effect differences covered zero, and the directions of the
+capacity/regeneration effects remained the same. This is not equivalence
+evidence; seed matching is not a full common-random-numbers design. Then, in a
+240-run follow-up, the action RNG streams were separated per agent and the same
+comparison was repeated; the primary contrasts again preserved their direction.
+Details are in `SCHEDULE_ROBUSTNESS_RESULTS.md` and
+`AGENT_RNG_ROBUSTNESS_RESULTS.md`. `shared` remains the current default; which
+mode to prefer for research is a separate methodological decision.
+In a subsequent follow-up, the old `identity_feedback_strength` finding was
+crossed with the 2×2 resource conditions (0.0/0.5; 30 paired seed blocks/cell).
+The trust and conflict effects came out in the same direction in all regimes;
+the increase in conflict and the decrease in cooperation were larger at low
+capacity. The method is in `EXPERIMENT_PROTOCOL_IDENTITY_BY_RESOURCE.md`, the
+results in `IDENTITY_RESOURCE_RESULTS.md`. This analysis is also within-model;
+intermediate doses and mechanism decomposition are open work.
+The full test suite was re-run on 2026-10-07 in an environment with SciPy
+installed and passed.
 
-2026-10-07 incelemesi: kaynak ve kimlik deneylerinin birincil sonuçları karar
-formülündeki doğrudan terimlere bağlıdır (`steal`/`share` skorlarında
-`scarcity_belief`; `opportunist` etiketinde `steal` bonusu) — ISSUE-013. İlke 7
-ve Aşama 5 kapsamında doğrudan bağlantıyı kesen 2×2×3 ablasyon deneyi
-protokolle (`EXPERIMENT_PROTOCOL_SCARCITY_LINK_ABLATION.md`) koşuldu; sonuçlar
-`SCARCITY_LINK_ABLATION_RESULTS.md` içinde. Kimlik deneyinin etiket/eylem
-dağılımı post hoc olarak çıkarıldı (`IDENTITY_RESOURCE_RESULTS.md` eki).
+2026-10-07 review: the primary results of the resource and identity experiments
+depend on direct terms in the decision formula (`scarcity_belief` in the
+`steal`/`share` scores; the `steal` bonus on the `opportunist` label) —
+ISSUE-013. Within the scope of Principle 7 and Stage 5, a 2×2×3 ablation
+experiment that severs the direct link was run according to a protocol
+(`EXPERIMENT_PROTOCOL_SCARCITY_LINK_ABLATION.md`); the results are in
+`SCARCITY_LINK_ABLATION_RESULTS.md`. The label/action distribution of the
+identity experiment was extracted post hoc (appendix to `IDENTITY_RESOURCE_RESULTS.md`).
 
-2026-10-09: alternatif, ihtiyaç temelli karar mimarisi (ISSUE-014) 2×2×2
-protokolle sınandı (`NEED_BASED_DECISION_RESULTS.md`). Kaynak → çatışma
-ilişkisi aynı yönde ama yaklaşık sekizde bir büyüklükte çıktı. Üç deney
-birlikte, bu ilişkinin büyüklüğünün karar kuralı varsayımına bağlı olduğunu
-gösteriyor; raporlanacak ana sonuç bu yapısal belirsizliktir.
+2026-10-09: the alternative, need-based decision architecture (ISSUE-014) was
+tested with a 2×2×2 protocol (`NEED_BASED_DECISION_RESULTS.md`). The scarcity →
+conflict relationship came out in the same direction but about one eighth in
+magnitude. Taken together, the three experiments show that the magnitude of
+this relationship depends on the decision-rule assumption; the main result to
+be reported is this structural uncertainty.
 
-2026-10-09 (devam): erzak × skor ayrışımı farkın skor biçimine ait olduğunu
-gösterdi (`PROVISION_SCORING_FACTORIAL_RESULTS.md`). `true_scarcity`'nin depo
-doluluğunu ölçtüğü, ajanların tavanda bile tok olduğu (ISSUE-015) ve sabit
-ajan sırasının kıtlıkta kimliğe göre öncelik ürettiği (ISSUE-016) bulundu.
-Karıştırılmış sırayla kurulan gerçek yoksunluk deneyinde
-(`DEPRIVATION_RESULTS.md`) yoksunluğun çatışma ölçüsüne etkisinin yönü karar
-kuralına göre ters çıktı. Ana sonuç genişledi: kıtlık → çatışma ilişkisi hem
-kıtlığın inanç mı yoksunluk mu olduğuna hem karar kuralına bağlıdır.
+2026-10-09 (continued): the provisions × scoring decomposition showed that the
+difference belongs to the scoring form (`PROVISION_SCORING_FACTORIAL_RESULTS.md`).
+It was found that `true_scarcity` measures store fullness, that agents are well
+fed even at the ceiling (ISSUE-015), and that fixed agent order produces
+priority by agent ID under scarcity (ISSUE-016). In the real-deprivation
+experiment set up with shuffled order (`DEPRIVATION_RESULTS.md`), the direction
+of the effect of deprivation on the conflict measure turned out opposite
+depending on the decision rule. The main result widened: the scarcity →
+conflict relationship depends both on whether scarcity is a belief or a
+deprivation and on the decision rule.
 
-## Kaynaklar
+## References
 
 - Grimm et al. (2020), “The ODD Protocol for Describing Agent-Based and Other
   Simulation Models”: <https://doi.org/10.18564/jasss.4259>

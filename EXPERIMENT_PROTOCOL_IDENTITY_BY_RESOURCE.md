@@ -1,54 +1,54 @@
-# Protokol: Kaynak Rejimi × Kimlik Geri Beslemesi
+# Protocol: Resource Regime × Identity Feedback
 
-## Soru
+## Question
 
-`identity_feedback_strength` yükselmesi güveni ve çatışmayı değiştiriyor mu;
-bu etki kapasite/yenilenme rejimine göre farklı mı?
+Does raising `identity_feedback_strength` change trust and conflict; does this effect
+differ by capacity/regeneration regime?
 
-## Gerekçe ve iddia sınırı
+## Rationale and limit of the claim
 
-Önceki V6 yeniden sınamada (`REVALIDATION.md`) identity feedback 0.0→0.5
-karşılaştırması varsayılan kaynak rejiminde `avg_trust`, `conflict_rate`,
-`inequality_gini` ve popülasyonla ilişkiliydi. Eski mekanizma taramasındaki
-monoton doz iddiası yalnızca beş seed'e dayanıyordu. Bu takip, seçilmiş uç
-kontrastı daha önce incelenmiş 2×2 kaynak aralığına taşır. Kuramsal/keşifsel
-ve model içi bir deneydir; dış geçerlilik veya insan davranışına dair nedensel
-iddia hedeflemez.
+In the earlier V6 re-test (`REVALIDATION.md`), the identity feedback 0.0→0.5
+comparison in the default resource regime was associated with `avg_trust`,
+`conflict_rate`, `inequality_gini` and population. The monotonic dose claim in the
+old mechanism sweep rested on only five seeds. This follow-up carries the selected
+extreme contrast to the previously examined 2×2 resource range. It is a
+theoretical/exploratory, within-model experiment; it does not aim at external
+validity or at causal claims about human behavior.
 
-## Önceden belirlenen tasarım
+## Design determined in advance
 
-- Faktörler: kaynak kapasitesi 90/120; gıda ve su yenilenme oranı 0.016/0.019;
+- Factors: resource capacity 90/120; food and water regeneration rate 0.016/0.019;
   `identity_feedback_strength` 0.0/0.5.
-- 2×2×2 = 8 hücre; hücre başına 30 seed; toplam 240 simülasyon.
-- Her seed tüm sekiz koşulda kullanılır (seed bloklu/eşleşik tasarım); seedler
-  50000–50029. Aynı seed etiketi tam common-random-numbers garantisi değildir:
-  mekanizma farklılaşınca paylaşılan RNG çekilişleri farklı dallara kayabilir.
-- Her dünya 80 kurucu ajan ve 500 tick; food/water başlangıcı kapasitenin 2/3'ü.
-- Güncelleme sırası sabit; `agent_rng_mode="shared"` mevcut varsayılanı
-  koruyarak eski V6 sonuçlarıyla karşılaştırılabilirlik sağlar. RNG ve sıra
-  belirsizlikleri bu tasarımın sınırlaması olarak kaydedilir.
-- Birim: bir seed/koşul simülasyonu. Metrikler son 100 tick içinde seed başına
-  ortalanır. Tickler bağımsız örnek sayılmaz.
+- 2×2×2 = 8 cells; 30 seeds per cell; 240 simulations in total.
+- Each seed is used in all eight conditions (seed-blocked/matched design); seeds
+  50000–50029. The same seed label is not a full common-random-numbers guarantee:
+  when the mechanism differs, the shared RNG draws may shift to different branches.
+- Each world has 80 founder agents and 500 ticks; food/water start is 2/3 of capacity.
+- The update order is fixed; `agent_rng_mode="shared"` preserves the current default
+  and provides comparability with the old V6 results. The RNG and order
+  uncertainties are recorded as limitations of this design.
+- Unit: one seed/condition simulation. Metrics are averaged per seed within the last
+  100 ticks. Ticks are not counted as independent samples.
 
-## Sonuç ölçüleri ve analiz
+## Outcome measures and analysis
 
-Birincil ölçüler `avg_trust`, `conflict_rate` ve dar davranışsal vekil olan
-`cooperation_rate`'tir. Birincil tahminler, her kaynak hücresinde kimlik geri
-beslemesi 0.5 eksi 0.0 eşleşmiş seed farkı; ayrıca kaynak faktörlerinin kimlik
-etkisini değiştirip değiştirmediğini gösteren identity×capacity,
-identity×regen ve üçlü etkileşim kontrastlarıdır. %95 seed-block bootstrap
-aralıkları 10.000 çekilişle ve kaydedilmiş analiz seed'iyle üretilir. P-değeri
-yerine tahminler ve aralıklar raporlanır; sonuçları seçerek öne çıkarmamak için
-tüm hücre ve birincil kontrastlar gösterilir.
+The primary measures are `avg_trust`, `conflict_rate` and `cooperation_rate`, which
+is a narrow behavioral proxy. The primary estimates are the matched seed difference
+of identity feedback 0.5 minus 0.0 in each resource cell; plus the identity×capacity,
+identity×regen and triple-interaction contrasts, which show whether the resource
+factors change the identity effect. 95% seed-block bootstrap intervals are produced
+with 10,000 draws and a recorded analysis seed. Estimates and intervals are reported
+instead of p-values; to avoid selectively highlighting results, all cells and primary
+contrasts are shown.
 
-İkincil ölçüler `true_scarcity`, `inequality_gini`, `population`,
-`identity_formed_rate` ve `positive_relationship_rate`; keşifsel olarak
-etiketlenir. Dış veriyle kalibrasyon/doğrulama yapılmadığından tüm yorumlar
-mevcut model mekanizmalarıyla sınırlıdır.
+The secondary measures are `true_scarcity`, `inequality_gini`, `population`,
+`identity_formed_rate` and `positive_relationship_rate`; they are labeled
+exploratory. Since no calibration/validation with external data is done, all
+interpretations are limited to the current model mechanisms.
 
-## Durdurma ve raporlama
+## Stopping and reporting
 
-30 seed/hücre önceden belirlenmiş pilot/final örneklemidir; yeterlilik garantisi
-değildir. Koşular başladıktan sonra sonuçlara bakarak örneklem/ölçü değiştirilmez.
-Çıktılar `output/identity_resource_factorial/` içine seed özetleri, tam
-zaman serisi ve konfigürasyonla yazılır.
+30 seeds/cell is the pre-specified pilot/final sample; it is not a guarantee of
+adequacy. After the runs start, the sample/measures are not changed by looking at the
+results. The outputs are written into `output/identity_resource_factorial/` with seed
+summaries, the full time series and the configuration.

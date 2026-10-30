@@ -1,103 +1,107 @@
-# Protokol: Yenebilir Erzak × İhtiyaç Temelli Skor × Kaynak Rejimi
+# Protocol: Edible Provisions × Need-Based Scoring × Resource Regime
 
-**Durum:** protokol koşudan önce yazıldı (2026-10-09). Sonuçlar ayrı
-`PROVISION_SCORING_FACTORIAL_RESULTS.md` dosyasında raporlanır.
+**Status:** the protocol was written before the run (2026-10-09). The results are
+reported in the separate file `PROVISION_SCORING_FACTORIAL_RESULTS.md`.
 
-## Soru
+## Question
 
-`NEED_BASED_DECISION_RESULTS.md`'de `need_based` kol iki şeyi birden
-değiştiriyordu: servetin yenebilir olması ve `forage`/`steal`/`share`
-skorlarının ihtiyaç aciliyeti × getiri ile hesaplanması. Kaynak rejiminin
-çatışma ve işbirliği ölçülerine etkisindeki değişim bu iki parçadan hangisine
-ait, ve birbirlerine bağlılar mı?
+In `NEED_BASED_DECISION_RESULTS.md` the `need_based` arm changed two things at once:
+wealth being edible, and the `forage`/`steal`/`share` scores being computed by need
+urgency × payoff. Which of these two parts does the change in the effect of the
+resource regime on the conflict and cooperation measures belong to, and are they
+dependent on each other?
 
-## Tasarım
+## Design
 
-- Kaynak faktörleri öncekilerle aynı: kapasite 90/120; food ve water
-  yenilenmesi 0.016/0.019; başlangıç stoku kapasitenin 2/3'ü.
-- Karar tarafında 2×2, dört kol:
+- Resource factors are the same as before: capacity 90/120; food and water
+  regeneration 0.016/0.019; initial stock 2/3 of capacity.
+- On the decision side a 2×2, four arms:
 
-  | Kol | Yenebilir erzak | İhtiyaç temelli skor | `Config` |
+  | Arm | Edible provisions | Need-based scoring | `Config` |
   |---|---|---|---|
-  | `intact` | hayır | hayır | varsayılan |
-  | `provisions_only` | evet | hayır | `provisions_edible=True` |
-  | `scoring_only` | hayır | evet | `need_based_scoring=True` |
-  | `need_based` | evet | evet | `decision_architecture="need_based"` |
+  | `intact` | no | no | default |
+  | `provisions_only` | yes | no | `provisions_edible=True` |
+  | `scoring_only` | no | yes | `need_based_scoring=True` |
+  | `need_based` | yes | yes | `decision_architecture="need_based"` |
 
-- 2×2×4 = 16 hücre; 30 seed bloğu (80000–80029) her hücrede; 480 simülasyon.
-  Seed aralığı daha önce kullanılmadı. Aynı seed etiketi tam
-  ortak-rastgele-sayı tasarımı değildir.
-- 80 kurucu ajan, 500 tick, sabit sıra, `agent_rng_mode="shared"`. Son 100
-  tick seed içinde ortalanır; seed analiz birimidir.
-- `provision_*` değerleri önceki deneydekiyle aynıdır ve değiştirilmez.
+- 2×2×4 = 16 cells; 30 seed blocks (80000–80029) in each cell; 480 simulations.
+  The seed range had not been used before. The same seed label is not a full
+  common-random-numbers design.
+- 80 founder agents, 500 ticks, fixed order, `agent_rng_mode="shared"`. The last 100
+  ticks are averaged within each seed; the seed is the unit of analysis.
+- The `provision_*` values are the same as in the previous experiment and are not changed.
 
-İki ara kolun anlamı:
+The meaning of the two intermediate arms:
 
-- `provisions_only`: özgün skorlar (doğrudan `scarcity_belief` terimleri
-  dahil) korunur; ajanlar aç kaldıklarında servetlerinden yer.
-- `scoring_only`: skorlar aciliyet × getiri ile hesaplanır ama servet
-  yenemez. Bu kolda `steal` skorundaki getiri terimi motorda karşılığı olmayan
-  bir kazancı varsayar; ajanın değerlemesi fiilen yanlıştır. Kol, skor
-  biçiminin etkisini erzak dinamiğinden ayırmak için vardır.
+- `provisions_only`: the original scores (including the direct `scarcity_belief`
+  terms) are kept; when agents go hungry they eat from their wealth.
+- `scoring_only`: scores are computed by urgency × payoff but wealth cannot be eaten.
+  In this arm the payoff term in the `steal` score assumes a gain that has no
+  counterpart in the engine; the agent's valuation is in effect wrong. The arm exists
+  to separate the effect of the score form from the provision dynamics.
 
-## Ölçüler ve analiz
+## Measures and analysis
 
-**Birincil:** `conflict_rate` ve `cooperation_rate` için kapasite ve yenilenme
-ana etkileri, her kolda; ve bu kontrastların karar tarafındaki 2×2 ayrışımı:
+**Primary:** the main effects of capacity and regeneration for `conflict_rate` and
+`cooperation_rate`, in each arm; and the 2×2 decomposition of these contrasts on the
+decision side:
 
-- erzak ana etkisi = ((`provisions_only` − `intact`) + (`need_based` −
+- provisions main effect = ((`provisions_only` − `intact`) + (`need_based` −
   `scoring_only`)) / 2,
-- skor ana etkisi = ((`scoring_only` − `intact`) + (`need_based` −
+- scoring main effect = ((`scoring_only` − `intact`) + (`need_based` −
   `provisions_only`)) / 2,
-- erzak × skor etkileşimi = (`need_based` − `scoring_only`) −
+- provisions × scoring interaction = (`need_based` − `scoring_only`) −
   (`provisions_only` − `intact`).
 
-**Manipülasyon kontrolü:** `true_scarcity`, `avg_scarcity_belief`.
+**Manipulation check:** `true_scarcity`, `avg_scarcity_belief`.
 
-**İkincil (keşifsel):** eylem payları, `avg_stress`, `avg_trust`,
-`inequality_gini`, `avg_wealth`, `population`, `helping_norm`, kimlik etiketi
-payları.
+**Secondary (exploratory):** action shares, `avg_stress`, `avg_trust`,
+`inequality_gini`, `avg_wealth`, `population`, `helping_norm`, identity label
+shares.
 
-Belirsizlik: 10.000 çekilişli seed-blok bootstrap, %95 yüzdelik aralık.
-P-değeri veya çoklu karşılaştırma düzeltmesi yok; tüm hücreler raporlanır.
+Uncertainty: 10,000-draw seed-block bootstrap, 95% percentile interval.
+No p-value or multiple-comparison correction; all cells are reported.
 
-## Koşudan önce bilinenler ve beklenti
+## What was known before the run, and expectation
 
-`intact` ve `need_based` kolları farklı seed bloklarında daha önce koşuldu
-(çatışma kapasite etkisi sırasıyla ≈ −0.10 ve −0.012); bu deneyde yeniden
-koşulurlar. `provisions_only` ve `scoring_only` kolları hiç koşulmadı.
+The `intact` and `need_based` arms were run before in different seed blocks (conflict
+capacity effect ≈ −0.10 and −0.012 respectively); they are re-run in this experiment.
+The `provisions_only` and `scoring_only` arms were never run.
 
-Beklenti (zayıf):
+Expectation (weak):
 
-- Çatışma ölçüsündeki farkın büyük kısmı **skor** faktörüne aittir, çünkü
-  doğrudan terimi kaldıran odur; ablasyonda terim kalkınca etki −0.10'dan
-  +0.012'ye gitmişti.
-- `provisions_only` kolda kapasite etkisi `intact`'e yakın kalır; erzak
-  ihtiyaçları tamponladığı için bir miktar küçülebilir.
-- `scoring_only` ile `need_based` arasındaki fark, yani erzakın skor açıkken
-  etkisi, işaret bakımından belirsizdir. Erzak yoksa hırsızlık ihtiyacı
-  gidermez ve aciliyet yüksek kalır; bu `steal` payını her hücrede yükseltip
-  kaynak kontrastını büyütebilir veya düzleştirebilir.
+- Most of the difference in the conflict measure belongs to the **scoring** factor,
+  because it is the one that removes the direct term; in the ablation, when the term
+  was removed, the effect had gone from −0.10 to +0.012.
+- In the `provisions_only` arm the capacity effect stays close to `intact`; it may
+  shrink somewhat because provisions buffer needs.
+- The difference between `scoring_only` and `need_based`, i.e. the effect of
+  provisions when scoring is on, is uncertain in sign. Without provisions, theft does
+  not relieve need and urgency stays high; this may raise the `steal` share in every
+  cell and enlarge or flatten the resource contrast.
 
-## Yorum kuralları
+## Interpretation rules
 
-- Ayrışımdaki bir ana etkinin aralığı sıfırı dışlıyorsa o faktör kaynak
-  etkisini değiştiriyor; kapsıyorsa bu örneklemde ayırt edilemiyor.
-- Etkileşim aralığı sıfırı dışlıyorsa iki parça birbirinden bağımsız
-  yorumlanamaz; ana etkiler yerine dört kolun ayrı kontrastları esas alınır.
-- `intact` ve `need_based` kollarının bu deneydeki kontrastları önceki
-  deneylerdekilerle aynı yönde ve benzer büyüklükte değilse bu ayrıca
-  raporlanır.
-- Manipülasyon kontrolü geçmeyen kolun birincil kontrastları yorumlanmaz.
-- Sonuca bakarak `provision_*` değerleri veya skor terimleri değiştirilmez
-  (ilke 9).
+- If the interval of a main effect in the decomposition excludes zero, that factor
+  changes the resource effect; if it covers zero, it is not distinguishable in this
+  sample.
+- If the interaction interval excludes zero, the two parts cannot be interpreted
+  independently of each other; the separate contrasts of the four arms, rather than
+  the main effects, are taken as the basis.
+- If the contrasts of the `intact` and `need_based` arms in this experiment are not in
+  the same direction and of similar magnitude as in the earlier experiments, this is
+  reported separately.
+- The primary contrasts of an arm whose manipulation check does not pass are not
+  interpreted.
+- The `provision_*` values or the score terms are not changed by looking at the
+  result (principle 9).
 
-## Sınırlar
+## Limits
 
-Önceki protokoldekilerle aynı: kollar aynı kıtlık düzeyinde çalışmaz;
-toplamada kütle korunumu tam değildir; dış veriyle kalibrasyon yoktur.
+Same as in the previous protocol: the arms do not operate at the same scarcity level;
+mass conservation in foraging is not exact; there is no calibration with external data.
 
-## Uygulama
+## Implementation
 
 ```
 py run_scarcity_link_ablation.py --arms intact,provisions_only,scoring_only,need_based \

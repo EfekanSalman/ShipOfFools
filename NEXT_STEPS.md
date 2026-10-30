@@ -1,65 +1,68 @@
-# Sıradaki Adımlar
+# Next Steps
 
-Son güncelleme: 2026-10-30. Bu dosya kısa çalışma planıdır; ayrıntılı geçmiş
-[TASK_GRAPH.md](TASK_GRAPH.md), açık sorunlar [KNOWN_ISSUES.md](KNOWN_ISSUES.md)
-içindedir.
+Last updated: 2026-10-30. This file is a short working plan; detailed history is
+in [TASK_GRAPH.md](TASK_GRAPH.md) and open issues are in
+[KNOWN_ISSUES.md](KNOWN_ISSUES.md).
 
-## Şu ana kadarki ana sonuç
+## Main result so far
 
-Bu modelde kıtlık → çatışma ilişkisinin işareti iki şeye bağlıdır: kıtlığın
-inanç mı yoksa gerçek yoksunluk mu olduğuna ve karar kuralına.
+In this model, the sign of the scarcity → conflict relationship depends on two
+things: whether scarcity is a belief or real deprivation, and the decision rule.
 
-| Koşul | Karar kuralı | Elverişsiz koşulun `steal` payına etkisi |
+| Condition | Decision rule | Effect of the adverse condition on the `steal` share |
 |---|---|---|
-| Depo boşalıyor, ajanlar tok (sabit sıra) | özgün | artırıyor (≈ +0.10) |
-| | doğrudan terim kesilmiş | hafif azaltıyor (≈ −0.012) |
-| | ihtiyaç temelli | hafif artırıyor (≈ +0.012) |
-| Depo zaten boş, ajanlar yoksun (karışık sıra) | özgün | azaltıyor (≈ −0.048) |
-| | ihtiyaç temelli | artırıyor (≈ +0.034) |
+| Stores are being depleted, agents well fed (fixed order) | original | increases (≈ +0.10) |
+| | direct term cut | slightly decreases (≈ −0.012) |
+| | need-based | slightly increases (≈ +0.012) |
+| Stores already empty, agents deprived (shuffled order) | original | decreases (≈ −0.048) |
+| | need-based | increases (≈ +0.034) |
 
-İki tasarım farklı güncelleme sırası kullanır; tablo yan yana okuma içindir,
-doğrudan fark alınmamalıdır. Sonuçlar model içidir, gerçek toplumlar hakkında
-iddia değildir. Raporlar: [SCARCITY_LINK_ABLATION_RESULTS.md](SCARCITY_LINK_ABLATION_RESULTS.md),
+The two designs use different update orders; the table is for side-by-side
+reading and the values should not be differenced directly. The results are
+internal to the model and make no claim about real societies. Reports:
+[SCARCITY_LINK_ABLATION_RESULTS.md](SCARCITY_LINK_ABLATION_RESULTS.md),
 [NEED_BASED_DECISION_RESULTS.md](NEED_BASED_DECISION_RESULTS.md),
 [PROVISION_SCORING_FACTORIAL_RESULTS.md](PROVISION_SCORING_FACTORIAL_RESULTS.md),
 [DEPRIVATION_RESULTS.md](DEPRIVATION_RESULTS.md).
 
-## Sıradaki işler (önerilen sıra)
+## Upcoming work (suggested order)
 
-1. [ ] **Güncelleme sırası tanısını 30 seed ile doğrulamak (ISSUE-016).**
-   Sabit sırada yüksek kimlikli kurucuların açlıktan ölme oranı %100, karışık
-   sırada %33 çıktı, ama bu 4 seed'e dayanıyor. Bundan sonraki deneylerin hangi
-   sırayla koşulacağını belirler.
-   - **Karar gerekiyor:** varsayılan sıra `shuffled` olsun mu? Eski deneylerin
-     tekrarı için `fixed` seçeneği kalır.
-2. [ ] **İhtiyaç temelli skordaki toplama zayıflığını düzeltmek.** Skor,
-   toplamanın getirisini depo inancıyla çarpıyor; depo boş görününce ajan
-   yoksunken de toplamıyor ve en çok açlık ölümü bu kollarda oluyor. Aday:
-   ajan getiriyi kendi son toplama deneyiminden öğrensin. Ayrı protokol ve yeni
-   seed bloğu gerekir.
-3. [ ] **Gini için null model.** Yalnızca rastgele aktarım yapan ajanlarla aynı
-   ölçüm; Gini bulgularının neye karşı okunacağını belirler
-   ([REFERENCES.md](REFERENCES.md) #15).
-4. [ ] **Kimlik bonusu ablasyonu.** Kaynak deneyinde yapılanın kimlik deneyindeki
-   karşılığı (ISSUE-013); ayrıca Gini artışının nedeni için etiket bazında
-   servet kaydı.
-5. [ ] **Doğum oranı bulgusunu 30 seed ile yeniden sınamak** (ISSUE-007, ISSUE-012;
-   şu an 10 seed).
-6. [ ] **`provision_*` duyarlılığı.** Yalnızca yoksunluk rejiminde anlamlı;
-   özellikle dayanaksız olan `provision_max_per_tick`.
-7. [ ] **Makale iskeleti.** ODD+D taslağı, protokoller ve sonuç raporlarından
-   derlenir. 1 ve 2 bitmeden ana iddia yazılmamalı.
+1. [ ] **Verify the update-order diagnosis with 30 seeds (ISSUE-016).**
+   The starvation death rate of high-ID founders was 100% under fixed
+   order and 33% under shuffled order, but this rests on 4 seeds. It determines
+   the order in which subsequent experiments will be run.
+   - **Decision needed:** should the default order be `shuffled`? The `fixed`
+     option remains for repeating older experiments.
+2. [ ] **Fix the foraging weakness in the need-based score.** The score
+   multiplies the return on foraging by the belief about the stores; when the
+   stores look empty, the agent does not forage even when deprived, and most
+   starvation deaths occur in these arms. Candidate: let the agent learn the
+   return from its own most recent foraging experience. This needs a separate
+   protocol and a new seed block.
+3. [ ] **Null model for Gini.** The same measurement with agents that only make
+   random transfers; it determines what the Gini findings are to be read
+   against ([REFERENCES.md](REFERENCES.md) #15).
+4. [ ] **Identity bonus ablation.** The identity-experiment counterpart of what
+   was done in the resource experiment (ISSUE-013); also a per-label wealth
+   record to explain the Gini increase.
+5. [ ] **Re-test the birth rate finding with 30 seeds** (ISSUE-007, ISSUE-012;
+   currently 10 seeds).
+6. [ ] **`provision_*` sensitivity.** Meaningful only in the deprivation regime;
+   particularly `provision_max_per_tick`, which has no empirical basis.
+7. [ ] **Paper outline.** Compiled from the ODD+D draft, the protocols, and the
+   results reports. The main claim should not be written before 1 and 2 are
+   finished.
 
-## Daha sonra
+## Later
 
-- Epstein (2002) karar kuralıyla karşılaştırma ("docking") — [REFERENCES.md](REFERENCES.md) #10–11.
-- Toplamada kütle korunumu (fazla toplanan kaynağın kaybolması).
-- Uzun deneyleri birkaç çekirdeğe bölmek; sonuçlar seed'e bağlı olduğu için
-  değişmez, süre kısalır.
-- Dashboard'u gerçek tarayıcıda doğrulamak (ISSUE-010).
+- Comparison with the Epstein (2002) decision rule ("docking") — [REFERENCES.md](REFERENCES.md) #10–11.
+- Mass conservation in foraging (loss of excess foraged resource).
+- Splitting long experiments across several cores; results do not change
+  because they depend on the seed, and the run time shortens.
+- Verifying the dashboard in a real browser (ISSUE-010).
 
-## Çalışma kuralları
+## Working rules
 
-Her deney için protokol koşudan önce yazılır ve commit edilir; yeni seed bloğu
-kullanılır; katsayılar sonuca bakılarak değiştirilmez
+For every experiment, the protocol is written and committed before the run; a
+new seed block is used; coefficients are not changed by looking at the results
 ([PROJECT_CONSTITUTION.md](PROJECT_CONSTITUTION.md)).

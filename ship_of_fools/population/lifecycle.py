@@ -1,7 +1,7 @@
 """TASK-401/402: aging, death, and birth. Agents are not immortal, and a new
 agent is not a blank slate — it inherits a blend of its parents' personality
 ("nature") and a snapshot of their current worldview ("nurture"), per doc 3's
-"genetik özellikleri + ailesi + kültürü ... onu şekillendiriyor". A child's
+"its genetic traits + family + culture ... shape it". A child's
 IDENTITY, however, starts at None like any founder's — identity must still be
 earned through the child's own lived experience (TASK-302's core rule), it is
 NOT inherited.

@@ -1,168 +1,177 @@
-# İhtiyaç Temelli Karar Mimarisi × Kaynak Rejimi — Sonuçlar
+# Need-Based Decision Architecture × Resource Regime — Results
 
-## Durum ve yorum düzeyi
+## Status and level of interpretation
 
-**Koşu tamamlandı: 2026-10-09.** Protokol
-(`EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md`) 2026-10-07'de koşudan önce
-yazıldı ve değiştirilmedi. İlk koşu 240 dünyanın 50'sinde oturum kapanınca
-kesildi; özet veya analiz dosyası üretmemişti ve sonuçlarına bakılmadı. Deney
-aynı seed'lerle baştan koşuldu. Model içi, kuramsal/keşifsel analizdir.
+**Run completed: 2026-10-09.** The protocol
+(`EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md`) was written before the run on
+2026-10-07 and was not changed. The first run was cut off at 50 of 240 worlds
+when the session closed; it had produced no summary or analysis file and its
+results were not examined. The experiment was re-run from scratch with the same
+seeds. This is an in-model, theoretical/exploratory analysis.
 
-## Yöntem (özet)
+## Method (summary)
 
-- 2×2 kaynak (kapasite 90/120; food+water yenilenme 0.016/0.019) × 2 mimari
-  (`intact` = varsayılan heuristic; `need_based`) = 8 hücre; 30 seed bloğu
-  (70000–70029) her hücrede; 240 simülasyon.
-- 80 kurucu ajan, 500 tick, sabit sıra, `agent_rng_mode="shared"`. Son 100
-  tick seed içinde ortalandı; seed analiz birimidir.
-- Köşeli parantezler 10.000 çekilişli seed-blok bootstrap %95 aralığıdır.
-  P-değeri veya çoklu karşılaştırma düzeltmesi yok.
+- 2×2 resource (capacity 90/120; food+water regeneration 0.016/0.019) × 2
+  architectures (`intact` = default heuristic; `need_based`) = 8 cells; 30 seed
+  blocks (70000–70029) per cell; 240 simulations.
+- 80 founder agents, 500 ticks, fixed order, `agent_rng_mode="shared"`. The last
+  100 ticks were averaged within each seed; the seed is the unit of analysis.
+- Square brackets are 10,000-draw seed-block bootstrap 95% intervals. There are
+  no p-values or multiple-comparison corrections.
 
-## Birincil sonuçlar
+## Primary results
 
-Kontrast = yüksek düzey eksi düşük düzey. Oran = `need_based` / `intact`.
+Contrast = high level minus low level. Ratio = `need_based` / `intact`.
 
-| Sonuç / kontrast | `intact` | `need_based` | Oran |
+| Outcome / contrast | `intact` | `need_based` | Ratio |
 |---|---:|---:|---:|
-| Çatışma — kapasite | −0.098 [−0.105, −0.090] | −0.012 [−0.013, −0.010] | 0.12 [0.10, 0.14] |
-| Çatışma — yenilenme | −0.042 [−0.047, −0.038] | −0.007 [−0.008, −0.005] | 0.15 [0.12, 0.19] |
-| Çatışma — etkileşim | −0.024 [−0.040, −0.009] | +0.008 [+0.004, +0.011] | — |
-| İşbirliği — kapasite | +0.092 [+0.084, +0.099] | +0.016 [+0.014, +0.018] | 0.17 [0.15, 0.20] |
-| İşbirliği — yenilenme | +0.045 [+0.040, +0.050] | +0.008 [+0.006, +0.010] | 0.18 [0.13, 0.23] |
-| İşbirliği — etkileşim | +0.024 [+0.011, +0.036] | −0.009 [−0.014, −0.005] | — |
+| Conflict — capacity | −0.098 [−0.105, −0.090] | −0.012 [−0.013, −0.010] | 0.12 [0.10, 0.14] |
+| Conflict — regeneration | −0.042 [−0.047, −0.038] | −0.007 [−0.008, −0.005] | 0.15 [0.12, 0.19] |
+| Conflict — interaction | −0.024 [−0.040, −0.009] | +0.008 [+0.004, +0.011] | — |
+| Cooperation — capacity | +0.092 [+0.084, +0.099] | +0.016 [+0.014, +0.018] | 0.17 [0.15, 0.20] |
+| Cooperation — regeneration | +0.045 [+0.040, +0.050] | +0.008 [+0.006, +0.010] | 0.18 [0.13, 0.23] |
+| Cooperation — interaction | +0.024 [+0.011, +0.036] | −0.009 [−0.014, −0.005] | — |
 
-Önceden yazılan kurala göre: `need_based` kolda dört ana etki kontrastı da
-sıfırı dışlıyor ve işaretleri `intact` ile aynı. **İlişki doğrudan katsayı
-olmadan, ihtiyaç kanalından da çıkıyor; ama büyüklüğü `intact` koldakinin
-yaklaşık sekizde biri ile altıda biri arasında.** Protokoldeki beklenti işaret
-bakımından doğrulandı. Kuralın kendi kaydı geçerlidir: bu, ilişkinin
-"emergent" olduğunu kanıtlamaz; karar kuralındaki daha zayıf bir varsayımdan
-da türediğini gösterir.
+According to the rule written in advance: in the `need_based` arm, all four
+main-effect contrasts exclude zero and their signs are the same as in `intact`.
+**The relationship also emerges through the need channel, without a direct
+coefficient; but its magnitude is between about one eighth and one sixth of that
+in the `intact` arm.** The expectation in the protocol was confirmed as far as
+the sign is concerned. The rule's own record applies: this does not prove that
+the relationship is "emergent"; it shows that it also derives from a weaker
+assumption in the decision rule.
 
-`intact` kolu üçüncü bağımsız seed bloğunda da aynı sonucu verdi (çatışma
-kapasite etkisi −0.099, −0.101, −0.098).
+The `intact` arm gave the same result in a third independent seed block (conflict
+capacity effect −0.099, −0.101, −0.098).
 
-Etkileşim terimleri iki kolda ters işaretli; `need_based` kolda kaynak
-faktörleri birbirini güçlendirmek yerine doyuma gidiyor.
+The interaction terms have opposite signs in the two arms; in the `need_based`
+arm the resource factors head toward saturation instead of reinforcing each
+other.
 
-## Manipülasyon kontrolü
+## Manipulation check
 
-| Sonuç / kontrast | `intact` | `need_based` |
+| Outcome / contrast | `intact` | `need_based` |
 |---|---:|---:|
-| Gerçek kıtlık — kapasite | −0.560 [−0.611, −0.507] | −0.527 [−0.563, −0.490] |
-| Gerçek kıtlık — yenilenme | −0.250 [−0.283, −0.217] | −0.265 [−0.306, −0.222] |
-| Kıtlık inancı — kapasite | −0.508 [−0.560, −0.456] | −0.498 [−0.532, −0.465] |
-| Kıtlık inancı — yenilenme | −0.226 [−0.256, −0.195] | −0.243 [−0.279, −0.205] |
+| True scarcity — capacity | −0.560 [−0.611, −0.507] | −0.527 [−0.563, −0.490] |
+| True scarcity — regeneration | −0.250 [−0.283, −0.217] | −0.265 [−0.306, −0.222] |
+| Scarcity belief — capacity | −0.508 [−0.560, −0.456] | −0.498 [−0.532, −0.465] |
+| Scarcity belief — regeneration | −0.226 [−0.256, −0.195] | −0.243 [−0.279, −0.205] |
 
-Kaynak manipülasyonu iki kolda da benzer büyüklükte kıtlık farkı üretiyor;
-birincil kontrastlar yorumlanabilir.
+The resource manipulation produces a scarcity difference of similar size in both
+arms; the primary contrasts can be interpreted.
 
-## Hücre ortalamaları
+## Cell means
 
-| Ölçü | Kol | 90/0.016 | 90/0.019 | 120/0.016 | 120/0.019 |
+| Measure | Arm | 90/0.016 | 90/0.019 | 120/0.016 | 120/0.019 |
 |---|---|---:|---:|---:|---:|
-| `steal` payı (çatışma) | `intact` | 0.319 | 0.289 | 0.234 | 0.179 |
+| `steal` share (conflict) | `intact` | 0.319 | 0.289 | 0.234 | 0.179 |
 | | `need_based` | 0.192 | 0.181 | 0.176 | 0.173 |
-| `share` payı | `intact` | 0.084 | 0.108 | 0.143 | 0.191 |
+| `share` share | `intact` | 0.084 | 0.108 | 0.143 | 0.191 |
 | | `need_based` | 0.168 | 0.180 | 0.186 | 0.190 |
-| `forage` payı | `intact` | 0.162 | 0.154 | 0.161 | 0.170 |
+| `forage` share | `intact` | 0.162 | 0.154 | 0.161 | 0.170 |
 | | `need_based` | 0.126 | 0.139 | 0.153 | 0.168 |
-| Gerçek kıtlık | `intact` | 0.992 | 0.837 | 0.527 | 0.182 |
+| True scarcity | `intact` | 0.992 | 0.837 | 0.527 | 0.182 |
 | | `need_based` | 0.898 | 0.644 | 0.383 | 0.106 |
-| Stres | `intact` | 0.844 | 0.765 | 0.657 | 0.522 |
+| Stress | `intact` | 0.844 | 0.765 | 0.657 | 0.522 |
 | | `need_based` | 0.583 | 0.549 | 0.528 | 0.520 |
-| Ortalama servet | `intact` | 60.9 | 56.2 | 49.7 | 49.1 |
+| Mean wealth | `intact` | 60.9 | 56.2 | 49.7 | 49.1 |
 | | `need_based` | 38.6 | 44.9 | 46.5 | 48.4 |
 | Gini | `intact` | 0.416 | 0.409 | 0.420 | 0.433 |
 | | `need_based` | 0.448 | 0.441 | 0.428 | 0.421 |
-| Nüfus | `intact` | 94.3 | 106.9 | 115.7 | 117.8 |
+| Population | `intact` | 94.3 | 106.9 | 115.7 | 117.8 |
 | | `need_based` | 110.8 | 114.1 | 116.1 | 115.7 |
 
-En bol hücrede (120/0.019) iki mimari neredeyse aynı davranış paylarını
-veriyor; ayrışma kıtlık arttıkça büyüyor.
+In the most abundant cell (120/0.019) the two architectures give almost the same
+behaviour shares; the divergence grows as scarcity increases.
 
-## İkincil keşifsel sonuçlar
+## Secondary exploratory results
 
-Kapasite kontrastı (yüksek eksi düşük):
+Capacity contrast (high minus low):
 
-| Ölçü | `intact` | `need_based` |
+| Measure | `intact` | `need_based` |
 |---|---:|---:|
-| Ortalama servet | −9.1 [−10.3, −7.9] | +5.8 [+4.6, +6.9] |
+| Mean wealth | −9.1 [−10.3, −7.9] | +5.8 [+4.6, +6.9] |
 | Gini | +0.015 [+0.007, +0.022] | −0.020 [−0.027, −0.013] |
-| `forage` payı | +0.007 [+0.005, +0.010] | +0.028 [+0.026, +0.030] |
-| `share` payı | +0.071 [+0.065, +0.078] | +0.014 [+0.012, +0.016] |
-| `socialize` payı | +0.020 [+0.018, +0.022] | +0.002 [+0.001, +0.003] |
-| `spread_belief` payı | −0.016 [−0.019, −0.013] | −0.039 [−0.042, −0.037] |
-| Stres | −0.215 [−0.231, −0.200] | −0.042 [−0.051, −0.033] |
-| Ortalama güven | +0.034 [+0.032, +0.035] | +0.003 [+0.002, +0.004] |
-| Nüfus | +16.2 [+13.1, +19.2] | +3.4 [+0.9, +6.0] |
-| `benefactor` etiketi payı | +0.234 [+0.215, +0.253] | +0.018 [+0.001, +0.035] |
+| `forage` share | +0.007 [+0.005, +0.010] | +0.028 [+0.026, +0.030] |
+| `share` share | +0.071 [+0.065, +0.078] | +0.014 [+0.012, +0.016] |
+| `socialize` share | +0.020 [+0.018, +0.022] | +0.002 [+0.001, +0.003] |
+| `spread_belief` share | −0.016 [−0.019, −0.013] | −0.039 [−0.042, −0.037] |
+| Stress | −0.215 [−0.231, −0.200] | −0.042 [−0.051, −0.033] |
+| Mean trust | +0.034 [+0.032, +0.035] | +0.003 [+0.002, +0.004] |
+| Population | +16.2 [+13.1, +19.2] | +3.4 [+0.9, +6.0] |
+| `benefactor` label share | +0.234 [+0.215, +0.253] | +0.018 [+0.001, +0.035] |
 
-> **Düzeltme (2026-10-09).** Aşağıdaki ilk iki gözlemdeki açıklama ("servet
-> yendiği için") sonraki ayrışım deneyinde desteklenmedi: işaret değişimi
-> servetin yenemediği `scoring_only` kolunda da görülüyor ve ağırlıkla skor
-> biçimine ait. Bkz. `PROVISION_SCORING_FACTORIAL_RESULTS.md`. Sayılar
-> geçerlidir; yorum değişti.
+> **Correction (2026-10-09).** The explanation in the first two observations
+> below ("because wealth is eaten") was not supported by the subsequent
+> decomposition experiment: the sign change is also seen in the `scoring_only`
+> arm, where wealth cannot be eaten, and belongs mostly to the score form. See
+> `PROVISION_SCORING_FACTORIAL_RESULTS.md`. The numbers stand; the
+> interpretation has changed.
 
-Gözlemler (keşifsel; mekanizma açıklamaları sınanmamış adaylardır):
+Observations (exploratory; mechanism explanations are untested candidates):
 
-- **Servet iki mimaride ters yönde hareket ediyor.** `intact` kolda en kıt
-  hücre en zengin hücredir (60.9'a karşı 49.1): servet hiçbir işe yaramadığı
-  için birikir. `need_based` kolda kıtlıkta servet azalır (38.6'ya karşı
-  48.4), çünkü yenir. Bu, ISSUE-014'ün veride görünen hâlidir.
-- **Gini'nin kaynak rejimine tepkisi işaret değiştiriyor.** `intact` kolda
-  bolluk Gini'yi hafif artırıyordu (ilk kaynak deneyindeki beklenmedik bulgu);
-  `need_based` kolda bolluk Gini'yi düşürüyor. İlk bulgu, servetin yenemeyen
-  bir sayı olmasına bağlı görünüyor; Gini üzerine çıkarımlar mimariye
-  duyarlıdır.
-- **Nüfus kıtlığa daha dayanıklı.** En kıt hücrede nüfus 94 yerine 111.
-  Olası nedenler: erzakın ihtiyaç tamponu olması ve daha düşük `steal` payıyla
-  daha düşük stres (0.58'e karşı 0.84). Ablasyondaki "nüfusu çalma kaynaklı
-  stres sınırlıyor" adayıyla uyumlu, ama bu deney onu ayrıştırmaz.
-- **Kıtlıkta boşalan `forage` payı `steal`'e değil çoğunlukla
-  `spread_belief`'e gidiyor.** `spread_belief` skorundaki stres ve
-  `scarcity_belief` terimleri bu mimaride de yerinde.
-- Seed'ler arası değişkenlik `need_based` kolda çatışma ölçüsü için çok
-  küçük (SD 0.006; `intact` kolda 0.012–0.029).
+- **Wealth moves in opposite directions in the two architectures.** In the
+  `intact` arm the scarcest cell is the richest cell (60.9 versus 49.1): wealth
+  accumulates because it is of no use. In the `need_based` arm, wealth decreases
+  under scarcity (38.6 versus 48.4), because it is eaten. This is how ISSUE-014
+  shows up in the data.
+- **The response of Gini to the resource regime changes sign.** In the `intact`
+  arm, abundance slightly increased Gini (the unexpected finding in the first
+  resource experiment); in the `need_based` arm, abundance lowers Gini. The first
+  finding appears to depend on wealth being a number that cannot be eaten;
+  inferences about Gini are sensitive to the architecture.
+- **Population is more resilient to scarcity.** In the scarcest cell, population
+  is 111 instead of 94. Possible causes: provisions acting as a need buffer, and
+  lower stress with a lower `steal` share (0.58 versus 0.84). This is consistent
+  with the ablation's candidate that "stress from stealing limits population",
+  but this experiment does not separate them.
+- **The `forage` share freed under scarcity goes mostly to `spread_belief`, not
+  to `steal`.** The stress and `scarcity_belief` terms in the `spread_belief`
+  score are still in place in this architecture.
+- Between-seed variability for the conflict measure is very small in the
+  `need_based` arm (SD 0.006; 0.012–0.029 in the `intact` arm).
 
-## Üç deneyin birlikte okunması
+## Reading the three experiments together
 
-Çatışma ölçüsünde kapasite etkisi (ayrı seed blokları; kollar arası doğrudan
-fark alınmamalı):
+Capacity effect on the conflict measure (separate seed blocks; the arms should
+not be differenced directly):
 
-| Karar kuralı | Kapasite etkisi | Kaynak |
+| Decision rule | Capacity effect | Source |
 |---|---:|---|
-| Doğrudan kıtlık inancı terimi (varsayılan) | −0.098 ile −0.101 | üç deney |
-| Terim yok (`zero`) | +0.012 | ablasyon |
-| Terim sabit (`fixed`) | +0.014 | ablasyon |
-| İhtiyaç temelli, yenebilir erzak | −0.012 | bu deney |
+| Direct scarcity-belief term (default) | −0.098 to −0.101 | three experiments |
+| No term (`zero`) | +0.012 | ablation |
+| Fixed term (`fixed`) | +0.014 | ablation |
+| Need-based, edible provisions | −0.012 | this experiment |
 
-Kaynak rejimi → çatışma ilişkisinin **yönü** iki farklı karar kuralında
-aynı, üçüncüsünde ters; **büyüklüğü** karar kuralına göre yaklaşık sekiz kat
-değişiyor. Bu modelden "kıtlık çatışmayı şu kadar artırır" türünde bir
-büyüklük iddiası çıkarılamaz. Savunulabilir iddia yapısal belirsizliğin
-kendisidir: sonucu kaynak dinamiği değil, bireysel karar kuralı varsayımı
-belirliyor.
+The **direction** of the resource regime → conflict relationship is the same in
+two of the decision rules and reversed in the third; its **magnitude** varies by
+roughly a factor of eight depending on the decision rule. No magnitude claim of
+the form "scarcity increases conflict by this much" can be drawn from this model.
+The defensible claim is the structural uncertainty itself: the result is
+determined not by resource dynamics but by the individual decision-rule
+assumption.
 
-## Yorum sınırları
+## Limits of interpretation
 
-- `need_based` kol erzak yemeyi de ekler; iki kol aynı kıtlık düzeyinde
-  çalışmaz (bu kolda kıtlık her hücrede biraz daha düşük). Karşılaştırma
-  "karar kuralı + erzak" paketinedir; ikisi ayrıştırılmadı.
-- Etkinin küçük çıkmasının nedeni sınanmadı. Adaylar: ortalama servet
-  39–48 olduğundan ajanların erzakı nadiren tükeniyor ve aciliyet bastırılıyor;
-  bir hırsızlığın getirisi (`g = 0.4`) toplamaya göre düşük.
-- `provision_max_per_tick` ve diğer `provision_*` değerlerine duyarlılık
-  sınanmadı. Bu sonuca bakılarak değiştirilmediler (ilke 9); duyarlılık ayrı
-  protokol ve yeni seed bloğu gerektirir.
-- Toplamada kütle korunumu tam değil (protokol, Sınırlar).
-- Seed bootstrap seed belirsizliğini özetler; yukarıdaki tablo tam da bunun
-  kapsamadığı model belirsizliğini gösteriyor.
+- The `need_based` arm also adds eating provisions; the two arms do not operate
+  at the same scarcity level (scarcity is somewhat lower in every cell of this
+  arm). The comparison is of the "decision rule + provisions" package; the two
+  were not separated.
+- The reason the effect turned out small was not tested. Candidates: because mean
+  wealth is 39–48, agents' provisions rarely run out and urgency is suppressed;
+  the payoff from a theft (`g = 0.4`) is low relative to foraging.
+- Sensitivity to `provision_max_per_tick` and the other `provision_*` values was
+  not tested. They were not changed in light of this result (principle 9);
+  sensitivity requires a separate protocol and a new seed block.
+- Mass conservation in foraging is not complete (protocol, Limits).
+- The seed bootstrap summarises seed uncertainty; the table above shows
+  precisely the model uncertainty that it does not cover.
 
-## Tekrar üretim dosyaları
+## Reproduction files
 
-- Protokol: `EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md`.
-- Koşu ve analiz komutları protokolün "Uygulama" bölümünde.
+- Protocol: `EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md`.
+- The run and analysis commands are in the "Implementation" section of the
+  protocol.
 - `output/need_based_decision/experiment.json`, `analysis.json`,
-  `seed_summaries.csv` (240 satır); `timeseries.csv` (120.000 tick gözlemi,
-  git dışında).
+  `seed_summaries.csv` (240 rows); `timeseries.csv` (120,000 tick observations,
+  outside git).

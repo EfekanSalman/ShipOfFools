@@ -1,161 +1,177 @@
-# Gerçek Yoksunluk × Karar Mimarisi — Sonuçlar
+# True Deprivation × Decision Architecture — Results
 
-## Durum ve yorum düzeyi
+## Status and level of interpretation
 
-**Koşu tamamlandı: 2026-10-09.** Protokol (`EXPERIMENT_PROTOCOL_DEPRIVATION.md`)
-koşudan önce yazıldı ve commit edildi (`d0c9bda`). Model içi, kuramsal/keşifsel
-analizdir; insan verisine kalibrasyon yoktur.
+**Run completed: 2026-10-09.** The protocol (`EXPERIMENT_PROTOCOL_DEPRIVATION.md`)
+was written and committed (`d0c9bda`) before the run. This is an
+in-model, theoretical/exploratory analysis; there is no calibration to human
+data.
 
-## Yöntem (özet)
+## Method (summary)
 
-- Kapasite 90/120 × yenilenme 0.004 (yoksun) / 0.010 (depo boş, ajanlar
-  büyük ölçüde tok) × dört karar kolu = 16 hücre; 30 seed bloğu
-  (94000–94029); 480 simülasyon.
-- `agent_update_order="shuffled"` (ISSUE-016). 80 kurucu ajan, 500 tick,
-  `agent_rng_mode="shared"`. Son 100 tick seed içinde ortalandı.
-- Yenilenme kontrastı = 0.010 eksi 0.004 = **tok eksi yoksun**. Pozitif
-  değer, ölçünün tok koşulda daha yüksek olduğunu gösterir.
-- Köşeli parantezler 10.000 çekilişli seed-blok bootstrap %95 aralığıdır.
+- Capacity 90/120 × regeneration 0.004 (deprived) / 0.010 (empty stores, agents
+  largely well fed) × four decision arms = 16 cells; 30 seed blocks
+  (94000–94029); 480 simulations.
+- `agent_update_order="shuffled"` (ISSUE-016). 80 founder agents, 500 ticks,
+  `agent_rng_mode="shared"`. The last 100 ticks were averaged within each seed.
+- Regeneration contrast = 0.010 minus 0.004 = **well fed minus deprived**. A
+  positive value indicates that the measure is higher in the well-fed
+  condition.
+- Square brackets are 10,000-draw seed-block bootstrap 95% intervals.
 
-## Manipülasyon kontrolü
+## Manipulation check
 
-| Ölçü | `intact` | `provisions_only` | `scoring_only` | `need_based` |
+| Measure | `intact` | `provisions_only` | `scoring_only` | `need_based` |
 |---|---:|---:|---:|---:|
-| Yoksun pay — yenilenme kontrastı | −0.206 [−0.213, −0.199] | −0.214 [−0.223, −0.205] | −0.077 [−0.087, −0.068] | −0.236 [−0.243, −0.228] |
-| Gerçek kıtlık — hücre ortalamaları | 1.000 | 0.998–1.000 | 0.991–1.000 | 0.984–1.000 |
-| Kıtlık inancı — hücre ortalamaları | 0.990–0.991 | 0.982–0.990 | 0.982–0.986 | 0.976–0.985 |
+| Deprived share — regeneration contrast | −0.206 [−0.213, −0.199] | −0.214 [−0.223, −0.205] | −0.077 [−0.087, −0.068] | −0.236 [−0.243, −0.228] |
+| True scarcity — cell means | 1.000 | 0.998–1.000 | 0.991–1.000 | 0.984–1.000 |
+| Scarcity belief — cell means | 0.990–0.991 | 0.982–0.990 | 0.982–0.986 | 0.976–0.985 |
 
-Yoksunluk manipülasyonu dört kolda da geçti; depo göstergesi ve ona dair inanç
-her hücrede doygun. İki yenilenme düzeyi arasındaki davranış farkı doğrudan
-`scarcity_belief` terimlerinden gelemez. `scoring_only` kolunda kontrast
-daha küçük, çünkü o kolun "tok" düzeyi de %13–19 yoksun.
+The deprivation manipulation passed in all four arms; the stores indicator and
+the belief about it are saturated in every cell. The behavioural difference
+between the two regeneration levels cannot come directly from the
+`scarcity_belief` terms. The contrast is smaller in the `scoring_only` arm
+because the "well-fed" level of that arm is also 13–19% deprived.
 
-## Birincil sonuçlar
+## Primary results
 
-Yenilenme kontrastı (tok eksi yoksun):
+Regeneration contrast (well fed minus deprived):
 
-| Sonuç | `intact` | `provisions_only` | `scoring_only` | `need_based` |
+| Outcome | `intact` | `provisions_only` | `scoring_only` | `need_based` |
 |---|---:|---:|---:|---:|
-| Çatışma (`steal` payı) | +0.048 [+0.045, +0.050] | +0.051 [+0.047, +0.054] | −0.006 [−0.009, −0.003] | −0.034 [−0.037, −0.032] |
-| İşbirliği | +0.015 [+0.014, +0.017] | +0.020 [+0.018, +0.022] | −0.009 [−0.012, −0.006] | +0.020 [+0.017, +0.023] |
+| Conflict (`steal` share) | +0.048 [+0.045, +0.050] | +0.051 [+0.047, +0.054] | −0.006 [−0.009, −0.003] | −0.034 [−0.037, −0.032] |
+| Cooperation | +0.015 [+0.014, +0.017] | +0.020 [+0.018, +0.022] | −0.009 [−0.012, −0.006] | +0.020 [+0.017, +0.023] |
 
-Çatışma kontrastının erzak × skor ayrışımı: erzak ana etkisi −0.012
-[−0.015, −0.010], skor ana etkisi −0.069 [−0.073, −0.066], etkileşim −0.031
-[−0.038, −0.025]. Etkileşim sıfırı dışladığı için, kural gereği ana etkiler
-yerine dört kolun ayrı kontrastları esas alınır.
+Provisions × scoring decomposition of the conflict contrast: provisions main
+effect −0.012 [−0.015, −0.010], scoring main effect −0.069 [−0.073, −0.066],
+interaction −0.031 [−0.038, −0.025]. Because the interaction excludes zero, the
+separate contrasts of the four arms are used instead of the main effects, as the
+rule requires.
 
-Önceden yazılan kurala göre: **özgün skorlu iki kolda yoksunluk `steal` payını
-düşürüyor (4.8–5.1 puan), ihtiyaç temelli skorlu iki kolda artırıyor (0.6 ve
-3.4 puan); dört aralık da sıfırı dışlıyor. Gerçek yoksunluğun çatışma
-ölçüsüne etkisinin yönü karar kuralı varsayımına bağlıdır.**
+According to the rule written in advance: **in the two arms with original
+scores, deprivation lowers the `steal` share (by 4.8–5.1 points); in the two
+arms with need-based scores, it raises it (by 0.6 and 3.4 points); all four
+intervals exclude zero. The direction of the effect of true deprivation on the
+conflict measure depends on the decision-rule assumption.**
 
-Beklentilerle karşılaştırma:
+Comparison with expectations:
 
-| Beklenti | Sonuç |
+| Expectation | Result |
 |---|---|
-| Özgün skor: yoksunlukta `steal` daha düşük | Doğrulandı (+0.048, +0.051) |
-| Özgün skor: yoksunlukta işbirliği daha düşük | Doğrulandı (+0.015, +0.020) |
-| İhtiyaç temelli skor: yoksunlukta `steal` daha yüksek | Doğrulandı (−0.006, −0.034); `scoring_only`'de çok küçük |
-| İhtiyaç temelli skor: yoksunlukta işbirliği daha düşük | `need_based`'de doğrulandı (+0.020); **`scoring_only`'de tutmadı** (−0.009: yoksunlukta işbirliği daha yüksek) |
-| İhtiyaç temelli kollarda açlık ölümü daha fazla | Doğrulandı (aşağıda) |
-| Erzak yoksun payı düşürür, birincil etkisi küçük ama öncekinden büyük | Kısmen: birincil kontrasta etkisi artık ayırt ediliyor ve skorla etkileşiyor; yoksun pay kapasiteye göre iki yönde değişiyor (aşağıda) |
+| Original scores: `steal` lower under deprivation | Confirmed (+0.048, +0.051) |
+| Original scores: cooperation lower under deprivation | Confirmed (+0.015, +0.020) |
+| Need-based scores: `steal` higher under deprivation | Confirmed (−0.006, −0.034); very small in `scoring_only` |
+| Need-based scores: cooperation lower under deprivation | Confirmed in `need_based` (+0.020); **did not hold in `scoring_only`** (−0.009: cooperation is higher under deprivation) |
+| More starvation deaths in the need-based arms | Confirmed (below) |
+| Provisions lower the deprived share; primary effect small but larger than before | Partly: its effect on the primary contrast can now be distinguished and it interacts with scoring; the deprived share changes in two directions depending on capacity (below) |
 
-## Hücre ortalamaları
+## Cell means
 
-Sütunlar: 90/0.004, 90/0.010, 120/0.004, 120/0.010.
+Columns: 90/0.004, 90/0.010, 120/0.004, 120/0.010.
 
-| Ölçü | Kol | 90 yoksun | 90 tok | 120 yoksun | 120 tok |
+| Measure | Arm | 90 deprived | 90 well fed | 120 deprived | 120 well fed |
 |---|---|---:|---:|---:|---:|
-| `steal` payı | `intact` | 0.268 | 0.318 | 0.280 | 0.325 |
+| `steal` share | `intact` | 0.268 | 0.318 | 0.280 | 0.325 |
 | | `provisions_only` | 0.259 | 0.321 | 0.291 | 0.331 |
 | | `scoring_only` | 0.218 | 0.219 | 0.219 | 0.206 |
 | | `need_based` | 0.230 | 0.215 | 0.252 | 0.198 |
-| `forage` payı | `intact` | 0.260 | 0.187 | 0.255 | 0.166 |
+| `forage` share | `intact` | 0.260 | 0.187 | 0.255 | 0.166 |
 | | `provisions_only` | 0.295 | 0.181 | 0.239 | 0.163 |
 | | `scoring_only` | 0.124 | 0.121 | 0.123 | 0.120 |
 | | `need_based` | 0.139 | 0.123 | 0.127 | 0.123 |
-| Yoksun pay | `intact` | 0.253 | 0.070 | 0.257 | 0.027 |
+| Deprived share | `intact` | 0.253 | 0.070 | 0.257 | 0.027 |
 | | `provisions_only` | 0.319 | 0.027 | 0.146 | 0.011 |
 | | `scoring_only` | 0.236 | 0.185 | 0.236 | 0.133 |
 | | `need_based` | 0.259 | 0.067 | 0.321 | 0.042 |
-| Açlık ölümü (toplam) | `intact` | 29.0 | 0.0 | 9.4 | 0.0 |
+| Starvation deaths (total) | `intact` | 29.0 | 0.0 | 9.4 | 0.0 |
 | | `provisions_only` | 12.7 | 0.0 | 0.0 | 0.0 |
 | | `scoring_only` | 60.1 | 12.4 | 45.6 | 1.8 |
 | | `need_based` | 48.0 | 0.0 | 13.8 | 0.0 |
-| Nüfus | `intact` | 56.0 | 86.1 | 74.7 | 90.6 |
+| Population | `intact` | 56.0 | 86.1 | 74.7 | 90.6 |
 | | `provisions_only` | 73.9 | 86.4 | 84.6 | 89.4 |
 | | `scoring_only` | 42.6 | 90.7 | 58.3 | 103.3 |
 | | `need_based` | 56.7 | 103.9 | 86.3 | 107.7 |
-| Ortalama servet | `intact` | 38.0 | 49.2 | 37.8 | 59.3 |
+| Mean wealth | `intact` | 38.0 | 49.2 | 37.8 | 59.3 |
 | | `provisions_only` | 1.0 | 42.6 | 7.0 | 57.5 |
 | | `scoring_only` | 27.3 | 32.2 | 27.4 | 39.5 |
 | | `need_based` | 1.5 | 19.3 | 1.2 | 32.7 |
-| Stres | `intact` | 0.795 | 0.847 | 0.848 | 0.846 |
+| Stress | `intact` | 0.795 | 0.847 | 0.848 | 0.846 |
 | | `provisions_only` | 0.545 | 0.837 | 0.770 | 0.846 |
 | | `scoring_only` | 0.578 | 0.699 | 0.626 | 0.674 |
 | | `need_based` | 0.415 | 0.653 | 0.560 | 0.608 |
 
-## İkincil keşifsel sonuçlar
+## Secondary exploratory results
 
-Mekanizma açıklamaları sınanmamış adaylardır.
+Mechanism explanations are untested candidates.
 
-- **Özgün skorda yoksunluk toplamaya yöneltiyor.** `intact` kolda `forage`
-  payı yoksun koşulda 0.26, tok koşulda 0.17–0.19; boşalan pay `steal` ve
-  `spread_belief`'ten geliyor. Protokolde öngörülen sıkıştırma budur.
-- **İhtiyaç temelli skorda ajanlar yoksunken de toplamıyor.** `forage` payı
-  dört hücrede 0.12–0.14'te sabit. Skor, toplamanın getirisini depo inancıyla
-  çarpıyor; inanç ≈1 olduğunda aciliyet terimi sıfırlanıyor. Sonuç: en çok
-  açlık ölümü bu kollarda (`scoring_only` 60 ve 46; `intact` 29 ve 9).
-  **Bu, mekanizmanın tasarım zayıflığıdır:** depo göstergesi boşken bile her
-  tick yenilenen bir akış var ve toplayan ajan ondan pay alıyor; ajanın
-  "depo boş, toplamak boşuna" inancı fiilen yanlış. Skor biçimi bu sonuca
-  bakılarak değiştirilmedi (ilke 9); düzeltme ayrı bir protokol ister.
-- **Erzak yoksunlukta işe yarıyor.** Özgün skorla açlık ölümü 29 → 13
-  (kapasite 90) ve 9.4 → 0.03 (kapasite 120); yoksun hücrelerde servet
-  neredeyse tamamen yeniyor (38 → 1). Tok rejimlerdeki etkisizliğin nedeni
-  açlığın oluşmamasıydı (ISSUE-015); bu deney onu doğruluyor.
-- **Erzak kollarında yoksun pay tek yönlü değişmiyor** (kapasite 90'da 0.25 →
-  0.32, 120'de 0.26 → 0.15). Olası neden hayatta kalma seçilimi: erzak
-  olmadan ölecek ajanlar hayatta ve yoksun kalıyor. Ölçü yaşayanlar
-  üzerinden hesaplanır.
-- **Servet tükenince stres düşüyor.** `provisions_only`, 90/yoksun hücresinde
-  stres 0.55 (`intact` 0.80), `steal` payı ise benzer (0.26). Motorda hırsızlık
-  ancak kurbanın serveti 1'in üzerindeyse gerçekleşir ve kurbana stres ekler;
-  servet ≈1 iken girişimler boşa çıkıyor olabilir. Ablasyondaki "stres
-  çalmayı izliyor" adayıyla uyumlu.
-- Kapasitenin birincil ölçülere etkisi küçük (mutlak değeri ≤ 0.021).
+- **Under original scores, deprivation pushes agents toward foraging.** In the
+  `intact` arm the `forage` share is 0.26 in the deprived condition and
+  0.17–0.19 in the well-fed condition; the share it frees up comes from `steal`
+  and `spread_belief`. This is the squeeze anticipated in the protocol.
+- **Under need-based scores, agents do not forage even when deprived.** The
+  `forage` share is constant at 0.12–0.14 across the four cells. The score
+  multiplies the return on foraging by the belief about the stores; when the
+  belief is ≈1, the urgency term is zeroed out. Result: the most starvation
+  deaths occur in these arms (`scoring_only` 60 and 46; `intact` 29 and 9).
+  **This is a design weakness of the mechanism:** even when the stores indicator
+  is empty, there is a flow regenerating every tick and an agent that forages
+  receives a share of it; the agent's belief that "the stores are empty, so
+  foraging is pointless" is in effect wrong. The score form was not changed in
+  light of this result (principle 9); a fix requires a separate protocol.
+- **Provisions work under deprivation.** With original scores, starvation deaths
+  go from 29 to 13 (capacity 90) and from 9.4 to 0.03 (capacity 120); in the
+  deprived cells wealth is almost entirely eaten (38 → 1). The ineffectiveness
+  in the well-fed regimes was because starvation did not occur (ISSUE-015); this
+  experiment confirms that.
+- **In the provisions arms the deprived share does not change in a single
+  direction** (0.25 → 0.32 at capacity 90, 0.26 → 0.15 at 120). A possible cause
+  is survival selection: agents who would die without provisions stay alive and
+  deprived. The measure is computed over living agents.
+- **Stress falls when wealth is exhausted.** In the `provisions_only` 90/deprived
+  cell, stress is 0.55 (`intact` 0.80), while the `steal` share is similar
+  (0.26). In the engine, theft takes place only if the victim's wealth exceeds 1
+  and adds stress to the victim; when wealth is ≈1, attempts may be coming to
+  nothing. This is consistent with the "stress tracks stealing" candidate from the
+  ablation.
+- The effect of capacity on the primary measures is small (absolute value ≤ 0.021).
 
-## Kaynak deneyleriyle birlikte okuma
+## Reading together with the resource experiments
 
-| Koşul | Karar kuralı | Elverişsiz koşulun `steal` payına etkisi |
+| Condition | Decision rule | Effect of the adverse condition on the `steal` share |
 |---|---|---|
-| Depo boşalıyor, ajanlar tok (sabit sıra) | özgün | artırıyor (≈ +0.10) |
-| | terim kesilmiş | hafif azaltıyor (≈ −0.012) |
-| | ihtiyaç temelli | hafif artırıyor (≈ +0.012) |
-| Depo zaten boş, ajanlar yoksun (karışık sıra) | özgün | azaltıyor (≈ −0.048) |
-| | ihtiyaç temelli | artırıyor (≈ +0.034) |
+| Stores are being depleted, agents well fed (fixed order) | original | increases (≈ +0.10) |
+| | term cut | slightly decreases (≈ −0.012) |
+| | need-based | slightly increases (≈ +0.012) |
+| Stores already empty, agents deprived (shuffled order) | original | decreases (≈ −0.048) |
+| | need-based | increases (≈ +0.034) |
 
-Özgün karar kuralında "kıtlık çatışmayı artırır" sonucu yalnızca inanç
-kanalıyla ve ajanlar tokken ortaya çıkıyor; ajanlar gerçekten yoksun
-kaldığında aynı kural tersini veriyor. Modelden çıkarılabilecek sağlam sonuç
-bir işaret ya da büyüklük değil, şudur: kıtlık → çatışma ilişkisi, (a) kıtlığın
-inanç mı yoksa yoksunluk mu olduğuna ve (b) karar kuralına bağlıdır.
+Under the original decision rule, the result that "scarcity increases conflict"
+appears only through the belief channel and while agents are well fed; when
+agents are truly deprived, the same rule gives the opposite. The robust
+conclusion that can be drawn from the model is not a sign or a magnitude but
+this: the scarcity → conflict relationship depends on (a) whether scarcity is a
+belief or deprivation and (b) the decision rule.
 
-## Yorum sınırları
+## Limits of interpretation
 
-- Hücreler arasında nüfus çok farklı (43–108); paylar yaşayanlar üzerinden
-  hesaplanır ve açlıktan ölenler ölçümden çıkar (hayatta kalma seçilimi).
-- "Tok" düzey tam tok değil (yoksun pay 0.01–0.19, kola göre).
-- Önceki deneyler sabit sırayla, bu deney karıştırılmış sırayla koşuldu;
-  yukarıdaki tablo iki tasarımı yan yana koyar, doğrudan fark alınmamalıdır.
-- Karşılaştırma düzeyini seçen ikinci kural pilot görüldükten sonra yazıldı.
-- `provision_*` değerleri ve skor terimleri sınanmadı/değiştirilmedi; toplamada
-  kütle korunumu tam değil; dış veriyle kalibrasyon yok.
+- Population differs greatly across cells (43–108); the shares are computed over
+  living agents and those who die of starvation drop out of the measurement
+  (survival selection).
+- The "well-fed" level is not fully well fed (deprived share 0.01–0.19,
+  depending on the arm).
+- Earlier experiments were run with fixed order and this one with shuffled
+  order; the table above puts the two designs side by side and should not be
+  differenced directly.
+- The second rule, which chose the comparison level, was written after the pilot
+  had been seen.
+- The `provision_*` values and score terms were not tested/changed; mass
+  conservation in foraging is not complete; there is no calibration to external
+  data.
 
-## Tekrar üretim dosyaları
+## Reproduction files
 
-- Protokol ve komutlar: `EXPERIMENT_PROTOCOL_DEPRIVATION.md`.
-- Pilot: `run_deprivation_pilot.py`, `output/deprivation_pilot.json` (sabit
-  sıra), `output/deprivation_pilot_shuffled.json`.
+- Protocol and commands: `EXPERIMENT_PROTOCOL_DEPRIVATION.md`.
+- Pilot: `run_deprivation_pilot.py`, `output/deprivation_pilot.json` (fixed
+  order), `output/deprivation_pilot_shuffled.json`.
 - `output/deprivation/experiment.json`, `analysis.json`, `seed_summaries.csv`
-  (480 satır); `timeseries.csv` git dışında.
+  (480 rows); `timeseries.csv` is outside git.

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -43,13 +43,13 @@ footer{padding:16px 20px;color:var(--muted);font-size:.78rem;text-align:center}
 </head>
 <body>
 <header>
-<h1>🚢 Ship of Fools — Simülasyon Dashboard</h1>
+<h1>🚢 Ship of Fools — Simulation Dashboard</h1>
 <p id="metaLine"></p>
 </header>
 <nav>
-<button class="tabbtn active" data-tab="pop">Popülasyon</button>
-<button class="tabbtn" data-tab="agent">Agent İnceleme</button>
-<button class="tabbtn" data-tab="net">Sosyal Ağ</button>
+<button class="tabbtn active" data-tab="pop">Population</button>
+<button class="tabbtn" data-tab="agent">Agent Inspector</button>
+<button class="tabbtn" data-tab="net">Social Network</button>
 </nav>
 <main>
 
@@ -57,7 +57,7 @@ footer{padding:16px 20px;color:var(--muted);font-size:.78rem;text-align:center}
   <div class="card">
     <div class="row">
       <label>Metrik: <select id="metricSelect"></select></label>
-      <label>Aralık: <input type="range" id="rangeStart" min="0" max="100" value="0"> - <input type="range" id="rangeEnd" min="0" max="100" value="100"></label>
+      <label>Range: <input type="range" id="rangeStart" min="0" max="100" value="0"> - <input type="range" id="rangeEnd" min="0" max="100" value="100"></label>
     </div>
     <div class="chart-wrap"><canvas id="popChart"></canvas></div>
   </div>
@@ -68,10 +68,10 @@ footer{padding:16px 20px;color:var(--muted);font-size:.78rem;text-align:center}
     <div class="row"><label>Agent: <select id="agentSelect"></select></label></div>
     <div class="stat-grid" id="agentStats"></div>
   </div>
-  <div class="card"><h3 style="margin-top:0">Kişilik: başlangıç vs güncel</h3>
+  <div class="card"><h3 style="margin-top:0">Personality: initial vs current</h3>
     <div class="chart-wrap" style="height:280px"><canvas id="radarChart"></canvas></div>
   </div>
-  <div class="card"><h3 style="margin-top:0">Zaman içinde</h3>
+  <div class="card"><h3 style="margin-top:0">Over time</h3>
     <div class="row"><label>Alan: <select id="agentFieldSelect"></select></label></div>
     <div class="chart-wrap"><canvas id="agentLineChart"></canvas></div>
   </div>
@@ -86,7 +86,7 @@ footer{padding:16px 20px;color:var(--muted);font-size:.78rem;text-align:center}
       <span><i class="dot" style="background:#dc2626"></i>opportunist</span>
       <span><i class="dot" style="background:#6b7280"></i>survivor</span>
       <span><i class="dot" style="background:#9ca3af"></i>none</span>
-      <span>yeşil kenar = pozitif güven, kırmızı = negatif</span>
+      <span>green edge = positive trust, red = negative</span>
     </div>
   </div>
 </section>
@@ -184,8 +184,8 @@ function drawAgentPanel() {
     type: 'radar',
     data: { labels: traits,
       datasets: [
-        { label: 'başlangıç', data: traits.map(t => first.personality[t]), borderColor: '#9ca3af', backgroundColor: 'rgba(156,163,175,.15)' },
-        { label: 'güncel', data: traits.map(t => last.personality[t]), borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,.15)' }
+        { label: 'initial', data: traits.map(t => first.personality[t]), borderColor: '#9ca3af', backgroundColor: 'rgba(156,163,175,.15)' },
+        { label: 'current', data: traits.map(t => last.personality[t]), borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,.15)' }
       ] },
     options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 1 } } }
   });

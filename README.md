@@ -1,21 +1,20 @@
-# Ship of Fools — akademik ajan tabanlı simülasyon
+# Ship of Fools — an academic agent-based simulation
 
-Ship of Fools, gemi ortamında bireysel psikoloji, sosyal ilişkiler, kurumlar,
-kültür ve kaynak dinamiklerini incelemek için geliştirilen bir ajan tabanlı
-simülasyon araştırma projesidir. Model, davranışları kişilik, ihtiyaçlar,
-stres, inançlar ve sosyal bağların etkileşiminden üretmeyi amaçlar.
+Ship of Fools is an agent-based simulation research project developed to study
+individual psychology, social relations, institutions, culture, and resource
+dynamics in a ship environment. The model aims to generate behaviour from the
+interaction of personality, needs, stress, beliefs, and social ties.
 
-Bu kod tabanı bir araştırma aracıdır; gerçek insanların davranışını veya
-nörobiyolojiyi doğrulanmış biçimde yeniden ürettiği iddiasında değildir.
-Mekanizmaların ve katsayıların önemli bir bölümü tasarım varsayımıdır. Kaynak
-durumları ve model sınırlamaları için [REFERENCES.md](REFERENCES.md),
-[KNOWN_ISSUES.md](KNOWN_ISSUES.md) ve [REVALIDATION.md](REVALIDATION.md)
-okunmalıdır.
+This code base is a research tool; it does not claim to reproduce the behaviour
+of real people or neurobiology in a validated way. A significant share of the
+mechanisms and coefficients are design assumptions. For the status of sources
+and the model's limitations, see [REFERENCES.md](REFERENCES.md),
+[KNOWN_ISSUES.md](KNOWN_ISSUES.md), and [REVALIDATION.md](REVALIDATION.md).
 
-## Kurulum
+## Installation
 
-Python 3.10 veya üstü gerekir. `requirements.txt`, PNG grafikleri için
-`matplotlib`; istatistiksel yeniden sınama modülü için `scipy` kurar. Windows
+Python 3.10 or later is required. `requirements.txt` installs `matplotlib` for
+PNG plots and `scipy` for the statistical re-testing module. Windows
 PowerShell:
 
 ```powershell
@@ -34,36 +33,36 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-## Kullanım
+## Usage
 
-Komutları proje klasöründen çalıştırın:
+Run the commands from the project folder:
 
 ```bash
-python run.py                         # tek koşu; output/metrics.csv ve PNG üretir
-python run_experiments.py             # baseline ve misinformation karşılaştırması
-python run_v5_lab.py                  # uzun çoklu-seed deney; birkaç dakika sürebilir
-python run_sensitivity.py             # Morris-tipi parametre taraması
-python run_interaction_test.py        # iki parametreli 2x2 faktöriyel deney
-python run_revalidation.py            # istatistiksel yeniden sınama; yaklaşık birkaç dakika
-python run_scale_test.py              # kısa çalışma zamanı ölçek ölçümü
+python run.py                         # single run; produces output/metrics.csv and a PNG
+python run_experiments.py             # baseline vs. misinformation comparison
+python run_v5_lab.py                  # long multi-seed experiment; may take a few minutes
+python run_sensitivity.py             # Morris-type parameter screening
+python run_interaction_test.py        # two-parameter 2x2 factorial experiment
+python run_revalidation.py            # statistical re-testing; roughly a few minutes
+python run_scale_test.py              # short runtime scaling measurement
 python run_dashboard.py --agents 80 --ticks 500 --seed 42
-python run_regime_calibration.py      # kaynak kıtlığı pilot taraması; birkaç dakika sürebilir
-python run_resource_factorial.py     # final 2x2 deney; 120 dünya, birkaç dakika
-python run_schedule_robustness.py    # sabit ve tick-başı karıştırılmış sıra karşılaştırması
-python analyze_schedule_robustness.py # zamanlama sonuçları için faktöriyel kontrast analizi
-python run_agent_rng_robustness.py   # ajan-başı RNG ile eş seedli 240 çizelge koşusu
-python analyze_agent_rng_robustness.py # ajan-başı RNG sağlamlık analizini üretir
-python run_identity_resource_factorial.py # kaynak rejimi × kimlik geri beslemesi; 240 dünya
-python analyze_identity_resource_factorial.py # seed bloklu paired bootstrap analizi
-python run_scarcity_link_ablation.py  # kaynak × kıtlık-inancı bağlantısı ablasyonu; 360 dünya
-python analyze_scarcity_link_ablation.py # ablasyon kontrastları ve kalan pay
-python run_identity_label_followup.py # kimlik deneyinin etiket/eylem payları; 240 dünya
-python run_scarcity_link_ablation.py --arms intact,need_based --seed-start 70000 --out-dir output/need_based_decision --protocol EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md  # ihtiyaç temelli karar mimarisi; 240 dünya
+python run_regime_calibration.py      # resource scarcity pilot sweep; may take a few minutes
+python run_resource_factorial.py     # final 2x2 experiment; 120 worlds, a few minutes
+python run_schedule_robustness.py    # fixed vs. per-tick shuffled order comparison
+python analyze_schedule_robustness.py # factorial contrast analysis for the scheduling results
+python run_agent_rng_robustness.py   # 240 schedule runs with per-agent RNG and matched seeds
+python analyze_agent_rng_robustness.py # produces the per-agent RNG robustness analysis
+python run_identity_resource_factorial.py # resource regime × identity feedback; 240 worlds
+python analyze_identity_resource_factorial.py # seed-blocked paired bootstrap analysis
+python run_scarcity_link_ablation.py  # resource × scarcity-belief link ablation; 360 worlds
+python analyze_scarcity_link_ablation.py # ablation contrasts and retained fraction
+python run_identity_label_followup.py # label/action shares of the identity experiment; 240 worlds
+python run_scarcity_link_ablation.py --arms intact,need_based --seed-start 70000 --out-dir output/need_based_decision --protocol EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md  # need-based decision architecture; 240 worlds
 python analyze_scarcity_link_ablation.py --dir output/need_based_decision
-python run_scarcity_link_ablation.py --arms intact,provisions_only,scoring_only,need_based --seed-start 80000 --out-dir output/provision_scoring_factorial --protocol EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md  # erzak × skor ayrışımı; 480 dünya
+python run_scarcity_link_ablation.py --arms intact,provisions_only,scoring_only,need_based --seed-start 80000 --out-dir output/provision_scoring_factorial --protocol EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md  # provisions × scoring decomposition; 480 worlds
 python analyze_scarcity_link_ablation.py --dir output/provision_scoring_factorial --factorial provisions_only,scoring_only,need_based
-python run_deprivation_pilot.py       # yoksunluk rejimi kalibrasyonu; --order shuffled ile de koşulur
-python run_scarcity_link_ablation.py --arms intact,provisions_only,scoring_only,need_based --capacities 90,120 --regen-rates 0.004,0.010 --order shuffled --seed-start 94000 --out-dir output/deprivation --protocol EXPERIMENT_PROTOCOL_DEPRIVATION.md  # gerçek yoksunluk; 480 dünya
+python run_deprivation_pilot.py       # deprivation regime calibration; also run with --order shuffled
+python run_scarcity_link_ablation.py --arms intact,provisions_only,scoring_only,need_based --capacities 90,120 --regen-rates 0.004,0.010 --order shuffled --seed-start 94000 --out-dir output/deprivation --protocol EXPERIMENT_PROTOCOL_DEPRIVATION.md  # true deprivation; 480 worlds
 python analyze_scarcity_link_ablation.py --dir output/deprivation --factorial provisions_only,scoring_only,need_based
 python ship_of_fools/tests/test_basic.py
 python ship_of_fools/tests/test_reproducibility.py
@@ -73,88 +72,98 @@ python ship_of_fools/tests/test_scarcity_link_ablation.py
 python ship_of_fools/tests/test_need_based_decision.py
 ```
 
-Dashboard HTML dosyasını üretir; grafik kütüphanelerini CDN'den yüklediği için
-dashboard'ı görüntülerken internet bağlantısı gerekir. Simülasyon motoru ve
-rejim kalibrasyon pilotu Python standart kütüphanesini kullanır; PNG grafikleri
-`matplotlib`, `run_revalidation.py` ise `scipy` gerektirir.
+The dashboard produces an HTML file; because it loads its charting libraries
+from a CDN, an internet connection is required to view it. The simulation
+engine and the regime calibration pilot use the Python standard library; PNG
+plots require `matplotlib`, and `run_revalidation.py` requires `scipy`.
 
-Her deneyde seed ve parametreleri kaydedin. Sonuçları mümkün olduğunda eşleşmiş
-seed'lerle, birden fazla koşu üzerinden raporlayın; tek bir koşuyu kanıt olarak
-yorumlamayın. Deney çıktıları `output/` altına yazılır. Tick düzeyindeki
-`timeseries` CSV dosyaları (9–65 MB) git'te tutulmaz; ilgili `run_*.py` betiği
-aynı seed'lerle yeniden üretir. Seed özetleri, deney metaverisi ve analiz
-dosyaları depodadır.
+Record the seed and parameters in every experiment. Report results over
+multiple runs, using matched seeds where possible; do not interpret a single
+run as evidence. Experiment outputs are written under `output/`. The tick-level
+`timeseries` CSV files (9–65 MB) are not kept in git; the corresponding
+`run_*.py` script regenerates them with the same seeds. Seed summaries,
+experiment metadata, and analysis files are in the repository.
 
-## Model kapsamı
+## Model scope
 
-Mevcut modelde şunlar bulunur:
+The current model includes:
 
-- Sürekli kişilik özellikleri, ihtiyaçlar, stres, enerji, ruh hâli ve sağlık.
-- Gürültülü çevre algısı, inanç güncelleme, söylenti yayılımı ve basit
-  metabilişsel özdeğerlendirme.
-- Small-world komşuluk ağı, güven ilişkileri, zihin modelleri ve kısmi
-  ikinci-derece zihin kuramı.
-- Paylaşılan kaynak havuzu, forage/share/steal eylemleri ve servet ölçümleri.
-- Organik liderlik, vergi ve yeniden dağıtım, kolluk, eğitim, sağlık ve kısmi
-  medya mekanikleri.
-- Norm oluşumu, iki norm ekseni, davranıştan türeyen kimlikler ve nesiller
-  arası basit aktarım; doğum, yaşlanma ve ölüm.
-- Zaman serisi metrikleri, sosyal ağ ölçümleri, çoklu-seed deneyleri,
-  karşı-olgusal karşılaştırmalar, duyarlılık ve etkileşim analizleri.
+- Continuous personality traits, needs, stress, energy, mood, and health.
+- Noisy perception of the environment, belief updating, rumour spread, and
+  simple metacognitive self-assessment.
+- A small-world neighbourhood network, trust relations, mental models, and
+  partial second-order theory of mind.
+- A shared resource pool, forage/share/steal actions, and wealth measures.
+- Organic leadership, taxation and redistribution, policing, education, health,
+  and partial media mechanics.
+- Norm formation, two norm axes, behaviour-derived identities, and simple
+  intergenerational transmission; birth, ageing, and death.
+- Time-series metrics, social network measures, multi-seed experiments,
+  counterfactual comparisons, and sensitivity and interaction analyses.
 
-Ayrıntılı modül ve tick akışı [ARCHITECTURE.md](ARCHITECTURE.md), kod temelli
-ODD+D taslağı [ODD_D.md](ODD_D.md), akademik yöntem ve deney planı
-[ACADEMIC_RESEARCH_PLAN.md](ACADEMIC_RESEARCH_PLAN.md), kaynak deneyi protokolü
+The detailed module structure and tick flow are in
+[ARCHITECTURE.md](ARCHITECTURE.md), the code-based ODD+D draft in
+[ODD_D.md](ODD_D.md), the academic method and experiment plan in
+[ACADEMIC_RESEARCH_PLAN.md](ACADEMIC_RESEARCH_PLAN.md), the resource experiment
+protocol in
 [EXPERIMENT_PROTOCOL_RESOURCE_STRESS.md](EXPERIMENT_PROTOCOL_RESOURCE_STRESS.md),
-deney sonuç raporu [RESOURCE_STRESS_RESULTS.md](RESOURCE_STRESS_RESULTS.md),
-güncelleme sırası sağlamlık raporu [SCHEDULE_ROBUSTNESS_RESULTS.md](SCHEDULE_ROBUSTNESS_RESULTS.md),
-ajan-başı RNG sağlamlık raporu [AGENT_RNG_ROBUSTNESS_RESULTS.md](AGENT_RNG_ROBUSTNESS_RESULTS.md),
-kimlik × kaynak faktöriyel protokolü [EXPERIMENT_PROTOCOL_IDENTITY_BY_RESOURCE.md](EXPERIMENT_PROTOCOL_IDENTITY_BY_RESOURCE.md)
-ve sonuçları [IDENTITY_RESOURCE_RESULTS.md](IDENTITY_RESOURCE_RESULTS.md),
-kıtlık-inancı bağlantısı ablasyon protokolü
+the experiment results report in
+[RESOURCE_STRESS_RESULTS.md](RESOURCE_STRESS_RESULTS.md), the update-order
+robustness report in
+[SCHEDULE_ROBUSTNESS_RESULTS.md](SCHEDULE_ROBUSTNESS_RESULTS.md), the per-agent
+RNG robustness report in
+[AGENT_RNG_ROBUSTNESS_RESULTS.md](AGENT_RNG_ROBUSTNESS_RESULTS.md), the
+identity × resource factorial protocol in
+[EXPERIMENT_PROTOCOL_IDENTITY_BY_RESOURCE.md](EXPERIMENT_PROTOCOL_IDENTITY_BY_RESOURCE.md)
+and its results in [IDENTITY_RESOURCE_RESULTS.md](IDENTITY_RESOURCE_RESULTS.md),
+the scarcity-belief link ablation protocol in
 [EXPERIMENT_PROTOCOL_SCARCITY_LINK_ABLATION.md](EXPERIMENT_PROTOCOL_SCARCITY_LINK_ABLATION.md)
-ve sonuçları [SCARCITY_LINK_ABLATION_RESULTS.md](SCARCITY_LINK_ABLATION_RESULTS.md),
-ihtiyaç temelli karar mimarisi protokolü
+and its results in
+[SCARCITY_LINK_ABLATION_RESULTS.md](SCARCITY_LINK_ABLATION_RESULTS.md), the
+need-based decision architecture protocol in
 [EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md](EXPERIMENT_PROTOCOL_NEED_BASED_DECISION.md)
-ve sonuçları [NEED_BASED_DECISION_RESULTS.md](NEED_BASED_DECISION_RESULTS.md),
-erzak × skor ayrışımı protokolü
+and its results in [NEED_BASED_DECISION_RESULTS.md](NEED_BASED_DECISION_RESULTS.md),
+the provisions × scoring decomposition protocol in
 [EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md](EXPERIMENT_PROTOCOL_PROVISION_SCORING_FACTORIAL.md)
-ve sonuçları [PROVISION_SCORING_FACTORIAL_RESULTS.md](PROVISION_SCORING_FACTORIAL_RESULTS.md),
-gerçek yoksunluk protokolü [EXPERIMENT_PROTOCOL_DEPRIVATION.md](EXPERIMENT_PROTOCOL_DEPRIVATION.md)
-ve sonuçları [DEPRIVATION_RESULTS.md](DEPRIVATION_RESULTS.md) içindedir.
-Aşamalı geliştirme planı [TASK_GRAPH.md](TASK_GRAPH.md) içindedir.
+and its results in
+[PROVISION_SCORING_FACTORIAL_RESULTS.md](PROVISION_SCORING_FACTORIAL_RESULTS.md),
+and the true deprivation protocol in
+[EXPERIMENT_PROTOCOL_DEPRIVATION.md](EXPERIMENT_PROTOCOL_DEPRIVATION.md) and its
+results in [DEPRIVATION_RESULTS.md](DEPRIVATION_RESULTS.md).
+The staged development plan is in [TASK_GRAPH.md](TASK_GRAPH.md).
 
-## Bilimsel yorum ve bilinen sınırlar
+## Scientific interpretation and known limitations
 
-- Model katsayılarının çoğu ampirik olarak kalibre edilmemiştir. Bilimsel
-  literatürden esinlenme, tek başına mekanizmanın doğrulandığı anlamına gelmez.
-- Varsayılan parametre rejiminde kıtlık tavan etkisine yaklaşır; bazı sonuçlar
-  başka rejimlerde değişebilir. Duyarlılık taraması parametre etkileşimlerini
-  tam olarak kapsamaz.
-- Bazı eski bulgular küçük örneklemli veya güven aralıksızdır; yeniden
-  sınanma durumu `REVALIDATION.md` ve `KNOWN_ISSUES.md`'de belirtilir.
-- Dashboard ilk dilimdir: sınırlı sayıda ajanı ve son-tick ağını gösterir;
-  gerçek tarayıcıda uçtan uca görsel doğrulaması henüz tamamlanmamıştır.
-- Ekonomi fiyat/emek piyasası içermez. Kültür iki basit normla sınırlıdır;
-  tam iç içe geçmiş zihin kuramı ve predictive processing henüz yoktur.
+- Most model coefficients have not been calibrated empirically. Being inspired
+  by the scientific literature does not, by itself, mean that a mechanism has
+  been validated.
+- In the default parameter regime, scarcity approaches a ceiling effect; some
+  results may change in other regimes. The sensitivity sweep does not fully
+  cover parameter interactions.
+- Some older findings rest on small samples or lack confidence intervals; their
+  re-testing status is noted in `REVALIDATION.md` and `KNOWN_ISSUES.md`.
+- The dashboard is a first slice: it shows a limited number of agents and the
+  last-tick network; end-to-end visual verification in a real browser has not
+  yet been completed.
+- The economy has no price/labour market. Culture is limited to two simple
+  norms; full nested theory of mind and predictive processing do not exist yet.
 
-Bu sınırlar, bilimsel sonuçları değerlendirirken modelin kapsamı içinde
-kalınmasını sağlar; açık işler [KNOWN_ISSUES.md](KNOWN_ISSUES.md) içinde
-izlenir.
+These limits keep the evaluation of scientific results within the scope of the
+model; open items are tracked in [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
 
-## Proje yapısı
+## Project structure
 
 ```text
 ship_of_fools/
   agents/ cognition/ sociology/ information/ economy/ environment/
   institutions/ culture/ population/ simulation/ metrics/ experiments/
   visualization/ tests/
-run*.py                 simülasyon ve deney giriş noktaları
-ARCHITECTURE.md         gerçek modül yapısı ve tick akışı
-PROJECT_CONSTITUTION.md modelleme ve geliştirme ilkeleri
-TASK_GRAPH.md           yol haritası ve kalan görevler
-KNOWN_ISSUES.md         açık sorunlar ve karar geçmişi
-REFERENCES.md           mekanizma-kaynak eşlemesi ve kanıt notları
-REVALIDATION.md         istatistiksel yeniden sınama sonuçları
-requirements.txt        çalışma zamanı bağımlılıkları
+run*.py                 simulation and experiment entry points
+ARCHITECTURE.md         actual module structure and tick flow
+PROJECT_CONSTITUTION.md modelling and development principles
+TASK_GRAPH.md           roadmap and remaining tasks
+KNOWN_ISSUES.md         open issues and decision history
+REFERENCES.md           mechanism–source mapping and evidence notes
+REVALIDATION.md         statistical re-testing results
+requirements.txt        runtime dependencies
 ```

@@ -1,4 +1,4 @@
-"""TASK-302: identity is NOT assigned at t=0 (doc 3, point 4: "Başlangıçta:
+"""TASK-302: identity is NOT assigned at t=0 (doc 3, point 4: "at the start:
 identity = undefined"). It emerges from accumulated lived experience, and once
 formed it feeds back into behavior with some stickiness — closer to how a
 real self-concept works than a simple derived stat would (it doesn't

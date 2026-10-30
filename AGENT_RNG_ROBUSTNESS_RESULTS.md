@@ -1,76 +1,77 @@
-# Ajan-Başı RNG ile Güncelleme Sırası Sağlamlığı
+# Update Order Robustness with Per-Agent RNG
 
-## Araştırma sorusu
+## Research question
 
-Sabit ID sırasına göre eylem güncellemek, kaynak kapasitesi ve yenilenme
-etkilerini değiştirdi mi? Önceki sağlamlık analizinde ajanların eylemleri tek
-bir karar RNG'sini paylaşıyordu. Bu nedenle güncelleme sırası değiştiğinde bir
-ajanın tükettiği rastgele çekiliş sayısı, sonraki ajanlara giden çekilişleri
-kaydırabiliyordu. Bu takipte eylem/lifecycle çekilişleri ajan başına ayrı
-akışlara ayrıldı.
+Did updating actions in fixed ID order change the effects of resource capacity and
+regeneration? In the earlier robustness analysis the agents' actions shared a single
+decision RNG. For this reason, when the update order changed, the number of random
+draws consumed by one agent could shift the draws going to subsequent agents. In
+this follow-up the action/lifecycle draws were separated into per-agent streams.
 
-## Tasarım
+## Design
 
-- 2×2 kaynak düzeni: kapasite 90/120, gıda ve su yenilenme oranı 0.016/0.019.
-- Her hücrede aynı 30 seed hem sabit hem tick-başı karıştırılmış eylem sırasıyla
-  çalıştırıldı: 4 hücre × 30 seed × 2 çizelge = 240 simülasyon.
-- Her koşu 80 kurucu ajan ve 500 tick içerir; analiz son 100 tick'in seed içi
-  ortalamasıdır.
-- `agent_rng_mode="per_agent"` eylem kararları, algı gürültüsü, etkileşim hedefi,
-  söylenti bozulması, yakalanma, yaşlanma ve doğum çekilişlerinde ajan-ID'den
-  türetilen RNG kullanır. Tick başı sıralama ayrı scheduler RNG kullanır.
-- Hücre içindeki eş seed farkları ve faktöriyel kontrast farkları için 10.000
-  paired bootstrap örneklemesi yapıldı.
+- 2×2 resource layout: capacity 90/120, food and water regeneration rate 0.016/0.019.
+- In each cell the same 30 seeds were run with both the fixed and the per-tick
+  shuffled action order: 4 cells × 30 seeds × 2 schedules = 240 simulations.
+- Each run contains 80 founder agents and 500 ticks; the analysis is the within-seed
+  mean of the last 100 ticks.
+- `agent_rng_mode="per_agent"` uses an RNG derived from the agent ID for action
+  decisions, perception noise, interaction target, rumor distortion, being caught,
+  aging and birth draws. The per-tick ordering uses a separate scheduler RNG.
+- 10,000 paired bootstrap resamples were made for the matched-seed differences within
+  a cell and for the factorial contrast differences.
 
-Bu, RNG aktarımını ajanlar arasında ayırır; tam ortak-rastgele-sayı/potansiyel
-sonuç tasarımı değildir. Bir ajanın eylemi ve etkileşimleri değişince o ajanın
-sonraki çekiliş sayısı/yolu da değişebilir. Çevre, ağ başlatma ve lider medya
-çekilişleri ana simülasyon RNG'sini kullanmayı sürdürür. Bu koşular içinde her
-seed/schedule tekrarlanabilir; per-agent mod, `shared` varsayılanını değiştirmez.
+This separates the transfer of RNG draws across agents; it is not a full
+common-random-numbers/potential-outcomes design. When an agent's action and
+interactions change, that agent's subsequent draw count/path may also change. The
+environment, network initialization and leader media draws continue to use the main
+simulation RNG. Within these runs each seed/schedule is reproducible; the per-agent
+mode does not change the `shared` default.
 
-## Birincil faktöriyel sonuçlar
+## Primary factorial results
 
-Kontrast yüksek düzey eksi düşük düzey; Δ karıştırılmış eylem sırası eksi sabit
-sıra kontrastıdır. Parantezler Δ için paired seed bootstrap %95 aralığıdır.
+Contrast is high level minus low level; Δ is the shuffled action order minus fixed
+order contrast. The brackets are the paired seed bootstrap 95% interval for Δ.
 
-| Sonuç / kontrast | Sabit | Karıştırılmış | Δ (%95 GA) |
+| Outcome / contrast | Fixed | Shuffled | Δ (95% CI) |
 |---|---:|---:|---:|
-| İşbirliği — kapasite | +0.096 | +0.093 | −0.003 [−0.009, +0.003] |
-| İşbirliği — yenilenme | +0.042 | +0.041 | −0.001 [−0.007, +0.006] |
-| İşbirliği — etkileşim | +0.024 | +0.021 | −0.004 [−0.016, +0.009] |
-| Çatışma — kapasite | −0.105 | −0.102 | +0.004 [−0.003, +0.011] |
-| Çatışma — yenilenme | −0.042 | −0.043 | −0.001 [−0.008, +0.006] |
-| Çatışma — etkileşim | −0.020 | −0.017 | +0.003 [−0.011, +0.017] |
-| Kıtlık — kapasite | −0.560 | −0.554 | +0.006 [−0.041, +0.052] |
-| Kıtlık — yenilenme | −0.231 | −0.228 | +0.003 [−0.043, +0.049] |
-| Kıtlık — etkileşim | −0.176 | −0.190 | −0.014 [−0.107, +0.078] |
+| Cooperation — capacity | +0.096 | +0.093 | −0.003 [−0.009, +0.003] |
+| Cooperation — regeneration | +0.042 | +0.041 | −0.001 [−0.007, +0.006] |
+| Cooperation — interaction | +0.024 | +0.021 | −0.004 [−0.016, +0.009] |
+| Conflict — capacity | −0.105 | −0.102 | +0.004 [−0.003, +0.011] |
+| Conflict — regeneration | −0.042 | −0.043 | −0.001 [−0.008, +0.006] |
+| Conflict — interaction | −0.020 | −0.017 | +0.003 [−0.011, +0.017] |
+| Scarcity — capacity | −0.560 | −0.554 | +0.006 [−0.041, +0.052] |
+| Scarcity — regeneration | −0.231 | −0.228 | +0.003 [−0.043, +0.049] |
+| Scarcity — interaction | −0.176 | −0.190 | −0.014 [−0.107, +0.078] |
 
-Dokuz fark aralığının tümü sıfırı içeriyor ve üç sonucun kapasite/yenilenme
-ana etkileri iki çizelgede de aynı yönde. Bu analiz güncelleme sıralarının
-eşdeğerliğini ispatlamaz; önceden belirlenmiş eşdeğerlik sınırı yoktur ve
-seedler arası değişkenlik özellikle kıtlık/etkileşim tahminlerinde aralıkları
-genişletir. Bununla birlikte önceki kaynak sonucu, ajanlar arası RNG çekiliş
-kaymasına daha az bağlı bir tasarımda da yönünü korudu.
+All nine difference intervals contain zero, and the capacity/regeneration main
+effects of the three outcomes are in the same direction in both schedules. This
+analysis does not prove the equivalence of the update orders; there is no
+pre-specified equivalence bound, and the between-seed variability widens the
+intervals especially in the scarcity/interaction estimates. Nevertheless, the earlier
+resource result kept its direction in a design that is less dependent on the shift of
+RNG draws across agents.
 
-## Sonraki yöntem kararı
+## Next methodological decision
 
-`shared` modu varsayılan olarak korundu; böylece eski deneyler değişmeden
-tekrarlanabilir. Yeni araştırmalarda `per_agent` modunun varsayılan olup
-olmayacağı, `shared` ve `per_agent` altında temel bulguların replikasyonu ve
-ajan başına stream tasarımının metodolojik gerekçesi birlikte değerlendirilerek
-seçilmelidir. Ortak dışsal olayları kimlik/tick bazında sabitleyen counter-based
-RNG, daha güçlü eşleştirme için gelecekteki bir alternatif olabilir.
+The `shared` mode was kept as the default so that old experiments remain repeatable
+unchanged. In new research, whether `per_agent` mode should become the default should
+be chosen by evaluating together the replication of the core findings under `shared`
+and `per_agent` and the methodological rationale of the per-agent stream design.
+Counter-based RNG, which pins common exogenous events by agent ID/tick, could be a
+future alternative for stronger matching.
 
-## Kapsam notu (2026-10-09)
+## Scope note (2026-10-09)
 
-Bu sonuç ajanların tok olduğu kaynak hücrelerine aittir; kıt rejimlerde
-güncelleme sırası sonuçları değiştirir (ISSUE-016).
+This result belongs to the resource cells in which the agents were well fed; in
+scarce regimes the update order changes the results (ISSUE-016).
 
-## Tekrar üretim
+## Reproduction
 
-- `run_agent_rng_robustness.py` — 240 koşu ve ham zaman serileri.
-- `analyze_agent_rng_robustness.py` — paired hücre ve faktöriyel bootstrap analizi.
-- `output/agent_rng_robustness/experiment.json` — tasarım/seed metaverisi.
-- `output/agent_rng_robustness/analysis.json` — sonuç tahminleri ve aralıklar.
-- `output/agent_rng_robustness/seed_summaries.csv` — 240 seed/schedule özeti.
-- `output/agent_rng_robustness/timeseries.csv` — 120.000 tick gözlemi.
+- `run_agent_rng_robustness.py` — 240 runs and the raw time series.
+- `analyze_agent_rng_robustness.py` — paired cell and factorial bootstrap analysis.
+- `output/agent_rng_robustness/experiment.json` — design/seed metadata.
+- `output/agent_rng_robustness/analysis.json` — result estimates and intervals.
+- `output/agent_rng_robustness/seed_summaries.csv` — 240 seed/schedule summaries.
+- `output/agent_rng_robustness/timeseries.csv` — 120,000 tick observations.
