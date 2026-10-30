@@ -235,13 +235,13 @@ decision history is not lost.
 
   Under the fixed order, all of the second half of the founders die of
   starvation; when the order is shuffled, death becomes independent of
-  identity, total deaths halve, and lasting deprivation appears.
+  agent ID, total deaths halve, and lasting deprivation appears.
 - **Consequence**: `SCHEDULE_ROBUSTNESS_RESULTS.md` and
   `AGENT_RNG_ROBUSTNESS_RESULTS.md` showed that the order does not change the
   results only in regimes where the agents are well fed; this robustness
   cannot be generalised to scarce regimes. There, the fixed order is an
   implicit "access hierarchy by agent ID" assumption. Since later-born agents
-  have the highest identity, they access last.
+  have the highest IDs, they access last.
 - **Done**: the deprivation pilot was run with both orders
   (`output/deprivation_pilot*.json`); the deprivation experiment was defined
   with shuffled order (`EXPERIMENT_PROTOCOL_DEPRIVATION.md`).
